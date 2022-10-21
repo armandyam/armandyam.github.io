@@ -11,8 +11,6 @@ redirect_from:
 
 Education
 ======
-{% include something.html %}
-
 * Ph.D in Computational Science, [RWTH Aachen University](https://www.aices.rwth-aachen.de/de/), 2021
 * M.Sc. in Simulation Sciences, [RWTH Aachen University](https://www.aices.rwth-aachen.de/de/), 2015
 * B.Tech. in Mechanical Engineering, [IIT Hyderabad](https://iith.ac.in/), 2013
