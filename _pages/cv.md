@@ -11,9 +11,9 @@ redirect_from:
 
 Education
 ======
-* B.Tech. in Mechanical Engineering, IIT Hyderabad, 2013
-* M.S. in Simulation Sciences, RWTH Aachen University, 2015
 * Ph.D in Computational Science, RWTH Aachen University, 2021
+* M.S. in Simulation Sciences, RWTH Aachen University, 2015
+* B.Tech. in Mechanical Engineering, IIT Hyderabad, 2013
 
 Work experience
 ======
