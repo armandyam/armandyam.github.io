@@ -1,7 +1,7 @@
 ---
 title: "Experimental study of dense bi-disperse granular flow through a pipe with a ninety degree bend"
 collection: publications
-permalink: /publication/2013-Experimental-study-of-dense-bi-disperse-granular-flow-through-a-pipe-with-a-ninety-degree-bend.md
+permalink: /publication/2013-Experimental-study-of-dense-bi-disperse-granular-flow-through-a-pipe-with-a-ninety-degree-bend
 date: 2013-01-01
 venue: 'Third International Conference on Material Modelling Thirteenth European Mechanics of Materials Conference'
 paperurl: 'http://icmm3.ippt.gov.pl/icmm3_book_of_abstracts-a4paper.pdf'
@@ -9,5 +9,6 @@ citation: 'Gautham Manoharan, Abram Kakkozha, Ajay Rangarajan, Karthik Vajapeyaj
 ---
 
 [Download paper here](http://icmm3.ippt.gov.pl/icmm3_book_of_abstracts-a4paper.pdf)
+
 
 Recommended citation: Gautham Manoharan, Abram Kakkozha, Ajay Rangarajan, Karthik Vajapeyajula, Ashwin Kolappan, Mahesh Panchagnula, Srikanth Vedantam. &quot;Experimental study of dense bi-disperse granular flow through a pipe with a ninety degree bend.&quot; <i>Third International Conference on Material Modelling Thirteenth European Mechanics of Materials Conference</i>. 2013.

@@ -1,7 +1,7 @@
 ---
 title: "A goal-oriented anisotropic hp-mesh adaptation method for linear convection–diffusion–reaction problems"
 collection: publications
-permalink: /publication/2019-A-goal-oriented-anisotropic-hp-mesh-adaptation-method-for-linear-convection–diffusion–reaction-problems.md
+permalink: /publication/2019-A-goal-oriented-anisotropic-hp-mesh-adaptation-method-for-linear-convection–diffusion–reaction-problems
 excerpt: 'We deal with the numerical solution of linear convection–diffusion–reaction equations using the hp-variant of the discontinuous Galerkin method on triangular grids. We develop a mesh adaptive algorithm which modifies the size and shape of mesh elements and the corresponding polynomial approximation degrees in order to decrease the error in a target functional under the given tolerance. We recall some theoretical results and describe in detail several technical aspects of this approach. Numerical experiments demonstrating the accuracy, efficiency and robustness of the algorithm are presented.'
 date: 2019-01-01
 venue: 'Computers & Mathematics with Applications'
@@ -11,5 +11,6 @@ citation: 'Ondřej Bartoš, Vít Dolejší, Georg May, Ajay Rangarajan, Filip Ro
 We deal with the numerical solution of linear convection–diffusion–reaction equations using the hp-variant of the discontinuous Galerkin method on triangular grids. We develop a mesh adaptive algorithm which modifies the size and shape of mesh elements and the corresponding polynomial approximation degrees in order to decrease the error in a target functional under the given tolerance. We recall some theoretical results and describe in detail several technical aspects of this approach. Numerical experiments demonstrating the accuracy, efficiency and robustness of the algorithm are presented.
 
 [Download paper here](https://www.sciencedirect.com/science/article/pii/S0898122119301774)
+
 
 Recommended citation: Ondřej Bartoš, Vít Dolejší, Georg May, Ajay Rangarajan, Filip Roskovec. &quot;A goal-oriented anisotropic hp-mesh adaptation method for linear convection–diffusion–reaction problems.&quot; <i>Computers & Mathematics with Applications</i>. 2019, Vol. 78, pp.2973-2993(9).
