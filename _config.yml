@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Ajay Mandyam Rangarajan / Personal Website"
+title                    : "Ajay Rangarajan's Personal Website"
 title_separator          : "-"
 name                     : &name "Ajay Mandyam Rangarajan"
 description              : &description "R&D Software Engineer at Dassault Systemes"
@@ -81,8 +81,8 @@ analytics:
 # Site Author
 author:
   name             : "Ajay Mandyam Rangarajan"
-  avatar           : "profile.png"
-  bio              : "Computational Sciencist"
+  avatar           : "IMG_4010.jpg"
+  bio              : "Computational Scientist"
   location         : "Darmstadt, Germany"
   employer         :
 #  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
@@ -255,7 +255,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Europe/Berlin # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
