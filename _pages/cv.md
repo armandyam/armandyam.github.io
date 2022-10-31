@@ -85,14 +85,6 @@ Transferable skills
 * Resource Management
 * Conflict Resolution
 
-Languages
-======
-* English (Native)
-* German (Intermediate)
-* Kannada (Native)
-* Hindi (Intermediate)
-* Tamil (Intermediate)
-
 Pro Bono
 ======
 * Society for Industrial and Applied Mathematics (SIAM) Aachen Chapter
