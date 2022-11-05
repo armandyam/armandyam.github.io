@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Ajay Rangarajan's Personal Website"
+title                    : "Ajay Rangarajan"
 title_separator          : "-"
 name                     : &name "Ajay Mandyam Rangarajan"
 description              : &description "R&D Software Engineer at Dassault Systemes"
