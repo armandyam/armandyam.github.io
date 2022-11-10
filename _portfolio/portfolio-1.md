@@ -1,6 +1,7 @@
 ---
 title: "Prompt-to-website pipeline"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/week_stability.png'>"
+excerpt: "Short description of portfolio item number 1<br/><img src='/images/week_stability.png' width='400' 
+     height='400'>"
 collection: portfolio
 ---
 
