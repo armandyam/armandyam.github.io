@@ -9,7 +9,7 @@ The idea of this short project was to see if I could build a pipeline with pytho
 
 In theory, if this works the idea is:
 1. The prompt generation is an exact replica of the work done by [boywithspork](https://github.com/boywithspork/DALLE2-Prompt-Generator) except that I reimplemented it in python. 
-2. The test-to-image generation is from the stable diffusion using [stability-sdk]ß(https://github.com/Stability-AI/stability-sdk)
+2. The test-to-image generation is from the stable diffusion using [stability-sdk](https://github.com/Stability-AI/stability-sdk)
 3. The push to the git repo is standard python using [GitPython](https://gitpython.readthedocs.io/en/stable/)
 4. TODO: Setup a cron tab to do this with a frequency of every x days where x is yet to be defined
 
