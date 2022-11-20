@@ -9,11 +9,15 @@ posteriori
 Posteriori
 Ajay
 Dolejsi
+Dolejší
 Filip
 Georg
 Rangarajan
 Roskovec
 Vit
+Vít
+Ondřej
+Bartos
 piecewise
 Ankit
 Chakraborty
