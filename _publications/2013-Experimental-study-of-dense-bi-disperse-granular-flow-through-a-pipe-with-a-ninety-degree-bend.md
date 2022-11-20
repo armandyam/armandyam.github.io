@@ -2,7 +2,6 @@
 title: "Experimental study of dense bi-disperse granular flow through a pipe with a ninety degree bend"
 collection: publications
 permalink: /publication/2013-Experimental-study-of-dense-bi-disperse-granular-flow-through-a-pipe-with-a-ninety-degree-bend
-excerpt: ''
 date: 2013-01-01
 venue: 'Third International Conference on Material Modelling Thirteenth European Mechanics of Materials Conference'
 ---

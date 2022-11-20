@@ -11,4 +11,4 @@ We have previously proposed a metric-based anisotropic adaption method for tetra
 [Download paper here](https://arc.aiaa.org/doi/abs/10.2514/6.2019-0349)
 
 
-Recommended citation: Ajay Rangarajan, Ankit Chakraborthy, Georg May. &quot;A goal oriented optimization technique for tetrahedral grids using a continuous-mesh model.&quot; <i>AIAA Scitech 2019 Forum</i>. 2019, pp., 2019-0349.
+Recommended citation: Ajay Rangarajan, Ankit Chakraborty, Georg May. &quot;A goal oriented optimization technique for tetrahedral grids using a continuous-mesh model.&quot; <i>AIAA Scitech 2019 Forum</i>. 2019, pp., 2019-0349.
