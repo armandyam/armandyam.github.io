@@ -17,6 +17,7 @@ Roskovec
 Vit
 Vít
 Ondřej
+Ondrej
 Bartos
 piecewise
 Ankit
@@ -110,6 +111,7 @@ Darmstadt
 Dassault
 Mandyam
 Systemes
+Systèmes
 Grepl
 Ing
 Ph
