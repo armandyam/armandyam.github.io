@@ -22,4 +22,6 @@ matrix:
       - 'pre'
       - 'blockquote'
   sources:
-  - '*.md'
+  - '_publications/*.md'
+  - '_talks/*.md'
+  - '_pages/about.md'
