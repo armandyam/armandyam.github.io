@@ -11,4 +11,4 @@ We deal with the numerical solution of linear convection–diffusion–reaction 
 [Download paper here](https://www.sciencedirect.com/science/article/pii/S0898122119301774)
 
 
-Recommended citation: Ondřej Bartos, Vít Dolejší, Georg May, Ajay Rangarajan, Filip Roskovec. &quot;A goal-oriented anisotropic hp-mesh adaptation method for linear convection–diffusion–reaction problems.&quot; <i>Computers & Mathematics with Applications</i>. 2019, Vol. 78, pp.2973-2993(9).
+Recommended citation: Ondrej Bartos, Vit Dolejsi, Georg May, Ajay Rangarajan, Filip Roskovec. &quot;A goal-oriented anisotropic hp-mesh adaptation method for linear convection–diffusion–reaction problems.&quot; <i>Computers & Mathematics with Applications</i>. 2019, Vol. 78, pp.2973-2993(9).

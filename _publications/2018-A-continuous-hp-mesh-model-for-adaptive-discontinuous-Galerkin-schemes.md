@@ -11,4 +11,4 @@ We present a continuous-mesh model for anisotropic hp-adaptation in the context 
 [Download paper here](https://www.sciencedirect.com/science/article/pii/S016892741730209X)
 
 
-Recommended citation: Vít Dolejší, Georg May, Ajay Rangarajan. &quot;A continuous hp-mesh model for adaptive discontinuous Galerkin schemes.&quot; <i>Applied Numerical Mathematics</i>. 2018, Vol. 124, pp.1-21.
+Recommended citation: Vit Dolejsi, Georg May, Ajay Rangarajan. &quot;A continuous hp-mesh model for adaptive discontinuous Galerkin schemes.&quot; <i>Applied Numerical Mathematics</i>. 2018, Vol. 124, pp.1-21.
