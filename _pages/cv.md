@@ -77,7 +77,7 @@ Transferable skills
 ======
 * Team Work
 * Collaboration
-* Discision Making
+* Decision Making
 * Project Management
 * Time Management
 * Knowledge Transfer
@@ -94,7 +94,7 @@ Pro Bono
 * AICES Steering Committee
   * Duration: 2018
   * Student Representative
-  * Elected for representating the interests of the AICES doctoral candidates at the stteering committee
+  * Elected for representing the interests of the AICES doctoral candidates at the steering committee
 * American Institute of Aeronautics and Astronautics
   * Duration: 2016 - 2019
   * Student Member

@@ -24,7 +24,6 @@ matrix:
   sources:
       - '_talks/*.md'
       - '_publications/*.md'
-      - '_posts/*.md'
       - '_portfolio/*.md'
       - '_pages/cv.md'
       - '_pages/publications.md'

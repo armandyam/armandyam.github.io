@@ -5,7 +5,7 @@ excerpt: "Automatic update of images on the website from randomly generated prom
 collection: portfolio
 ---
 
-The idea of this short project was to see if I could build a pipeline using python and cron to auto generate a prompt, get a text-to-image generator (Dall-W 2, Stable-diffusion etc) to create an image, grab this image and finally push this website. 
+The idea of this short project was to see if I could build a pipeline using python and cron to auto generate a prompt, get a text-to-image generator (DALL-E 2, Stable-diffusion etc) to create an image, grab this image and finally push this website. 
 
 My current workflow is as follows:
 1. **Prompt generation**: Current I coded an exact replica of the script done by [boywithspork](https://github.com/boywithspork/DALLE2-Prompt-Generator) except that I reimplemented it in python. The algorithm fascinated my and after implementing it, I ended up thinking about this for an entire day. (More on that below!)
