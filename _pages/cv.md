@@ -30,9 +30,9 @@ Work experience
 * Computational Scientist, [RWTH Aachen University](https://www.rwth-aachen.de/)
   * Duration:
     * Postdoctoral researcher - 01/2020 - 11/2021
-      * Supervisor: [Prof. Karen Veroy-Grepl]()
+      * Supervisor: [Prof. Karen Veroy-Grepl](https://www.tue.nl/en/research/researchers/karen-veroy-grepl/)
     * Doctoral researcher - 02/2016 - 04/2021
-      * Supervisor: [Prof. Georg May]()
+      * Supervisor: [Prof. Georg May](https://www.vki.ac.be/index.php/vkidepartments/ar-department-other-menu-100/263-faculty/faculty-in-ar/768-georg-may)
   * Location: Aachen, Germany
   * Computational algorithms and software development
     * Identified, developed and implemented research software engineering principles for computational aerospace projects
