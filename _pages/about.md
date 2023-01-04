@@ -14,3 +14,5 @@ Previously I worked at RWTH Aachen University as a postdoctoral researcher with 
 Outside of work, I am interested in reading (mostly non-fiction) books, training for and participating in marathons/triathlons and traveling. I also am interested in home automation but do not get sufficient time to hack around. 
 
 I will keep this website updated with news about my personal and professional projects/goals and achievements.
+
+Please note that this website is still under construction and might still be a bit rough around the edges! :)
