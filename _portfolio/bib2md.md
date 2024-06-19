@@ -7,6 +7,8 @@ collection: portfolio
 
 I recently developed a Python script that converts BibTeX files to Markdown files using a Jinja2 template. This tool is incredibly useful for anyone managing their academic publications on a personal website or academic pages.
 
+![BibTeX to Markdown Converter](/images/bib2md_picture.webp)
+
 The script leverages the [Pybtex](https://pybtex.org/){:target="_blank"} library to parse .bib files and [Jinja2](https://jinja.palletsprojects.com/){:target="_blank"} for template rendering. It allows for the inclusion of abstracts and download links directly in the generated markdown files, making it easier to maintain a comprehensive and up-to-date portfolio of publications.
 
 Here's a brief overview of how it works:
