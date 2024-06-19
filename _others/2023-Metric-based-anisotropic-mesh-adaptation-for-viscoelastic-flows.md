@@ -1,7 +1,7 @@
 ---
 title: "Metric-based anisotropic mesh adaptation for viscoelastic flows"
-collection: publications
-permalink: /publication/2023-Metric-based-anisotropic-mesh-adaptation-for-viscoelastic-flows
+collection: others
+permalink: /others/2023-Metric-based-anisotropic-mesh-adaptation-for-viscoelastic-flows
 date: 2023-01-01
 excerpt: ''
 venue: 'Computers & Mathematics with Applications'
