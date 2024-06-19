@@ -3,7 +3,7 @@ title: "Wall decor using pretty maps"
 collection: portfolio
 ---
 
-I recently came across an amazing python package called [Pretty maps](https://github.com/marceloprates/prettymaps). The images generated are incredibly beautiful but are pretty inconvenient to use for navigation! :)
+I recently came across an amazing python package called [Pretty maps](https://github.com/marceloprates/prettymaps){:target="_blank"}. The images generated are incredibly beautiful but are pretty inconvenient to use for navigation! :)
 
 
 I was playing around with this package and as usual the first thing I created a map of was my own house. This got me thinking that these pretty maps are pretty good as wall decor. The next idea was to come up with locations and ideas to put up. 
