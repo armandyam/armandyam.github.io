@@ -1,5 +1,6 @@
 ---
 title: "Races"
+permalink: /others/races
 excerpt: "List of races run over the years
 <br/><br/>
 <table>
