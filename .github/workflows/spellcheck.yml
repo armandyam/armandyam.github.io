@@ -1,5 +1,15 @@
 name: spellcheck
 on: push
+
+matrix:
+- name: Markdown
+  aspell:
+    lang: en
+  dictionary:
+    wordlists:
+    - .wordlist.txt
+    encoding: utf-8
+    
 jobs:
   check-spelling:
     runs-on: ubuntu-latest
