@@ -1,7 +1,5 @@
 ---
 title: "Wall decor using pretty maps"
-excerpt: "Creating a wall decor using pretty maps and basic geometry <br/><br/><img src='/images/week_stability.png' width='400' 
-     height='400'>"
 collection: portfolio
 ---
 
