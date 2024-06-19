@@ -29,4 +29,3 @@ matrix:
       - '_pages/publications.md'
       - '_pages/about.md'
       - '_teaching/*.md'
-      - '_posts/*.md'
