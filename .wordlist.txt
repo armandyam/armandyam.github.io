@@ -144,3 +144,6 @@ Wittschieber
 viscoelastic
 Weissenberg
 Wi
+BibTeX
+Pybtex
+Jinja
