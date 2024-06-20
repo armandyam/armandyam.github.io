@@ -244,16 +244,17 @@ defaults:
       path: ""
       type: talks
     values:
-      layout: talk
+      layout: single
       author_profile: true
       share: true
   - scope:
       path: ""
-      type: other
+      type: others
     values:
-      layout: talk
+      layout: single
       author_profile: true
       share: true
+
 
 # Sass/SCSS
 sass:
