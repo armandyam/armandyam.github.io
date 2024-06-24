@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Summary</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .card.half-width {
+            width: calc(50% - 40px);
+            margin: 20px auto;  /* Center the card */
+        }
+        .card h2 {
+            color: #2c3e50;
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .card ul li {
+            margin: 5px 0;
+        }
+        @media (max-width: 768px) {
+            .card.half-width {
+                width: calc(100% - 40px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h3>Travel Summary</h3>
+    <p>Here is a summary of the cities, countries, and continents I've visited over the years.</p>
+    <div class="container">
+        <div class="card half-width">
+            <h2>Locations</h2>
+            <ul>
+                <li>🏙️ Cities: 121</li>
+                <li>🇺🇳 Countries: 35</li>
+                <li>🌍 Continents: 6</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
