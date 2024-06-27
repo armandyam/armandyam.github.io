@@ -17,6 +17,6 @@ I will keep this website updated with news about my personal and professional pr
 
 You can download my CV to learn more about my academic background, research interests, publications, and professional experiences.
 
-[Download CV](assets/CV.pdf)
+[Download CV](assets/cv.pdf)
 
 Please note that this website is still under construction and might still be a bit rough around the edges! :)
