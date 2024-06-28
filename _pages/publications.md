@@ -9,9 +9,7 @@ author_profile: true
   You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
 {% endif %}
 
-[Download CV]
-
-Click [here](assets/rangarajan.bib), [another](assets/cv.pdf) to download my citations in BibTex format that can be imported into most reference management software.
+Click [here](/assets/rangarajan.bib)to download my citations in BibTex format that can be imported into most reference management software.
 
 {% include base_path %}
 
