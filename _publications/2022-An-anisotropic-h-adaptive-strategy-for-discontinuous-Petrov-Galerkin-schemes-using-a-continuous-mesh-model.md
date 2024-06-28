@@ -9,7 +9,7 @@ paperurl: ''
 citation: 'Ankit Chakraborty, Ajay Rangarajan, Georg May.
 (2022).
 &quot;An anisotropic h-adaptive strategy for discontinuous Petrov-Galerkin schemes using a continuous mesh model.&quot;
-<i>Computers & Mathematics with Applications</i>, 2022, 106.'
+<i>Computers & Mathematics with Applications</i>'
 ---
 Certain Petrov-Galerkin schemes deliver inherently stable formulations of variational problems on a given mesh by selecting appropriate pairs of trial and test spaces. These schemes are especially suited for adaptation, due to their inherent ability to yield robust a posteriori error estimates. On the other hand, metric-based continuous mesh models have previously been proposed for schemes using piecewise polynomial approximation spaces. These models aim to build (near) optimal anisotropic meshes with respect to interpolation error models. The main focus of this article is to formulate continuous-mesh error models for the optimal Petrov-Galerkin methodology using the inbuilt a posteriori error estimate rather than a generic interpolation error model. This pairs the ability to produce near optimal anisotropic simplex meshes with a numerical method that in turn produces optimal stability and approximation properties on these meshes. Error models are formulated either with respect to a suitable norm of the numerical error, or with respect to certain admissible target functionals, in the spirit of goal-oriented adaptation. We demonstrate the fidelity of the proposed metric-based mesh adaptation strategy via numerical examples for convection-diffusion problems on triangular meshes.
 
@@ -18,4 +18,4 @@ Certain Petrov-Galerkin schemes deliver inherently stable formulations of variat
 Recommended citation: Ankit Chakraborty, Ajay Rangarajan, Georg May.
 (2022).
 &quot;An anisotropic h-adaptive strategy for discontinuous Petrov-Galerkin schemes using a continuous mesh model.&quot;
-<i>Computers & Mathematics with Applications</i>, 2022, 106.
+<i>Computers & Mathematics with Applications</i>

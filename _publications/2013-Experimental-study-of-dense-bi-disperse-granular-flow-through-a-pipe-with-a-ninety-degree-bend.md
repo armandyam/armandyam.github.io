@@ -9,7 +9,7 @@ paperurl: ''
 citation: 'Gautham Manoharan, Abram Kakkozha, Ajay Rangarajan, Karthik Vajapeyajula, Ashwin Kolappan, Mahesh Panchagnula, Srikanth Vedantam.
 (2013).
 &quot;Experimental study of dense bi-disperse granular flow through a pipe with a ninety degree bend.&quot;
-<i>Third International Conference on Material Modelling Thirteenth European Mechanics of Materials Conference</i>, 2013.'
+<i>Third International Conference on Material Modelling Thirteenth European Mechanics of Materials Conference</i>'
 ---
 
 
@@ -18,4 +18,4 @@ citation: 'Gautham Manoharan, Abram Kakkozha, Ajay Rangarajan, Karthik Vajapeyaj
 Recommended citation: Gautham Manoharan, Abram Kakkozha, Ajay Rangarajan, Karthik Vajapeyajula, Ashwin Kolappan, Mahesh Panchagnula, Srikanth Vedantam.
 (2013).
 &quot;Experimental study of dense bi-disperse granular flow through a pipe with a ninety degree bend.&quot;
-<i>Third International Conference on Material Modelling Thirteenth European Mechanics of Materials Conference</i>, 2013.
+<i>Third International Conference on Material Modelling Thirteenth European Mechanics of Materials Conference</i>
