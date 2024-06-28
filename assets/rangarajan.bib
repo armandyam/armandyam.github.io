@@ -1,0 +1,286 @@
+@article{BARTOS20192973,
+title = {A goal-oriented anisotropic hp-mesh adaptation method for linear convection–diffusion–reaction problems},
+journal = {Computers & Mathematics with Applications},
+volume = {78},
+number = {9},
+pages = {2973-2993},
+year = {2019},
+note = {Applications of Partial Differential Equations in Science and Engineering},
+issn = {0898-1221},
+doi = {https://doi.org/10.1016/j.camwa.2019.03.046},
+url = {https://www.sciencedirect.com/science/article/pii/S0898122119301774},
+author = {Ondřej Bartos and Vít Dolejší and Georg May and Ajay Rangarajan and Filip Roskovec},
+keywords = {Goal-oriented error estimates, DWR method, -methods, Anisotropic mesh adaptation, Mesh elements optimization},
+abstract = {We deal with the numerical solution of linear convection–diffusion–reaction equations using the hp-variant of the discontinuous Galerkin method on triangular grids. We develop a mesh adaptive algorithm which modifies the size and shape of mesh elements and the corresponding polynomial approximation degrees in order to decrease the error in a target functional under the given tolerance. We recall some theoretical results and describe in detail several technical aspects of this approach. Numerical experiments demonstrating the accuracy, efficiency and robustness of the algorithm are presented.}
+}
+
+@article{BALAN2022105259,
+title = {A review and comparison of error estimators for anisotropic mesh adaptation for flow simulations},
+journal = {Computers & Fluids},
+volume = {234},
+pages = {105259},
+year = {2022},
+issn = {0045-7930},
+doi = {https://doi.org/10.1016/j.compfluid.2021.105259},
+url = {https://www.sciencedirect.com/science/article/pii/S0045793021003601},
+author = {Aravind Balan and Michael A. Park and Stephen L. Wood and W. Kyle Anderson and Ajay Rangarajan and Devina P. Sanjaya and Georg May},
+keywords = {Anisotropic mesh adaptation, Error estimators, Adjoint-based, Metric field},
+abstract = {Automated mesh adaptation is known to be an efficient way to control discretization errors in Computational Fluid Dynamics (CFD) simulations. It offers the added advantage that the user only needs to have a minimal expertise in generating appropriate meshes, which is the biggest bottleneck in current CFD workflows. For anisotropic, or highly stretched, simplex (triangles in 2D and tetrahedra in 3D) meshes, the concept of a metric field, that describes a continuous mesh, offers a convenient way to describe the shape and size of mesh elements. Error estimators can be derived and optimized on this continuous mesh to get the optimal metric field, which can be used to generate the corresponding mesh using a metric-conforming mesh generator. The current work aims to review the various error estimators and the corresponding metric fields available for anisotropic mesh adaptation, and compare their mesh convergence behavior for various flow problems. Mathematical formulations are also briefly described here for many of those methods to understand their differences, including the underlying local error estimators used for the global analytic optimization. The metric fields include both solution-based ones that control interpolation error of a scalar field in Lq norm, and also adjoint-based ones that control the error in a particular output functional. All the metric fields considered in this work are implemented in NASA’s open-source grid mechanics package, refine, and FUN3D-SFE, a finite-element solver, is used for the primal and the adjoint solutions. Mesh convergences of output quantities are compared for various benchmark problems, including inviscid and laminar flows around the ONERA M6 wing, supersonic inviscid flow over a low-boom aircraft, and RANS turbulent flow around a high-lift configuration.}
+}
+
+@article{Rangarajan2013,
+author={Rangarajan, Ajay and Banerjee, Raja},
+journal = {11th ISHMT - ASME Heat and Mass Transfer Conference},
+title={Numerical Investigation of In-Cylinder Fuel Atomization and Mixing For a GDI Engine},
+month = {December},
+url = {https://raiith.iith.ac.in/1935/1/ASME-ISHMT-2013-HMTC1300405.pdf},
+number = {HMTC1300405},
+abstract={Gasoline Direct Injection (GDI) engines have been shown
+to have better fuel economy, transient response and cold-start
+hydrocarbon emissions. Additionally they have lower NOx
+emissions when operated under lean conditions. However,
+controlling charge stratification under various load conditions
+is a major challenge in GDI engines. In the present study a
+numerical simulations have been performed to understand
+factors affecting air/fuel mixture preparation under various
+engine operating conditions. Fuel spray atomization was
+studied using the two-way coupled Eulerian-Lagrangian
+approach. Momentum, energy and species equations were
+solved for the continuous gas phase. The droplet life history was
+tracked using the Lagrangian approach. Parameters like fuel
+injection time, fuel mass flow rate and engine speed was varied
+to determine their effect on air/fuel mixture preparation inside
+the cylinder.},
+year={2013}
+}
+
+@article{CHAKRABORTY20221,
+title = {An anisotropic h-adaptive strategy for discontinuous Petrov-Galerkin schemes using a continuous mesh model},
+journal = {Computers & Mathematics with Applications},
+volume = {106},
+pages = {1-17},
+year = {2022},
+issn = {0898-1221},
+doi = {https://doi.org/10.1016/j.camwa.2021.12.001},
+url = {https://www.sciencedirect.com/science/article/pii/S0898122121004272},
+author = {Ankit Chakraborty and Ajay Mandyam Rangarajan and Georg May},
+keywords = {Petrov-Galerkin schemes, Metric-based, Anisotropy, Continuous-mesh models},
+abstract = {Certain Petrov-Galerkin schemes deliver inherently stable formulations of variational problems on a given mesh by selecting appropriate pairs of trial and test spaces. These schemes are especially suited for adaptation, due to their inherent ability to yield robust a posteriori error estimates. On the other hand, metric-based continuous mesh models have previously been proposed for schemes using piecewise polynomial approximation spaces. These models aim to build (near) optimal anisotropic meshes with respect to interpolation error models. The main focus of this article is to formulate continuous-mesh error models for the optimal Petrov-Galerkin methodology using the inbuilt a posteriori error estimate rather than a generic interpolation error model. This pairs the ability to produce near optimal anisotropic simplex meshes with a numerical method that in turn produces optimal stability and approximation properties on these meshes. Error models are formulated either with respect to a suitable norm of the numerical error, or with respect to certain admissible target functionals, in the spirit of goal-oriented adaptation. We demonstrate the fidelity of the proposed metric-based mesh adaptation strategy via numerical examples for convection-diffusion problems on triangular meshes.}
+}
+
+@article{DOLEJSI20181,
+title = {A continuous hp-mesh model for adaptive discontinuous Galerkin schemes},
+journal = {Applied Numerical Mathematics},
+volume = {124},
+pages = {1-21},
+year = {2018},
+issn = {0168-9274},
+doi = {https://doi.org/10.1016/j.apnum.2017.09.015},
+url = {https://www.sciencedirect.com/science/article/pii/S016892741730209X},
+author = {Vít Dolejší and Georg May and Ajay Rangarajan},
+keywords = {-Methods, Anisotropic mesh adaptation, Continuous mesh and error models, Interpolation error estimates},
+abstract = {We present a continuous-mesh model for anisotropic hp-adaptation in the context of numerical methods using discontinuous piecewise polynomial approximation spaces. The present work is an extension of a previously proposed mesh-only (h-)adaptation method which uses both a continuous mesh, and a corresponding high-order continuous interpolation operator. In this previous formulation local anisotropy and global mesh density distribution may be determined by analytical optimization techniques, operating on the continuous mesh model. The addition of varying polynomial degree necessitates a departure from purely analytic optimization. However, we show in this article that a global optimization problem may still be formulated and solved by analytic optimization, adding only the necessity to solve numerically a single nonlinear algebraic equation per adaptation step to satisfy a constraint on the total number of degrees of freedom. The result is a tailor suited continuous mesh with respect to a model for the global interpolation error measured in the Lq-norm. From the continuous mesh a discrete triangular mesh may be generated using any metric-based mesh generator.}
+}
+
+
+
+
+
+
+
+@article{doi:10.2514/1.J056965,
+author = {Rangarajan, Ajay and Balan, Aravind and May, Georg},
+title = {Mesh Optimization for Discontinuous Galerkin Methods Using a Continuous Mesh Model},
+journal = {AIAA Journal},
+volume = {56},
+number = {10},
+pages = {4060-4073},
+year = {2018},
+doi = {10.2514/1.J056965},
+
+URL = { 
+        https://doi.org/10.2514/1.J056965
+    
+},
+eprint = { 
+        https://doi.org/10.2514/1.J056965
+    
+}
+,
+    abstract = { A method for anisotropic mesh adaptation and optimization for high-order discontinuous Galerkin schemes is presented. Given the total number of degrees of freedom, a metric-based method is proposed, which aims to globally optimize the mesh with respect to the Lq norm of the error. This is done by minimizing a suitable error model associated with the approximation space. Advantages of using a metric-based method in this context are several. First, it facilitates changing and manipulating the mesh in a general anisotropic way. Second, defining a suitable continuous interpolation operator allows the use of an analytic optimization framework that operates on the metric field, rather than the discrete mesh. The formulation of the method is presented as well as numerical experiments in the context of convection–diffusion systems. }
+}
+
+
+
+
+@article{Manoharan2013,
+author = {Gautham Manoharan and Abram Kakkozha and Ajay Rangarajan and Karthik Vajapeyajula and Ashwin Kolappan and Mahesh Panchagnula and Srikanth Vedantam},
+isbn = {9788389687838},
+url={http://icmm3.ippt.gov.pl/icmm3_book_of_abstracts-a4paper.pdf},
+journal = {Third International Conference on Material Modelling Thirteenth European Mechanics of Materials Conference},
+year={2013},
+month={September},
+date={8-11},
+title={Experimental study of dense bi-disperse granular flow through a pipe with a ninety degree bend}
+}
+
+
+
+
+
+
+
+
+@inbook{doi:10.2514/6.2019-3058,
+author = {Ajay Rangarajan and Georg May},
+title = {Metric Construction for Error Control of Finite Element Solutions},
+booktitle = {AIAA Aviation 2019 Forum},
+chapter = {},
+pages = {},
+article-number = {2019-3058},
+year = {2019},
+doi = {10.2514/6.2019-3058},
+URL = {https://arc.aiaa.org/doi/abs/10.2514/6.2019-3058},
+abstract = {We have previously presented error models for finite-element methods (FEM), which can
+be used to drive metric-based anisotropic adaptation in a parameter free way. While numerical results were presented using primarily our in-house hybridized Discontinuous Galerkin (HDG) solver, the algorithm can be used to drive adaptation for solutions obtained from many different schemes. Here, we present a generalized framework and data structure, taking solutions from different high-order solvers, using continuous-Galerkin (CG) FEM, DG-FEM, and HDG-FEM, to drive the anisotropic adaptation. The algorithm presented is also reverse compatible for low order schemes such as piecewise linear finite volume, and some results for the same are presented. The adaptation algorithm has been successfully interfaced with an in-house solver (DG/HDG), as well as the open source software NGSolve which has the capability to solve using CG-FEM, DG and HDG. With suitable additional packages, we also incorporate the Discontinuous Petrov Galerkin(DPG) solver within the framework of NGSolve. In addition, the adaptation capability has also been shown with FEniCS and the Finite Volume solver SU2. We present results for various scalar problems as well as systems of equations, optimizing meshes with respect to the Lq error in some scalar variable. The overall aim is to generate and document a stand-alone tool for anisotropic adaptation that may be interfaced with other in-house or commercial solvers, thereby providing extension to anisotropic adaptation for computational},
+eprint = {https://arc.aiaa.org/doi/pdf/10.2514/6.2019-3058}
+}
+
+
+
+
+
+
+
+
+@article{doi:10.1137/18M1172491,
+author = {Dolejsi, Vit and May, Georg and Rangarajan, Ajay and Roskovec, Filip},
+title = {A Goal-Oriented High-Order Anisotropic Mesh Adaptation Using Discontinuous Galerkin Method for Linear Convection-Diffusion-Reaction Problems},
+journal = {SIAM Journal on Scientific Computing},
+volume = {41},
+number = {3},
+pages = {A1899-A1922},
+year = {2019},
+doi = {10.1137/18M1172491},
+
+URL = { 
+        https://doi.org/10.1137/18M1172491
+    
+},
+eprint = { 
+        https://doi.org/10.1137/18M1172491
+    
+}
+,
+    abstract = { We deal with the numerical solution of a linear convection-diffusion-reaction equation using the discontinuous Galerkin method of arbitrary polynomial approximation degree on anisotropic triangular grids. We derive a posteriori goal-oriented error estimates taking into account the anisotropy of mesh elements. The resulting error estimates are employed for the construction of an anisotropic mesh adaptation algorithm which locally optimizes the size and shape of mesh elements. The computational performance is demonstrated by several numerical experiments. }
+}
+
+
+
+
+
+@Article{aerospace8110322,
+AUTHOR = {May, Georg and Devesse, Koen and Rangarajan, Ajay and Magin, Thierry},
+TITLE = {A Hybridized Discontinuous Galerkin Solver for High-Speed Compressible Flow},
+JOURNAL = {Aerospace},
+VOLUME = {8},
+YEAR = {2021},
+NUMBER = {11},
+ARTICLE-NUMBER = {322},
+URL = {https://www.mdpi.com/2226-4310/8/11/322},
+ISSN = {2226-4310},
+ABSTRACT = {We present a high-order consistent compressible flow solver, based on a hybridized discontinuous Galerkin (HDG) discretization, for applications covering subsonic to hypersonic flow. In the context of high-order discretization, this broad range of applications presents unique difficulty, especially at the high-Mach number end. For instance, if a high-order discretization is to efficiently resolve shock and shear layers, it is imperative to use adaptive methods. Furthermore, high-Enthalpy flow requires non-trivial physical modeling. The aim of the present paper is to present the key enabling technologies. We discuss efficient discretization methods, including anisotropic metric-based adaptation, as well as the implementation of flexible modeling using object-oriented programming and algorithmic differentiation. We present initial verification and validation test cases focusing on external aerodynamics.},
+DOI = {10.3390/aerospace8110322}
+}
+
+
+
+
+
+
+
+
+
+
+
+@inbook{doi:10.2514/6.2018-3246,
+author = {Ajay Mandyam Rangarajan and Ankit Chakraborty and Georg May and Vit Dolejsi},
+title = {A continuous-mesh optimization technique for piecewise polynomial approximation on tetrahedral grids},
+booktitle = {2018 Fluid Dynamics Conference},
+chapter = {},
+pages = {},
+article-number = {2018-3246},
+year = {2018},
+doi = {10.2514/6.2018-3246},
+URL = {https://arc.aiaa.org/doi/abs/10.2514/6.2018-3246},
+abstract = {Building on previous research we present a three-dimensional formulation of a metric-
+based mesh optimization scheme. The intended application area is higher order (discontinuous) Galerkin schemes for convection-diffusion problems. Ultimately, as in our previous two-dimensional formulation, the aim is to use the method for compressible flow simulation. Similar to the two-dimensional formulation, we combine a local (analytical) optimization of the anisotropy with an ensuing global optimization of the mesh density distribution. In particular the local optimization of the mesh anisotropy is a non-trivial extension of the two-dimensional case. Both optimization steps are built on a suitable continuous-mesh error estimate. The scheme is parameter-free, using only the total integrated mesh density as a constraint. We present the derivation of the method, as well as numerical experiments using model problems.},
+eprint = {https://arc.aiaa.org/doi/pdf/10.2514/6.2018-3246}
+}
+
+
+
+
+
+
+
+
+@inbook{doi:10.2514/6.2019-0349,
+author = {Ajay Mandyam Rangarajan and Ankit Chakraborty and Georg May},
+title = {A goal oriented optimization technique for tetrahedral grids using a continuous-mesh model},
+booktitle = {AIAA Scitech 2019 Forum},
+chapter = {},
+pages = {},
+article-number = {2019-0349},
+year = {2019},
+abstract = {We have previously proposed a metric-based anisotropic adaption method for tetrahedral
+grids. In the present paper, we extend our method to goal oriented adaptation. Target-based adaptation is realized using a suitable adjoint-based error estimate for three-dimensional continuous mesh models. The ultimate goal is a parameter free framework, leading to near- optimal anisotropy, and size distribution in the discrete mesh, which is generated from the continuous mesh model. The intended area of application is higher order (discontinuous) Galerkin schemes for convection-diffusion problems. We present the theory for the adaptation method and some numerical results.},
+doi = {10.2514/6.2019-0349},
+URL = {https://arc.aiaa.org/doi/abs/10.2514/6.2019-0349},
+eprint = {https://arc.aiaa.org/doi/pdf/10.2514/6.2019-0349}
+}
+
+
+@article{RANGARAJAN2020109321,
+title = {Adjoint-based anisotropic hp-adaptation for discontinuous Galerkin methods using a continuous mesh model},
+journal = {Journal of Computational Physics},
+volume = {409},
+pages = {109321},
+year = {2020},
+issn = {0021-9991},
+doi = {https://doi.org/10.1016/j.jcp.2020.109321},
+url = {https://www.sciencedirect.com/science/article/pii/S0021999120300954},
+author = {Ajay Rangarajan and Georg May and Vit Dolejsi},
+keywords = {High-order, Anisotropic mesh, Metric, Discontinuous-Galerkin, Adjoint},
+abstract = {In this paper we propose an adjoint-based hp-adaptation method for conservation laws, and corresponding numerical schemes based on piecewise polynomial approximation spaces. The method uses a continuous mesh framework, similar to that proposed in [1], where a global optimization scheme was formulated with respect to the error in the numerical solution, measured in any Lq norm. The novelty of the present work is the extension to more general optimization targets. Here, any solution-dependent functional, which is compatible with an adjoint equation, may be the target of the continuous-mesh optimization. We present the rationale behind the formulation of the optimization problem, with particular emphasis on the continuous mesh model, and the relevant adjoint-based error estimate. Additionally we combine the adjoint-based error estimates with the polynomial optimization strategy from [2] to present a complete hp-adaptation method which shows exponential convergence in the target function. The h-only mesh adaptation strategy of this work has been presented as a conference proceeding earlier [3]. Numerical experiments are carried out to demonstrate the viability of the scheme.}
+}
+
+@article{Rangarajan2013a,
+author={Karnik, Aditya and Rangarajan, Ajay and Tandon, Mohit},
+journal = {The 14th International Conference on Fluidization – From Fundamentals to Products", J.A.M. Kuipers, Eindhoven University of Technology R.F. Mudde, Delft University of Technology J.R. van Ommen, Delft University of Technology N.G. Deen, Eindhoven University of Technology Eds, ECI Symposium Series},
+title={Numerical Investigation of the Hydrodynamics of Cylindrical Fluidized Bed},
+year={2013},
+url={https://dc.engconfintl.org/fluidization_xiv/67},
+abstract={Numerical simulation for 4 different ratios of initial bed heights (H) to base diameter (D), were
+performed; viz. 0.5, 1, 2 and 3. Glass beads of density 2600kg/m3 and with an average diameter
+of 550µm were used for all the simulations. Simulations were performed using the commercial
+CFD software, STAR-CCM+. The minimum fluidization velocity was identified by measuring
+pressure drop across the entire domain and found to remain same for all the above mentioned
+ratios. Comparison between experiment and simulation is done.}
+}
+
+
+@article{WITTSCHIEBER202367,
+title = {Metric-based anisotropic mesh adaptation for viscoelastic flows},
+journal = {Computers & Mathematics with Applications},
+volume = {151},
+pages = {67-79},
+year = {2023},
+issn = {0898-1221},
+doi = {https://doi.org/10.1016/j.camwa.2023.09.031},
+url = {https://www.sciencedirect.com/science/article/pii/S0898122123004170},
+author = {Stefan Wittschieber and Ajay Rangarajan and Georg May and Marek Behr},
+keywords = {Viscoelastic fluids, Metric-based anisotropic meshing, Log-conformation reformulation, Stabilized finite element method},
+abstract = {The computation of flows of viscoelastic fluids is expensive compared to standard fluids. Besides degrees-of-freedom for velocity and pressure, the viscoelastic stresses introduce an additional unknown to the system. While adaptive meshing techniques are commonly used for simulations of standard fluids, their application is seldom explored in the context of viscoelastic fluids. In this work, we apply an anisotropic mesh adaptation algorithm to solve the viscoelastic flow problem. Our flow solver is based on a logarithmic reformulation of the viscoelastic constitutive laws, which greatly reduces the stringent stability requirements on the mesh size and allows adaptive meshing in this context. For discretization, we use a stabilized finite element method. We present numerical results for a flow past a cylinder. The adaptive method produces near mesh-independent results up to Weissenberg number Wi=0.7. Our results indicate that with an anisotropic refinement strategy, fewer mesh elements are needed to maintain the same error level as with an isotropic refinement strategy. In a stick-slip transition flow, we demonstrate the capability of the adaptive method to produce optimal meshes even in the presence of a singularity in the solution.}
+}
+
