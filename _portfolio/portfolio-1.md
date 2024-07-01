@@ -1,7 +1,8 @@
 ---
 title: "Prompt-to-website pipeline"
-excerpt: "Automatic update of images on the website from randomly generated prompts fed into stable diffusion <br/><br/><img src='/images/week_stability.png' width='400' 
-     height='400'>"
+symbol: 'fas fa-code'
+excerpt: "Automatic update of images on the website from randomly generated prompts fed into stable diffusion"
+technologies: ["Python", "Automation"]
 collection: portfolio
 ---
 
