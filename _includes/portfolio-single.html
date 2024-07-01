@@ -1,0 +1,23 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<article class="mini-blog">
+    <a href="{{ base_path }}{{ post.url }}">
+        <h5><i class='{{ post.symbol | default: "fas fa-laptop-code" }}'></i>{{ title }}</h5>
+        <p>{{ post.excerpt | markdownify }}</p>
+        {% for technology in post.technologies %}
+          <span class="tag">{{ technology }}</span>
+        {% endfor %}
+    </a>
+</article>
