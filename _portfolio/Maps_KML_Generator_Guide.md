@@ -8,7 +8,7 @@ technologies: ["Python", "Jinja2"]
 
 ## Visualize Your Travels with Maps KML Generator
 
-Creating a visual representation of the places you've traveled to can be a fun way to share your experiences. The Maps KML Generator is a simple tool designed to help you create a custom KML file from a CSV file, which you can then upload to Google My Maps. This guide will walk you through the steps to achieve this.
+Creating a visual representation of the places you've traveled to can be a fun way to share your experiences. The Maps KML Generator is a simple tool designed to help you create a custom KML file from a CSV file, which you can then upload to Google My Maps. This guide will walk you through the steps to achieve this as done [here](https://armandyam.github.io/others/#travel_map). 
 
 ### Why Use Maps KML Generator?
 
