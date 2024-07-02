@@ -2,7 +2,7 @@
 title: "Wall decor using Pretty Maps"
 excerpt: "Creating a wall decor using Pretty Maps"
 symbol: 'fas fa-map-marked-alt'
-technologies: ["Python", "Geometry"]
+technologies: ["Python", "Geometry", "MIT License"]
 collection: portfolio
 ---
 

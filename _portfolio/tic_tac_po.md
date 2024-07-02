@@ -1,8 +1,8 @@
 ---
 title: "Tic-Tac-po"
-symbol: 'fas fa-code'
+symbol: 'fas fa-times-circle and fas fa-circle'
 excerpt: "Implement a never lose Tic-Tac-Toe with a GUI"
-technologies: ["Python", "GUI"]
+technologies: ["Python", "GUI", "MIT License"]
 collection: portfolio
 ---
 
