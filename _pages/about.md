@@ -7,16 +7,18 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hi, welcome to my personal website! I am Ajay Mandyam Rangarajan and I currently work as a Software Development Engineering/R&D Software Engineer Manager at Dassault Systemes in Darmstadt, Germany. 
 
-Previously I worked at RWTH Aachen University as a postdoctoral researcher with [Prof. Karen Veroy-Grepl](https://www.tue.nl/en/research/researchers/karen-veroy-grepl/). My research focus was on reduced order modeling and parameter reduction. I graduated from RWTH Aachen University, Germany with a Ph.D. (Dr.-Ing) in Computational Sciences in 2021. I was a student of [Prof. Georg May](https://www.vki.ac.be/index.php/vkidepartments/ar-department-other-menu-100/263-faculty/faculty-in-ar/768-georg-may) and my research focus was on anisotropic meshing for higher order methods with a focus on external aerodynamic applications. 
+Hi there, and welcome to my personal website! I’m Ajay Mandyam Rangarajan, currently working as a Software Development Engineering/R&D Software Engineer Manager at Dassault Systemes in Darmstadt, Germany.
 
-Outside of work, I am interested in reading (mostly non-fiction) books, training for and participating in marathons/triathlons and traveling. You can find more about that [here](https://armandyam.github.io/others/). I also am interested in home automation but do not get sufficient time to hack around you can find a small subset of hacks that I have managed to put out [here](https://armandyam.github.io/portfolio/). 
+Before joining Dassault Systemes, I worked at RWTH Aachen University as a postdoctoral researcher with [Prof. Karen Veroy-Grepl](https://www.tue.nl/en/research/researchers/karen-veroy-grepl/). My research focused on reduced order modeling and parameter reduction. I earned my Ph.D. (Dr.-Ing) in Computational Sciences from RWTH Aachen University in 2021, where I focused on anisotropic meshing for higher order methods, particularly in external aerodynamic applications, as a student of [Prof. Georg May](https://www.vki.ac.be/index.php/vkidepartments/ar-department-other-menu-100/263-faculty/faculty-in-ar/768-georg-may).
 
-I will keep this website updated with news about my personal and professional projects/goals and achievements.
+Outside of my professional life, I have a passion for reading (mostly non-fiction), training for and participating in marathons and triathlons, and exploring new places. You can find more about my adventures [here](https://armandyam.github.io/others/). Additionally, I enjoy automating various tasks and have a collection of interesting scripts and hacks. You can check out some of these projects in my [portfolio](https://armandyam.github.io/portfolio/).
 
-You can download my CV to learn more about my academic background, research interests, publications, and professional experiences.
+I plan to keep this website updated with the latest news about my personal and professional projects, goals, and achievements.
+
+Feel free to download my CV to learn more about my academic background, research interests, publications, and professional experiences.
 
 [Download CV](assets/cv.pdf)
 
-Please note that this website is still under construction and might still be a bit rough around the edges! :)
+Please note that this website is still a work in progress and might be a bit rough around the edges! :)
+
