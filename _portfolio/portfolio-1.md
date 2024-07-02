@@ -8,13 +8,24 @@ collection: portfolio
 
 The idea of this short project was to see if I could build a pipeline using python and cron to auto generate a prompt, get a text-to-image generator (DALL-E 2, Stable-diffusion etc) to create an image, grab this image and finally push this website. 
 
-My current workflow is as follows:
-1. **Prompt generation**: Current I coded an exact replica of the script done by [boywithspork](https://github.com/boywithspork/DALLE2-Prompt-Generator) except that I reimplemented it in python. The algorithm fascinated my and after implementing it, I ended up thinking about this for an entire day. (More on that below!)
-2. **txt-to-img**: I am using the [stability-sdk](https://github.com/Stability-AI/stability-sdk) for this. I only have the free version as of now but perhaps in the future I would consider upgrading to a paid version. I did try to run this locally on my trusty 2015 Macbook pro but I was not convinced that it would handle the work load (or may be I do not know how to get it running correctly, yet!). This script takes in a prompt and automatically saves an image locally. After some housekeeping to save the images into appropriate folders, we can move onto the next step. 
-3. **Sync to repository**: Currently the push to the repository is quite crudely written code using [GitPython](https://gitpython.readthedocs.io/en/stable/). The commit message is basic, only a single file with a fixed file name is committed. I hope to improve this going forward as I hope to keep all the previously generated images with their prompts. 
-4. **TODO: Cron automation**: I finally want to setup an automatic cron job. This should hopefully be easy and the images on the website should get updated every x days. I am yet to figure out what is the optimal x for this.
+My Current Workflow
+
+1. Prompt Generation
+So, I shamelessly cloned [boywithspork](https://github.com/boywithspork/DALLE2-Prompt-Generator)'s script in Python. The algorithm was so fascinating that I spent an entire day obsessing over it. Yes, a whole day. My cat thinks I'm nuts.
+
+2. txt-to-img
+I’m using the [stability-sdk](https://github.com/Stability-AI/stability-sdk) for this. I only have the free version for now, but maybe one day I'll splurge. I tried running this beast on my 2015 MacBook Pro. Spoiler alert: It almost set my lap on fire. Clearly, either the MacBook's seen better days, or I need to brush up on my setup skills. This script takes a prompt and saves an image locally. After some housekeeping, we can move on to the next step.
+
+3. Sync to Repository
+I used GitPython to push the images to the repository. The code is, let's say, 'minimalist' for now. Think of it as a rough draft with lots of room for creative edits. Baby steps, right?
+
+4. TODO: Cron Automation
+Next up, cron automation. Because who doesn’t love a good cron job, right? It's like setting an alarm clock for your code to wake up and do its thing every few days. Still figuring out the perfect snooze interval though.
 
 I also intend to save the older images and keep them under this page.
+
+So there you have it! My automated, art-generating pipeline in all its glory. Stay tuned as I refine this masterpiece, one cron job at a time.
+
 
 [//]: # (https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll)
 
