@@ -1,8 +1,8 @@
 ---
 title: "Script kit"
-symbol: 'fas fa-code'
+symbol: 'fas fa-wrench'
 excerpt: "Set of small scripts that are too useful to not be in version control but not big enough for their own repo"
-technologies: ["Python", "Bash"]
+technologies: ["Python", "Bash", "MIT License"]
 collection: portfolio
 ---
 

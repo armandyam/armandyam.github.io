@@ -3,7 +3,7 @@ title: "Maps KML Generator Guide"
 excerpt: "Auto generate KML files for My Maps"
 collection: portfolio
 symbol: 'fas fa-globe'
-technologies: ["Python", "Jinja2"]
+technologies: ["Python", "Jinja2", "MIT License"]
 ---
 
 The idea for displaying a map came when I stumbled upon this [resume](https://neuspla.wordpress.com/2012/06/27/google-maps-resume/) many moons ago. I thought, "Cool idea, but I'd rather showcase my epic travel adventures than my job history!" So, I used it to track the places I've traveled to. I had been keeping a simple text file of all the cities I’ve visited (and by “visited,” I mean stayed overnight—none of that drive-by business).

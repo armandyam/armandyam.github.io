@@ -1,8 +1,8 @@
 ---
 title: "TeX Templates"
-symbol: 'fas fa-code'
+symbol: 'fas fa-file-alt'
 excerpt: "Useful set of LaTeX templates for presentation, reports and thesis"
-technologies: ["LaTeX"]
+technologies: ["LaTeX", "MIT License"]
 collection: portfolio
 ---
 
