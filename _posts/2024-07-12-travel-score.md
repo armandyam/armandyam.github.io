@@ -25,7 +25,6 @@ I’m excited about the potential to enhance this tool further. Here are a few i
 2. **World Heritage Sites:** Include extra information about UNESCO World Heritage Sites visited to add another layer of cultural significance to the score.
 3. **Country-Specific Scoring:** Make each country's score different. For example, visiting a rare or less-visited country would give more points than visiting a popular tourist destination.
 4. **Duration of Stay:** Incorporate the length of time spent in each location, with longer stays contributing more to the travel score.
-5. **Types of Activities:** Factor in the variety of activities undertaken, such as cultural experiences, adventure sports, or historical tours, to give a more nuanced score.
-6. **Repeat Visits:** Acknowledge multiple visits to the same country or city, reflecting the depth of exploration rather than just the breadth.
-7. **Regional Diversity:** Measure the diversity of regions visited within a country to capture a more detailed picture of one’s travel experiences.
-8. **Off-the-Beaten-Path Locations:** Award additional points for visiting less well-known or remote locations that might be more challenging to reach.
+5. **Repeat Visits:** Acknowledge multiple visits to the same country or city, reflecting the depth of exploration rather than just the breadth.
+6. **Regional Diversity:** Measure the diversity of regions visited within a country to capture a more detailed picture of one’s travel experiences.
+7. **Off-the-Beaten-Path Locations:** Award additional points for visiting less well-known or remote locations that might be more challenging to reach.
