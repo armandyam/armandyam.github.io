@@ -191,7 +191,6 @@ collections:
     output: true
     permalink: /:collection/:path/
 
-
 # Defaults
 defaults:
   # _posts
@@ -254,7 +253,6 @@ defaults:
       layout: single
       author_profile: true
       share: true
-
 
 # Sass/SCSS
 sass:
