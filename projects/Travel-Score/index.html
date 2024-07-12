@@ -209,7 +209,7 @@ function ready(error, background, cells, land, places, data) {
         .style("stroke", "#DDDDDD");
 
     // Load travel data using callback
-d3.json('Data/travel_data.json', function(error, travelData) {
+d3.json('data/travel_data.json', function(error, travelData) {
     if (error) {
         console.error("Error loading travel data:", error);
         return;
