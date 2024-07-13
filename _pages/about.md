@@ -18,7 +18,13 @@ I plan to keep this website updated with the latest news about my personal and p
 
 Feel free to download my CV to learn more about my academic background, research interests, publications, and professional experiences.
 
-[Download CV](assets/cv.pdf)
+<div class="cta-buttons"><center>
+    <a href="assets/cv.pdf" target="_blank">
+        <i class="fas fa-arrow-alt-circle-down"></i> Download CV
+    </a>
+    <p>Last updated: June 2024 </p>
+    </center>
+</div>
 
 Please note that this website is still a work in progress and might be a bit rough around the edges! :)
 
