@@ -21,3 +21,5 @@ Here's a brief overview of how it works:
 This script is perfect for anyone looking to keep their academic publication list in sync with their personal or academic website. By automating the conversion process, it saves time and ensures consistency across all publications displayed on your site.
 
 Feel free to check out the [GitHub repository](https://github.com/armandyam/bib2md){:target="_blank"} for more details and to get started with the script.
+
+I am going to try something new with this. Always. AlWaYs. "Always". always, 'allways', 'aLWAYS'.
