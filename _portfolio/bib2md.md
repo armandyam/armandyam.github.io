@@ -22,4 +22,4 @@ This script is perfect for anyone looking to keep their academic publication lis
 
 Feel free to check out the [GitHub repository](https://github.com/armandyam/bib2md){:target="_blank"} for more details and to get started with the script.
 
-I am going to try something new with this. Always. AlWaYs. "Always". always, 'allways', 'aLWAYS.
+I am going to try something new with this. [Always](https://media.gifdb.com/severus-snape-always-7uaebm4cohnfo0a6.gif){:target="_blank"}. [AlWaYs](https://media.gifdb.com/severus-snape-always-7uaebm4cohnfo0a6.gif){:target="_blank"}. "[Always](https://media.gifdb.com/severus-snape-always-7uaebm4cohnfo0a6.gif){:target="_blank"}". [always](https://media.gifdb.com/severus-snape-always-7uaebm4cohnfo0a6.gif){:target="_blank"}, 'allways', '[aLWAYS](https://media.gifdb.com/severus-snape-always-7uaebm4cohnfo0a6.gif){:target="_blank"}.
