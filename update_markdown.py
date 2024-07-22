@@ -6,16 +6,16 @@ def replace_always_with_link(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         content = file.read()
 
-    # Define the replacement pattern with the target="_blank" attribute
-    replacement_pattern = r'[\1](https://media.gifdb.com/severus-snape-always-7uaebm4cohnfo0a6.gif){:target="_blank"}'
+    # Define the regex pattern to find 'always' and its replacement with the target attribute
+    pattern = r'\b(always)\b'
+    replacement_pattern = r'[\1](https://tenor.com/view/always-severus-snape-harry-potter-alan-rickman-gif-17624951){:target="_blank"}'
+
+    # Check if 'always' is already a hyperlink
+    if re.search(r'\[always\]\(https://tenor.com/view/always-severus-snape-harry-potter-alan-rickman-gif-17624951\)\{:target="_blank"\}', content, re.IGNORECASE):
+        return
 
     # Replace 'always' with the hyperlink and target attribute, ignoring case
-    updated_content = re.sub(
-        r'\b(always)\b',
-        replacement_pattern,
-        content,
-        flags=re.IGNORECASE
-    )
+    updated_content = re.sub(pattern, replacement_pattern, content, flags=re.IGNORECASE)
 
     # Check if the content has changed
     if updated_content != content:
