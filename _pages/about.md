@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi there, and welcome to my personal website! I’m Ajay Mandyam Rangarajan, currently working as a Software Development Engineering/R&D Software Engineer Manager at Dassault Systemes in Darmstadt, Germany.
+Hi there, and welcome to my personal website! I’m Ajay Mandyam Rangarajan, currently working as R&D Product Manager - CFD Meshing (was previously an R&D Software Engineering Manager) at Dassault Systemes in Darmstadt, Germany.
 
 Before joining Dassault Systemes, I worked at RWTH Aachen University as a postdoctoral researcher with [Prof. Karen Veroy-Grepl](https://www.tue.nl/en/research/researchers/karen-veroy-grepl/). My research focused on reduced order modeling and parameter reduction. I earned my Ph.D. (Dr.-Ing) in Computational Sciences from RWTH Aachen University in 2021, where I focused on anisotropic meshing for higher order methods, particularly in external aerodynamic applications, as a student of [Prof. Georg May](https://www.vki.ac.be/index.php/vkidepartments/ar-department-other-menu-100/263-faculty/faculty-in-ar/768-georg-may).
 
