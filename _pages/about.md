@@ -22,7 +22,7 @@ Feel free to download my CV to learn more about my academic background, research
     <a href="assets/cv.pdf" target="_blank">
         <i class="fas fa-arrow-alt-circle-down"></i> Download CV
     </a>
-    <p>Last updated: June 2024 </p>
+    <p>Last updated: September 2024 </p>
     </center>
 </div>
 
