@@ -8,6 +8,432 @@ tags:
 ---
 
 <html lang="en">
+    <script>
+        // Line plot code
+        var margin = {top: 50, right: 200, bottom: 30, left: 30},
+            width = 850 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+
+        var svg = d3.select("#line_plot")
+          .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .style("display", "block")
+            .style("margin", "0 auto")
+          .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        svg.append("text")
+            .attr("x", (width / 2))
+            .attr("y", 0 - (margin.top / 2))
+            .attr("text-anchor", "middle")
+            .style("font-size", "16px")
+            .text("Weekly distance in kilometers by Sport");
+
+        var Tooltip = d3.select("#line_plot")
+          .append("div")
+          .attr("class", "tooltip");
+
+        var mouseover = function(d) {
+            Tooltip.style("opacity", 1);
+        };
+
+        var mousemove = function(d) {
+            Tooltip.html("Date: " + d3.timeFormat("%Y-%m-%d")(d.date) + "<br>Value: " + d.value)
+              .style("left", (d3.event.pageX + 10) + "px")
+              .style("top", (d3.event.pageY - 10) + "px");
+        };
+
+        var mouseleave = function(d) {
+            Tooltip.style("opacity", 0);
+        };
+
+        console.log('Data Ready:', data_ready);
+        console.log('SVG Element:', pie_svg);
+
+
+        d3.csv("/assets/data/total_time_output.csv").then(function(data) {
+            // Continue with the processing
+        }).catch(function(error) {
+            console.error("Error loading CSV file:", error);
+        });
+
+
+            var parseDate = d3.timeParse("%Y-%m-%d");
+
+            var allGroup = d3.keys(data[0]).filter(function(key) { return key !== "week_start"; });
+
+            d3.select("#selectButton")
+              .selectAll('myOptions')
+              .data(allGroup)
+              .enter()
+              .append('option')
+              .text(function (d) { return d; })
+              .attr("value", function (d) { return d; });
+
+            data.forEach(function(d) {
+                d['week_start'] = parseDate(d['week_start']);
+                allGroup.forEach(function(group) {
+                    d[group] = +d[group];
+                });
+            });
+
+            var x = d3.scaleTime()
+              .domain(d3.extent(data, function(d) { return d['week_start']; }))
+              .range([ 0, width ]);
+            svg.append("g")
+              .attr("transform", "translate(0," + height + ")")
+              .call(d3.axisBottom(x));
+
+            var y = d3.scaleLinear()
+              .range([ height, 0 ]);
+            var yAxis = svg.append("g");
+
+            svg.append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("y", 0 - margin.left)
+                .attr("x", 0 - (height / 2))
+                .attr("dy", "1em")
+                .style("text-anchor", "middle")
+                .text("Distance (Km)");
+
+            var line = svg
+              .append('g')
+              .append("path")
+                .attr("stroke", "black")
+                .style("stroke-width", 4)
+                .style("fill", "none");
+
+            var dot = svg
+              .selectAll('circle')
+              .data(data)
+              .enter()
+              .append('circle')
+                .attr("class", "myCircle")
+                .attr("r", 7)
+                .style("fill", "#69b3a2")
+                .on("mouseover", mouseover)
+                .on("mousemove", mousemove)
+                .on("mouseleave", mouseleave);
+
+            var pointAnnotations = [
+                {
+                    group: "Run",
+                    date: parseDate("2024-04-02"),
+                    value: 45,
+                    dy: -70,
+                    dx: -20,
+                    text: "Sao Paulo Marathon"
+                },
+                {
+                    group: "Run",
+                    date: parseDate("2024-04-16"),
+                    value: 52,
+                    dy: -40,
+                    dx: 0,
+                    text: "Machu Picchu hike"
+                },
+                {
+                    group: "Run",
+                    date: parseDate("2024-02-13"),
+                    value: 35,
+                    dy: -40,
+                    dx: 0,
+                    text: "Moerfelden Half marathon"
+                },
+                {
+                    group: "Run",
+                    date: parseDate("2024-05-14"),
+                    value: 36,
+                    dy: -40,
+                    dx: 0,
+                    text: "Darmstadt firmenlauf"
+                },
+                {
+                    group: "Run",
+                    date: parseDate("2024-06-04"),
+                    value: 39,
+                    dy: -60,
+                    dx: 0,
+                    text: "Moret triathlon"
+                },
+                {
+                    group: "Bike",
+                    date: parseDate("2024-06-04"),
+                    value: 216,
+                    dy: -60,
+                    dx: -10,
+                    text: "Moret triathlon"
+                },
+                {
+                    group: "Swim",
+                    date: parseDate("2024-06-04"),
+                    value: 3,
+                    dy: -150,
+                    dx: 35,
+                    text: "Moret triathlon"
+                }
+            ];
+
+            var rectAnnotations = [
+                {
+                    group: "Bike",
+                    title: "Vacation",
+                    start: parseDate("2024-03-26"),
+                    end: parseDate("2024-04-31"),
+                    description: ""
+                },
+                {
+                    group: "Run",
+                    title: "Vacation",
+                    start: parseDate("2024-03-26"),
+                    end: parseDate("2024-04-31"),
+                    description: ""
+                },
+                {
+                    group: "Swim",
+                    title: "Vacation",
+                    start: parseDate("2024-03-26"),
+                    end: parseDate("2024-04-31"),
+                    description: ""
+                },
+                {
+                    group: "Bike",
+                    title: "Vacation",
+                    start: parseDate("2023-11-15"),
+                    end: parseDate("2023-12-12"),
+                    description: ""
+                },
+                {
+                    group: "Run",
+                    title: "Vacation",
+                    start: parseDate("2023-11-15"),
+                    end: parseDate("2023-12-12"),
+                    description: ""
+                },
+                {
+                    group: "Swim",
+                    title: "Vacation",
+                    start: parseDate("2023-11-15"),
+                    end: parseDate("2023-12-12"),
+                    description: ""
+                }
+            ];
+
+            function update(selectedGroup) {
+                var dataFilter = data.map(function(d) { return {date: d['week_start'], value: d[selectedGroup]}; });
+
+                y.domain([0, d3.max(dataFilter, function(d) { return d.value; })]);
+                yAxis.transition().duration(1000).call(d3.axisLeft(y));
+
+                svg.selectAll(".annotation-group").remove();
+
+                var groupRectAnnotations = rectAnnotations.filter(function(a) { return a.group === selectedGroup; });
+
+                var rectAnnotationData = groupRectAnnotations.map(function(d) {
+                    return {
+                        note: {
+                            title: d.title,
+                            label: d.description,
+                            wrap: 150,
+                            align: "middle"
+                        },
+                        connector: { end: "none" },
+                        type: d3.annotationCalloutRect,
+                        subject: {
+                            height: height - margin.top,
+                            width: x(d.end) - x(d.start)
+                        },
+                        color: ["grey"],
+                        x: x(d.start),
+                        y: margin.top,
+                        dy: 0,
+                        dx: (x(d.end) - x(d.start)) / 2
+                    };
+                });
+
+                const makeRectAnnotations = d3.annotation()
+                  .type(d3.annotationLabel)
+                  .annotations(rectAnnotationData);
+
+                svg.append("g")
+                  .attr("class", "annotation-group")
+                  .call(makeRectAnnotations);
+
+                line
+                    .datum(dataFilter)
+                    .transition()
+                    .duration(1000)
+                    .attr("d", d3.line()
+                      .x(function(d) { return x(d.date); })
+                      .y(function(d) { return y(d.value); })
+                    );
+
+                dot
+                  .data(dataFilter)
+                  .transition()
+                  .duration(1000)
+                    .attr("cx", function(d) { return x(d.date); })
+                    .attr("cy", function(d) { return y(d.value); });
+
+                var groupPointAnnotations = pointAnnotations.filter(function(a) { return a.group === selectedGroup; });
+
+                var pointAnnotationData = groupPointAnnotations.map(function(d) {
+                    return {
+                        note: {
+                            label: d.text,
+                            title: ""
+                        },
+                        connector: {
+                            end: "arrow",
+                            type: "line",
+                            lineType: "vertical"
+                        },
+                        color: ["grey"],
+                        x: x(d.date),
+                        y: y(d.value),
+                        dy: d.dy,
+                        dx: d.dx
+                    };
+                });
+
+                const makePointAnnotations = d3.annotation()
+                  .type(d3.annotationLabel)
+                  .annotations(pointAnnotationData);
+
+                svg.append("g")
+                  .attr("class", "annotation-group")
+                  .call(makePointAnnotations);
+            }
+
+            d3.select("#selectButton").on("change", function() {
+                var selectedOption = d3.select(this).property("value");
+                update(selectedOption);
+            });
+
+            update(allGroup[0]);
+        });
+
+        var pie_svg = d3.select("#pie_chart")
+          .attr("width", 500)
+          .attr("height", 500)
+          .append("g")
+          .attr("transform", "translate(" + 250 + "," + 250 + ")");
+
+
+        // Updated donut chart code with tooltip
+        var pie_width = 470,
+            pie_height = 450,
+            pie_margin = 40;
+
+        var pie_radius = Math.min(pie_width, pie_height) / 2 - pie_margin;
+
+        var pie_svg = d3.select("#pie_chart");
+          .append("svg")
+            .attr("width", pie_width)
+            .attr("height", pie_height)
+            .style("display", "block")
+            .style("margin", "0 auto")
+          .append("g")
+            .attr("transform", "translate(" + pie_width / 2 + "," + pie_height / 2 + ")");
+
+        var pieTooltip = d3.select("#pie_chart")
+          .append("div")
+          .attr("class", "tooltip");
+
+        var pieMouseover = function(d) {
+            pieTooltip.style("opacity", 1);
+            d3.select(this)
+              .style("opacity", 1);
+        };
+
+        var pieMousemove = function(d) {
+            pieTooltip.html("Activity: " + d.data.key + "<br>Hours: " + d.data.value)
+              .style("left", (d3.event.pageX + 10) + "px")
+              .style("top", (d3.event.pageY - 10) + "px");
+        };
+
+        var pieMouseleave = function(d) {
+            pieTooltip.style("opacity", 0);
+            d3.select(this)
+              .style("opacity", 0.7);
+        };
+
+        d3.csv("/assets/data/total_time_output.csv", function(data) {
+            var formattedData = {};
+            data.columns.forEach(function(column) {
+                formattedData[column] = +data[0][column];
+            });
+
+            var color = d3.scaleOrdinal()
+              .domain(data.columns)
+              .range(d3.schemeDark2);
+
+            var pie = d3.pie()
+              .sort(null)
+              .value(function(d) { return d.value; });
+
+            var data_ready = pie(d3.entries(formattedData));
+
+            var arc = d3.arc()
+              .innerRadius(pie_radius * 0.5)
+              .outerRadius(pie_radius * 0.8);
+
+            var outerArc = d3.arc()
+              .innerRadius(pie_radius * 0.9)
+              .outerRadius(pie_radius * 0.9);
+
+            pie_svg
+              .selectAll('allSlices')
+              .data(data_ready)
+              .enter()
+              .append('path')
+              .attr('d', arc)
+              .attr('fill', function(d){ return(color(d.data.key)) })
+              .attr("stroke", "white")
+              .style("stroke-width", "2px")
+              .style("opacity", 0.7)
+              .on("mouseover", pieMouseover)
+              .on("mousemove", pieMousemove)
+              .on("mouseleave", pieMouseleave);
+
+            pie_svg
+              .selectAll('allPolylines')
+              .data(data_ready)
+              .enter()
+              .append('polyline')
+              .attr("stroke", "black")
+              .style("fill", "none")
+              .attr("stroke-width", 1)
+              .attr('points', function(d) {
+                  var posA = arc.centroid(d);
+                  var posB = outerArc.centroid(d);
+                  var posC = outerArc.centroid(d);
+                  var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2;
+                  posC[0] = pie_radius * 0.95 * (midangle < Math.PI ? 1 : -1);
+                  return [posA, posB, posC];
+              });
+
+            pie_svg
+              .selectAll('allLabels')
+              .data(data_ready)
+              .enter()
+              .append('text')
+              .text(function(d) { return d.data.key; })
+              .attr('transform', function(d) {
+                  var pos = outerArc.centroid(d);
+                  var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2;
+                  pos[0] = pie_radius * 0.99 * (midangle < Math.PI ? 1 : -1);
+                  return 'translate(' + pos + ')';
+              })
+              .style('text-anchor', function(d) {
+                  var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2;
+                  return (midangle < Math.PI ? 'start' : 'end');
+              });
+        });
+
+    </script>
+
 <head>
     <meta charset="UTF-8">
     <title>Sport Data Visualization</title>
