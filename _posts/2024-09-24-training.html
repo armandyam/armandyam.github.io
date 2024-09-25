@@ -273,7 +273,11 @@ h3, p, ul, ol {
             Tooltip.style("opacity", 0);
         };
 
-        d3.csv("/assets/data/weekly_sport_data.csv", function(error, data) {
+        console.log('Data Ready:', data_ready);
+        console.log('SVG Element:', pie_svg);
+
+
+        d3.csv("data/weekly_sport_data.csv", function(error, data) {
             if (error) {
                 console.error("Error loading CSV file:", error);
                 return;
@@ -541,7 +545,7 @@ h3, p, ul, ol {
 
         var pie_radius = Math.min(pie_width, pie_height) / 2 - pie_margin;
 
-        var pie_svg = d3.select("#pie_chart")
+        var pie_svg = d3.select("#pie_chart");
           .append("svg")
             .attr("width", pie_width)
             .attr("height", pie_height)
