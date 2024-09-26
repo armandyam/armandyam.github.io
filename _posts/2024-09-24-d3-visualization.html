@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "D3.js Axis Test"
+title: "D3.js Axis Test with Rectangle"
 date: 2024-09-26
 categories: blog
 ---
@@ -10,7 +10,7 @@ categories: blog
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D3.js Axis Test</title>
+    <title>D3.js Axis Test with Rectangle</title>
 
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.js"></script>
@@ -18,7 +18,7 @@ categories: blog
 </head>
 <body>
 
-<h1>D3.js Axis Test</h1>
+<h1>D3.js Axis Test with Rectangle</h1>
 
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
@@ -37,6 +37,14 @@ categories: blog
         .attr("height", height + margin.top + margin.bottom)
       .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    // Add a simple rectangle to test the SVG container
+    svg.append("rect")
+        .attr("x", 50)
+        .attr("y", 50)
+        .attr("width", 100)
+        .attr("height", 100)
+        .style("fill", "#69b3a2");
 
     // Add the X axis
     var x = d3.scaleLinear()
