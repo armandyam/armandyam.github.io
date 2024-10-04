@@ -8,3 +8,5 @@ title: "Funfolio"
 {% include travel_map.html %}
 
 {% include travel.html %}
+
+{% include media_online.html %}
