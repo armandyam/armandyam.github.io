@@ -10,5 +10,3 @@ title: "Funfolio"
 {% include travel.html %}
 
 {% include media_online.html %}
-
-{% include temp.html %}
