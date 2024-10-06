@@ -1,0 +1,636 @@
+---
+title: 'Part 1: Training, Data, and Debugging: My training logs for my first ironman race'
+date: 2024-09-24
+permalink: /posts/2024/08/sports/
+tags:
+  - sports
+  - training
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sport Data Visualization</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <link rel="stylesheet" href="https://d3-annotation.susielu.com/assets/d3.annotation.css">
+    <style>
+    p {
+    text-align: left; /* Align all <p> text to the left */
+    margin: 10px 0;
+    color: #2c3e50; /* Keep the text color consistent */
+    font-size: 16px; /* Standard font size for readability */
+    line-height: 1.6; /* Improve readability with a comfortable line height */
+}
+
+    .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .card.half-width {
+            width: calc(50% - 40px);
+        }
+        .card.full-width {
+            width: calc(100% - 40px);
+        }
+        .card h2 {
+            color: #2c3e50;
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .card ul li {
+            margin: 5px 0;
+        }
+        .myCircle:hover {
+            stroke: black;
+        }
+        .tooltip {
+            position: absolute;
+            text-align: center;
+            width: auto;
+            height: auto;
+            padding: 10px;
+            font: 14px sans-serif;
+            background: white;
+            border: solid 2px #aaa;
+            border-radius: 5px;
+            pointer-events: none;
+            opacity: 0;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .annotation {
+            fill: red;
+            font-size: 12px;
+        }
+        .annotation-line {
+            stroke: red;
+            stroke-width: 1;
+            fill: none;
+        }
+        .annotation-arrow {
+            fill: red;
+        }
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            width: 960px;
+            margin: auto;
+            text-align: center;
+        }
+        svg {
+            margin: 0 auto;
+        }
+        .slices path.slice {
+            stroke-width: 2px;
+        }
+        .lines polyline {
+            opacity: .3;
+            stroke: black;
+            stroke-width: 2px;
+            fill: none;
+        }
+        #line_plot, #pie_chart {
+            display: inline-block;
+            width: 100%;
+        }
+   header {
+    background-color: white; /* Keep the background white */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #ddd; /* Light gray border for subtle separation */
+}
+
+header h1 {
+    margin: 0;
+    color: #2c3e50; /* Dark gray-blue for the text */
+    font-size: 28px;
+    font-weight: bold;
+}
+
+p {
+    text-align: left; /* Default left alignment for all paragraphs */
+    margin: 10px 0;
+    color: #2c3e50;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.header-text {
+    text-align: center; /* Center align only the paragraph under the header */
+}
+h3, p, ul, ol {
+    text-align: left;
+}
+    h3 {
+        margin-bottom: 20px; /* Adds space below all h2 headers */
+    }
+    </style>
+</head>
+<body>
+
+<p>Over the past month, many of you have reached out to me about my Ironman triathlon experience. So, naturally, I decided to humble-brag and turn it into a blog series. In this series, I’ll be documenting the ups, the downs, and everything in between—covering my training (yes, I survived), my vegan nutrition, and a few coding hacks that helped me train smarter (because of course, there’s code involved).</p>
+
+
+<p>In 2014, I watched a friend’s friend (you know the type) complete an Ironman, and it sparked a wild idea: <em>What if I could do that too?</em> There was just one minor hitch—I could barely swim a lap without gasping for air, didn’t own a bike (unless that rusty €30 bike counts), and could only manage a 2-3 km run, with plenty of snack breaks. But hey, why let little details like that stop me?</p>
+
+<p>Back then, my goal was simple: survive the run part of a triathlon. So, I signed up for a half marathon. Naturally, the next logical step was a full marathon a year later. And to top it off, I started taking swim lessons at my university, because apparently, I love to suffer. Shoutout to my friend Aadu Huli, who unofficially took on the role of my motivator—dragging me to the pool until I upgraded my swim style from "drowning" to a somewhat decent breaststroke.</p>
+
+<p>By 2017, I bought my first road bike and signed up for a sprint triathlon. That’s when I faced my first open water swim—a slightly terrifying experience where I was proud just to come out of the water still breathing. Fast forward to 2018, and I’d tackled three Olympic-distance triathlons, still holding onto my trusty breaststroke, like an old friend.</p>
+
+<p>Then came the pandemic—because nothing says “pause your ambitions” like a global lockdown. Fast forward to 2023, and I found myself in a new city with fresh opportunities—and a sweet perk from work: freestyle swim coaching. Plus, joining my local triathlon club’s summer camp kicked my training into high gear. The cherry on top? A brand-new bike, which made me feel like a pro (or at least look the part). With everything in place, I decided it was time to tackle the big one—the Ironman.</p>
+
+<p>Now, what kind of blog would this be without some nerdy data? I’ll be sharing my training stats (thanks to the intervals.icu API) and some slick JavaScript visualizations to track my swimming, biking, and running progress. You’ll get insights into my form, fatigue, and race prep—and maybe a few graphs showing when I hit the “why am I doing this” phase. But if I can do it, so can you—with the right support, a solid plan, and a high tolerance for discomfort.</p>
+
+
+<h3>The Most Common Question I Get: "How Often Did You Train?"</h3>
+
+<p>This really depends on three things:</p>
+<ol style="text-align:left;">
+    <li>My experience level (beginner with big dreams).</li>
+    <li>My competitive spirit (firmly at the back of the pack).</li>
+    <li>My training plan (Phil Mosley’s 32-week Ironman plan because, why not?).</li>
+</ol>
+
+<p>Most plans suggest 2-3 sessions per sport each week, plus some weight training. As you can see from my activity stats, biking took the spotlight—because running the full marathon distance in training is brutal. My longest run capped at 44 km, while my longest bike ride stretched to 155 km. Biking clearly became my favorite because, well, let's just say I wasn’t exactly born with wheels.</p>
+
+<p><strong>Fun fact:</strong> I ran a full marathon while on vacation in São Paulo, making my longest run a 44 km beast (I forgive Garmin for the 1.804 km error). Because who doesn’t relax by running a marathon, right?</p>
+
+<p>The hardest part? <em>Cue the dramatic music.</em> The month leading up to the race. July 2024 was my most intense month, with over 70 hours of training! My craziest week? 21 hours of pure exercise. My most intense day? A 7.5-hour simulation: 112 miles of biking, a 2.4 km swim, and a 26 km run—all in one day. Sleep? Who needs it?</p>
+
+<div class="container">
+            <div class="card half-width">
+                <h2>Training Activity Stats</h2>
+                <ul>
+                    <li>🏊 Longest Swim: 4.05 km</li>
+                    <li>🚴 Longest Bike: 155.36 km</li>
+                    <li>🏃 Longest Run: 44.00 km</li>
+                </ul>
+            </div>
+            <div class="card half-width">
+                <h2>Training Activity Counts</h2>
+                <ul>
+                    <li>🏊 Number of Swims: 54</li>
+                    <li>🚴 Number of Bike: 110</li>
+                    <li>🏃 Number of Runs: 89</li>
+                    <li>🏋️ Number of Gym Sessions: 64</li>
+                </ul>
+            </div>
+            <div class="card full-width">
+                <h2>Training Hour stats</h2>
+                <ul>
+                    <li>📅 Most intense Month (July 2024): 70:33:00 hh:mm:ss</li>
+                    <li>📅 Most intense Week (July 1-7, 2024): 20:59:11 hh:mm:ss</li>
+                    <li>📅 Most intense day (July 28, 2024): 07:34:32 hh:mm:ss</li>
+                </ul>
+            </div>
+        </div>
+
+<h3>How Many Kilometers Did I Actually Cover During Training?</h3>
+
+<p>Let’s get into the nitty-gritty: the actual distances during training. As the graph shows, I tried (emphasis on <em>tried</em>) to keep up with around 10 km of swimming, 50 km of running, and 300 km of biking per month. But... vacations happened. The dip in training during November and December aligns with my trip to India for a friend’s wedding, where I did absolutely <em>nothing</em>. You can see the steep decline in biking distances during that time. However, I redeemed myself during my second vacation in April, as shown by a similar drop in training but with a redeeming event: I ran a marathon in São Paulo and even hiked to Machu Picchu. Clearly, vacations aren’t always an excuse to slack off—they’re sometimes just another opportunity to push limits.</p>
+
+<!-- Initialize a select button -->
+    <select id="selectButton"></select>
+    <!-- Create a div where the graph will take place -->
+    <div id="line_plot"></div>
+
+<h3>Training Time Breakdown: Biking Dominates, Obviously</h3>
+
+<p>The donut chart highlights how much time I dedicated to each sport starting October 16, 2023 (the day I officially kicked off the training plan). As expected, biking takes up the largest chunk—no surprises there. However, running wasn’t far behind, thanks to the extra weekly run I did with a good friend outside of my plan. You can also spot the gym sessions, which made up a smaller slice of the pie but were essential for foam rolling, stretching, and sometimes sneaking in a yoga pose. Swimming had its moments too, especially with that weekly hour of coached swimming from my office perk. All in all, it's clear my schedule stayed pretty packed!</p>
+
+    <div id="pie_chart"></div>
+
+
+
+<h3>In Conclusion...</h3>
+
+<p>This post was equal parts humblebrag and learning journey. I got to flex my JavaScript skills and hack together some Python scripts to make sense of my training data, all while documenting my Ironman training adventure. Figuring out how to use the Intervals.icu API and tweaking the data to fit my needs was a fun (and sometimes frustrating) challenge. For those of you who stuck around this long—thank you! In a future post, I’ll dive into the costs of doing an Ironman, the lessons I learned from doing it on a plant-based diet, and plenty more. Stay tuned!</p>
+
+
+    <script>
+        var margin = {top: 50, right: 200, bottom: 30, left: 30},
+            width = 850 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+
+        var svg = d3.select("#line_plot")
+          .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .style("display", "block")
+            .style("margin", "0 auto")
+          .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        svg.append("text")
+            .attr("x", (width / 2))
+            .attr("y", 0 - (margin.top / 2))
+            .attr("text-anchor", "middle")
+            .style("font-size", "16px")
+            .text("Weekly distance in kilometers by Sport");
+
+        var Tooltip = d3.select("#line_plot")
+          .append("div")
+          .attr("class", "tooltip");
+
+        var mouseover = function(d) {
+            Tooltip.style("opacity", 1);
+        };
+
+        var mousemove = function(d) {
+            Tooltip.html("Date: " + d3.timeFormat("%Y-%m-%d")(d.date) + "<br>Value: " + d.value)
+              .style("left", (d3.event.pageX + 10) + "px")
+              .style("top", (d3.event.pageY - 10) + "px");
+        };
+
+        var mouseleave = function(d) {
+            Tooltip.style("opacity", 0);
+        };
+
+        d3.csv("data/weekly_sport_data.csv", function(error, data) {
+            if (error) {
+                console.error("Error loading CSV file:", error);
+                return;
+            }
+
+            var parseDate = d3.timeParse("%Y-%m-%d");
+
+            var allGroup = d3.keys(data[0]).filter(function(key) { return key !== "week_start"; });
+
+            d3.select("#selectButton")
+              .selectAll('myOptions')
+              .data(allGroup)
+              .enter()
+              .append('option')
+              .text(function (d) { return d; })
+              .attr("value", function (d) { return d; });
+
+            data.forEach(function(d) {
+                d['week_start'] = parseDate(d['week_start']);
+                allGroup.forEach(function(group) {
+                    d[group] = +d[group];
+                });
+            });
+
+            var x = d3.scaleTime()
+              .domain(d3.extent(data, function(d) { return d['week_start']; }))
+              .range([ 0, width ]);
+            svg.append("g")
+              .attr("transform", "translate(0," + height + ")")
+              .call(d3.axisBottom(x));
+
+            var y = d3.scaleLinear()
+              .range([ height, 0 ]);
+            var yAxis = svg.append("g");
+
+            svg.append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("y", 0 - margin.left)
+                .attr("x", 0 - (height / 2))
+                .attr("dy", "1em")
+                .style("text-anchor", "middle")
+                .text("Distance (Km)");
+
+            var line = svg
+              .append('g')
+              .append("path")
+                .attr("stroke", "black")
+                .style("stroke-width", 4)
+                .style("fill", "none");
+
+            var dot = svg
+              .selectAll('circle')
+              .data(data)
+              .enter()
+              .append('circle')
+                .attr("class", "myCircle")
+                .attr("r", 7)
+                .style("fill", "#69b3a2")
+                .on("mouseover", mouseover)
+                .on("mousemove", mousemove)
+                .on("mouseleave", mouseleave);
+
+            var pointAnnotations = [
+                {
+                    group: "Run",
+                    date: parseDate("2024-04-02"),
+                    value: 45,
+                    dy: -70,
+                    dx: -20,
+                    text: "Sao Paulo Marathon"
+                },
+                {
+                    group: "Run",
+                    date: parseDate("2024-04-16"),
+                    value: 52,
+                    dy: -40,
+                    dx: 0,
+                    text: "Machu Picchu hike"
+                },
+                {
+                    group: "Run",
+                    date: parseDate("2024-02-13"),
+                    value: 35,
+                    dy: -40,
+                    dx: 0,
+                    text: "Moerfelden Half marathon"
+                },
+                {
+                    group: "Run",
+                    date: parseDate("2024-05-14"),
+                    value: 36,
+                    dy: -40,
+                    dx: 0,
+                    text: "Darmstadt firmenlauf"
+                },
+                {
+                    group: "Run",
+                    date: parseDate("2024-06-04"),
+                    value: 39,
+                    dy: -60,
+                    dx: 0,
+                    text: "Moret triathlon"
+                },
+                {
+                    group: "Bike",
+                    date: parseDate("2024-06-04"),
+                    value: 216,
+                    dy: -60,
+                    dx: -10,
+                    text: "Moret triathlon"
+                },
+                {
+                    group: "Swim",
+                    date: parseDate("2024-06-04"),
+                    value: 3,
+                    dy: -150,
+                    dx: 35,
+                    text: "Moret triathlon"
+                }
+            ];
+
+            var rectAnnotations = [
+                {
+                    group: "Bike",
+                    title: "Vacation",
+                    start: parseDate("2024-03-26"),
+                    end: parseDate("2024-04-31"),
+                    description: ""
+                },
+                {
+                    group: "Run",
+                    title: "Vacation",
+                    start: parseDate("2024-03-26"),
+                    end: parseDate("2024-04-31"),
+                    description: ""
+                },
+                {
+                    group: "Swim",
+                    title: "Vacation",
+                    start: parseDate("2024-03-26"),
+                    end: parseDate("2024-04-31"),
+                    description: ""
+                },
+                {
+                    group: "Bike",
+                    title: "Vacation",
+                    start: parseDate("2023-11-15"),
+                    end: parseDate("2023-12-12"),
+                    description: ""
+                },
+                {
+                    group: "Run",
+                    title: "Vacation",
+                    start: parseDate("2023-11-15"),
+                    end: parseDate("2023-12-12"),
+                    description: ""
+                },
+                {
+                    group: "Swim",
+                    title: "Vacation",
+                    start: parseDate("2023-11-15"),
+                    end: parseDate("2023-12-12"),
+                    description: ""
+                }
+            ];
+
+            function update(selectedGroup) {
+                var dataFilter = data.map(function(d) { return {date: d['week_start'], value: d[selectedGroup]}; });
+
+                y.domain([0, d3.max(dataFilter, function(d) { return d.value; })]);
+                yAxis.transition().duration(1000).call(d3.axisLeft(y));
+
+                svg.selectAll(".annotation-group").remove();
+
+                var groupRectAnnotations = rectAnnotations.filter(function(a) { return a.group === selectedGroup; });
+
+                var rectAnnotationData = groupRectAnnotations.map(function(d) {
+                    return {
+                        note: {
+                            title: d.title,
+                            label: d.description,
+                            wrap: 150,
+                            align: "middle"
+                        },
+                        connector: { end: "none" },
+                        type: d3.annotationCalloutRect,
+                        subject: {
+                            height: height - margin.top,
+                            width: x(d.end) - x(d.start)
+                        },
+                        color: ["grey"],
+                        x: x(d.start),
+                        y: margin.top,
+                        dy: 0,
+                        dx: (x(d.end) - x(d.start)) / 2
+                    };
+                });
+
+                const makeRectAnnotations = d3.annotation()
+                  .type(d3.annotationLabel)
+                  .annotations(rectAnnotationData);
+
+                svg.append("g")
+                  .attr("class", "annotation-group")
+                  .call(makeRectAnnotations);
+
+                line
+                    .datum(dataFilter)
+                    .transition()
+                    .duration(1000)
+                    .attr("d", d3.line()
+                      .x(function(d) { return x(d.date); })
+                      .y(function(d) { return y(d.value); })
+                    );
+
+                dot
+                  .data(dataFilter)
+                  .transition()
+                  .duration(1000)
+                    .attr("cx", function(d) { return x(d.date); })
+                    .attr("cy", function(d) { return y(d.value); });
+
+                var groupPointAnnotations = pointAnnotations.filter(function(a) { return a.group === selectedGroup; });
+
+                var pointAnnotationData = groupPointAnnotations.map(function(d) {
+                    return {
+                        note: {
+                            label: d.text,
+                            title: ""
+                        },
+                        connector: {
+                            end: "arrow",
+                            type: "line",
+                            lineType: "vertical"
+                        },
+                        color: ["grey"],
+                        x: x(d.date),
+                        y: y(d.value),
+                        dy: d.dy,
+                        dx: d.dx
+                    };
+                });
+
+                const makePointAnnotations = d3.annotation()
+                  .type(d3.annotationLabel)
+                  .annotations(pointAnnotationData);
+
+                svg.append("g")
+                  .attr("class", "annotation-group")
+                  .call(makePointAnnotations);
+            }
+
+            d3.select("#selectButton").on("change", function() {
+                var selectedOption = d3.select(this).property("value");
+                update(selectedOption);
+            });
+
+            update(allGroup[0]);
+        });
+
+        var pie_width = 470,
+            pie_height = 450,
+            pie_margin = 40;
+
+        var pie_radius = Math.min(pie_width, pie_height) / 2 - pie_margin;
+
+        var pie_svg = d3.select("#pie_chart")
+          .append("svg")
+            .attr("width", pie_width)
+            .attr("height", pie_height)
+            .style("display", "block")
+            .style("margin", "0 auto")
+          .append("g")
+            .attr("transform", "translate(" + pie_width / 2 + "," + pie_height / 2 + ")");
+
+        var pieTooltip = d3.select("#pie_chart")
+          .append("div")
+          .attr("class", "tooltip");
+
+        var pieMouseover = function(d) {
+            pieTooltip.style("opacity", 1);
+            d3.select(this)
+              .style("opacity", 1);
+        };
+
+        var pieMousemove = function(d) {
+            pieTooltip.html("Activity: " + d.data.key + "<br>Hours: " + d.data.value)
+              .style("left", (d3.event.pageX + 10) + "px")
+              .style("top", (d3.event.pageY - 10) + "px");
+        };
+
+        var pieMouseleave = function(d) {
+            pieTooltip.style("opacity", 0);
+            d3.select(this)
+              .style("opacity", 0.7);
+        };
+
+        d3.csv("data/total_time_output.csv", function(data) {
+            var formattedData = {};
+            data.columns.forEach(function(column) {
+                formattedData[column] = +data[0][column];
+            });
+
+            var color = d3.scaleOrdinal()
+              .domain(data.columns)
+              .range(d3.schemeDark2);
+
+            var pie = d3.pie()
+              .sort(null)
+              .value(function(d) { return d.value; });
+
+            var data_ready = pie(d3.entries(formattedData));
+
+            var arc = d3.arc()
+              .innerRadius(pie_radius * 0.5)
+              .outerRadius(pie_radius * 0.8);
+
+            var outerArc = d3.arc()
+              .innerRadius(pie_radius * 0.9)
+              .outerRadius(pie_radius * 0.9);
+
+            pie_svg
+              .selectAll('allSlices')
+              .data(data_ready)
+              .enter()
+              .append('path')
+              .attr('d', arc)
+              .attr('fill', function(d){ return(color(d.data.key)) })
+              .attr("stroke", "white")
+              .style("stroke-width", "2px")
+              .style("opacity", 0.7)
+              .on("mouseover", pieMouseover)
+              .on("mousemove", pieMousemove)
+              .on("mouseleave", pieMouseleave);
+
+            pie_svg
+              .selectAll('allPolylines')
+              .data(data_ready)
+              .enter()
+              .append('polyline')
+              .attr("stroke", "black")
+              .style("fill", "none")
+              .attr("stroke-width", 1)
+              .attr('points', function(d) {
+                  var posA = arc.centroid(d);
+                  var posB = outerArc.centroid(d);
+                  var posC = outerArc.centroid(d);
+                  var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2;
+                  posC[0] = pie_radius * 0.95 * (midangle < Math.PI ? 1 : -1);
+                  return [posA, posB, posC];
+              });
+
+            pie_svg
+              .selectAll('allLabels')
+              .data(data_ready)
+              .enter()
+              .append('text')
+              .text(function(d) { return d.data.key; })
+              .attr('transform', function(d) {
+                  var pos = outerArc.centroid(d);
+                  var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2;
+                  pos[0] = pie_radius * 0.99 * (midangle < Math.PI ? 1 : -1);
+                  return 'translate(' + pos + ')';
+              })
+              .style('text-anchor', function(d) {
+                  var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2;
+                  return (midangle < Math.PI ? 'start' : 'end');
+              });
+        });
+
+    </script>
+</body>
+</html>
