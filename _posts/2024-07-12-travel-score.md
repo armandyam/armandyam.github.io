@@ -5,6 +5,33 @@ permalink: /posts/2024/07/travel/
 tags:
   - travel
 ---
+ <style>
+   header {
+    background-color: white; /* Keep the background white */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #ddd; /* Light gray border for subtle separation */
+}
+
+p {
+    text-align: left; /* Default left alignment for all paragraphs */
+    margin: 10px 0;
+    color: #2c3e50;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.header-text {
+    text-align: center; /* Center align only the paragraph under the header */
+}
+h3, p, ul, ol {
+    text-align: left;
+}
+    h3 {
+        margin-bottom: 20px; /* Adds space below all h2 headers */
+    }
+    </style>
+Calculating a travel score for myself
 
 I know, I know—travel is supposed to be a fun activity, enjoyed without the constraints of metrics and measurements. But there's a part of <a href="https://x.com/shenanigansen/status/764093557497929733?lang=en" target="_blank">me</a> that loves seeing improvement in what I do, especially when it involves some numbers moving up or down towards a goal.
 
