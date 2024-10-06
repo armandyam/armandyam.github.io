@@ -260,7 +260,7 @@ h3, p, ul, ol {
             Tooltip.style("opacity", 0);
         };
 
-        d3.csv("assets/data/weekly_sport_data.csv", function(error, data) {
+        d3.csv("/assets/data/weekly_sport_data.csv", function(error, data) {
             if (error) {
                 console.error("Error loading CSV file:", error);
                 return;
