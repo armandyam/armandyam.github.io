@@ -231,34 +231,26 @@ tags:
 
   <script>
 
-// The svg for the map
 var svgMap = d3.select("#my_dataviz"),
     widthMap = +svgMap.attr("width"),
     heightMap = +svgMap.attr("height");
 
-// Tooltip div for hover info
 var tooltip = d3.select("#tooltip");
 
-// Create a zoom behavior
 var zoom = d3.zoom()
     .scaleExtent([1, 8])  // Set the minimum and maximum zoom levels
     .on("zoom", zoomed);
 
-// Apply zoom behavior to the SVG
 svgMap.call(zoom);
 
-// Create a container group for the map and paths so everything scales with zoom
 var g = svgMap.append("g");
 
-// Map and projection
 var projection = d3.geoMercator()
     .scale(120)  // Adjust scale for zoom out/in
     .translate([widthMap / 2, heightMap / 2]);
 
-// Path generator
 var path = d3.geoPath().projection(projection);
 
-// Load world shape AND list of connections
 d3.queue()
   .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")  // World shape
   .defer(d3.csv, "/assets/data/flights.csv") // Load your updated CSV file
@@ -267,7 +259,6 @@ d3.queue()
 function ready(error, dataGeo, data) {
     if (error) throw error;
 
-    // Reformat the list of links
     var link = [];
     data.forEach(function(row) {
         var source = [+row.DepLon, +row.DepLat];
@@ -283,12 +274,10 @@ function ready(error, dataGeo, data) {
         link.push(topush);
     });
 
-    // Power scale for color mapping based on CO2 intensity
     var co2Scale = d3.scalePow().exponent(0.3)
       .domain([d3.min(link, d => +d.co2), d3.max(link, d => +d.co2)])
       .range(["#000000", "#ff00ff"]);
 
-    // Draw the map
     g.append("g")
         .selectAll("path")
         .data(dataGeo.features)
@@ -298,7 +287,6 @@ function ready(error, dataGeo, data) {
             .style("stroke", "#fff")
             .style("stroke-width", 0.5);
 
-    // Add the flight paths
     var paths = g.selectAll("myPath")
       .data(link)
       .enter()
@@ -326,19 +314,16 @@ function ready(error, dataGeo, data) {
         });
 }
 
-// Zoom function
 function zoomed() {
     g.attr("transform", d3.event.transform);
 }
 
 
 
-// Set the dimensions and margins of the horizontal bar chart
 var marginHBar = {top: 30, right: 70, bottom: 70, left: 160},
     widthHBar = 460 - marginHBar.left - marginHBar.right,
     heightHBar = 500 - marginHBar.top - marginHBar.bottom;
 
-// Append the svg object for the horizontal bar chart
 var svgHBar = d3.select("#my_dataviz_hbar")
   .append("svg")
     .attr("width", widthHBar + marginHBar.left + marginHBar.right)
@@ -346,7 +331,6 @@ var svgHBar = d3.select("#my_dataviz_hbar")
   .append("g")
     .attr("transform", "translate(" + marginHBar.left + "," + marginHBar.top + ")");
 
-// Tooltip div for Earth rotations (initially hidden)
 var earthTooltip = d3.select("body").append("div")
     .attr("class", "earth-tooltip")
     .style("position", "absolute")
@@ -358,7 +342,6 @@ var earthTooltip = d3.select("body").append("div")
     .style("box-shadow", "0px 0px 5px rgba(0, 0, 0, 0.3)")
     .style("visibility", "hidden");
 
-// List of transports and corresponding FontAwesome classes
 var transportIcons = {
     'AIRPLANE': 'fas fa-plane',
     'LARGE_CAR': 'fas fa-car-side',
@@ -374,17 +357,14 @@ var transportIcons = {
     'BIKE': 'fa-solid fa-bicycle'
 };
 
-// Function to update the plot based on distance data
 function update2(data) {
   var y = d3.scaleBand()
     .range([0, heightHBar])
     .domain(data.map(function(d) { return d.Transport; }))
     .padding(0.2);
 
-  // Remove any existing elements before updating
   svgHBar.selectAll("*").remove();
 
-  // Add transport names
   svgHBar.selectAll(".label")
     .data(data)
     .enter()
@@ -396,7 +376,6 @@ function update2(data) {
       .style("font-size", "12px")
       .text(function(d) { return d.Transport; });
 
-  // Add transport icons
   svgHBar.selectAll(".icon")
     .data(data)
     .enter()
@@ -409,7 +388,6 @@ function update2(data) {
       .attr("class", function(d) { return transportIcons[d.Transport]; })
       .style("font-size", "24px");
 
-  // Center alignment line for the bars
   var centerLine = widthHBar / 2;
 
   var x_max = d3.max(data, function(d) { return +d['Total Distance (km)']; });
@@ -417,7 +395,6 @@ function update2(data) {
     .domain([0, x_max])
     .range([0, widthHBar - 50]);
 
-  // Bars (center-aligned)
   svgHBar.selectAll("mybar")
     .data(data)
     .enter()
@@ -428,25 +405,20 @@ function update2(data) {
       .attr("height", y.bandwidth())
       .attr("fill", "#69b3a2")
       .on("mouseover", function(d) {
-        // Check if 'Earth eq' is a valid number
         const earthEq = parseFloat(d['Earth eq']);
         const tooltipText = !isNaN(earthEq) ? `${earthEq.toFixed(1)} x 🌍` : "Data unavailable";
 
-        // Show tooltip with appropriate text
         earthTooltip.html(tooltipText)
           .style("visibility", "visible");
       })
       .on("mousemove", function() {
-        // Move tooltip with cursor
         earthTooltip.style("left", (d3.event.pageX + 10) + "px")
           .style("top", (d3.event.pageY - 10) + "px");
       })
       .on("mouseout", function() {
-        // Hide tooltip when not hovering
         earthTooltip.style("visibility", "hidden");
       });
 
-  // Add values in millions of kilometers after the bars
   svgHBar.selectAll(".value")
     .data(data)
     .enter()
@@ -461,13 +433,11 @@ function update2(data) {
       });
 }
 
-// Load the data from the CSV file (using a callback for older D3 versions)
 d3.csv("/assets/data/transport_distances.csv", function(error, data) {
   if (error) throw error;
   update2(data);
 });
 
-    // Function to load JSON data and populate emojis
         async function loadDietData() {
             try {
                 const response = await fetch('/assets/data/diet_data.json'); // Adjust to your actual file path
