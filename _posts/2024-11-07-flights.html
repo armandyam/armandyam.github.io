@@ -238,7 +238,7 @@ var svgMap = d3.select("#my_dataviz"),
 var tooltip = d3.select("#tooltip");
 
 var zoom = d3.zoom()
-    .scaleExtent([1, 8])  // Set the minimum and maximum zoom levels
+    .scaleExtent([1, 8])  
     .on("zoom", zoomed);
 
 svgMap.call(zoom);
@@ -246,14 +246,14 @@ svgMap.call(zoom);
 var g = svgMap.append("g");
 
 var projection = d3.geoMercator()
-    .scale(120)  // Adjust scale for zoom out/in
+    .scale(120)  
     .translate([widthMap / 2, heightMap / 2]);
 
 var path = d3.geoPath().projection(projection);
 
 d3.queue()
-  .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")  // World shape
-  .defer(d3.csv, "/assets/data/flights.csv") // Load your updated CSV file
+  .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")  
+  .defer(d3.csv, "/assets/data/flights.csv") 
   .await(ready);
 
 function ready(error, dataGeo, data) {
@@ -440,10 +440,10 @@ d3.csv("/assets/data/transport_distances.csv", function(error, data) {
 
         async function loadDietData() {
             try {
-                const response = await fetch('/assets/data/diet_data.json'); // Adjust to your actual file path
+                const response = await fetch('/assets/data/diet_data.json'); 
                 const data = await response.json();
 
-                // Populate emojis based on the number of years, rounding as needed
+
                 document.getElementById('meat-emojis').innerText = '🎂'.repeat(Math.round(data.meat_years));
                 document.getElementById('average-emojis').innerText = '🎂'.repeat(Math.round(data.average_years));
                 document.getElementById('no-beef-emojis').innerText = '🎂'.repeat(Math.round(data.no_beef_years));
@@ -454,7 +454,7 @@ d3.csv("/assets/data/transport_distances.csv", function(error, data) {
             }
         }
 
-        // Load data on page load
+
         window.onload = loadDietData;
 
 
