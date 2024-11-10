@@ -1,0 +1,491 @@
+---
+title: 'Travel Dreams vs. Climate Realities'
+date: 2024-11-07
+permalink: /posts/2024/11/travel/
+tags:
+  - travel
+  - environment
+---
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Load D3.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    #my_dataviz {
+      margin: 0 auto;
+      display: block;
+      background-color: black; /* Set black background */
+    }
+
+    .tooltip {
+      position: absolute;
+      text-align: center;
+      padding: 8px;
+      font: 12px sans-serif;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      pointer-events: none;
+      opacity: 0; /* Start hidden */
+      color: black; /* Ensure the text color is visible */
+      box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); /* Add shadow for visibility */
+    }
+      /* Style for the tooltip */
+    .earth-tooltip {
+        position: absolute;
+        background-color: white;
+        border: 1px solid #ddd;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 12px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+        visibility: hidden;
+    }
+   table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 15px 0;
+          table-layout: auto; /* Allows columns to adjust based on content */
+      }
+      table, th, td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: center;
+      }
+      th {
+          background-color: #f2f2f2;
+          font-weight: bold;
+      }
+      /* Prevent second column from expanding fully */
+      td:nth-child(2) {
+          white-space: nowrap; /* Prevents line break within cells */
+      }
+ /* Container for all emoji rows as a grid */
+        .emoji-chart {
+            display: grid;
+            grid-template-columns: auto 1fr; /* Auto for labels, flex for emojis */
+            gap: 5px;
+            max-width: 100%;
+        }
+
+        /* Each row styled to resemble a horizontal bar */
+        .emoji-row {
+            display: contents; /* Allows direct placement of children in grid */
+            white-space: nowrap; /* Prevents wrapping of emojis */
+        }
+
+        /* Label for diet names */
+        .diet-label {
+            font-size: 0.7em; /* Adjust for smaller emoji size */
+            font-weight: bold;
+            text-align: left;
+            margin-right: 10px;
+        }
+
+        /* Emoji display area, aligned across all rows */
+        .emoji-display {
+            font-size: 0.7em; /* Adjust for smaller emoji size */
+            line-height: 1.2em;
+            white-space: nowrap; /* Keeps emojis in one line */
+        }
+
+  </style>
+</head>
+<body>
+
+<h2> Part 1 – Mapping My Air Travel Adventures</h2>
+
+<p>I love <a href="https://armandyam.github.io/others#travel_map">travelling</a>. Whether it’s the excitement of exploring new places, the inevitable collection of random souvenirs that always seem like a good idea at the time (I am looking at you "random rocks from the Lima shore"), or just the feeling of temporarily escaping the daily grind, it’s something I truly enjoy. (I even made it into a game for myself by searching for a <a href="https://armandyam.github.io/posts/2024/07/travel/">"Travel-Score"</a> to dunk on friends and family) But let’s be real—travelling isn’t exactly an environmentalist’s best friend. Every flight I take contributes to the massive, invisible CO₂ cloud floating, and that got me thinking: How bad is it, really?</p>
+
+<p>So, in the spirit of both curiosity and eco-guilt, I decided to dive into the numbers. I also wanted to have my facts right before I get <a href="https://en.wikipedia.org/wiki/Flight_shame">"flight shamed"</a>. I documented every single flight I’ve taken since I was born. Yes, every flight—because I’m nothing if not thorough. And for those of you wondering, flights with layovers count as separate ones for this calculation. This resulted in digging into my old emails and photos to recollect any trips and also of course directly from memory. I wrote them down in a simple file with the year, departure and arrival city name.</p>
+
+<p>I then used the city names to find their exact latitude and longitude with the help of <a href="https://geopy.readthedocs.io/en/stable/">geopy</a> and an <a href="https://github.com/armandyam/maps_kml_generator">old script</a>. Once I had those, I calculated the distance between the cities using the <a href="https://en.wikipedia.org/wiki/Haversine_formula">haversine formula</a>. The result was a shocker: I've flown far enough to make a small dent in the ozone layer and I have taken 112 flights as of today! </p>
+
+<p>Next, I used the <a href="https://pypi.org/project/transport-co2/">transport_co2</a> library to estimate the CO₂ emissions based on the distance for each flight. After calculating all that, I thought, why not slap it on a map? Despite not being my favourite type of projection, I used the Mercator projections as the others produced ugly corners in the visualization. I always wanted to create a map like this to try and recreate the old <a href="http://fbmap.bitaesthetics.com/">Facebook friends map</a>. I got the ideas for the color-coding from <a href="https://blog.hugo-larcher.com/flight-data-visualisation-with-pandas-and-matplotlib-ebbd13038647">this</a> blog where a power law scaling is recommended for small data sets (which it is in this case, thankfully!). Of course, the color coding is done based on the CO₂ emissions: the darker the color, the lower the emissions. You can zoom into the map and also hover on each flight path to get an estimate of the tons CO₂ equivalent emissions (tCO₂e).</p>
+
+  <!-- Create an element where the map will take place -->
+  <svg id="my_dataviz" width="800" height="600"></svg>
+
+  <!-- Tooltip div -->
+  <div class="tooltip" id="tooltip"></div>
+
+
+<!-- <p>The bar chart shows the year by year emissions, with notable peaks in the years around 2016 to 2018 that corresponds to my time attending conferences presenting my PhD work. The drop in 2019-2022 is obvious and finally the large 2023 emissions is due to the big trip. </p> -->
+
+
+<div id="my_dataviz_bar"></div>
+<p>&nbsp;&nbsp;&nbsp;</p>
+
+
+<h2>Part 2 – What Does This Carbon Emission Actually Mean?</h2>
+
+
+<p>Okay, so now that I’ve mapped out all the flights I’ve taken (and probably scared myself with those numbers), I wanted to figure out just how much this 92.28 tCO₂e actually means in real-world terms. Because, let’s face it, throwing a massive number out there is one thing, but unless I’m visualizing it in relation to something I know, it’s just another abstract figure. So, I dug deeper.</p>
+
+<p> The easiest way I thought of visualizing this is to do some sort of <a href="https://en.wikipedia.org/wiki/One-factor-at-a-time_method">one-factor-at-a-time</a> sensitivity of analysis comparing the total cost of my flights against various lifestyle factors such as transport methods, food choices, number of trees required to offset this and also the carbon cost of this. Of course, this is not a scientific study but only something based on a few hours of doing "internet research". So take this with <a href="https://www.smithsonianmag.com/travel/spanish-mountain-made-salt-180969946/">mountains of salt</a>!</p>
+
+<p> Note: I am only comparing the carbon footprint of flights against other factors, but the total carbon footprint of a person would involve all these factors combined.</p>
+
+<h3>How Far Could I Have Gone in Other Transport Modes?</h3>
+
+<p>&nbsp;&nbsp;</p>
+
+<p>First up, I thought, "How does flying compare to other modes?" What if I had chosen other means of transportation? How far could I have traveled using other modes? To keep a standard I measured each mode of transport in terms of number of Earth’s equatorial circumference which is about <a href="https://coolcosmos.ipac.caltech.edu/ask/57-How-large-is-Earth-#:~:text=Earth's%20circumference%20(the%20distance%20all,miles%20(about%2012%2C756%20kilometers)">40,075 km</a> (Hover over each bar to view the distance as a multiple of Earth's circumference)</p>
+
+<p>I used the same <a href="https://pypi.org/project/transport-co2/">transport_co2</a> for the other modes of transport (except walking and bicycle, more on those below). From this library, I can calculate the emitted CO₂ for a given distance travelled, however, I wanted to calculate the other way around i.e., calculate the distance for a given CO₂ emitted. In addition, I did not want to find out the inner workings of the function but made the assumption that a larger distance would result in a larger CO₂ emission. With that assumption, I was able to implement a simple bisection method to find out the distance for a given CO₂ emitted, specifically the total CO₂ emitted by all my flights taken so far. </p>
+
+<p>As mentioned before, the distances for walking and biking were not from transport_co2 library instead calculated based on calorie consumption and CO₂ emissions associated with that energy. To estimate the CO₂ offset by walking or biking, I assumed an annual vegan diet's carbon footprint—around 1.5 tCO₂e per year as mentioned <a href="https://www.greeneatz.com/foods-carbon-footprint.html">here</a>. Based on an average daily intake of 2600 calories.</p>
+
+<p>For walking, assuming 80 calories burned per kilometer as mentioned <a href="https://timesofindia.indiatimes.com/life-style/health-fitness/fitness/how-many-calories-are-burned-in-walking-1-km/articleshow/111300054.cms">here</a>, the distance required to offset a CO₂ target can be estimated using:</p>
+
+<p>\[
+\text{Distance walked} = \frac{\text{CO}_2 \text{ target} \times \text{Calories per year}}{\text{CO}_2 \text{ emissions from diet} \times \text{Calories burned per km}}
+\]</p>
+
+<p>Similarly, for biking, where the calorie burn is about 23 calories per kilometer as mentioned <a href="https://www.canyon.com/en-id/blog-content/advice/calories-burned-cycling/b24062022.html">here</a>, the distance required is:</p>
+
+<p>\[
+\text{Distance biked} = \frac{\text{CO}_2 \text{ target} \times \text{Calories per year}}{\text{CO}_2 \text{ emissions from diet} \times \text{Calories burned per km}}
+\]</p>
+
+<p>Where:
+\[
+\begin{array}{rl}
+\text{CO}_2 \text{ target} & = \text{The total emissions from all my flights} \\
+\text{Calories per year} & = 2600 \times 365 \, \text{kcal}
+\end{array}
+\]
+</p>
+
+
+<p>Of course, these are just fun numbers to calculate and don't have a rigorous scientific basis. However, what was interesting to see was that some modes of transport turned out to be more efficient than walking or biking. This perhaps concurs with what is already <a href="https://en.wikipedia.org/wiki/Energy_efficiency_in_transport">known</a></p>
+
+<!-- Create a div where the graph will take place -->
+<div style="text-align: center;">
+    <div id="my_dataviz_hbar"></div>
+    <div class="earth-tooltip" id="tooltip_earth"></div>
+</div>
+
+<h3>Years of Diet Comparison – Meat Lovers, Take Note!</h3>
+
+<p>&nbsp;&nbsp;</p>
+
+<p>
+    We all know that our food choices can make a big difference in reducing CO₂ emissions. I wanted to see how my CO₂ emissions from flying stack up against the emissions saved by different diets. For example, in how many years would a meat eater emit the same CO₂ as a vegan? Although I’ve mostly been vegan for a few years, this comparison helps put the impact of flights into perspective against everyday choices like diet.
+</p>
+
+<p>
+    Using the numbers from <a href="https://www.greeneatz.com/foods-carbon-footprint.html">here</a> and the calculations shown below, we can estimate the number of years for each diet to offset my total flight CO₂ emissions:
+</p>
+
+<p style="font-size: 1.2em; font-style: italic; text-indent: 20px;">
+    \[
+    Y_{\text{diet}} = \frac{\text{Total CO₂ from flights}}{\text{Yearly CO₂ from each diet}}
+    \]
+</p>
+
+<p>We see below the equivalent years (represented by number of birthday emojis 🎂) of different diets to offset the total CO₂ emitted by my flights so far:</p>
+  
+  <div class="emoji-chart">
+        <div class="emoji-row">
+            <div class="diet-label">Meat Lover (28 years):</div>
+            <div id="meat-emojis" class="emoji-display"></div>
+        </div>
+        
+        <div class="emoji-row">
+            <div class="diet-label">Average Diet (37 years):</div>
+            <div id="average-emojis" class="emoji-display"></div>
+        </div>
+        
+        <div class="emoji-row">
+            <div class="diet-label">No Beef Diet (49 years):</div>
+            <div id="no-beef-emojis" class="emoji-display"></div>
+        </div>
+        
+        <div class="emoji-row">
+            <div class="diet-label">Vegetarian (54 years):</div>
+            <div id="vegetarian-emojis" class="emoji-display"></div>
+        </div>
+
+        <div class="emoji-row">
+            <div class="diet-label">Vegan (62 years):</div>
+            <div id="vegan-emojis" class="emoji-display"></div>
+        </div>
+    </div>
+
+<p>&nbsp;&nbsp;</p>
+
+<p>It is good to know that the difference is substantial and well within a single person's lifetime. So, this gives me hope that our lifestyle choices can realistically impact our CO₂ emissions. (Note: I realize that diet is an emotionally charged topic and I promise to keep my (very mild) judgment in check! 😄)</p>
+
+<!-- <h3>Apartment Size Equivalent – Downsizing Anyone?</h3>
+<p>Next up, was the size of apartments. A larger living space requires more energy for heating (if living in colder countries) and electricity. Using the estimates from here, one can calculate how much Ever wondered how much space all that CO₂ could fill? Well, if we translated those emissions into an apartment size, my CO₂ output is the equivalent of living in a 33.63 m² apartment. Not the coziest of spots but still, that’s a lot of space dedicated to my carbon footprint. Could I at least get a loft with a view?</p>
+ -->
+
+<h3>Number of Trees to Plant – Start Digging Holes</h3>
+
+<p>&nbsp;&nbsp;</p>
+
+<p>We know that planting trees is one of the effective methods to offset our emissions. How many trees would it then take to offset my flight emissions alone? According to <a href="https://onetreeplanted.org/blogs/stories/how-much-co2-does-tree-absorb">this</a> resource a mature tree absorbs around 10 kg of CO₂ every year. So, then to offset my emissions, I’d need to plant a whopping 9228 trees. That's an entire forest! Guess I’d better start clearing my weekends if I want to make up for all those flights. Furthermore, one cannot just go around planting a single species of tree over acres of land leading to monocultures. Various restorative methods yield varying results. Not only, really start contributing to CO₂ removal after they are mature meaning, we need to grow them for years before we start seeing results. </p>
+
+<p> Apart from actually contributing to NGOs that do good work, some <a href="https://en.wikipedia.org/wiki/Slacktivism">slacktivists</a> like me can help by using something like <a href="https://www.ecosia.org/Ecosia">Ecosia</a> which is a search engine that uses their profits to plan trees (I am in no way associated to them!). In addition, one can directly contribute to their cause to plant trees. In my case, this would <a href="https://plant.ecosia.org/products/trees-for-climate-action?variant=37125904761006">cost</a> me around 23071€. This is definitely something I hope to offset some day even!</p>
+
+<h3>Cost to Offset – Can I Pay My Way Out of This?</h3>
+
+<p>&nbsp;&nbsp;</p>
+
+<p>I know carbon offsets are controversial but while writing this, I had a chance to read up a little bit about this. They seem to be some good number of high quality offset opportunities while at the same time one has low-quality cheap offset methods which are questionable at best (looking at you <a href="https://www.ucl.ac.uk/news/headlines/2019/nov/ryanair-carbon-offset-programme-woefully-inadequate">Ryan Air</a>!). I believe, we are beyond the point where just "avoiding deforestation" (or <a href="https://unfccc.int/topics/land-use/workstreams/redd/what-is-redd">REDD+</a>) is sufficient and we actually need positive action towards offsets. Of course, this market is also quite fluctuating and there isn't a fixed number to tell how much it costs and what is the quality of this. You can read up more about this <a href="https://www.bloomberg.com/professional/insights/sustainable-finance/long-term-carbon-offsets-outlook-2023/">here</a>. We of course, need both technology based and nature based solutions for this as well.</p>
+
+<p>All in all, this is still a fun blog post and not a serious scientific research article so I want some number to calculate, so I just ended up using the one from <a href="https://www.reuters.com/sustainability/climate-energy/carbon-offset-price-25-35ton-would-boost-climate-action-adb-climate-envoy-2023-11-16/">here</a> and from that my flights would cost me between <span>$</span> 2307 to <span>$</span> 3230. That’s more than the cost of a few round-trip tickets! Sigh—I guess the price of this first world hobby also comes with a hefty environmental tax.</p>
+
+<h3>Final remarks</h3>
+
+<p>&nbsp;&nbsp;</p>
+
+<p>This blog started as a fun conversation with a friend about plotting flight paths in Python and ended up taking me on a philosophical journey, reckoning with my CO₂ emissions.</p> 
+
+<p>Some of you might wonder: won’t the numbers and images here change as I take more flights? They will! So, I made this blog dynamic (thanks to <a href="https://jinja.palletsprojects.com/en/stable/jinja2">Jinja2</a> for my fellow nerds) and set it to update whenever I add new flights to my database.</p> 
+
+<p>In the end, writing this has reminded me of my privilege to travel and the not-so-small environmental cost that comes with it. Yes, it’s a bit hypocritical to say I care about the planet while booking a flight for my next adventure. But I’m doing my best to keep a lighter footprint where I can: I’ve lived vegetarian most of my life and switched to veganism, managed without a personal car so far thanks to good public transport, and try to rely on renewable energy for electricity. It doesn’t fully justify flying—I know that—but it’s a challenge I’m aware of and working to improve. Who knows, maybe someday I’ll trade air miles for virtual ones and pioneer ‘sustainable wanderlust’!</p>
+
+  <script>
+
+var svgMap = d3.select("#my_dataviz"),
+    widthMap = +svgMap.attr("width"),
+    heightMap = +svgMap.attr("height");
+
+var tooltip = d3.select("#tooltip");
+
+var zoom = d3.zoom()
+    .scaleExtent([1, 8])  
+    .on("zoom", zoomed);
+
+svgMap.call(zoom);
+
+var g = svgMap.append("g");
+
+var projection = d3.geoMercator()
+    .scale(120)  
+    .translate([widthMap / 2, heightMap / 2]);
+
+var path = d3.geoPath().projection(projection);
+
+d3.queue()
+  .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")  
+  .defer(d3.csv, "/assets/data/flights.csv") 
+  .await(ready);
+
+function ready(error, dataGeo, data) {
+    if (error) throw error;
+
+    var link = [];
+    data.forEach(function(row) {
+        var source = [+row.DepLon, +row.DepLat];
+        var target = [+row.ArrLon, +row.ArrLat];
+        var topush = {
+            type: "LineString",
+            coordinates: [source, target],
+            depCity: row.DepCity,
+            arrCity: row.ArrCity,
+            nbFlights: row.NbFlights,
+            co2: row.CO2Intensity
+        };
+        link.push(topush);
+    });
+
+    var co2Scale = d3.scalePow().exponent(0.3)
+      .domain([d3.min(link, d => +d.co2), d3.max(link, d => +d.co2)])
+      .range(["#000000", "#ff00ff"]);
+
+    g.append("g")
+        .selectAll("path")
+        .data(dataGeo.features)
+        .enter().append("path")
+            .attr("fill", "#222")
+            .attr("d", d3.geoPath().projection(projection))
+            .style("stroke", "#fff")
+            .style("stroke-width", 0.5);
+
+    var paths = g.selectAll("myPath")
+      .data(link)
+      .enter()
+      .append("path")
+        .attr("d", function(d){ return path(d); })
+        .style("fill", "none")
+        .style("stroke", function(d) { return co2Scale(+d.co2); })
+        .style("stroke-width", 2)
+        .style("opacity", 1)
+        .on("mouseover", function(d) {
+            paths.style("opacity", 0.2);
+            d3.select(this).style("opacity", 1);
+            
+            tooltip.transition().duration(200)
+                   .style("opacity", 1);
+
+            tooltip.html(d.depCity + " to " + d.arrCity + ": " + d.co2 + " tCO₂e")
+                   .style("left", (d3.event.pageX + 15) + "px")
+                   .style("top", (d3.event.pageY - 28) + "px")
+                   .style("display", "block");
+        })
+        .on("mouseout", function(d) {
+            paths.style("opacity", 1);
+            tooltip.transition().duration(200).style("opacity", 0);
+        });
+}
+
+function zoomed() {
+    g.attr("transform", d3.event.transform);
+}
+
+
+
+var marginHBar = {top: 30, right: 70, bottom: 70, left: 160},
+    widthHBar = 460 - marginHBar.left - marginHBar.right,
+    heightHBar = 500 - marginHBar.top - marginHBar.bottom;
+
+var svgHBar = d3.select("#my_dataviz_hbar")
+  .append("svg")
+    .attr("width", widthHBar + marginHBar.left + marginHBar.right)
+    .attr("height", heightHBar + marginHBar.top + marginHBar.bottom)
+  .append("g")
+    .attr("transform", "translate(" + marginHBar.left + "," + marginHBar.top + ")");
+
+var earthTooltip = d3.select("body").append("div")
+    .attr("class", "earth-tooltip")
+    .style("position", "absolute")
+    .style("background-color", "white")
+    .style("border", "1px solid #ddd")
+    .style("padding", "5px")
+    .style("border-radius", "5px")
+    .style("font-size", "12px")
+    .style("box-shadow", "0px 0px 5px rgba(0, 0, 0, 0.3)")
+    .style("visibility", "hidden");
+
+var transportIcons = {
+    'AIRPLANE': 'fas fa-plane',
+    'LARGE_CAR': 'fas fa-car-side',
+    'CAR': 'fas fa-car',
+    'SMALL_CAR': 'fas fa-car',
+    'FERRY': 'fas fa-ship',
+    'SCOOTER': 'fas fa-motorcycle',
+    'BUS': 'fas fa-bus',
+    'TRANSIT': 'fas fa-train',
+    'LIGHT_RAIL': 'fas fa-subway',
+    'SUBWAY': 'fas fa-subway',
+    'WALK': 'fas fa-walking',
+    'BIKE': 'fa-solid fa-bicycle'
+};
+
+function update2(data) {
+  var y = d3.scaleBand()
+    .range([0, heightHBar])
+    .domain(data.map(function(d) { return d.Transport; }))
+    .padding(0.2);
+
+  svgHBar.selectAll("*").remove();
+
+  svgHBar.selectAll(".label")
+    .data(data)
+    .enter()
+    .append("text")
+      .attr("x", -120)
+      .attr("y", function(d) { return y(d.Transport) + y.bandwidth() / 2; })
+      .attr("dy", ".35em")
+      .style("text-anchor", "start")
+      .style("font-size", "12px")
+      .text(function(d) { return d.Transport; });
+
+  svgHBar.selectAll(".icon")
+    .data(data)
+    .enter()
+    .append("foreignObject")
+      .attr("x", -35)
+      .attr("y", function(d) { return y(d.Transport); })
+      .attr("width", 40)
+      .attr("height", 40)
+    .append("xhtml:i")
+      .attr("class", function(d) { return transportIcons[d.Transport]; })
+      .style("font-size", "24px");
+
+  var centerLine = widthHBar / 2;
+
+  var x_max = d3.max(data, function(d) { return +d['Total Distance (km)']; });
+  var x = d3.scaleLinear()
+    .domain([0, x_max])
+    .range([0, widthHBar - 50]);
+
+  svgHBar.selectAll("mybar")
+    .data(data)
+    .enter()
+    .append("rect")
+      .attr("y", function(d) { return y(d.Transport); })
+      .attr("x", function(d) { return centerLine - x(+d['Total Distance (km)']) / 2; })
+      .attr("width", function(d) { return x(+d['Total Distance (km)']); })
+      .attr("height", y.bandwidth())
+      .attr("fill", "#69b3a2")
+      .on("mouseover", function(d) {
+        const earthEq = parseFloat(d['Earth eq']);
+        const tooltipText = !isNaN(earthEq) ? `${earthEq.toFixed(1)} x 🌍` : "Data unavailable";
+
+        earthTooltip.html(tooltipText)
+          .style("visibility", "visible");
+      })
+      .on("mousemove", function() {
+        earthTooltip.style("left", (d3.event.pageX + 10) + "px")
+          .style("top", (d3.event.pageY - 10) + "px");
+      })
+      .on("mouseout", function() {
+        earthTooltip.style("visibility", "hidden");
+      });
+
+  svgHBar.selectAll(".value")
+    .data(data)
+    .enter()
+    .append("text")
+      .attr("x", function(d) { return centerLine + x(+d['Total Distance (km)']) / 2 + 5; })
+      .attr("y", function(d) { return y(d.Transport) + y.bandwidth() / 2; })
+      .attr("dy", ".35em")
+      .style("text-anchor", "start")
+      .style("font-size", "12px")
+      .text(function(d) { 
+        return (+d['Total Distance (km)'] / 1e6).toFixed(1) + "M km";
+      });
+}
+
+d3.csv("/assets/data/transport_distances.csv", function(error, data) {
+  if (error) throw error;
+  update2(data);
+});
+
+        async function loadDietData() {
+            try {
+                const response = await fetch('/assets/data/diet_data.json'); 
+                const data = await response.json();
+
+
+                document.getElementById('meat-emojis').innerText = '🎂'.repeat(Math.round(data.meat_years));
+                document.getElementById('average-emojis').innerText = '🎂'.repeat(Math.round(data.average_years));
+                document.getElementById('no-beef-emojis').innerText = '🎂'.repeat(Math.round(data.no_beef_years));
+                document.getElementById('vegetarian-emojis').innerText = '🎂'.repeat(Math.round(data.vegetarian_years));
+                document.getElementById('vegan-emojis').innerText = '🎂'.repeat(Math.round(data.vegan_years));
+            } catch (error) {
+                console.error('Error loading diet data:', error);
+            }
+        }
+
+
+        window.onload = loadDietData;
+
+
+  </script>
+
+</body>
+</html>
+
