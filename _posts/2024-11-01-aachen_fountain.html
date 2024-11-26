@@ -22,6 +22,12 @@ excerpt: "Exploring the Aachen Fountains with an optimized TSP route on an inter
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <link rel="stylesheet" href="https://d3-annotation.susielu.com/assets/d3.annotation.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
@@ -90,28 +96,13 @@ Feel free to zoom in and explore!</p>
             tile_layer_6a8c2db9bc4ec341d22cd90fd22274cc.addTo(map_2d824d78bfa3a647b5773def1d27a8fb); 
 
 
-             async function loadMapData() {
-                        try {
-                            const response = await fetch('/assets/data/markers.json'); 
-                            const data = await response.json();
-                            const markers = data.markers;
-                            const latlngs = []; // Array to store coordinates for the polyline
-                
-                            markers.forEach(marker => {
-                                // Add marker to the map
-                                L.marker([marker.latitude, marker.longitude])
-                                    .bindPopup(marker.name)
-                                    .addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
-                                
-                                // Add coordinates to the polyline array
-                                latlngs.push([marker.latitude, marker.longitude]);
-                                    });
-                            } 
-                            catch (error) {
-                                console.error('Error loading diet data:', error);
-                            }
-                    }
-        window.onload = loadDietData;
+d3.json("/assets/data/markers.json", function(error, data) {
+    if (error) {
+        console.error("Error loading GeoJSON file:", error);
+        return;
+    }
+    console.log(data)
+
 
     
 </script>
