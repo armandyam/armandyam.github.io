@@ -102,17 +102,15 @@ d3.json("/assets/data/markers.json", function(error, data) {
         return;
     }
     const markers = data.markers;
-     markers.forEach(marker => {
-                    // Add marker to the map
-                    L.marker([data.latitude, data.longitude])
-                        .bindPopup(data.name)
-                        .addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
-                    
-                    // Add coordinates to the polyline array
-                    latlngs.push([data.latitude, data.longitude]);
-                });
+    markers.forEach(marker => {
+                console.log(marker.latitude, marker.longitude)
+        // Add marker to the map
+        // L.marker([marker.latitude, marker.longitude])
+        //     .bindPopup(marker.name)
+        //     .addTo(map);
+    });
 
-        console.log(data)
+        console.log(data);
 
     });
 
