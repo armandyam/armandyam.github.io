@@ -95,18 +95,21 @@ Feel free to zoom in and explore!</p>
     
             tile_layer_6a8c2db9bc4ec341d22cd90fd22274cc.addTo(map_2d824d78bfa3a647b5773def1d27a8fb); 
 
-
-d3.json("/assets/data/markers.json", function(error, data) {
-    if (error) {
-        console.error("Error loading GeoJSON file:", error);
-        return;
-    }
-    const markers = data.markers;
-                console.log(markers)
-
+// Use modern d3-fetch method
+d3.json("/assets/data/markers.json")
+    .then(data => {
+        if (!data || !data.markers) {
+            console.error("Data or markers are missing in the GeoJSON file.");
+            return;
+        }
+        const markers = data.markers;
+        console.log(markers);
         console.log(data);
-
+    })
+    .catch(error => {
+        console.error("Error loading GeoJSON file:", error);
     });
+
 
 
     
