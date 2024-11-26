@@ -7,6 +7,7 @@ tags:
   - aachen
 excerpt: "Exploring the Aachen Fountains with an optimized TSP route on an interactive map."
 ---
+<html lang="en">
 <head>
     
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -16,7 +17,6 @@ excerpt: "Exploring the Aachen Fountains with an optimized TSP route on an inter
             L_DISABLE_3D = false;
         </script>
     
-    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
     <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -44,6 +44,7 @@ excerpt: "Exploring the Aachen Fountains with an optimized TSP route on an inter
                 .leaflet-container { font-size: 1rem; }
             </style>
 </head>
+<body>
 
 <h1>Exploring Paris with Interactive Maps</h1>
 
@@ -54,16 +55,17 @@ Fusce tempor sollicitudin mi ut bibendum.</p>
 <p>Below is an interactive map of Paris, showcasing its landmarks and beauty. 
 Feel free to zoom in and explore!</p>
 
+
 <!-- Map container -->
 <div style="border: 1px solid #ccc; margin: 20px 0; position:relative; width:100%; height:600px;">
-<body>
     
     
                
             <div class="folium-map" id="map_2d824d78bfa3a647b5773def1d27a8fb" ></div>
         
-</body>
-<script>
+
+
+ <script>
            var map_2d824d78bfa3a647b5773def1d27a8fb = L.map(
                 "map_2d824d78bfa3a647b5773def1d27a8fb",
                 {
@@ -125,11 +127,5 @@ Feel free to zoom in and explore!</p>
             .catch(error => console.error('Error loading JSON:', error));
     
 </script>
-</div>
-
-<p>Vivamus fermentum, nulla at commodo auctor, sapien massa dignissim justo, at lacinia eros lacus ac eros. 
-Praesent tincidunt lorem vel purus scelerisque dignissim. Pellentesque dapibus sit amet magna et bibendum. 
-Cras vestibulum, sapien sed posuere tempus, mi felis aliquam urna, sed bibendum sapien augue id risus.</p>
-
-<p>Sed viverra nec turpis eget maximus. Nulla vehicula, elit eget placerat aliquet, velit velit auctor quam, 
-vitae ultricies libero mi quis ligula. Donec malesuada ultrices urna in auctor.</p>
+</body>
+</html>
