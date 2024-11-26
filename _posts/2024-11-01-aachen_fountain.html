@@ -1,0 +1,135 @@
+---
+title: 'Aachen Fountain TSP'
+date: 2024-10-06
+permalink: /posts/2024/11/aachen-fountains/
+tags:
+  - interests
+  - aachen
+excerpt: "Exploring the Aachen Fountains with an optimized TSP route on an interactive map."
+---
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/elfalem/Leaflet.curve/src/leaflet.curve.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+             <style>
+                #map_2d824d78bfa3a647b5773def1d27a8fb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+</head>
+
+<h1>Exploring Paris with Interactive Maps</h1>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus eros aliquet convallis ultricies. 
+Mauris augue massa, ultricies non ligula. Suspendisse imperdiet vestibulum nunc. 
+Fusce tempor sollicitudin mi ut bibendum.</p>
+
+<p>Below is an interactive map of Paris, showcasing its landmarks and beauty. 
+Feel free to zoom in and explore!</p>
+
+<!-- Map container -->
+<div style="border: 1px solid #ccc; margin: 20px 0; position:relative; width:100%; height:600px;">
+<body>
+    
+    
+               
+            <div class="folium-map" id="map_2d824d78bfa3a647b5773def1d27a8fb" ></div>
+        
+</body>
+<script>
+           var map_2d824d78bfa3a647b5773def1d27a8fb = L.map(
+                "map_2d824d78bfa3a647b5773def1d27a8fb",
+                {
+                    center: [48.8566, 2.3522],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 14,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6a8c2db9bc4ec341d22cd90fd22274cc = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_6a8c2db9bc4ec341d22cd90fd22274cc.addTo(map_2d824d78bfa3a647b5773def1d27a8fb); 
+   
+           fetch("/assets/data/markers.json")
+            .then(response => response.json())
+            .then(data => {
+                const markers = data.markers;
+                const latlngs = []; // Array to store coordinates for the polyline
+                
+                markers.forEach(marker => {
+                    // Add marker to the map
+                    L.marker([marker.latitude, marker.longitude])
+                        .bindPopup(marker.name)
+                        .addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
+                    
+                    // Add coordinates to the polyline array
+                    latlngs.push([marker.latitude, marker.longitude]);
+                });
+                // console.log(typeof latlngs)
+                // console.log(latlngs)
+
+                // Coordinates for the polyline
+                var points = [
+                    [48.8566, 2.3522], // Paris (Eiffel Tower)
+                    [48.8584, 2.2945], // Louvre Museum
+                    [48.8606, 2.3376]  // Notre Dame Cathedral
+                ];
+
+                if (points.every(coord => Array.isArray(coord) && coord.length === 2)) {
+                    var polyline = L.polyline(points, { color: 'blue', weight: 4 }).addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
+                } else {
+                    console.error("Invalid coordinates in points array:", points);
+                }
+
+
+                // Add polyline to the map
+                // L.polyline(latlngs, {color: 'blue', weight: 4}).addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
+            })
+            .catch(error => console.error('Error loading JSON:', error));
+    
+</script>
+</div>
+
+<p>Vivamus fermentum, nulla at commodo auctor, sapien massa dignissim justo, at lacinia eros lacus ac eros. 
+Praesent tincidunt lorem vel purus scelerisque dignissim. Pellentesque dapibus sit amet magna et bibendum. 
+Cras vestibulum, sapien sed posuere tempus, mi felis aliquam urna, sed bibendum sapien augue id risus.</p>
+
+<p>Sed viverra nec turpis eget maximus. Nulla vehicula, elit eget placerat aliquet, velit velit auctor quam, 
+vitae ultricies libero mi quis ligula. Donec malesuada ultrices urna in auctor.</p>
