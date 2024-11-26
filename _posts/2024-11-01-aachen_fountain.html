@@ -102,13 +102,7 @@ d3.json("/assets/data/markers.json", function(error, data) {
         return;
     }
     const markers = data.markers;
-    markers.forEach(marker => {
-                console.log(marker.latitude, marker.longitude)
-        // Add marker to the map
-        // L.marker([marker.latitude, marker.longitude])
-        //     .bindPopup(marker.name)
-        //     .addTo(map);
-    });
+                console.log(markers)
 
         console.log(data);
 
