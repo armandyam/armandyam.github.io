@@ -1,0 +1,19 @@
+{
+    "markers": [
+        {
+            "name": "Paris",
+            "latitude": 48.8566,
+            "longitude": 2.3522
+        },
+        {
+            "latitude": 48.8584, 
+            "longitude": 2.2945, 
+            "name": "Louvre Museum"
+        },
+        {
+            "latitude": 48.8606, 
+            "longitude": 2.3376, 
+            "name": "Notre Dame Cathedral"
+        }
+    ]
+}
