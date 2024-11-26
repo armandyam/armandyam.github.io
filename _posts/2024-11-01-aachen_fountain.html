@@ -89,7 +89,7 @@ Feel free to zoom in and explore!</p>
     
             tile_layer_6a8c2db9bc4ec341d22cd90fd22274cc.addTo(map_2d824d78bfa3a647b5773def1d27a8fb); 
    
-           fetch("/assets/data/markers.json")
+        fetch("/assets/data/markers.json")
             .then(response => response.json())
             .then(data => {
                 const markers = data.markers;
@@ -99,30 +99,14 @@ Feel free to zoom in and explore!</p>
                     // Add marker to the map
                     L.marker([marker.latitude, marker.longitude])
                         .bindPopup(marker.name)
-                        .addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
+                        .addTo(map);
                     
                     // Add coordinates to the polyline array
                     latlngs.push([marker.latitude, marker.longitude]);
                 });
-                // console.log(typeof latlngs)
-                // console.log(latlngs)
-
-                // Coordinates for the polyline
-                var points = [
-                    [48.8566, 2.3522], // Paris (Eiffel Tower)
-                    [48.8584, 2.2945], // Louvre Museum
-                    [48.8606, 2.3376]  // Notre Dame Cathedral
-                ];
-
-                if (points.every(coord => Array.isArray(coord) && coord.length === 2)) {
-                    var polyline = L.polyline(points, { color: 'blue', weight: 4 }).addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
-                } else {
-                    console.error("Invalid coordinates in points array:", points);
-                }
-
-
+                
                 // Add polyline to the map
-                // L.polyline(latlngs, {color: 'blue', weight: 4}).addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
+                L.polyline(latlngs, {color: 'blue', weight: 4}).addTo(map);
             })
             .catch(error => console.error('Error loading JSON:', error));
     
