@@ -62,7 +62,6 @@ Fusce tempor sollicitudin mi ut bibendum.</p>
 Feel free to zoom in and explore!</p>
 
 
-<!-- Map container -->
 <div style="border: 1px solid #ccc; margin: 20px 0; position:relative; width:100%; height:600px;">
     
     
@@ -111,7 +110,7 @@ d3.json("/assets/data/route_cache.json", function (error, data) {
 
         if (paths && paths[routeType]) {
             var route = paths[routeType].path;
-            var distance = paths[routeType].distance.toFixed(2); // Format distance to 2 decimal places
+            var distance = paths[routeType].distance.toFixed(2); 
             var latlngs = [];
 
             document.getElementById("distanceLabel").innerText = "Total Distance: " + distance + " km";
