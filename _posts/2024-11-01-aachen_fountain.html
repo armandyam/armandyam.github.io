@@ -107,11 +107,11 @@ d3.json("/assets/data/route_cache.json", function(error, data) {
     const latlngs = []; 
 
     markers.forEach(marker => {
-        L.marker([marker.latitude, marker.longitude])
+        L.marker([marker.lat, marker.lon])
             .bindPopup(marker.name)
             .addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
 
-        latlngs.push([marker.latitude, marker.longitude]);
+        latlngs.push([marker.lat, marker.lon]);
     });
      L.polyline(latlngs, {color: 'blue', weight: 4}).addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
 });
