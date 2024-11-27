@@ -55,6 +55,21 @@ excerpt: "Exploring the Aachen Fountains with an optimized TSP route on an inter
                   border: 1px solid #ddd;
                   margin-bottom: 20px;
               }
+            .map-controls {
+                  position: absolute;
+                  top: 10px;
+                  right: 10px;
+                  z-index: 9999;
+                  background-color: white;
+                  padding: 10px;
+                  border-radius: 5px;
+                  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+              }
+              .map-controls select {
+                  display: inline-block;
+                  width: auto;
+                  max-width: 200px;
+              }
 
             </style>
 </head>
@@ -190,7 +205,10 @@ d3.json("/assets/data/route_cache.json", function (error, data) {
     
 </script>
 
-        <div style="position: fixed; top: 10px; left: 80px; z-index: 9999; background-color: white; padding: 10px;">
+
+   <div class="map-container" style="position: relative; width: 100%; height: 500px; margin: 20px auto;">
+
+        <div class="map-controls" style="position: absolute; top: 10px; right: 10px; z-index: 9999; background-color: white; padding: 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
         <label for="routeType">Select Route Type:</label>
         <select id="routeType" onchange="updateMap(this.value)">
             <option value="crow_flies">As the Crow Flies</option>
@@ -216,8 +234,6 @@ d3.json("/assets/data/route_cache.json", function (error, data) {
             object-fit: cover;
         }
     </style>
-
-   <div class="map-container" style="position: relative; width: 100%; height: 500px; margin: 20px auto;">
 
             <div class="folium-map" id="map_4345da8416a360146c06209c41abb8ae" ></div>
 
