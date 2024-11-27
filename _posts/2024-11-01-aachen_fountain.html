@@ -115,10 +115,6 @@ d3.json("/assets/data/route_cache.json", function(error, data) {
                         }).addTo(map_2d824d78bfa3a647b5773def1d27a8fb)
                         .bindTooltip(tooltipContent, { permanent: false, direction: "top", className: "custom-tooltip" });
 
-        // L.marker()
-        //     .bindPopup(marker.name)
-        //     .addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
-
         latlngs.push([marker.lat, marker.lon]);
     });
      L.polyline(latlngs, {color: 'blue', weight: 4}).addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
