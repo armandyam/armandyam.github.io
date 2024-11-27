@@ -65,6 +65,32 @@ Feel free to zoom in and explore!</p>
 <div style="border: 1px solid #ccc; margin: 20px 0; position:relative; width:100%; height:600px;">
     
     
+        <div style="position: fixed; top: 10px; left: 80px; z-index: 9999; background-color: white; padding: 10px;">
+        <label for="routeType">Select Route Type:</label>
+        <select id="routeType" onchange="updateMap(this.value)">
+            <option value="crow_flies">As the Crow Flies</option>
+            <option value="walking_distance">Walking Distance</option>
+        </select>
+        <br>
+        <label id="distanceLabel" style="margin-top: 5px; display: block;">Total Distance: 0.00 km</label>
+    </div>
+    <style>
+        .custom-tooltip {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 5px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .custom-tooltip img {
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+    
                
             <div class="folium-map" id="map_4345da8416a360146c06209c41abb8ae" ></div>
         
