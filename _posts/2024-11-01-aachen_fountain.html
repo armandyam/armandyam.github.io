@@ -108,12 +108,20 @@ d3.json("/assets/data/route_cache.json", function(error, data) {
 
     markers.forEach(marker => {
 
+
+                        var tooltipContent = `
+                            <div style="text-align: center;">
+                                <strong>${tooltipLabel}</strong><br>
+                                <img src="${marker.image_url}" alt="${marker.name}" style="width:150px; height:150px; object-fit: cover; margin-top:5px;">
+                            </div>
+                        `;
          L.circleMarker([marker.lat, marker.lon], {
                             radius: 6,
                             fillOpacity: 0.8,
                             title: marker.name
-                        }).addTo(map_2d824d78bfa3a647b5773def1d27a8fb)
+                        }).addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
                         .bindTooltip(tooltipContent, { permanent: false, direction: "top", className: "custom-tooltip" });
+
 
         latlngs.push([marker.lat, marker.lon]);
     });
