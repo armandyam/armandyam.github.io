@@ -75,7 +75,7 @@ Feel free to zoom in and explore!</p>
            var map_2d824d78bfa3a647b5773def1d27a8fb = L.map(
                 "map_2d824d78bfa3a647b5773def1d27a8fb",
                 {
-                    center: [48.8566, 2.3522],
+                    center: [50.776351, 6.083862],
                     crs: L.CRS.EPSG3857,
                     zoom: 14,
                     zoomControl: true,
@@ -96,15 +96,13 @@ Feel free to zoom in and explore!</p>
             tile_layer_6a8c2db9bc4ec341d22cd90fd22274cc.addTo(map_2d824d78bfa3a647b5773def1d27a8fb); 
 
 
-d3.json("/assets/data/markers.json", function(error, data) {
+d3.json("/assets/data/route_cache.json", function(error, data) {
     if (error) {
         console.error("Error loading GeoJSON file:", error);
         return;
     }
 
-    const markers = data.markers;
-    console.log(markers); 
-    console.log(data);    
+    const markers = data.crow_flies.pat;  
 
     const latlngs = []; 
 
