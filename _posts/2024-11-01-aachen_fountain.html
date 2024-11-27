@@ -107,9 +107,17 @@ d3.json("/assets/data/route_cache.json", function(error, data) {
     const latlngs = []; 
 
     markers.forEach(marker => {
-        L.marker([marker.lat, marker.lon])
-            .bindPopup(marker.name)
-            .addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
+
+         L.circleMarker([marker.lat, marker.lon], {
+                            radius: 6,
+                            fillOpacity: 0.8,
+                            title: marker.name
+                        }).addTo(map_2d824d78bfa3a647b5773def1d27a8fb)
+                        .bindTooltip(tooltipContent, { permanent: false, direction: "top", className: "custom-tooltip" });
+
+        // L.marker()
+        //     .bindPopup(marker.name)
+        //     .addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
 
         latlngs.push([marker.lat, marker.lon]);
     });
