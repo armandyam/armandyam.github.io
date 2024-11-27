@@ -115,6 +115,7 @@ d3.json("/assets/data/markers.json", function(error, data) {
 
         latlngs.push([marker.latitude, marker.longitude]);
     });
+     L.polyline(latlngs, {color: 'blue', weight: 4}).addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
 });
 
 
