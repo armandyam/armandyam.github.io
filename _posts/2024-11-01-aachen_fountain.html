@@ -103,6 +103,18 @@ d3.json("/assets/data/markers.json", function(error, data) {
     const markers = data.markers;
     console.log(markers); 
     console.log(data);    
+                    const latlngs = []; // Array to store coordinates for the polyline
+                
+                markers.forEach(marker => {
+                    // Add marker to the map
+                    L.marker([marker.latitude, marker.longitude])
+                        .bindPopup(marker.name)
+                        .addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
+                    
+                    // Add coordinates to the polyline array
+                    latlngs.push([marker.latitude, marker.longitude]);
+                });
+                
 });
 
 
