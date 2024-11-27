@@ -95,27 +95,30 @@ Feel free to zoom in and explore!</p>
     
             tile_layer_6a8c2db9bc4ec341d22cd90fd22274cc.addTo(map_2d824d78bfa3a647b5773def1d27a8fb); 
 
+
 d3.json("/assets/data/markers.json", function(error, data) {
     if (error) {
         console.error("Error loading GeoJSON file:", error);
         return;
     }
+
     const markers = data.markers;
     console.log(markers); 
     console.log(data);    
-                    const latlngs = []; // Array to store coordinates for the polyline
-                
-                markers.forEach(marker => {
-                    // Add marker to the map
-                    L.marker([marker.latitude, marker.longitude])
-                        .bindPopup(marker.name)
-                        .addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
-                    
-                    // Add coordinates to the polyline array
-                    latlngs.push([marker.latitude, marker.longitude]);
-                });
-                
+
+    const latlngs = []; // Array to store coordinates for the polyline
+
+    markers.forEach(marker => {
+        // Add marker to the map
+        L.marker([marker.latitude, marker.longitude])
+            .bindPopup(marker.name)
+            .addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
+        
+        // Add coordinates to the polyline array
+        latlngs.push([marker.latitude, marker.longitude]);
+    });
 });
+
 
 
     
