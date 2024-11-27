@@ -72,12 +72,13 @@ Feel free to zoom in and explore!</p>
 
 
  <script>
-           var map_2d824d78bfa3a647b5773def1d27a8fb = L.map(
-                "map_2d824d78bfa3a647b5773def1d27a8fb",
+
+            var map_4345da8416a360146c06209c41abb8ae = L.map(
+                "map_4345da8416a360146c06209c41abb8ae",
                 {
                     center: [50.776351, 6.083862],
                     crs: L.CRS.EPSG3857,
-                    zoom: 14,
+                    zoom: 13,
                     zoomControl: true,
                     preferCanvas: false,
                 }
@@ -87,47 +88,124 @@ Feel free to zoom in and explore!</p>
 
         
     
-            var tile_layer_6a8c2db9bc4ec341d22cd90fd22274cc = L.tileLayer(
+            var tile_layer_c6662b5f0e163d2b2d40ea34941395bc = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             );
         
     
-            tile_layer_6a8c2db9bc4ec341d22cd90fd22274cc.addTo(map_2d824d78bfa3a647b5773def1d27a8fb); 
+            tile_layer_c6662b5f0e163d2b2d40ea34941395bc.addTo(map_4345da8416a360146c06209c41abb8ae);
 
 
-d3.json("/assets/data/route_cache.json", function(error, data) {
+
+d3.json("/assets/data/route_cache.json", function (error, data) {
     if (error) {
         console.error("Error loading JSON file:", error);
         return;
     }
 
-    const markers = data.crow_flies.path;  
+    const paths = data;
 
-    const latlngs = []; 
+    function updateMap(routeType) {
+        clearMap();
 
-    markers.forEach(marker => {
+        if (paths && paths[routeType]) {
+            var route = paths[routeType].path;
+            var distance = paths[routeType].distance.toFixed(2); // Format distance to 2 decimal places
+            var latlngs = [];
 
-                 tooltipLabel = `Start`;
-                        var tooltipContent = `
-                            <div style="text-align: center;">
-                                <strong>${tooltipLabel}</strong><br>
-                                <img src="${marker.image_url}" alt="${marker.name}" style="width:150px; height:150px; object-fit: cover; margin-top:5px;">
-                            </div>
-                        `;
-         L.circleMarker([marker.lat, marker.lon], {
-                            radius: 6,
-                            fillOpacity: 0.8,
-                            title: marker.name
-                        }).addTo(map_2d824d78bfa3a647b5773def1d27a8fb)
-                        .bindTooltip(tooltipContent, { permanent: false, direction: "top", className: "custom-tooltip" });
+            document.getElementById("distanceLabel").innerText = "Total Distance: " + distance + " km";
 
+            if (routeType === "crow_flies") {
+                for (var i = 0; i < route.length; i++) {
+                    var point = route[i];
+                    latlngs.push([point.lat, point.lon]);
 
-        latlngs.push([marker.lat, marker.lon]);
+                    var markerColor, tooltipLabel;
+                    if (i === 0) {
+                        markerColor = 'red';
+                        tooltipLabel = `Start: ${point.name}`;
+                    } else if (i === route.length - 1) {
+                        markerColor = 'blue';
+                        tooltipLabel = `End: ${point.name}`;
+                    } else {
+                        markerColor = 'green';
+                        tooltipLabel = `Point ${i + 1}: ${point.name}`;
+                    }
+
+                    var tooltipContent = `
+                        <div style="text-align: center;">
+                            <strong>${tooltipLabel}</strong><br>
+                            <img src="${point.image_url}" alt="${point.name}" style="width:150px; height:150px; object-fit: cover; margin-top:5px;">
+                        </div>
+                    `;
+
+                    L.circleMarker([point.lat, point.lon], {
+                        radius: 6,
+                        color: markerColor,
+                        fillColor: markerColor,
+                        fillOpacity: 0.8,
+                        title: point.name
+                    }).addTo(map_4345da8416a360146c06209c41abb8ae)
+                    .bindTooltip(tooltipContent, { permanent: false, direction: "top", className: "custom-tooltip" });
+                }
+            } else if (routeType === "walking_distance") {
+                for (var i = 0; i < route.length; i++) {
+                    latlngs.push([route[i].lat, route[i].lon]);
+                }
+                for (var i = 0; i < paths["walking_distance"].order.length; i++) {
+                    var point = paths["walking_distance"].order[i];
+
+                    var markerColor, tooltipLabel;
+                    if (i === 0) {
+                        markerColor = 'red';
+                        tooltipLabel = `Start: ${point.name}`;
+                    } else if (i === paths["walking_distance"].order.length - 1) {
+                        markerColor = 'blue';
+                        tooltipLabel = `End: ${point.name}`;
+                    } else {
+                        markerColor = 'green';
+                        tooltipLabel = `Point ${i + 1}: ${point.name}`;
+                    }
+
+                    var tooltipContent = `
+                        <div style="text-align: center;">
+                            <strong>${tooltipLabel}</strong><br>
+                            <img src="${point.image_url}" alt="${point.name}" style="width:150px; height:150px; object-fit: cover; margin-top:5px;">
+                        </div>
+                    `;
+
+                    L.circleMarker([point.lat, point.lon], {
+                        radius: 6,
+                        color: markerColor,
+                        fillColor: markerColor,
+                        fillOpacity: 0.8,
+                        title: point.name
+                    }).addTo(map_4345da8416a360146c06209c41abb8ae)
+                    .bindTooltip(tooltipContent, { permanent: false, direction: "top", className: "custom-tooltip" });
+                }
+            }
+
+            L.polyline(latlngs, {
+                color: routeType === 'crow_flies' ? 'red' : 'green',
+                weight: 3,
+                opacity: 0.7
+            }).addTo(map_4345da8416a360146c06209c41abb8ae);
+        }
+    }
+
+    function clearMap() {
+        map_4345da8416a360146c06209c41abb8ae.eachLayer(function (layer) {
+            if (layer !== tileLayer) {
+                map_4345da8416a360146c06209c41abb8ae.removeLayer(layer);
+            }
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        updateMap("crow_flies");
     });
-     L.polyline(latlngs, {color: 'blue', weight: 4}).addTo(map_2d824d78bfa3a647b5773def1d27a8fb);
 });
-
 
 
     
