@@ -95,7 +95,6 @@ Feel free to zoom in and explore!</p>
     
             tile_layer_6a8c2db9bc4ec341d22cd90fd22274cc.addTo(map_2d824d78bfa3a647b5773def1d27a8fb); 
 
-// Use modern d3-fetch method
 d3.json("/assets/data/markers.json")
     .then(data => {
         if (!data || !data.markers) {
