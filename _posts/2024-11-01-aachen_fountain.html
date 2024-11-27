@@ -98,11 +98,11 @@ Feel free to zoom in and explore!</p>
 
 d3.json("/assets/data/route_cache.json", function(error, data) {
     if (error) {
-        console.error("Error loading GeoJSON file:", error);
+        console.error("Error loading JSON file:", error);
         return;
     }
 
-    const markers = data.crow_flies.pat;  
+    const markers = data.crow_flies.path;  
 
     const latlngs = []; 
 
