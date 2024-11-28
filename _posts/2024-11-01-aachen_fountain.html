@@ -89,7 +89,9 @@ tags:
             As many of you might already know the TSP is a classic optimization problem where a "salesman" must visit \( N \) cities (or fountains, in our case), minimizing the total distance traveled and returning to the starting point. Formally, given a set of locations \( \{1, 2, \dots, N\} \) with distances \( d(i, j) \) between them, the goal is to minimize:
         </p>
         <p>
-            <code>Total Distance = Σ d(i, i+1)</code>
+            \[
+            \text{Total Distance} = \sum d(i, i+1)
+            \]
         </p>
         <p>
             Of course, the TSP is NP-complete and for larger \( N \) (which in our case is around 32), finding the exact solution via brute force is computationally infeasible (\( O(N!) \)). Instead, we settle for approximate solutions using heuristics like <em>simulated annealing</em>.
@@ -101,9 +103,9 @@ tags:
         <p>
             This was the easy case and I used the <a href="https://en.wikipedia.org/wiki/Haversine_formula" target="_blank">Haversine formula</a>:
         </p>
-        <pre>
-d(i, j) = 2r * arcsin(sqrt(sin²((φj - φi)/2) + cos(φi)cos(φj)sin²((λj - λi)/2)))
-        </pre>
+\[
+d(i, j) = 2r \cdot \arcsin\left(\sqrt{\sin^2\left(\frac{\phi_j - \phi_i}{2}\right) + \cos(\phi_i) \cos(\phi_j) \sin^2\left(\frac{\lambda_j - \lambda_i}{2}\right)}\right)
+\]
         <p>
         where <em>r</em> is the Earth's radius, <em>&phi;</em> is latitude, and <em>&lambda;</em> is longitude. This gives the “straight-line” distance between fountains.
         </p>
