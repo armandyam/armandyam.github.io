@@ -79,22 +79,12 @@ tags:
 </head>
 <body>
 
-    <header>
-        <h1>Aachen’s Fountains: A Nerdy Quest to Solve a Summer Promise</h1>
-    </header>
-    <section>
         <p>
             When I lived in Aachen—a city brimming with history, charm, and yes, fountains—my friend Aadu Huli and I made an ambitious summer plan: visit every fountain in town. A quintessential “once summer” goal. But summer after summer, we let that plan evaporate like mist on a hot day. Now, years later, I’m finally solving this puzzle. Not just solving it—I’m turning it into a computational adventure.
         </p>
-    </section>
-    <section>
-        <h2>The Quest: A Tour of Aachen’s Fountains</h2>
         <p>
             Aachen is famous for its fountains, each telling its own story. From the playful Puppenbrunnen to the iconic Elisenbrunnen, these waterworks are scattered throughout the city. They’re not just decorative but an integral part of the city’s identity. So, when I decided to “finally do this,” I thought, why not make it fun and nerdy? Why not solve the <em>Traveling Salesman Problem</em> (TSP) to plan the route?
         </p>
-    </section>
-    <section>
-        <h2>What is the Traveling Salesman Problem (TSP)?</h2>
         <p>
             For the uninitiated, the TSP is a classic optimization problem where a "salesman" must visit \( N \) cities (or fountains, in our case), minimizing the total distance traveled and returning to the starting point. Formally, given a set of locations \( \{1, 2, \dots, N\} \) with distances \( d(i, j) \) between them, the goal is to minimize:
         </p>
@@ -104,14 +94,9 @@ tags:
         <p>
             The catch? TSP is NP-complete. For larger \( N \), finding the exact solution is computationally infeasible. Instead, we settle for approximate solutions using heuristics like <em>simulated annealing</em>.
         </p>
-    </section>
-    <section>
-        <h2>Data Collection: A Wiki-Fountain Treasure Trove</h2>
         <p>
             The fountains list came from <a href="https://commons.wikimedia.org/wiki/Fountains_in_Aachen" target="_blank">Wiki Commons</a>, where each fountain has its coordinates, name, and sometimes a photo. After some cleaning (and nudging overlapping fountains by &lt;10m to make them unique), I fed the data into my code.
         </p>
-    </section>
-    <section>
         <h2>Computing the Optimal Routes</h2>
         <h3>Case 1: As the Crow Flies</h3>
         <p>
@@ -130,9 +115,6 @@ d(i, j) = 2r * arcsin(sqrt(sin²((φj - φi)/2) + cos(φi)cos(φj)sin²((λj - �
         <p>
             Both distance matrices were fed into a simulated annealing algorithm (thanks, Frigidum!). The algorithm mimics the cooling process of metals, finding a near-optimal route by progressively "cooling" the search space.
         </p>
-    </section>
-    <section>
-        <h2>The Visualization</h2>
         <ul>
             <li><strong>A dropdown menu:</strong> Switch between the "crow flies" and "walking" routes.</li>
             <li><strong>Hover-over markers:</strong> Each fountain displays its name and an image from Wiki Commons.</li>
@@ -141,18 +123,12 @@ d(i, j) = 2r * arcsin(sqrt(sin²((φj - φi)/2) + cos(φi)cos(φj)sin²((λj - �
         <p>
             For nerds like me, it’s also fun to note that the starting fountain is chosen based on proximity to the geographic mean of all points—a little mathematical cherry on top.
         </p>
-    </section>
-    <section>
-        <h2>What Makes This Awesome?</h2>
         <ul>
             <li><strong>It’s practical:</strong> The total distance (~20 km) is a leisurely outing, perfect for a summer day.</li>
             <li><strong>It’s customizable:</strong> Want to include elevation? Mixed transport modes? Just tweak the distance matrix!</li>
             <li><strong>It’s shareable:</strong> Download the KML file (link below) and import it into Google MyMaps for your own adventure.</li>
         </ul>
-    </section>
-    <section>
-        <h2>The Bigger Picture: Why TSP is Cool</h2>
-        <p>
+<!--         <p>
             Solving TSP for fountains might seem trivial, but this problem has real-world applications:
         </p>
         <ul>
@@ -160,16 +136,10 @@ d(i, j) = 2r * arcsin(sqrt(sin²((φj - φi)/2) + cos(φi)cos(φj)sin²((λj - �
             <li><strong>Genetics:</strong> Sequencing DNA.</li>
             <li><strong>Manufacturing:</strong> Circuit board design.</li>
         </ul>
-        <p>Sometimes, though, it’s just about keeping a summer promise.</p>
-    </section>
-    <section>
-        <h2>What’s Next?</h2>
+ -->        <p>Sometimes, though, it’s just about keeping a summer promise.</p>
         <p>
             After solving this computationally, it’s time for the fun part: visiting Aachen again and walking the optimized route. Aadu Huli, if you’re reading this, pack your walking shoes. We’ve got a date with some fountains.
         </p>
-    </section>
-    <section>
-        <h2>Ready to Solve It Yourself?</h2>
         <ul>
             <li><strong>Code:</strong> Available on GitHub.</li>
             <li><strong>API Access:</strong> Create an account on OpenRouteService.</li>
@@ -177,16 +147,7 @@ d(i, j) = 2r * arcsin(sqrt(sin²((φj - φi)/2) + cos(φi)cos(φj)sin²((λj - �
             <li><strong>Map Import:</strong> Download the KML file <a href="#">here</a>.</li>
         </ul>
     </section>
-    <section>
-        <h2>Meme Time</h2>
-        <ul>
-            <li><strong>TSP Math Nerds:</strong> “Me: Solves NP-complete problems for fun. Also me: Forgets to pack snacks.”</li>
-            <li><strong>Simulated Annealing:</strong> “Chill your problems, bro. Literally.”</li>
-        </ul>
-        <p>
-            Stay computational, stay curious, and don’t forget to hydrate—especially when chasing fountains.
-        </p>
-    </section>
+
 
 <div style="border: 1px solid #ccc; margin: 20px 0; position:relative; width:100%; height:600px;">
 
