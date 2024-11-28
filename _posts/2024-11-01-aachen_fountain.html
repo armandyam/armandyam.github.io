@@ -1,5 +1,5 @@
 ---
-title: 'An near-optimal tour of Aachen'
+title: 'An (near-)optimal tour of Aachen'
 date: 2024-11-28
 permalink: /posts/2024/11/aachen-fountains/
 tags:
@@ -80,72 +80,53 @@ tags:
 <body>
     <section>
         <p>
-            When I lived in Aachen—a city brimming with history, charm, and yes, fountains—my friend Aadu Huli and I made an ambitious summer plan: visit every fountain in town. A quintessential “once summer” goal. But summer after summer, we let that plan evaporate like mist on a hot day. Now, years later, I’m finally solving this puzzle. Not just solving it—I’m turning it into a computational adventure.
+            When I lived in Aachen—a city brimming with history, charm, and yes, <a href="https://aachen.de/en/ts/PDFs/City-of-fountains-and-monuments.pdf" target="_blank">fountains</a>—my friend and I made an ambitious summer plan: visit every fountain in town. A quintessential “summer” goal. But summer after summer, we let that plan evaporate. Now, years later, I’m finally solving this puzzle. Not just solving it—I’m turning it into a nice small computational adventure.
         </p>
         <p>
-            Aachen is famous for its fountains, each telling its own story. From the playful Puppenbrunnen to the iconic Elisenbrunnen, these waterworks are scattered throughout the city. They’re not just decorative but an integral part of the city’s identity. So, when I decided to “finally do this,” I thought, why not make it fun and nerdy? Why not solve the <em>Traveling Salesman Problem</em> (TSP) to plan the route?
+            Aachen is famous for its fountains, each telling its own story. From the playful Puppenbrunnen to the iconic Elisenbrunnen, these waterworks are scattered throughout the city. They’re not just decorative but an integral part of the city’s identity. So, when I decided to “finally do this,” I thought, why not make it fun and nerdy as always? I am no peasant who walks from fountain to fountain I know some computational science and coding who comes up with a (near-)optimal solution to the <em><a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem" target="_blank">Traveling Salesman Problem</a></em> (TSP) to plan the route and never goes outside in summer to ever walk the actual route!
         </p>
         <p>
-            For the uninitiated, the TSP is a classic optimization problem where a "salesman" must visit \( N \) cities (or fountains, in our case), minimizing the total distance traveled and returning to the starting point. Formally, given a set of locations \( \{1, 2, \dots, N\} \) with distances \( d(i, j) \) between them, the goal is to minimize:
+            As many of you might already know the TSP is a classic optimization problem where a "salesman" must visit \( N \) cities (or fountains, in our case), minimizing the total distance traveled and returning to the starting point. Formally, given a set of locations \( \{1, 2, \dots, N\} \) with distances \( d(i, j) \) between them, the goal is to minimize:
         </p>
         <p>
             <code>Total Distance = Σ d(i, i+1)</code>
         </p>
         <p>
-            The catch? TSP is NP-complete. For larger \( N \), finding the exact solution is computationally infeasible. Instead, we settle for approximate solutions using heuristics like <em>simulated annealing</em>.
+            Of course, the TSP is NP-complete and for larger \( N \) (which in our case is around 32), finding the exact solution via brute force is computationally infeasible (\( O(N!) \)). Instead, we settle for approximate solutions using heuristics like <em>simulated annealing</em>.
         </p>
         <p>
-            The fountains list came from <a href="https://commons.wikimedia.org/wiki/Fountains_in_Aachen" target="_blank">Wiki Commons</a>, where each fountain has its coordinates, name, and sometimes a photo. After some cleaning (and nudging overlapping fountains by &lt;10m to make them unique), I fed the data into my code.
+            Now, to get the location of the fountains themselves, I fould a helpful list from <a href="https://commons.wikimedia.org/wiki/Fountains_in_Aachen" target="_blank">Wiki Commons</a>, where each fountain has its coordinates, name, and a photo. After some beautiful soup parsing and cleaning (and nudging overlapping fountains by 10m to make them unique), I fed the data into my code. (The overlapping fountains had to be moved to make sure the optimizer does not fail with zero distances between points.). This is where I tried two types of distances the first being "as the crow flies" and the second the walking distance between these (to make sure such a tour is feasiable within a days effort). Now for each of these, I had to calculate the distance matrix between every pair of points, \( d(i, j) \). For this, I used the following methods:
         </p>
-        <h2>Computing the Optimal Routes</h2>
         <h3>Case 1: As the Crow Flies</h3>
         <p>
-            Using the Haversine formula:
+            This was the easy case and I used the <a href="https://en.wikipedia.org/wiki/Haversine_formula" target="_blank">Haversine formula</a>:
         </p>
         <pre>
 d(i, j) = 2r * arcsin(sqrt(sin²((φj - φi)/2) + cos(φi)cos(φj)sin²((λj - λi)/2)))
         </pre>
         <p>
-            This gives the “straight-line” distance between fountains.
+        where <em>r</em> is the Earth's radius, <em>&phi;</em> is latitude, and <em>&lambda;</em> is longitude. This gives the “straight-line” distance between fountains.
         </p>
         <h3>Case 2: Walking Paths</h3>
         <p>
-            I used the <a href="https://openrouteservice.org/" target="_blank">OpenRouteService API</a> to compute the actual walking distances. The API returned a detailed distance matrix, making the solution more realistic for those of us without wings.
+            This case is of course, much harder to calculate and I ended using the <a href="https://openrouteservice.org/" target="_blank">OpenRouteService API</a> to compute the actual walking distances. The API returned a distance between two latitude longitude pairs and also a list of coordinates for the walking path. This makes the solution more realistic for those of us without wings. The idea and parts of the code for using the route service came from this blog <a href="ttps://towardsdatascience.com/solving-geographic-travelling-salesman-problems-using-python-e57284b14cd7" target="_blank">here</a> where a different optimizer is used for the same problem. 
         </p>
         <p>
-            Both distance matrices were fed into a simulated annealing algorithm (thanks, Frigidum!). The algorithm mimics the cooling process of metals, finding a near-optimal route by progressively "cooling" the search space.
+            Both distance matrices were fed into a simulated annealing algorithm (thanks, Frigidum!). The algorithm mimics the cooling process of metals, finding a near-optimal route by progressively "cooling" the search space. I did battle with the original optimizer - <a href="https://www.math.uwaterloo.ca/tsp/concorde.html" target="_blank">concorde</a>  as in the blog but failed to get it to run successfully on my laptop so I had to resigned to using simulated annealing as mentioned in this <a href="https://stackoverflow.com/questions/71196078/scalable-implementation-of-the-travelling-salesman-problem-in-python" target="_blank">stack overflow answer</a>. 
         </p>
-        <ul>
-            <li><strong>A dropdown menu:</strong> Switch between the "crow flies" and "walking" routes.</li>
-            <li><strong>Hover-over markers:</strong> Each fountain displays its name and an image from Wiki Commons.</li>
-            <li><strong>Measured distances:</strong> Easily compare the efficiency of both routes.</li>
-        </ul>
+
         <p>
-            For nerds like me, it’s also fun to note that the starting fountain is chosen based on proximity to the geographic mean of all points—a little mathematical cherry on top.
-        </p>
-        <ul>
-            <li><strong>It’s practical:</strong> The total distance (~20 km) is a leisurely outing, perfect for a summer day.</li>
-            <li><strong>It’s customizable:</strong> Want to include elevation? Mixed transport modes? Just tweak the distance matrix!</li>
-            <li><strong>It’s shareable:</strong> Download the KML file (link below) and import it into Google MyMaps for your own adventure.</li>
-        </ul>
-<!--         <p>
-            Solving TSP for fountains might seem trivial, but this problem has real-world applications:
-        </p>
-        <ul>
-            <li><strong>Logistics:</strong> Delivery routes for Amazon or UPS.</li>
-            <li><strong>Genetics:</strong> Sequencing DNA.</li>
-            <li><strong>Manufacturing:</strong> Circuit board design.</li>
-        </ul>
- -->        <p>Sometimes, though, it’s just about keeping a summer promise.</p>
+        Coming to the actual results itself, you can explore it yourself below with a dropdown menu allowing you to change from "crow flies" to "walking". You can hover over the markers to display some basic info about the fountins with an image from Wiki Commons. How did I choose the starting point I hear you asking? Well the starting fountain is chosen based on proximity to the geographic mean of all points—a little cherry on top. Now this solution of course, is great, its under 20km so a days worth of walking would be enough to cover all of them within a day. 
+    </p>
+
         <p>
-            After solving this computationally, it’s time for the fun part: visiting Aachen again and walking the optimized route. Aadu Huli, if you’re reading this, pack your walking shoes. We’ve got a date with some fountains.
+            After solving this computationally, it’s time for the fun part: visiting Aachen again and walking the optimized route. All my friends (and frenemies! :D), if you’re reading this, pack your walking shoes. We’ve got an Aachen trip coming up next summer.
         </p>
-        <ul>
-            <li><strong>Code:</strong> Available on GitHub.</li>
-            <li><strong>API Access:</strong> Create an account on OpenRouteService.</li>
-            <li><strong>Fountain Data:</strong> Use my provided CSV file.</li>
-            <li><strong>Map Import:</strong> Download the KML file <a href="#">here</a>.</li>
-        </ul>
+
+        <p>
+        If any of you want to use this for your own geeky walking trips, then head over to my semi documented code on github, signup for your own OpenRouteService API and put this into your environment variable and setup a CSV file of your favourite places to visit. For those of you wanting to do the Aachen fountain trip itself, here is a kml file you can import into your google maps. 
+        </p>
+
     </section>
 
 
