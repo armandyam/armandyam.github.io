@@ -2,7 +2,7 @@
 title: "Aachen Fountain Visualizer"
 excerpt: "Run a small TSP problem and plot the optimized route"
 collection: portfolio
-symbol: 'fas fa-fountain'
+symbol: 'fas fa-landmark'
 technologies: ["Python", "Folium", "BeautifulSoup", "MIT License"]
 ---
 
