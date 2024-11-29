@@ -3,7 +3,7 @@ title: "Aachen Fountain Visualizer"
 excerpt: "Run a small TSP problem and plot the optimized route"
 collection: portfolio
 symbol: 'fas fa-landmark'
-technologies: ["Python", "Folium", "BeautifulSoup", "MIT License"]
+technologies: ["Python", "Folium", "BeautifulSoup", "Frigidum", "MIT License"]
 ---
 
 Explore an interactive map of Aachen fountains, dynamically rendered using **Leaflet.js** and **Folium**. This project demonstrates the integration of Python for data generation and JavaScript for interactive map rendering. A blog post showing it in action can be found [here](https://armandyam.github.io/posts/2024/11/aachen-fountains/).
