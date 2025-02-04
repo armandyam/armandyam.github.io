@@ -79,9 +79,26 @@ tags:
 </head>
 <body>
     <section>
-        <p>
-            When I lived in Aachen—a city brimming with history, charm, and yes, <a href="https://aachen.de/en/ts/PDFs/City-of-fountains-and-monuments.pdf" target="_blank">fountains</a>—my friend and I made an ambitious summer plan: visit every fountain in town. A quintessential “summer” goal. But summer after summer, we let that plan evaporate. Now, years later, I’m finally solving this puzzle. Not just solving it—I’m turning it into a nice small computational adventure.
-        </p>
+
+    <p>Some experiments start small. A simple question, a little curiosity—just a modest goal of optimizing a walk between fountains. But then, the dataset gets bigger. The scope expands. And suddenly, you’re looking at a 101 km optimized walking tour of Aachen, covering every fountain, sculpture, garden, and Denkmal (monument) the city has to offer.</p>
+
+    <p>This was not the original plan.</p>
+
+    <p>It all started with my first <a href="https://armandyam.github.io/posts/2024/11/aachen-fountains/" target="_blank">fountain-optimizing blog post</a>, where I used the Traveling Salesman Problem (TSP) to find the best route between Aachen’s fountains. But then I stumbled upon a much larger dataset from <a href="https://de.wikipedia.org/wiki/Liste_der_Denkm%C3%A4ler,_Brunnen_und_Skulpturen_in_Aachen" target="_blank">Wikipedia</a>—one that included not just fountains, but sculptures, monuments, and gardens too. At this point, it was clear: I had to go all in.</p>
+
+    <p>Turns out, optimizing a 101 km route with hundreds of stops is no joke. Running the simulated annealing algorithm on my 2015 MacBook Pro took nearly a full day. Watching my laptop churn through permutations at a pace best described as <b>leisurely</b> made me question some of my life choices. But, in the end, it worked!</p>
+
+    <p>As before, I fed the location data into a TSP solver using simulated annealing, letting the algorithm work its magic. The result? A path that covers all major artistic and historical landmarks in Aachen in just over 100 km. It’s still a long walk, but hey, at least it’s optimized.</p>
+
+    <p>Let’s be honest: walking this entire route in one go is completely out of the question, at least based on my current fitness levels. Running it? Absolutely not. But biking—biking might still be an idea. A very bad idea, but an idea nonetheless.</p>
+
+    <p>That said, it’s probably best not to make this an actual goal. I need to remind myself that just because something is computationally interesting doesn’t mean I have to physically suffer for it. Probably.</p>
+
+    <p>If the original fountain walk was a fun side quest, this is the full-scale main mission. If anyone out there feels like attempting the <b>Grand Tour of Aachen</b> next summer, let me know—I might need company (no seriously).</p>
+
+    <p>You can download the <a href="/assets/optimized_aachen_grand_tour.kml" download="optimized_aachen_grand_tour.kml">larger KML file</a> to import into Google Maps for your own adventure.</p>
+
+    <p>Who knew a simple walk could turn into an optimization problem? Well, probably everyone who knows me.</p>
 
     </section>
 
