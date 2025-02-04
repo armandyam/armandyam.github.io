@@ -95,7 +95,7 @@ tags:
         // var myMap = L.map('map_id').setView([50.776351, 6.083862], 13);
         // var tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(myMap);
 
-        function updateMap(routeType) {
+         window.updateMap = function(routeType) {
             clearMap();
 
             if (paths && paths[routeType]) {
