@@ -480,6 +480,12 @@
     "Longitude":9.5531527
   },
   {
+    "City":"Luxembourg",
+    "Country":"Luxembourg",
+    "Latitude":49.6112768,
+    "Longitude":6.129799
+  },
+  {
     "City":"Valletta",
     "Country":"Malta",
     "Latitude":35.8989979,
@@ -730,6 +736,12 @@
     "Country":"USA",
     "Latitude":33.7489924,
     "Longitude":-84.3902644
+  },
+  {
+    "City":"Chicago",
+    "Country":"USA",
+    "Latitude":41.8755616,
+    "Longitude":-87.6244212
   },
   {
     "City":"Minneapolis",
@@ -1096,5 +1108,113 @@
     "Country":"Indonesia",
     "Latitude":-6.1754049,
     "Longitude":106.827168
+  },
+  {
+    "City":"Mt Fuji",
+    "Country":"Japan",
+    "Latitude":35.362799,
+    "Longitude":138.730781
+  },
+  {
+    "City":"Arashiaya",
+    "Country":"Japan",
+    "Latitude":43.19309075,
+    "Longitude":140.9983509
+  },
+  {
+    "City":"Miyajima",
+    "Country":"Japan",
+    "Latitude":34.271448,
+    "Longitude":132.3088721805
+  },
+  {
+    "City":"Fukuoka",
+    "Country":"Japan",
+    "Latitude":33.6251241,
+    "Longitude":130.6180016
+  },
+  {
+    "City":"Secret Lagoon",
+    "Country":"Philippines",
+    "Latitude":11.14501175,
+    "Longitude":119.3123956274
+  },
+  {
+    "City":"Big lagoon",
+    "Country":"Philippines",
+    "Latitude":11.1547427,
+    "Longitude":119.320873057
+  },
+  {
+    "City":"Shimizu Island",
+    "Country":"Philippines",
+    "Latitude":11.13899515,
+    "Longitude":119.3184367535
+  },
+  {
+    "City":"Papaya beach",
+    "Country":"Philippines",
+    "Latitude":10.4123463,
+    "Longitude":119.1675328
+  },
+  {
+    "City":"Cu Chi",
+    "Country":"Vietnam",
+    "Latitude":11.0370567,
+    "Longitude":106.5024104029
+  },
+  {
+    "City":"Phi Phi",
+    "Country":"Thailand",
+    "Latitude":19.5285843,
+    "Longitude":98.2361646
+  },
+  {
+    "City":"Maya Beach",
+    "Country":"Thailand",
+    "Latitude":7.9958181,
+    "Longitude":98.2916435
+  },
+  {
+    "City":"Bamboo island",
+    "Country":"Thailand",
+    "Latitude":12.935749,
+    "Longitude":100.6741102781
+  },
+  {
+    "City":"Ubud",
+    "Country":"Indonesia",
+    "Latitude":-8.5068977,
+    "Longitude":115.2622931
+  },
+  {
+    "City":"Kuta",
+    "Country":"Indonesia",
+    "Latitude":-8.7278354,
+    "Longitude":115.1730049
+  },
+  {
+    "City":"Denpasar",
+    "Country":"Indonesia",
+    "Latitude":-8.6524973,
+    "Longitude":115.2191175
+  },
+  {
+    "City":"Kalong island",
+    "Country":"Indonesia",
+    "Latitude":-8.6050015,
+    "Longitude":119.768705993
+  },
+  {
+    "City":"Pink beach",
+    "Country":"Indonesia",
+    "Latitude":-8.66590745,
+    "Longitude":119.5393386893
+  },
+  {
+    "City":"Manta point",
+    "Country":"Indonesia",
+    "Latitude":-8.7984847,
+    "Longitude":115.5294895
   }
 ]
