@@ -1,5 +1,17 @@
 [
   {
+    "City":"Tirana",
+    "Country":"Albania",
+    "Latitude":41.3281482,
+    "Longitude":19.8184435
+  },
+  {
+    "City":"Shkoder",
+    "Country":"Albania",
+    "Latitude":42.0681371,
+    "Longitude":19.5121437
+  },
+  {
     "City":"Vienna",
     "Country":"Austria",
     "Latitude":48.2083537,
@@ -12,10 +24,22 @@
     "Longitude":11.3927685
   },
   {
+    "City":"Salzburg",
+    "Country":"Austria",
+    "Latitude":47.7981346,
+    "Longitude":13.0464806
+  },
+  {
     "City":"Brussels",
     "Country":"Belgium",
     "Latitude":50.8465573,
     "Longitude":4.351697
+  },
+  {
+    "City":"La Roche",
+    "Country":"Belgium",
+    "Latitude":50.6105423,
+    "Longitude":4.5397458
   },
   {
     "City":"Ghent",
@@ -24,28 +48,82 @@
     "Longitude":3.7250121
   },
   {
-    "City":"La Roche",
-    "Country":"Belgium",
-    "Latitude":50.6105423,
-    "Longitude":4.5397458
-  },
-  {
-    "City":"Oostende",
+    "City":"Ostend",
     "Country":"Belgium",
     "Latitude":51.2258565,
     "Longitude":2.919496
   },
   {
-    "City":"La Roche",
+    "City":"Koksijde",
     "Country":"Belgium",
-    "Latitude":50.6105423,
-    "Longitude":4.5397458
+    "Latitude":51.1187723,
+    "Longitude":2.6349277
+  },
+  {
+    "City":"La Roche-en-Ardenne",
+    "Country":"Belgium",
+    "Latitude":50.1602833,
+    "Longitude":5.5627594032
+  },
+  {
+    "City":"Liege",
+    "Country":"Belgium",
+    "Latitude":50.47081585,
+    "Longitude":5.7735459035
+  },
+  {
+    "City":"Spa",
+    "Country":"Belgium",
+    "Latitude":50.4920654,
+    "Longitude":5.8627569
+  },
+  {
+    "City":"Charleroi",
+    "Country":"Belgium",
+    "Latitude":50.4116233,
+    "Longitude":4.444528
+  },
+  {
+    "City":"Bruges",
+    "Country":"Belgium",
+    "Latitude":51.2085526,
+    "Longitude":3.226772
+  },
+  {
+    "City":"Mostar",
+    "Country":"Bosnia and Herzegovina",
+    "Latitude":43.3435855,
+    "Longitude":17.8076584
   },
   {
     "City":"Montreal",
     "Country":"Canada",
     "Latitude":45.5031824,
     "Longitude":-73.5698065
+  },
+  {
+    "City":"Ottawa",
+    "Country":"Canada",
+    "Latitude":45.4208777,
+    "Longitude":-75.6901106
+  },
+  {
+    "City":"Zagreb",
+    "Country":"Croatia",
+    "Latitude":45.8130967,
+    "Longitude":15.9772795
+  },
+  {
+    "City":"Dubrovnik",
+    "Country":"Croatia",
+    "Latitude":42.6491029,
+    "Longitude":18.0939501
+  },
+  {
+    "City":"Split",
+    "Country":"Croatia",
+    "Latitude":43.5116383,
+    "Longitude":16.4399659
   },
   {
     "City":"Prague",
@@ -58,6 +136,12 @@
     "Country":"Czech",
     "Latitude":49.7341363,
     "Longitude":15.0928954
+  },
+  {
+    "City":"Brno",
+    "Country":"Czech",
+    "Latitude":49.2052271,
+    "Longitude":16.6021742039
   },
   {
     "City":"Copenhagen",
@@ -78,46 +162,10 @@
     "Longitude":2.3772525
   },
   {
-    "City":"Aachen",
-    "Country":"Germany",
-    "Latitude":50.776351,
-    "Longitude":6.083862
-  },
-  {
-    "City":"Cologne",
-    "Country":"Germany",
-    "Latitude":50.938361,
-    "Longitude":6.959974
-  },
-  {
     "City":"Berlin",
     "Country":"Germany",
     "Latitude":52.510885,
     "Longitude":13.3989367
-  },
-  {
-    "City":"Munich",
-    "Country":"Germany",
-    "Latitude":48.1371079,
-    "Longitude":11.5753822
-  },
-  {
-    "City":"Stuttgart",
-    "Country":"Germany",
-    "Latitude":48.7784485,
-    "Longitude":9.1800132
-  },
-  {
-    "City":"Suhl",
-    "Country":"Germany",
-    "Latitude":50.6086518,
-    "Longitude":10.6926437
-  },
-  {
-    "City":"Frankfurt",
-    "Country":"Germany",
-    "Latitude":50.1106444,
-    "Longitude":8.6820917
   },
   {
     "City":"Bonn",
@@ -126,22 +174,52 @@
     "Longitude":7.1024635
   },
   {
+    "City":"Aachen",
+    "Country":"Germany",
+    "Latitude":50.776351,
+    "Longitude":6.083862
+  },
+  {
+    "City":"D\u00fcsseldorf",
+    "Country":"Germany",
+    "Latitude":51.2254018,
+    "Longitude":6.7763137
+  },
+  {
+    "City":"Frankfurt",
+    "Country":"Germany",
+    "Latitude":50.1106444,
+    "Longitude":8.6820917
+  },
+  {
+    "City":"Cologne",
+    "Country":"Germany",
+    "Latitude":50.938361,
+    "Longitude":6.959974
+  },
+  {
+    "City":"Stuttgart",
+    "Country":"Germany",
+    "Latitude":48.7784485,
+    "Longitude":9.1800132
+  },
+  {
+    "City":"M\u00fcnich",
+    "Country":"Germany",
+    "Latitude":48.1371079,
+    "Longitude":11.5753822
+  },
+  {
+    "City":"S\u00fchl",
+    "Country":"Germany",
+    "Latitude":50.6086518,
+    "Longitude":10.6926437
+  },
+  {
     "City":"Heidelberg",
     "Country":"Germany",
     "Latitude":49.4093582,
     "Longitude":8.694724
-  },
-  {
-    "City":"Speyer",
-    "Country":"Germany",
-    "Latitude":49.3165553,
-    "Longitude":8.433615
-  },
-  {
-    "City":"Wurzburg",
-    "Country":"Germany",
-    "Latitude":49.7780356,
-    "Longitude":9.9434769071
   },
   {
     "City":"Essen",
@@ -150,16 +228,10 @@
     "Longitude":7.0158171
   },
   {
-    "City":"Wuppertal",
+    "City":"Mannheim",
     "Country":"Germany",
-    "Latitude":51.264018,
-    "Longitude":7.1780374
-  },
-  {
-    "City":"Duisburg",
-    "Country":"Germany",
-    "Latitude":51.434999,
-    "Longitude":6.759562
+    "Latitude":49.4892913,
+    "Longitude":8.4673098
   },
   {
     "City":"Athens",
@@ -174,28 +246,16 @@
     "Longitude":19.0402383
   },
   {
-    "City":"Bangalore",
-    "Country":"India",
-    "Latitude":12.98815675,
-    "Longitude":77.622600038
-  },
-  {
     "City":"Chennai",
     "Country":"India",
     "Latitude":13.0836939,
     "Longitude":80.270186
   },
   {
-    "City":"Hyderabad",
+    "City":"Bangalore",
     "Country":"India",
-    "Latitude":17.360589,
-    "Longitude":78.4740613
-  },
-  {
-    "City":"Delhi",
-    "Country":"India",
-    "Latitude":28.6273928,
-    "Longitude":77.1716954
+    "Latitude":12.98815675,
+    "Longitude":77.622600038
   },
   {
     "City":"Mumbai",
@@ -204,28 +264,10 @@
     "Longitude":72.8692035
   },
   {
-    "City":"Kolkata",
+    "City":"Hyderabad",
     "Country":"India",
-    "Latitude":22.5726459,
-    "Longitude":88.3638953
-  },
-  {
-    "City":"Nagpur",
-    "Country":"India",
-    "Latitude":21.1498134,
-    "Longitude":79.0820556
-  },
-  {
-    "City":"Mysore",
-    "Country":"India",
-    "Latitude":12.3051828,
-    "Longitude":76.6553609
-  },
-  {
-    "City":"Goa",
-    "Country":"India",
-    "Latitude":15.3004543,
-    "Longitude":74.0855134
+    "Latitude":17.360589,
+    "Longitude":78.4740613
   },
   {
     "City":"Kochi",
@@ -234,22 +276,10 @@
     "Longitude":76.2454436
   },
   {
-    "City":"Kumbakonam",
+    "City":"Mysuru",
     "Country":"India",
-    "Latitude":10.9604108,
-    "Longitude":79.3820861
-  },
-  {
-    "City":"Mandya",
-    "Country":"India",
-    "Latitude":12.6368939,
-    "Longitude":76.7275477143
-  },
-  {
-    "City":"Belgaum",
-    "Country":"India",
-    "Latitude":15.8572666,
-    "Longitude":74.5069343
+    "Latitude":12.3051828,
+    "Longitude":76.6553609
   },
   {
     "City":"Madurai",
@@ -258,16 +288,46 @@
     "Longitude":78.1140983
   },
   {
+    "City":"Coimbatore",
+    "Country":"India",
+    "Latitude":11.0018115,
+    "Longitude":76.9628425
+  },
+  {
+    "City":"Kumbakonam",
+    "Country":"India",
+    "Latitude":10.9604108,
+    "Longitude":79.3820861
+  },
+  {
+    "City":"Pondicherry",
+    "Country":"India",
+    "Latitude":10.91564885,
+    "Longitude":79.8069487984
+  },
+  {
+    "City":"Tirunelveli",
+    "Country":"India",
+    "Latitude":8.7978177217,
+    "Longitude":77.8113269605
+  },
+  {
+    "City":"Rameshwaram",
+    "Country":"India",
+    "Latitude":9.2844657,
+    "Longitude":79.3125553
+  },
+  {
     "City":"Trivandrum",
     "Country":"India",
     "Latitude":8.4882267,
     "Longitude":76.947551
   },
   {
-    "City":"Shivamogga",
+    "City":"Mangalore",
     "Country":"India",
-    "Latitude":13.9326093,
-    "Longitude":75.574978
+    "Latitude":12.8698101,
+    "Longitude":74.8430082
   },
   {
     "City":"Vizag",
@@ -282,16 +342,70 @@
     "Longitude":73.8545071
   },
   {
-    "City":"Dehradun",
+    "City":"Nashik",
     "Country":"India",
-    "Latitude":30.3255646,
-    "Longitude":78.0436813
+    "Latitude":20.0112475,
+    "Longitude":73.7902364
   },
   {
-    "City":"Allhabad",
+    "City":"Vijayawada",
     "Country":"India",
-    "Latitude":20.652746,
-    "Longitude":85.5931721
+    "Latitude":16.5115306,
+    "Longitude":80.6160469
+  },
+  {
+    "City":"Kolkata",
+    "Country":"India",
+    "Latitude":22.5726459,
+    "Longitude":88.3638953
+  },
+  {
+    "City":"Ranchi",
+    "Country":"India",
+    "Latitude":23.3700501,
+    "Longitude":85.3250387
+  },
+  {
+    "City":"Jaipur",
+    "Country":"India",
+    "Latitude":26.9154576,
+    "Longitude":75.8189817
+  },
+  {
+    "City":"Ajmer",
+    "Country":"India",
+    "Latitude":26.4691,
+    "Longitude":74.639
+  },
+  {
+    "City":"Allahabad",
+    "Country":"India",
+    "Latitude":25.4381302,
+    "Longitude":81.8338005
+  },
+  {
+    "City":"New Delhi",
+    "Country":"India",
+    "Latitude":28.64308585,
+    "Longitude":77.2192670573
+  },
+  {
+    "City":"Gorakhpur",
+    "Country":"India",
+    "Latitude":26.6677977,
+    "Longitude":83.3642333783
+  },
+  {
+    "City":"Varanasi",
+    "Country":"India",
+    "Latitude":25.3356491,
+    "Longitude":83.0076292
+  },
+  {
+    "City":"Gaya",
+    "Country":"India",
+    "Latitude":24.67938895,
+    "Longitude":85.0115832965
   },
   {
     "City":"Agra",
@@ -306,22 +420,10 @@
     "Longitude":77.6855554
   },
   {
-    "City":"Ayodhya",
-    "Country":"India",
-    "Latitude":26.7990707,
-    "Longitude":82.2052321
-  },
-  {
-    "City":"Varanasi",
-    "Country":"India",
-    "Latitude":25.3356491,
-    "Longitude":83.0076292
-  },
-  {
-    "City":"Lucknow",
-    "Country":"India",
-    "Latitude":26.8381,
-    "Longitude":80.9346001
+    "City":"Dublin",
+    "Country":"Ireland",
+    "Latitude":53.3493795,
+    "Longitude":-6.2605593
   },
   {
     "City":"Pisa",
@@ -348,10 +450,52 @@
     "Longitude":11.2556404
   },
   {
-    "City":"Luxembourg city",
-    "Country":"Luxembourg",
-    "Latitude":49.6112768,
-    "Longitude":6.129799
+    "City":"Sicilia",
+    "Country":"Italy",
+    "Latitude":37.587794,
+    "Longitude":14.155048
+  },
+  {
+    "City":"Catania",
+    "Country":"Italy",
+    "Latitude":37.5023612,
+    "Longitude":15.0873718
+  },
+  {
+    "City":"Salina",
+    "Country":"Italy",
+    "Latitude":38.55904115,
+    "Longitude":14.8358906072
+  },
+  {
+    "City":"Tokyo",
+    "Country":"Japan",
+    "Latitude":35.6768601,
+    "Longitude":139.7638947
+  },
+  {
+    "City":"Liechtenstein",
+    "Country":"Liechtenstein",
+    "Latitude":47.1416307,
+    "Longitude":9.5531527
+  },
+  {
+    "City":"Valletta",
+    "Country":"Malta",
+    "Latitude":35.8989979,
+    "Longitude":14.5136607
+  },
+  {
+    "City":"Canc\u00fan",
+    "Country":"Mexico",
+    "Latitude":21.1527467,
+    "Longitude":-86.8425761
+  },
+  {
+    "City":"Podgorica",
+    "Country":"Montenegro",
+    "Latitude":42.4415238,
+    "Longitude":19.2621081
   },
   {
     "City":"Marrakesh",
@@ -360,16 +504,28 @@
     "Longitude":-7.9891608
   },
   {
-    "City":"Dordrecht",
-    "Country":"Netherlands",
-    "Latitude":51.7689546,
-    "Longitude":4.6867890546
+    "City":"Kathmandu",
+    "Country":"Nepal",
+    "Latitude":27.708317,
+    "Longitude":85.3205817
+  },
+  {
+    "City":"Jomsom",
+    "Country":"Nepal",
+    "Latitude":28.7838097,
+    "Longitude":83.7304953
   },
   {
     "City":"Amsterdam",
     "Country":"Netherlands",
     "Latitude":52.3730796,
     "Longitude":4.8924534
+  },
+  {
+    "City":"Dordrecht",
+    "Country":"Netherlands",
+    "Latitude":51.7689546,
+    "Longitude":4.6867890546
   },
   {
     "City":"Den Haag",
@@ -390,10 +546,88 @@
     "Longitude":5.478633
   },
   {
+    "City":"Delft",
+    "Country":"Netherlands",
+    "Latitude":51.9994572,
+    "Longitude":4.3627245385
+  },
+  {
+    "City":"Rotterdam",
+    "Country":"Netherlands",
+    "Latitude":51.9244424,
+    "Longitude":4.47775
+  },
+  {
+    "City":"Muscat",
+    "Country":"Oman",
+    "Latitude":23.5882019,
+    "Longitude":58.3829448
+  },
+  {
+    "City":"Warsaw",
+    "Country":"Poland",
+    "Latitude":52.2319581,
+    "Longitude":21.0067249
+  },
+  {
     "City":"Katowice",
     "Country":"Poland",
     "Latitude":50.2137321,
     "Longitude":19.0058877566
+  },
+  {
+    "City":"Auschwitz",
+    "Country":"Poland",
+    "Latitude":50.0382443,
+    "Longitude":19.2214053
+  },
+  {
+    "City":"Lisbon",
+    "Country":"Portugal",
+    "Latitude":38.7077507,
+    "Longitude":-9.1365919
+  },
+  {
+    "City":"Porto",
+    "Country":"Portugal",
+    "Latitude":41.1494512,
+    "Longitude":-8.6107884
+  },
+  {
+    "City":"Doha",
+    "Country":"Qatar",
+    "Latitude":25.2856329,
+    "Longitude":51.5264162
+  },
+  {
+    "City":"Timisoara",
+    "Country":"Romania",
+    "Latitude":45.7538355,
+    "Longitude":21.2257474
+  },
+  {
+    "City":"Riyadh",
+    "Country":"Saudi Arabia",
+    "Latitude":23.333333,
+    "Longitude":45.333333
+  },
+  {
+    "City":"Belgrade",
+    "Country":"Serbia",
+    "Latitude":44.8178131,
+    "Longitude":20.4568974
+  },
+  {
+    "City":"Singapore",
+    "Country":"Singapore",
+    "Latitude":1.357107,
+    "Longitude":103.8194992
+  },
+  {
+    "City":"Ljubljana",
+    "Country":"Slovenia",
+    "Latitude":46.0500268,
+    "Longitude":14.5069289
   },
   {
     "City":"Bratislava",
@@ -402,10 +636,10 @@
     "Longitude":17.1093063
   },
   {
-    "City":"Toledo",
+    "City":"Barcelona",
     "Country":"Spain",
-    "Latitude":39.8560679,
-    "Longitude":-4.0239568
+    "Latitude":41.3828939,
+    "Longitude":2.1774322
   },
   {
     "City":"Madrid",
@@ -414,22 +648,16 @@
     "Longitude":-3.7035825
   },
   {
-    "City":"Barcelona",
-    "Country":"Spain",
-    "Latitude":41.3828939,
-    "Longitude":2.1774322
-  },
-  {
-    "City":"Zurich",
+    "City":"Z\u00fcrich",
     "Country":"Switzerland",
     "Latitude":47.3744489,
     "Longitude":8.5410422
   },
   {
-    "City":"Geneva",
+    "City":"Basel",
     "Country":"Switzerland",
-    "Latitude":46.2017559,
-    "Longitude":6.1466014
+    "Latitude":47.5581077,
+    "Longitude":7.5878261
   },
   {
     "City":"Lausanne",
@@ -438,16 +666,10 @@
     "Longitude":6.6327025
   },
   {
-    "City":"Interlaken",
-    "Country":"Switzerland",
-    "Latitude":46.6855231,
-    "Longitude":7.8585139
-  },
-  {
-    "City":"Bern",
-    "Country":"Switzerland",
-    "Latitude":46.9484742,
-    "Longitude":7.4521749
+    "City":"Abu Dhabi",
+    "Country":"UAE",
+    "Latitude":24.4538352,
+    "Longitude":54.3774014
   },
   {
     "City":"London",
@@ -456,10 +678,22 @@
     "Longitude":-0.1440550845
   },
   {
-    "City":"Edinburg",
+    "City":"Edinburgh",
     "Country":"UK",
     "Latitude":55.9533456,
     "Longitude":-3.1883749
+  },
+  {
+    "City":"Oxford",
+    "Country":"UK",
+    "Latitude":51.7520131,
+    "Longitude":-1.2578499
+  },
+  {
+    "City":"Surrey",
+    "Country":"UK",
+    "Latitude":51.2715316,
+    "Longitude":-0.3414523511
   },
   {
     "City":"Manchester",
@@ -468,64 +702,10 @@
     "Longitude":-2.2451148
   },
   {
-    "City":"York",
+    "City":"Nottingham",
     "Country":"UK",
-    "Latitude":53.96565785,
-    "Longitude":-1.0743052445
-  },
-  {
-    "City":"Banbury",
-    "Country":"UK",
-    "Latitude":52.0601807,
-    "Longitude":-1.3402795
-  },
-  {
-    "City":"Swindon",
-    "Country":"UK",
-    "Latitude":51.5615327,
-    "Longitude":-1.7854322
-  },
-  {
-    "City":"Warwick",
-    "Country":"UK",
-    "Latitude":52.2814519,
-    "Longitude":-1.5815742
-  },
-  {
-    "City":"Loch ness",
-    "Country":"UK",
-    "Latitude":57.27412225,
-    "Longitude":-4.4849684042
-  },
-  {
-    "City":"Inverness",
-    "Country":"UK",
-    "Latitude":57.4790124,
-    "Longitude":-4.225739
-  },
-  {
-    "City":"Glasgow",
-    "Country":"UK",
-    "Latitude":55.861155,
-    "Longitude":-4.2501687
-  },
-  {
-    "City":"Boston",
-    "Country":"USA",
-    "Latitude":42.3554334,
-    "Longitude":-71.060511
-  },
-  {
-    "City":"San Diego",
-    "Country":"USA",
-    "Latitude":32.7174202,
-    "Longitude":-117.162772
-  },
-  {
-    "City":"San Francisco",
-    "Country":"USA",
-    "Latitude":37.7792588,
-    "Longitude":-122.4193286
+    "Latitude":52.9534193,
+    "Longitude":-1.1496461
   },
   {
     "City":"New York",
@@ -534,16 +714,70 @@
     "Longitude":-74.0060152
   },
   {
-    "City":"Denver",
+    "City":"New Jersey",
     "Country":"USA",
-    "Latitude":39.7392364,
-    "Longitude":-104.984862
+    "Latitude":40.0757384,
+    "Longitude":-74.4041622
+  },
+  {
+    "City":"Pittsburgh",
+    "Country":"USA",
+    "Latitude":40.4416941,
+    "Longitude":-79.9900861
   },
   {
     "City":"Atlanta",
     "Country":"USA",
     "Latitude":33.7489924,
     "Longitude":-84.3902644
+  },
+  {
+    "City":"Minneapolis",
+    "Country":"USA",
+    "Latitude":44.9772995,
+    "Longitude":-93.2654692
+  },
+  {
+    "City":"San Francisco",
+    "Country":"USA",
+    "Latitude":37.7792588,
+    "Longitude":-122.4193286
+  },
+  {
+    "City":"San Diego",
+    "Country":"USA",
+    "Latitude":32.7174202,
+    "Longitude":-117.162772
+  },
+  {
+    "City":"Los Angeles",
+    "Country":"USA",
+    "Latitude":34.0536909,
+    "Longitude":-118.242766
+  },
+  {
+    "City":"Boston",
+    "Country":"USA",
+    "Latitude":42.3554334,
+    "Longitude":-71.060511
+  },
+  {
+    "City":"Spokane",
+    "Country":"USA",
+    "Latitude":47.6571934,
+    "Longitude":-117.42351
+  },
+  {
+    "City":"Vatican City",
+    "Country":"Vatican City",
+    "Latitude":41.9034912,
+    "Longitude":12.4528349
+  },
+  {
+    "City":"Sana'a",
+    "Country":"Yemen",
+    "Latitude":15.35,
+    "Longitude":44.2
   },
   {
     "City":"Kaunas",
@@ -588,24 +822,6 @@
     "Longitude":24.9427473
   },
   {
-    "City":"Suomenlinna",
-    "Country":"Finland",
-    "Latitude":60.1443884,
-    "Longitude":24.9854048
-  },
-  {
-    "City":"Turku",
-    "Country":"Finland",
-    "Latitude":60.4517531,
-    "Longitude":22.2670522
-  },
-  {
-    "City":"Vaduz",
-    "Country":"Liechtenstein",
-    "Latitude":47.1392862,
-    "Longitude":9.5227962
-  },
-  {
     "City":"Sofia",
     "Country":"Bulgaria",
     "Latitude":42.6977028,
@@ -622,6 +838,12 @@
     "Country":"Bulgaria",
     "Latitude":42.1418541,
     "Longitude":24.7499297
+  },
+  {
+    "City":"Koprivshtitsa",
+    "Country":"Bulgaria",
+    "Latitude":42.6375324,
+    "Longitude":24.3577991
   },
   {
     "City":"Skopje",
@@ -724,12 +946,6 @@
     "Country":"Peru",
     "Latitude":-12.5938633,
     "Longitude":-69.1866773
-  },
-  {
-    "City":"Abu Dhabi",
-    "Country":"UAE",
-    "Latitude":24.4538352,
-    "Longitude":54.3774014
   },
   {
     "City":"Tokyo",
