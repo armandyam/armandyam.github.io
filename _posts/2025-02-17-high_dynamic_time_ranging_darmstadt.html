@@ -29,19 +29,17 @@ tags:
         }
         .container { 
             position: relative; 
-            width: 800px; 
-            height: auto; 
-            max-width: 100%;
+            width: 600px; 
+            height: 400px; 
             overflow: hidden; 
             margin-bottom: 20px; 
         }
         .image { 
             position: absolute; 
             width: 100%; 
-            height: auto;
-            max-height: 500px; 
-            object-fit: contain; 
+            height: 100%;
             transition: clip-path 1s ease-in-out; 
+            clip-path: inset(0 100% 0 0); /* Start hidden */
         }
         .controls { 
             display: flex; 
@@ -70,9 +68,9 @@ tags:
 
     <div class="container">
         <img id="l2r" class="image" src="/assets/pictures/output_left_to_right_temporal.jpeg" style="clip-path: inset(0 0 0 0);">
-        <img id="r2l" class="image" src="/assets/pictures/output_right_to_left_temporal.jpeg" style="clip-path: inset(100% 0 0 0);">
-        <img id="t2b" class="image" src="/assets/pictures/output_top_to_bottom_temporal.jpeg" style="clip-path: inset(100% 0 0 0);">
-        <img id="b2t" class="image" src="/assets/pictures/output_bottom_to_top_temporal.jpeg" style="clip-path: inset(100% 0 0 0);">
+        <img id="r2l" class="image" src="/assets/pictures/output_right_to_left_temporal.jpeg">
+        <img id="t2b" class="image" src="/assets/pictures/output_top_to_bottom_temporal.jpeg">
+        <img id="b2t" class="image" src="/assets/pictures/output_bottom_to_top_temporal.jpeg">
     </div>
 
     <div class="controls">
@@ -85,17 +83,18 @@ tags:
     <script>
         function showImage(id, direction) {
 
-            document.getElementById('l2r').style.clipPath = "inset(100% 0 0 0)";
-            document.getElementById('r2l').style.clipPath = "inset(100% 0 0 0)";
-            document.getElementById('t2b').style.clipPath = "inset(100% 0 0 0)";
-            document.getElementById('b2t').style.clipPath = "inset(100% 0 0 0)";
+            document.getElementById('l2r').style.clipPath = "inset(0 100% 0 0)";
+            document.getElementById('r2l').style.clipPath = "inset(0 100% 0 0)";
+            document.getElementById('t2b').style.clipPath = "inset(0 100% 0 0)";
+            document.getElementById('b2t').style.clipPath = "inset(0 100% 0 0)";
+
 
             let img = document.getElementById(id);
             if (direction === 'left') {
-                img.style.clipPath = "inset(0 100% 0 0)";
+                img.style.clipPath = "inset(0 0 0 100%)";
                 setTimeout(() => img.style.clipPath = "inset(0 0 0 0)", 50);
             } else if (direction === 'right') {
-                img.style.clipPath = "inset(0 0 0 100%)";
+                img.style.clipPath = "inset(0 100% 0 0)";
                 setTimeout(() => img.style.clipPath = "inset(0 0 0 0)", 50);
             } else if (direction === 'up') {
                 img.style.clipPath = "inset(100% 0 0 0)";
@@ -115,3 +114,4 @@ tags:
 
 </body>
 </html>
+
