@@ -8,7 +8,6 @@ tags:
   - photography
   - python
 ---
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -40,7 +39,7 @@ tags:
             width: 100%; 
             height: 100%;
             transition: clip-path 1s ease-in-out; 
-            clip-path: inset(0 100% 0 0); 
+            clip-path: inset(0 100% 0 0); /* Start hidden */
         }
         .controls { 
             display: flex; 
@@ -64,49 +63,52 @@ tags:
 
     <div class="content">
         <h1>High Dynamic Time Ranging (HDTR) Images</h1>
-        <p>In the past, I had the idea to create High Dynamic Time Ranging (HDTR) images, but like many of my ideas, it remained just that—an idea. The usual culprit? Time. I never got around to implementing it. But now, thanks to GPT and modern tools, I’ve been accelerating my creative process and converting all these dormant ideas into reality with ease.</p>
-
-        <p>The inspiration for this came from two fascinating sources. First, the HDTR project showcased here: <a href="https://mk.bcgsc.ca/fun/hdtr/?gallery" target="_blank">BCGSC HDTR</a>, which creates stunning images that compress time into a single frame. The second was from Eirik Solheim’s year-long time-lapse project (<a href="https://eirikso.com/2011/01/04/one-year-in-one-image/" target="_blank">One Year in One Image</a>), where an entire year’s worth of photos is merged into a single, smooth transition.</p>
+        <p>These images were taken over a 24-hour period around the equinox last year to capture an equal balance of day and night. The final composition features four distinct directions of time movement: left to right, right to left, top to bottom, and bottom to top. Click an arrow to reveal the corresponding blending effect in the right direction.</p>
     </div>
 
     <div class="container">
-        <img id="raw" class="image" src="/assets/pictures/output_left_to_right_temporal.jpeg" style="clip-path: inset(0 0 0 0);">
-        <img id="spatial" class="image" src="/assets/pictures/output_left_to_right_temporal.jpeg">
-        <img id="both" class="image" src="/assets/pictures/sports.png">
+        <img id="l2r" class="image" src="/assets/pictures/output_left_to_right_temporal.jpeg" style="clip-path: inset(0 0 0 0);">
+        <img id="r2l" class="image" src="/assets/pictures/output_right_to_left_temporal.jpeg">
+        <img id="t2b" class="image" src="/assets/pictures/output_top_to_bottom_temporal.jpeg">
+        <img id="b2t" class="image" src="/assets/pictures/output_bottom_to_top_temporal.jpeg">
     </div>
 
     <div class="controls">
-        <span class="arrow" onclick="showImage('raw')">⬆</span>
-        <span class="arrow" onclick="showImage('spatial')">⬅</span>
-        <span class="arrow" onclick="showImage('both')">➡</span>
-        <span class="arrow" onclick="showImage('both')">⬇</span>
+        <span class="arrow" onclick="showImage('b2t', 'up')">⬆</span>
+        <span class="arrow" onclick="showImage('r2l', 'left')">⬅</span>
+        <span class="arrow" onclick="showImage('l2r', 'right')">➡</span>
+        <span class="arrow" onclick="showImage('t2b', 'down')">⬇</span>
     </div>
 
     <script>
-        function showImage(id) {
+        function showImage(id, direction) {
+            // Hide all images first
             document.getElementById('raw').style.clipPath = "inset(0 100% 0 0)";
             document.getElementById('spatial').style.clipPath = "inset(0 100% 0 0)";
             document.getElementById('both').style.clipPath = "inset(0 100% 0 0)";
 
-            document.getElementById(id).style.clipPath = "inset(0 0 0 0)";
+            // Apply the correct clip-path transition based on the direction
+            let img = document.getElementById(id);
+            if (direction === 'left') {
+                img.style.clipPath = "inset(0 0 0 100%)";
+                setTimeout(() => img.style.clipPath = "inset(0 0 0 0)", 50);
+            } else if (direction === 'right') {
+                img.style.clipPath = "inset(0 100% 0 0)";
+                setTimeout(() => img.style.clipPath = "inset(0 0 0 0)", 50);
+            } else if (direction === 'up') {
+                img.style.clipPath = "inset(100% 0 0 0)";
+                setTimeout(() => img.style.clipPath = "inset(0 0 0 0)", 50);
+            } else if (direction === 'down') {
+                img.style.clipPath = "inset(0 0 100% 0)";
+                setTimeout(() => img.style.clipPath = "inset(0 0 0 0)", 50);
+            }
         }
     </script>
 
     <div class="content">
-        <h2>Comparing Different Blending Approaches</h2>
-        <p>To illustrate the blending process, here are three images:</p>
-        <ul>
-            <li>The raw image without any post-processing.</li>
-            <li>The image with only spatial blending.</li>
-            <li>The image with both spatial and temporal blending.</li>
-        </ul>
-        <p>These images were taken over a 24-hour period around the equinox last year to capture an equal balance of day and night. The final composition features four distinct directions of time movement: left to right, right to left, top to bottom, and bottom to top. The direction of time movement is represented by an arrow on the bottom left of each image.</p>
-
         <p>Now, I’m thinking of taking this idea a step further—what if I create an HDTR image spanning an entire year? Just like Solheim’s project, I could blend time over a full 12 months to create an even more immersive and intricate representation of change. This would capture not only daily variations but also the gradual shift of seasons, turning a single image into a powerful chronicle of time.</p>
 
         <p>For those interested, I’ve made the code available on GitHub, so you can try it out yourself and experiment with different blending techniques.</p>
-
-        <p>In hindsight, this project embodies what I’ve been realizing lately: I used to have ideas but no implementation. Now, with the right tools and AI-assisted workflows, I can finally turn all these creative concepts into reality without spending months fumbling through them. And this is just the beginning—who knows what past idea I’ll dig up next?</p>
     </div>
 
 </body>
