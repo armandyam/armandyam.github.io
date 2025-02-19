@@ -8,45 +8,43 @@ tags:
   - photography
   - python
 ---
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HDTR Images Blog</title>
     <style>
+        body { 
+            text-align: center; 
+            font-family: Arial, sans-serif; 
+            margin: 40px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
         .content { 
             text-align: left; 
             max-width: 800px; 
             margin-bottom: 20px; 
         }
-        .container { 
-            position: relative; 
-            width: 600px; 
-            height: 400px; 
-            overflow: hidden; 
-            margin-bottom: 20px; 
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns */
+            grid-gap: 20px;
+            max-width: 900px;
         }
-        .image { 
-            position: absolute; 
-            width: 100%; 
-            height: 100%;
-            transition: clip-path 1s ease-in-out; 
-            clip-path: inset(0 100% 0 0); /* Start hidden */
+        .gallery div {
+            text-align: center;
         }
-        .controls { 
-            display: flex; 
-            justify-content: center; 
-            margin-top: 10px; 
+        .gallery img {
+            width: 100%;
+            height: auto;
+            max-width: 400px; /* Ensures images aren't too large */
         }
-        .arrow { 
-            cursor: pointer; 
-            font-size: 32px; 
-            margin: 10px; 
-            padding: 10px; 
-            background: #ddd; 
-            border-radius: 5px; 
-        }
-        .arrow:hover {
-            background: #bbb;
+        .caption {
+            font-size: 16px;
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -54,50 +52,33 @@ tags:
 
     <div class="content">
         <h1>High Dynamic Time Ranging (HDTR) Images</h1>
-        <p>These images were taken over a 24-hour period around the equinox last year to capture an equal balance of day and night. The final composition features four distinct directions of time movement: left to right, right to left, top to bottom, and bottom to top. Click an arrow to reveal the corresponding blending effect in the right direction.</p>
+        <p>In the past, I had the idea to create High Dynamic Time Ranging (HDTR) images, but like many of my ideas, it remained just that—an idea. The usual culprit? Time. I never got around to implementing it. But now, thanks to GPT and modern tools, I’ve been accelerating my creative process and converting all these dormant ideas into reality with ease.</p>
+
+        <p>The inspiration for this came from two fascinating sources. First, the HDTR project showcased here: <a href="https://mk.bcgsc.ca/fun/hdtr/?gallery" target="_blank">BCGSC HDTR</a>, which creates stunning images that compress time into a single frame. The second was from Eirik Solheim’s year-long time-lapse project (<a href="https://eirikso.com/2011/01/04/one-year-in-one-image/" target="_blank">One Year in One Image</a>), where an entire year’s worth of photos is merged into a single, smooth transition.</p>
     </div>
 
-    <div class="container">
-        <img id="l2r" class="image" src="/assets/pictures/output_left_to_right_temporal.jpeg" style="clip-path: inset(0 0 0 0);">
-        <img id="r2l" class="image" src="/assets/pictures/output_right_to_left_temporal.jpeg">
-        <img id="t2b" class="image" src="/assets/pictures/output_top_to_bottom_temporal.jpeg">
-        <img id="b2t" class="image" src="/assets/pictures/output_bottom_to_top_temporal.jpeg">
+    <div class="gallery">
+        <div>
+            <img src="/assets/pictures/output_left_to_right_temporal.jpeg" alt="Left to Right">
+            <div class="caption">Left to Right</div>
+        </div>
+        <div>
+            <img src="/assets/pictures/output_right_to_left_temporal.jpeg" alt="Right to Left">
+            <div class="caption">Right to Left</div>
+        </div>
+        <div>
+            <img src="/assets/pictures/output_top_to_bottom_temporal.jpeg" alt="Top to Bottom">
+            <div class="caption">Top to Bottom</div>
+        </div>
+        <div>
+            <img src="/assets/pictures/output_bottom_to_top_temporal.jpeg" alt="Bottom to Top">
+            <div class="caption">Bottom to Top</div>
+        </div>
     </div>
-
-    <div class="controls">
-        <span class="arrow" onclick="showImage('b2t', 'up')">⬆</span>
-        <span class="arrow" onclick="showImage('r2l', 'left')">⬅</span>
-        <span class="arrow" onclick="showImage('l2r', 'right')">➡</span>
-        <span class="arrow" onclick="showImage('t2b', 'down')">⬇</span>
-    </div>
-
-    <script>
-        function showImage(id, direction) {
-
-            document.getElementById('l2r').style.clipPath = "inset(0 100% 0 0)";
-            document.getElementById('r2l').style.clipPath = "inset(0 100% 0 0)";
-            document.getElementById('t2b').style.clipPath = "inset(0 100% 0 0)";
-            document.getElementById('b2t').style.clipPath = "inset(0 100% 0 0)";
-
-
-            let img = document.getElementById(id);
-            if (direction === 'left') {
-                img.style.clipPath = "inset(0 0 0 100%)";
-                setTimeout(() => img.style.clipPath = "inset(0 0 0 0)", 50);
-            } else if (direction === 'right') {
-                img.style.clipPath = "inset(0 100% 0 0)";
-                setTimeout(() => img.style.clipPath = "inset(0 0 0 0)", 50);
-            } else if (direction === 'up') {
-                img.style.clipPath = "inset(100% 0 0 0)";
-                setTimeout(() => img.style.clipPath = "inset(0 0 0 0)", 50);
-            } else if (direction === 'down') {
-                img.style.clipPath = "inset(0 0 100% 0)";
-                setTimeout(() => img.style.clipPath = "inset(0 0 0 0)", 50);
-            }
-        }
-    </script>
 
     <div class="content">
+        <p>These images were taken over a 24-hour period around the equinox last year to capture an equal balance of day and night. The final composition features four distinct directions of time movement. Each method provides a different way to visualize how time transitions throughout the day.</p>
+        
         <p>Now, I’m thinking of taking this idea a step further—what if I create an HDTR image spanning an entire year? Just like Solheim’s project, I could blend time over a full 12 months to create an even more immersive and intricate representation of change. This would capture not only daily variations but also the gradual shift of seasons, turning a single image into a powerful chronicle of time.</p>
 
         <p>For those interested, I’ve made the code available on GitHub, so you can try it out yourself and experiment with different blending techniques.</p>
@@ -105,4 +86,5 @@ tags:
 
 </body>
 </html>
+
 
