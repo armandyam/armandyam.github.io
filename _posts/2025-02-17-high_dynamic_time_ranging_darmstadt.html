@@ -10,22 +10,36 @@ tags:
 ---
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HDTR Images Blog</title>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--         <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+     -->
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <link rel="stylesheet" href="https://d3-annotation.susielu.com/assets/d3.annotation.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/> -->
+    <!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/elfalem/Leaflet.curve/src/leaflet.curve.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
     <style>
-        body { 
-            text-align: center; 
-            font-family: Arial, sans-serif; 
-            margin: 40px; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-        }
-        .content { 
-            text-align: left; 
-            max-width: 800px; 
-            margin-bottom: 20px; 
-        }
         .gallery {
             display: grid;
             grid-template-columns: 1fr 1fr; /* Two columns */
@@ -35,6 +49,9 @@ tags:
         }
         .gallery div {
             text-align: center;
+        }
+        .gallery a {
+            display: inline-block;
         }
         .gallery img {
             width: 100%;
@@ -52,12 +69,10 @@ tags:
 </head>
 <body>
 
-    <div class="content">
         <h1>High Dynamic Time Ranging (HDTR) Images</h1>
         <p>In the past, I had the idea to create High Dynamic Time Ranging (HDTR) images, but like many of my ideas, it remained just that—an idea. The usual culprit? Time. I never got around to implementing it. But now, thanks to GPT and modern tools, I’ve been accelerating my creative process and converting all these dormant ideas into reality with ease.</p>
 
         <p>The inspiration for this came from two fascinating sources. First, the HDTR project showcased here: <a href="https://mk.bcgsc.ca/fun/hdtr/?gallery" target="_blank">BCGSC HDTR</a>, which creates stunning images that compress time into a single frame. The second was from Eirik Solheim’s year-long time-lapse project (<a href="https://eirikso.com/2011/01/04/one-year-in-one-image/" target="_blank">One Year in One Image</a>), where an entire year’s worth of photos is merged into a single, smooth transition.</p>
-    </div>
 
     <div class="dropdown-container">
         <label for="location-select">Select a Location:</label>
@@ -72,33 +87,31 @@ tags:
         <!-- Images will be dynamically loaded here -->
     </div>
 
-    <div class="content">
         <p>These images were taken over a 24-hour period around the equinox last year to capture an equal balance of day and night. The final composition features four distinct directions of time movement. Each method provides a different way to visualize how time transitions throughout the day.</p>
         
         <p>Now, I’m thinking of taking this idea a step further—what if I create an HDTR image spanning an entire year? Just like Solheim’s project, I could blend time over a full 12 months to create an even more immersive and intricate representation of change. This would capture not only daily variations but also the gradual shift of seasons, turning a single image into a powerful chronicle of time.</p>
 
         <p>For those interested, I’ve made the code available on GitHub, so you can try it out yourself and experiment with different blending techniques.</p>
-    </div>
 
     <script>
         const imageSets = {
             "luisenplatz": [
-                { src: "/assets/pictures/luisenplatz_left_to_right_temporal.jpeg", caption: "Left to Right" },
-                { src: "/assets/pictures/luisenplatz_right_to_left_temporal.jpeg", caption: "Right to Left" },
-                { src: "/assets/pictures/luisenplatz_top_to_bottom_temporal.jpeg", caption: "Top to Bottom" },
-                { src: "/assets/pictures/luisenplatz_bottom_to_top_temporal.jpeg", caption: "Bottom to Top" }
+                { src: "/assets/pictures/luisenplatz_left_to_right.jpeg", caption: "Left to Right" },
+                { src: "/assets/pictures/luisenplatz_right_to_left.jpeg", caption: "Right to Left" },
+                { src: "/assets/pictures/luisenplatz_top_to_bottom.jpeg", caption: "Top to Bottom" },
+                { src: "/assets/pictures/luisenplatz_bottom_to_top.jpeg", caption: "Bottom to Top" }
             ],
             "darmstadt-west": [
-                { src: "/assets/pictures/darmstadt_west_left_to_right_temporal.jpeg", caption: "Left to Right" },
-                { src: "/assets/pictures/darmstadt_west_right_to_left_temporal.jpeg", caption: "Right to Left" },
-                { src: "/assets/pictures/darmstadt_west_top_to_bottom_temporal.jpeg", caption: "Top to Bottom" },
-                { src: "/assets/pictures/darmstadt_west_bottom_to_top_temporal.jpeg", caption: "Bottom to Top" }
+                { src: "/assets/pictures/darmstadt_west_left_to_right.jpeg", caption: "Left to Right" },
+                { src: "/assets/pictures/darmstadt_west_right_to_left.jpeg", caption: "Right to Left" },
+                { src: "/assets/pictures/darmstadt_west_top_to_bottom.jpeg", caption: "Top to Bottom" },
+                { src: "/assets/pictures/darmstadt_west_bottom_to_top.jpeg", caption: "Bottom to Top" }
             ],
             "darmstadt-east": [
-                { src: "/assets/pictures/darmstadt_east_left_to_right_temporal.jpeg", caption: "Left to Right" },
-                { src: "/assets/pictures/darmstadt_east_right_to_left_temporal.jpeg", caption: "Right to Left" },
-                { src: "/assets/pictures/darmstadt_east_top_to_bottom_temporal.jpeg", caption: "Top to Bottom" },
-                { src: "/assets/pictures/darmstadt_east_bottom_to_top_temporal.jpeg", caption: "Bottom to Top" }
+                { src: "/assets/pictures/darmstadt_east_left_to_right.jpeg", caption: "Left to Right" },
+                { src: "/assets/pictures/darmstadt_east_right_to_left.jpeg", caption: "Right to Left" },
+                { src: "/assets/pictures/darmstadt_east_top_to_bottom.jpeg", caption: "Top to Bottom" },
+                { src: "/assets/pictures/darmstadt_east_bottom_to_top.jpeg", caption: "Bottom to Top" }
             ]
         };
 
@@ -109,17 +122,22 @@ tags:
 
             imageSets[location].forEach(imgData => {
                 const imgDiv = document.createElement("div");
+                const imgLink = document.createElement("a");
                 const imgElement = document.createElement("img");
                 const captionDiv = document.createElement("div");
 
+                imgLink.href = imgData.src; 
+                imgLink.target = "_blank"; 
+                
                 imgElement.src = imgData.src;
                 imgElement.alt = imgData.caption;
                 imgElement.classList.add("gallery-img");
-                
+
                 captionDiv.textContent = imgData.caption;
                 captionDiv.classList.add("caption");
 
-                imgDiv.appendChild(imgElement);
+                imgLink.appendChild(imgElement);
+                imgDiv.appendChild(imgLink);
                 imgDiv.appendChild(captionDiv);
                 galleryContainer.appendChild(imgDiv);
             });
