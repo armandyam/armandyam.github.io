@@ -8,10 +8,8 @@ tags:
   - photography
   - python
 ---
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HDTR Images Blog</title>
     <style>
@@ -33,6 +31,7 @@ tags:
             grid-template-columns: 1fr 1fr; /* Two columns */
             grid-gap: 20px;
             max-width: 900px;
+            margin-top: 20px;
         }
         .gallery div {
             text-align: center;
@@ -40,11 +39,14 @@ tags:
         .gallery img {
             width: 100%;
             height: auto;
-            max-width: 400px; /* Ensures images aren't too large */
+            max-width: 400px;
         }
         .caption {
             font-size: 16px;
             margin-top: 5px;
+        }
+        .dropdown-container {
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -57,23 +59,17 @@ tags:
         <p>The inspiration for this came from two fascinating sources. First, the HDTR project showcased here: <a href="https://mk.bcgsc.ca/fun/hdtr/?gallery" target="_blank">BCGSC HDTR</a>, which creates stunning images that compress time into a single frame. The second was from Eirik Solheim’s year-long time-lapse project (<a href="https://eirikso.com/2011/01/04/one-year-in-one-image/" target="_blank">One Year in One Image</a>), where an entire year’s worth of photos is merged into a single, smooth transition.</p>
     </div>
 
-    <div class="gallery">
-        <div>
-            <img src="/assets/pictures/output_left_to_right_temporal.jpeg" alt="Left to Right">
-            <div class="caption">Left to Right</div>
-        </div>
-        <div>
-            <img src="/assets/pictures/output_right_to_left_temporal.jpeg" alt="Right to Left">
-            <div class="caption">Right to Left</div>
-        </div>
-        <div>
-            <img src="/assets/pictures/output_top_to_bottom_temporal.jpeg" alt="Top to Bottom">
-            <div class="caption">Top to Bottom</div>
-        </div>
-        <div>
-            <img src="/assets/pictures/output_bottom_to_top_temporal.jpeg" alt="Bottom to Top">
-            <div class="caption">Bottom to Top</div>
-        </div>
+    <div class="dropdown-container">
+        <label for="location-select">Select a Location:</label>
+        <select id="location-select" onchange="updateGallery()">
+            <option value="luisenplatz">Luisenplatz</option>
+            <option value="darmstadt-west">Darmstadt West</option>
+            <option value="darmstadt-east">Darmstadt East</option>
+        </select>
+    </div>
+
+    <div id="gallery-container" class="gallery">
+        <!-- Images will be dynamically loaded here -->
     </div>
 
     <div class="content">
@@ -84,7 +80,56 @@ tags:
         <p>For those interested, I’ve made the code available on GitHub, so you can try it out yourself and experiment with different blending techniques.</p>
     </div>
 
+    <script>
+        const imageSets = {
+            "luisenplatz": [
+                { src: "/assets/pictures/luisenplatz_left_to_right_temporal.jpeg", caption: "Left to Right" },
+                { src: "/assets/pictures/luisenplatz_right_to_left_temporal.jpeg", caption: "Right to Left" },
+                { src: "/assets/pictures/luisenplatz_top_to_bottom_temporal.jpeg", caption: "Top to Bottom" },
+                { src: "/assets/pictures/luisenplatz_bottom_to_top_temporal.jpeg", caption: "Bottom to Top" }
+            ],
+            "darmstadt-west": [
+                { src: "/assets/pictures/darmstadt_west_left_to_right_temporal.jpeg", caption: "Left to Right" },
+                { src: "/assets/pictures/darmstadt_west_right_to_left_temporal.jpeg", caption: "Right to Left" },
+                { src: "/assets/pictures/darmstadt_west_top_to_bottom_temporal.jpeg", caption: "Top to Bottom" },
+                { src: "/assets/pictures/darmstadt_west_bottom_to_top_temporal.jpeg", caption: "Bottom to Top" }
+            ],
+            "darmstadt-east": [
+                { src: "/assets/pictures/darmstadt_east_left_to_right_temporal.jpeg", caption: "Left to Right" },
+                { src: "/assets/pictures/darmstadt_east_right_to_left_temporal.jpeg", caption: "Right to Left" },
+                { src: "/assets/pictures/darmstadt_east_top_to_bottom_temporal.jpeg", caption: "Top to Bottom" },
+                { src: "/assets/pictures/darmstadt_east_bottom_to_top_temporal.jpeg", caption: "Bottom to Top" }
+            ]
+        };
+
+        function updateGallery() {
+            const location = document.getElementById("location-select").value;
+            const galleryContainer = document.getElementById("gallery-container");
+            galleryContainer.innerHTML = ""; 
+
+            imageSets[location].forEach(imgData => {
+                const imgDiv = document.createElement("div");
+                const imgElement = document.createElement("img");
+                const captionDiv = document.createElement("div");
+
+                imgElement.src = imgData.src;
+                imgElement.alt = imgData.caption;
+                imgElement.classList.add("gallery-img");
+                
+                captionDiv.textContent = imgData.caption;
+                captionDiv.classList.add("caption");
+
+                imgDiv.appendChild(imgElement);
+                imgDiv.appendChild(captionDiv);
+                galleryContainer.appendChild(imgDiv);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", updateGallery);
+    </script>
+
 </body>
 </html>
+
 
 
