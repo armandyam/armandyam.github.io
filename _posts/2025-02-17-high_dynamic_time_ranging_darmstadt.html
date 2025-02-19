@@ -1,0 +1,91 @@
+---
+title: 'My attempt at HDTR'
+date: 2025-02-17
+permalink: /posts/2025/22/hdtr_darmstadt/
+tags:
+  - interests
+  - darmstadt
+  - photography
+  - python
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDTR Images Blog</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; margin: 40px; }
+        .container { position: relative; width: 600px; margin: auto; }
+        .image { position: absolute; width: 100%; transition: clip-path 1s ease-in-out; }
+        .controls { margin-top: 20px; }
+        .arrow { cursor: pointer; font-size: 24px; margin: 10px; }
+        .content { text-align: left; max-width: 800px; margin: auto; }
+    </style>
+</head>
+<body>
+
+    <h1>High Dynamic Time Ranging (HDTR) Images</h1>
+
+    <div class="content">
+        <p>In the past, I had the idea to create High Dynamic Time Ranging (HDTR) images, but like many of my ideas, it remained just that—an idea. The usual culprit? Time. I never got around to implementing it. But now, thanks to GPT and modern tools, I’ve been accelerating my creative process and converting all these dormant ideas into reality with ease.</p>
+
+        <p>The inspiration for this came from two fascinating sources. First, the HDTR project showcased here: <a href="https://mk.bcgsc.ca/fun/hdtr/?gallery" target="_blank">BCGSC HDTR</a>, which creates stunning images that compress time into a single frame. The second was from Eirik Solheim’s year-long time-lapse project (<a href="https://eirikso.com/2011/01/04/one-year-in-one-image/" target="_blank">One Year in One Image</a>), where an entire year’s worth of photos is merged into a single, smooth transition.</p>
+
+        <p>Of course, being excited about this concept, I initially thought, "Why not try this at home?" That’s where the meme kicks in:</p>
+
+        <p><strong>Me:</strong> Mom, can we get HDTR images?</p>
+        <p><strong>Mom:</strong> We have HDTR images at home.</p>
+        <p><strong>HDTR images at home:</strong> *A bunch of blurry, overexposed, and completely misaligned photos.*</p>
+
+        <p>So, after failing spectacularly at creating my own, I decided to use existing, high-quality data from <a href="https://www.foto-webcam.eu/webcam/darmstadt-ost/" target="_blank">Foto-Webcam Darmstadt Ost</a>. To download the images, I had to manually download them since they do not recommend automation 😉—but let’s just say I was very generous with the timing of my requests to avoid overwhelming their servers.</p>
+
+        <p>I also made several optimizations similar to those in my first blog, incorporating both spatial and temporal blending to ensure smooth transitions and a polished final result. The final image showcases four distinct directions of time for each of the three images of Darmstadt. Each photograph captures a temporal gradient, revealing how different times of the day (or even across seasons) blend together into a single, mesmerizing visualization.</p>
+
+        <h2>Comparing Different Blending Approaches</h2>
+        <p>To illustrate the blending process, here are three images:</p>
+        <ul>
+            <li>The raw image without any post-processing.</li>
+            <li>The image with only spatial blending.</li>
+            <li>The image with both spatial and temporal blending.</li>
+        </ul>
+        <p>These images were taken over a 24-hour period around the equinox last year to capture an equal balance of day and night. The final composition features four distinct directions of time movement: left to right, right to left, top to bottom, and bottom to top. The direction of time movement is represented by an arrow on the bottom left of each image.</p>
+
+        <h2>Interactive HDTR Image Viewer</h2>
+        <p>Click on the arrows to switch between different time directions with a smooth transition.</p>
+    </div>
+
+    <div class="container">
+        <img id="raw" class="image" src="raw_image.jpg" style="clip-path: inset(0 0 0 0);">
+        <img id="spatial" class="image" src="spatial_blend.jpg" style="clip-path: inset(100% 0 0 0);">
+        <img id="both" class="image" src="spatial_temporal_blend.jpg" style="clip-path: inset(100% 0 0 0);">
+    </div>
+
+    <div class="controls">
+        <span class="arrow" onclick="showImage('raw')">⬆</span>
+        <span class="arrow" onclick="showImage('spatial')">⬅</span>
+        <span class="arrow" onclick="showImage('both')">➡</span>
+        <span class="arrow" onclick="showImage('both')">⬇</span>
+    </div>
+
+    <script>
+        function showImage(id) {
+            document.getElementById('raw').style.clipPath = "inset(100% 0 0 0)";
+            document.getElementById('spatial').style.clipPath = "inset(100% 0 0 0)";
+            document.getElementById('both').style.clipPath = "inset(100% 0 0 0)";
+
+            document.getElementById(id).style.clipPath = "inset(0 0 0 0)";
+        }
+    </script>
+
+    <div class="content">
+        <p>Now, I’m thinking of taking this idea a step further—what if I create an HDTR image spanning an entire year? Just like Solheim’s project, I could blend time over a full 12 months to create an even more immersive and intricate representation of change. This would capture not only daily variations but also the gradual shift of seasons, turning a single image into a powerful chronicle of time.</p>
+
+        <p>For those interested, I’ve made the code available on GitHub, so you can try it out yourself and experiment with different blending techniques.</p>
+
+        <p>In hindsight, this project embodies what I’ve been realizing lately: I used to have ideas but no implementation. Now, with the right tools and AI-assisted workflows, I can finally turn all these creative concepts into reality without spending months fumbling through them. And this is just the beginning—who knows what past idea I’ll dig up next?</p>
+    </div>
+
+</body>
+</html>
+
