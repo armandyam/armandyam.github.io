@@ -63,14 +63,15 @@ tags:
 
         <p>My next task was to get hold of images of the same spot taken over some time. I dont have access to fancy scenary so I went with what I had which was the apartment balcony with my GoPro. While it technically worked, the results were not the most awe-inspiring. </p>
 
-<p> While searching around for more, I stumbled upon this excellent HDTR project by Martin Krzywinski in this blog <a href="https://mk.bcgsc.ca/fun/hdtr/?home" target="_blank">here</a>, where he showed how to create insanely awesome images. Infact, most of the code for this project was based on his work. He has an excellent website with so many serious and fun projects. His blogs have become one of my always-open tabs in the last weeks. </p>
+<p> While searching around the internet, I stumbled upon this excellent HDTR project by Martin Krzywinski on his blog <a href="https://mk.bcgsc.ca/fun/hdtr/?home" target="_blank">here</a>, where he showed how to create insanely awesome images. Infact, most of the code for this project was based on his work. He has an excellent website with so many serious and fun projects. His blogs have become one of my always-open tabs in the last weeks. </p>
 
-<p>Given that I did not have access to great set of photos, I looked to the internet and found another great website with nearly real-time photos of three locations in Darmstadt and a history of photos taken every 10 minutes. This was just the missing piece in my HDTR puzzle. Finally, piecing together all of the code and images together, I was able to create similar photos as Martin Krzywinski work (thought they dont have as smooth a transition as his. I was considering running an optimization algorithm with some sort of edge detection code to reduce these "bands"). </p>
+<p>Going back, given that I did not have access to great set of photos, I looked to the internet and found this <a href="https://www.foto-webcam.eu/" target="_blank">great</a> website with nearly real-time photos of many places across Europe and specifically three locations in Darmstadt. They even have a history of photos taken every 10 minutes over many years. This was just the missing piece in my HDTR puzzle. My idea was to download the images for a specific day from last year. I choose the spring equinox and downloaded the data for a 24 hour time window starting at 6AM on March 21. Finally, piecing together all of the code and images together, I was able to create similar photos as Martin Krzywinski work (thought they dont have as smooth a transition as his. I was considering running an optimization algorithm with some sort of edge detection code to reduce these "bands"). </p>
 
-<p>The code itself was pretty straight forward, sort the images in forward time, take slices of width w/N where w is the width of each image and N is the total number of images, position the slices for each image sequentially. This gives us a first image which is quite good but still has jumps across the image boundary and shows bands as can be seen below. </p>
+<p>The code itself was pretty straight forward: sort the images forward in time, take slices of width w/N where w is the width of each image and N is the total number of images, the slice from image i is positioned at i*w/N. This gives us a first image which is quite good but still has jumps across the image boundary and shows bands as can be seen below. </p>
 
-<p>Next, I did a simple spatial averaging where I take neighbouring images and do a weighted average of the slices. This produces </p>
+<p>Next, is a simple spatial averaging where neighbouring images are taken and a weighted average of the slices across the boundary is done. This smoothens some of the boundaries as seen in the image below </p>
 
+<p>Finally, a temporal blending is done by doing a weighted average of the time slices. I played around with the weights and setteled on a large window of averaging. This produces the final processed image. To this, just a few things like the time data is added and like from the original work I added direction of movement just for clarity. By direction of movement, I mean this composition can we done in all four ways: top-to-bottom, bottom-to-top, left-to-right and right-to-left. These images for the three locations in Darmstadt can be seen in collection below. </p>
 
     <div class="dropdown-container">
         <label for="location-select">Select a Location:</label>
@@ -85,11 +86,10 @@ tags:
         <!-- Images will be dynamically loaded here -->
     </div>
 
-        <p>These images were taken over a 24-hour period around the equinox last year to capture an equal balance of day and night. The final composition features four distinct directions of time movement. Each method provides a different way to visualize how time transitions throughout the day.</p>
-        
-        <p>Now, I’m thinking of taking this idea a step further—what if I create an HDTR image spanning an entire year? Just like Solheim’s project, I could blend time over a full 12 months to create an even more immersive and intricate representation of change. This would capture not only daily variations but also the gradual shift of seasons, turning a single image into a powerful chronicle of time.</p>
 
-        <p>For those interested, I’ve made the code available on GitHub, so you can try it out yourself and experiment with different blending techniques.</p>
+        <p>Next, was to reuse the same code to create an HDTR image for the entire year. I arbitrarily choose the time of 1PM as time of day and downloaded one photo per day at this time for the entire year of 2024. Now, just like Erik Solheim’s project, I first created the simple banded image and then added the blending techniques as before. As the images themselves were quite large (6000x4150 pixels) the combination of 365 images took quite a while to run. However, I was quite proud of the results. You can check them for all three locations of Darmstadt below.</p>
+
+        <p>For those interested, I’ve made the code available <a href="https://github.com/armandyam/hdtr_photo_creation" target="_blank">here</a> on GitHub, so you can try it out yourself and experiment with different blending techniques. I did have a few more ideas to run some simpler blending algorithm using pillow or may be even something a bit more sophisticaled with edge detection. However, for now I want to move onto a different project before getting back to this.  </p>
 
     <script>
         const imageSets = {
