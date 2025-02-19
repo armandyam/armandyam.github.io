@@ -26,19 +26,7 @@ tags:
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-    <link rel="stylesheet" href="https://d3-annotation.susielu.com/assets/d3.annotation.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/> -->
-    <!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-    <script src="https://cdn.jsdelivr.net/gh/elfalem/Leaflet.curve/src/leaflet.curve.js"></script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-    
+   
     <style>
         .gallery {
             display: grid;
@@ -69,10 +57,20 @@ tags:
 </head>
 <body>
 
-        <h1>High Dynamic Time Ranging (HDTR) Images</h1>
-        <p>In the past, I had the idea to create High Dynamic Time Ranging (HDTR) images, but like many of my ideas, it remained just that—an idea. The usual culprit? Time. I never got around to implementing it. But now, thanks to GPT and modern tools, I’ve been accelerating my creative process and converting all these dormant ideas into reality with ease.</p>
+        <p>Many years ago I (probably like millions of people before!) had the idea to take the photo of a place over some time period. Now one can merge them in two ways, the first is a straight forward time-lapse and the second is to merge them into a single image with slices coming from each photo. However, like many of my ideas, it remained just that—an idea. I never got around to implementing it. But now, thanks to the super awesome LLMS, I’ve been accelerating my creative process and converting all these dormant ideas into reality with ease.</p>
 
-        <p>The inspiration for this came from two fascinating sources. First, the HDTR project showcased here: <a href="https://mk.bcgsc.ca/fun/hdtr/?gallery" target="_blank">BCGSC HDTR</a>, which creates stunning images that compress time into a single frame. The second was from Eirik Solheim’s year-long time-lapse project (<a href="https://eirikso.com/2011/01/04/one-year-in-one-image/" target="_blank">One Year in One Image</a>), where an entire year’s worth of photos is merged into a single, smooth transition.</p>
+        <p>I restarted the effort for this earlier this month and when doing some internet-research, I came to know that there is a phrase for this called "High Dynamic Time Ranging (HDTR)" images. I was able to dig out the original image from which I got the actual idea from which is from Eirik Solheim’s year-long time-lapse project (<a href="https://www.eirikso.com/2011/01/04/one-year-in-one-image/" target="_blank">One Year in One Image</a>), where an entire year’s worth of photos is merged into a single image. The results look beautiful! I wish I had such a great sceneary to photograph. </p>
+
+        <p>My next task was to get hold of images of the same spot taken over some time. I dont have access to fancy scenary so I went with what I had which was the apartment balcony with my GoPro. While it technically worked, the results were not the most awe-inspiring. </p>
+
+<p> While searching around for more, I stumbled upon this excellent HDTR project by Martin Krzywinski in this blog <a href="https://mk.bcgsc.ca/fun/hdtr/?home" target="_blank">here</a>, where he showed how to create insanely awesome images. Infact, most of the code for this project was based on his work. He has an excellent website with so many serious and fun projects. His blogs have become one of my always-open tabs in the last weeks. </p>
+
+<p>Given that I did not have access to great set of photos, I looked to the internet and found another great website with nearly real-time photos of three locations in Darmstadt and a history of photos taken every 10 minutes. This was just the missing piece in my HDTR puzzle. Finally, piecing together all of the code and images together, I was able to create similar photos as Martin Krzywinski work (thought they dont have as smooth a transition as his. I was considering running an optimization algorithm with some sort of edge detection code to reduce these "bands"). </p>
+
+<p>The code itself was pretty straight forward, sort the images in forward time, take slices of width w/N where w is the width of each image and N is the total number of images, position the slices for each image sequentially. This gives us a first image which is quite good but still has jumps across the image boundary and shows bands as can be seen below. </p>
+
+<p>Next, I did a simple spatial averaging where I take neighbouring images and do a weighted average of the slices. This produces </p>
+
 
     <div class="dropdown-container">
         <label for="location-select">Select a Location:</label>
