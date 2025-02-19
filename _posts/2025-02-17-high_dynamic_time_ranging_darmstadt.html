@@ -82,12 +82,13 @@ tags:
 
     <script>
         function showImage(id, direction) {
-            // Hide all images first
-            document.getElementById('raw').style.clipPath = "inset(0 100% 0 0)";
-            document.getElementById('spatial').style.clipPath = "inset(0 100% 0 0)";
-            document.getElementById('both').style.clipPath = "inset(0 100% 0 0)";
 
-            // Apply the correct clip-path transition based on the direction
+            document.getElementById('l2r').style.clipPath = "inset(0 100% 0 0)";
+            document.getElementById('r2l').style.clipPath = "inset(0 100% 0 0)";
+            document.getElementById('t2b').style.clipPath = "inset(0 100% 0 0)";
+            document.getElementById('b2t').style.clipPath = "inset(0 100% 0 0)";
+
+
             let img = document.getElementById(id);
             if (direction === 'left') {
                 img.style.clipPath = "inset(0 0 0 100%)";
