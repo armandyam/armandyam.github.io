@@ -2,7 +2,7 @@
 title: "HDTR image generator"
 excerpt: "Merge and generate sequence of photos into a single image"
 collection: portfolio
-symbol: 'fas fa-globe'
+symbol: 'fas fa-image'
 technologies: ["Python", "Pillow", "MIT License"]
 ---
 
