@@ -6,7 +6,7 @@ symbol: 'fas fa-globe'
 technologies: ["Python", "Pillow", "MIT License"]
 ---
 
-Capturing time in a single image—this tool generates High Dynamic Time Range (HDTR) images by compositing a sequence of photos taken over time. It supports both daily sequences (e.g., sunrise to sunset) and yearly sequences (e.g., seasonal changes) and arranges them into a structured strip-based layout. Inspired from [Eirik Solheim’s project](https://www.eirikso.com/2011/01/04/one-year-in-one-image/) and code implemented using the tutorial from [Martin Krzywinski’s blog](https://mk.bcgsc.ca/fun/hdtr/?home)
+Capturing time in a single image—this tool generates High Dynamic Time Range (HDTR) images by compositing a sequence of photos taken over time. It supports both daily sequences (e.g., sunrise to sunset) and yearly sequences (e.g., seasonal changes) and arranges them into a structured strip-based layout. Inspired from [Eirik Solheim’s project](https://www.eirikso.com/2011/01/04/one-year-in-one-image/) and code implemented using the tutorial from [Martin Krzywinski’s blog](https://mk.bcgsc.ca/fun/hdtr/?home).
 
 The script processes a folder of images, extracts timestamps from filenames, and stitches them together while allowing customization of:
 
