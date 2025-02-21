@@ -255,6 +255,25 @@ keywords = {High-order, Anisotropic mesh, Metric, Discontinuous-Galerkin, Adjoin
 abstract = {In this paper we propose an adjoint-based hp-adaptation method for conservation laws, and corresponding numerical schemes based on piecewise polynomial approximation spaces. The method uses a continuous mesh framework, similar to that proposed in [1], where a global optimization scheme was formulated with respect to the error in the numerical solution, measured in any Lq norm. The novelty of the present work is the extension to more general optimization targets. Here, any solution-dependent functional, which is compatible with an adjoint equation, may be the target of the continuous-mesh optimization. We present the rationale behind the formulation of the optimization problem, with particular emphasis on the continuous mesh model, and the relevant adjoint-based error estimate. Additionally we combine the adjoint-based error estimates with the polynomial optimization strategy from [2] to present a complete hp-adaptation method which shows exponential convergence in the target function. The h-only mesh adaptation strategy of this work has been presented as a conference proceeding earlier [3]. Numerical experiments are carried out to demonstrate the viability of the scheme.}
 }
 
+
+
+
+
+
+
+@inbook{doi:10.2514/6.2025-0780,
+author = {Devina P. Sanjaya and Ajay Rangarajan and Carl F. Ollivier Gooch},
+title = {Error Sampling and Synthesis for High-Order Node Movement},
+booktitle = {AIAA SCITECH 2025 Forum},
+chapter = {},
+pages = {},
+doi = {10.2514/6.2025-0780},
+URL = {https://arc.aiaa.org/doi/abs/10.2514/6.2025-0780},
+eprint = {https://arc.aiaa.org/doi/pdf/10.2514/6.2025-0780},
+    abstract = { The presented work focuses on the error sampling and synthesis procedure within an optimization framework for high-order, metric-based mesh adaptation in high-order, finite-element (FEM) discretization. This mesh optimization framework is designed to handle arbitrary FEM discretization order, geometry order, and element types. In performing a metric-based adaptation, the framework uses a high-order Riemannian metric field to encode the curvature, anisotropy, and global coupling between vertices and high-order geometry nodes. An error model and a cost model are employed to iteratively construct the desired Riemannian metric field and guide a series of globally coupled vertex (r-adaptation) and high-order geometry (q-adaptation) node movements. The resulting mesh is an optimal high-order (curved) mesh that conforms to the specified metric field. The error model requires an error sampling and synthesis procedure, which involves several steps, including element splitting, random sampling of high-order geometry node movements, and estimating the metric-based error kernel on each mesh element. This paper aims to: 1) discuss the theoretical underpinnings of a robust, a posteriori, metric-based error model for qr-adaptation and 2) provide a status update on the 1D HOMES algorithm, which is a native extension of the Mesh Optimization via Error Sampling and Synthesis (MOESS) algorithm to a higher order. }
+}
+
+
 @article{Rangarajan2013a,
 author={Karnik, Aditya and Rangarajan, Ajay and Tandon, Mohit},
 journal = {The 14th International Conference on Fluidization – From Fundamentals to Products", J.A.M. Kuipers, Eindhoven University of Technology R.F. Mudde, Delft University of Technology J.R. van Ommen, Delft University of Technology N.G. Deen, Eindhoven University of Technology Eds, ECI Symposium Series},
