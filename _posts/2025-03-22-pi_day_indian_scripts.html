@@ -9,319 +9,506 @@ tags:
 ---
 <html lang="en">
 <head>
-    
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Add Noto Sans fonts for Indian scripts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Sans+Arabic&family=Noto+Sans+Bengali&family=Noto+Sans+Devanagari&family=Noto+Sans+Gujarati&family=Noto+Sans+Gurmukhi&family=Noto+Sans+Kannada&family=Noto+Sans+Malayalam&family=Noto+Sans+Meetei+Mayek&family=Noto+Sans+Oriya&family=Noto+Sans+Tamil&family=Noto+Sans+Telugu&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2980b9;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+            --border-color: #ddd;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 20px 0;
+            color: var(--secondary-color);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .controls {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .preview {
+            flex: 2;
+            min-width: 500px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .slider-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .slider-value {
+            text-align: center;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+        
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        button.secondary {
+            background-color: var(--accent-color);
+        }
+        
+        button.secondary:hover {
+            background-color: #c0392b;
+        }
+        
+        .pi-grid {
+            display: grid;
+            grid-template-columns: repeat(20, 1fr);
+            gap: 0;  /* ✅ Removes gaps between cells */
+            background-color: transparent; /* ✅ Removes any extra background */
+            border: none; /* ✅ Removes any border around the grid */
+        }
 
-<!--         <script>
-            L_NO_TOUCH = false;
-            L_DISABLE_3D = false;
-        </script>
-     -->
-    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
-
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-    <link rel="stylesheet" href="https://d3-annotation.susielu.com/assets/d3.annotation.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/> -->
-    <!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-    <script src="https://cdn.jsdelivr.net/gh/elfalem/Leaflet.curve/src/leaflet.curve.js"></script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-    
-             <style>
-                #map_4345da8416a360146c06209c41abb8ae {
-                    position: absolute; /* Ensures no spacing within the container */
-                    top: 0;
-                    left: 0;
-                    bottom: 0;
-                    right: 0;
-                    width: 100%;
-                    height: 100%;
-                }
-                .leaflet-container { font-size: 1rem; }
-                .map-container {
-                    position: absolute; /* Fix the position to eliminate gaps */
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    width: 100%;
-                    height: 100%;
-                    margin: 0; /* Remove any extra spacing */
-                    border: none; /* Optional: Remove border if unnecessary */
-                }
-            .map-controls {
-                  position: absolute;
-                  top: 10px;
-                  right: 10px;
-                  z-index: 9999;
-                  background-color: white;
-                  padding: 10px;
-                  border-radius: 5px;
-                  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-              }
-              .map-controls select {
-                  display: inline-block;
-                  width: auto;
-                  max-width: 200px;
-              }
-
-            </style>
+        
+        .pi-cell {
+            background-color: white;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            position: relative;
+        }
+        
+        .pi-cell.highlight {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .pi-cell:hover::after {
+            content: attr(data-script);
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0,0,0,0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            z-index: 10;
+        }
+        
+        .stats {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+        }
+        
+        .script-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .script-tag {
+            background-color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+        
+        /* Font classes for different Indian scripts */
+        .script-Latin { font-family: 'Noto Sans', sans-serif; }
+        .script-Devanagari { font-family: 'Noto Sans Devanagari', sans-serif; }
+        .script-Bengali, .script-Assamese { font-family: 'Noto Sans Bengali', sans-serif; }
+        .script-Gujarati { font-family: 'Noto Sans Gujarati', sans-serif; }
+        .script-Gurmukhi { font-family: 'Noto Sans Gurmukhi', sans-serif; }
+        .script-Kannada { font-family: 'Noto Sans Kannada', sans-serif; }
+        .script-Malayalam { font-family: 'Noto Sans Malayalam', sans-serif; }
+        .script-Tamil { font-family: 'Noto Sans Tamil', sans-serif; }
+        .script-Telugu { font-family: 'Noto Sans Telugu', sans-serif; }
+        .script-Odia { font-family: 'Noto Sans Oriya', sans-serif; }
+        .script-Urdu, .script-Kashmiri, .script-Sindhi { font-family: 'Noto Sans Arabic', sans-serif; }
+        .script-Manipuri { font-family: 'Noto Sans Meetei Mayek', sans-serif; }
+        .script-Ol-Chiki { font-family: 'Noto Sans', sans-serif; } /* Fallback as Noto Sans Ol Chiki might not be available via Google Fonts */
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .preview, .controls {
+                min-width: 100%;
+            }
+            
+            .pi-cell {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Dynamic font sizes based on digit count */
+        .small-grid .pi-cell { font-size: 1.5rem; }
+        .medium-grid .pi-cell { font-size: 1.2rem; }
+        .large-grid .pi-cell { font-size: 0.9rem; }
+        .extra-large-grid .pi-cell { font-size: 0.7rem; }
+    </style>
 </head>
 <body>
-    <section>
-        <p>
-            When I lived in Aachen—a city brimming with history, charm, and yes, <a href="https://aachen.de/en/ts/PDFs/City-of-fountains-and-monuments.pdf" target="_blank">fountains</a>—my friend and I made an ambitious summer plan: visit every fountain in town. A quintessential “summer” goal. But summer after summer, we let that plan evaporate. Now, years later, I’m finally solving this puzzle. Not just solving it—I’m turning it into a nice small computational adventure.
-        </p>
-        <p>
-            Aachen is famous for its fountains, each telling its own story. From the playful <a href="https://de.wikipedia.org/wiki/Puppenbrunnen" target="_blank">Puppenbrunnen</a> to the iconic <a href="https://de.wikipedia.org/wiki/Elisenbrunnen" target="_blank">Elisenbrunnen</a>, these waterworks are scattered throughout the city. They’re not just decorative but an integral part of the city’s identity. So, when I decided to “finally do this,” I thought, why not make it fun and nerdy as always? I’m not just someone who strolls from fountain to fountain—I have some computational science skills and coding expertise! Naturally, I devised a (near-)optimal solution to the <em><a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem" target="_blank">Traveling Salesman Problem</a></em> (TSP) to plan the route, even if I might never actually walk it!
-        </p>
-        <p>
-            As many of you might already know the TSP is a classic optimization problem where a "salesman" must visit \( N \) cities (or fountains, in our case), minimizing the total distance traveled and returning to the starting point. Formally, given a set of locations \( \{1, 2, \dots, N\} \) with distances \( d(i, j) \) between them, the goal is to minimize:
-        </p>
-        <p>
-            \[
-            \text{Total Distance} = \sum d(i, i+1)
-            \]
-        </p>
-        <p>
-            Of course, the TSP is NP-complete and for larger \( N \) (which in our case is around 32), finding the exact solution via brute force is computationally infeasible (\( O(N!) \)). Instead, we settle for approximate solutions using heuristics like <em>simulated annealing</em>.
-        </p>
-        <p>
-            Now, to get the location of the fountains themselves, I fould a helpful list from <a href="https://commons.wikimedia.org/wiki/Fountains_in_Aachen" target="_blank">Wiki Commons</a>, where each fountain has its coordinates, name, and a photo. After some <a href="https://pypi.org/project/beautifulsoup4/" target="_blank">beautifulsoup</a> parsing and cleaning (and nudging overlapping fountains by 10&nbsp;m to make them unique), I fed the data into my code. (The overlapping fountains had to be moved to make sure the optimizer does not fail with zero distances between points). This is where I tried two types of distances the first being "as the crow flies" and the second the walking distance between these (to make sure such a tour is feasiable within a days effort). Now for each of these, I had to calculate the distance matrix between every pair of points, \( d(i, j) \). For this, I used the following methods:
-        </p>
-       <section>
-        <h3>Case 1: As the Crow Flies</h3>
-        <p>
-            This was the easy case and I used the <a href="https://en.wikipedia.org/wiki/Haversine_formula" target="_blank">Haversine formula</a>:
-        </p>
-\[
-d(i, j) = 2r \cdot \arcsin\left(\sqrt{\sin^2\left(\frac{\phi_j - \phi_i}{2}\right) + \cos(\phi_i) \cos(\phi_j) \sin^2\left(\frac{\lambda_j - \lambda_i}{2}\right)}\right)
-\]
-        <p>
-        where <em>r</em> is the Earth's radius, <em>&phi;</em> is latitude, and <em>&lambda;</em> is longitude. This gives the “straight-line” distance between fountains.
-        </p>
-        <h3>Case 2: Walking Paths</h3>
-        <p>
-            This case is of course, much harder to calculate and I ended using the <a href="https://openrouteservice.org/" target="_blank">OpenRouteService API</a> to compute the actual walking distances. The API returned a distance between two latitude longitude pairs and also a list of coordinates for the walking path. This makes the solution more realistic for those of us without wings. The idea and parts of the code for using the route service came from this blog <a href="ttps://towardsdatascience.com/solving-geographic-travelling-salesman-problems-using-python-e57284b14cd7" target="_blank">here</a> where a different optimizer is used for the same problem. 
-        </p>
-           </section>
-        <p>
-            Both distance matrices were fed into a simulated annealing algorithm (thanks, <a href="https://pypi.org/project/frigidum/" target="_blank">Frigidum</a>!). The algorithm mimics the cooling process of metals, finding a near-optimal route by progressively "cooling" the search space. I did battle with the original optimizer - <a href="https://www.math.uwaterloo.ca/tsp/concorde.html" target="_blank">concorde</a>  as in the blog but failed to get it to run successfully on my laptop so I had to resigned to using simulated annealing as mentioned in this <a href="https://stackoverflow.com/questions/71196078/scalable-implementation-of-the-travelling-salesman-problem-in-python" target="_blank">Stack Overflow answer</a>. 
-        </p>
-
-        <p>
-        Coming to the actual results, you can explore it below with a dropdown menu allowing you to change from "As the Crow Flies" to "Walking Distance". You can hover over the markers to display some basic info about the fountins with an image from Wiki Commons. How did I choose the starting point I hear you asking? Well the starting fountain is chosen based on proximity to the geographic mean of all points—a little cherry on top. Now this solution of course, is great, its under 20&nbsp;km so a days worth of walking would be enough to cover all of them within a day. (Also note that as we have are doing a round trip the total distance travelled does not depend on the starting point choosen!)
-    </p>
-
-        <p>
-            After solving this computationally, it’s time for the fun part: visiting Aachen again and walking the optimized route. All my friends (and frenemies! :D), if you’re reading this, pack your walking shoes. We’ve got an Aachen trip coming up next summer.
-        </p>
-        <p>
-        If any of you want to use this for your own geeky walking trips, then head over to my <a href="https://github.com/armandyam/aachen-fountain-visualizer" target="_blank">semi documented code</a> on github, signup for your own OpenRouteService API and put this into your environment variable and setup a CSV file of your favourite places to visit. For those of you wanting to do this specific Aachen fountain trip, you can download the <a href="/assets/optimized_aachen_fountain_route.kml" download="optimized_aachen_fountain_route.kml">KML file</a> which you can import into your google maps. 
-        </p>
-
-        <p>To view this route on Google My Maps:</p>
-        <ol>
-            <li>Download the file using the link above.</li>
-            <li>Go to <a href="https://www.google.com/mymaps" target="_blank">Google My Maps</a>.</li>
-            <li>Click on "Create a new map" and use the "Import" option to upload the file.</li>
-        </ol>
-
-        <p>Of course, I should thank chatGPT for helping me with everything on this project (like many other projects!) with ideas, code, documentation, building, blog, README and so on.</p>
-
-    </section>
-
-
-<div style="border: 1px solid #ccc; margin: 20px 0; position:relative; width:100%; height:600px;">
-
-
- <script>
-
-d3.json("/assets/data/route_cache.json", function (error, data) {
-    if (error) {
-        console.error("Error loading JSON file:", error);
-        return;
-    }
-
-    const paths = data;
-
-     window.updateMap = function(routeType) {
-        clearMap();
-
-        if (paths && paths[routeType]) {
-            var route = paths[routeType].path;
-            var distance = paths[routeType].distance.toFixed(2); 
-            var latlngs = [];
-
-            document.getElementById("distanceLabel").innerText = "Total Distance: " + distance + " km";
-
-            if (routeType === "crow_flies") {
-                for (var i = 0; i < route.length; i++) {
-                    var point = route[i];
-                    latlngs.push([point.lat, point.lon]);
-
-                    var markerColor, tooltipLabel;
-                    if (i === 0) {
-                        markerColor = 'red';
-                        tooltipLabel = `Start: ${point.name}`;
-                    } else if (i === route.length - 1) {
-                        markerColor = 'blue';
-                        tooltipLabel = `End: ${point.name}`;
-                    } else {
-                        markerColor = 'green';
-                        tooltipLabel = `Point ${i + 1}: ${point.name}`;
-                    }
-
-                    var tooltipContent = `
-                        <div style="text-align: center;">
-                            <strong>${tooltipLabel}</strong><br>
-                            <img src="${point.image_url}" alt="${point.name}" style="width:150px; height:150px; object-fit: cover; margin-top:5px;">
-                        </div>
-                    `;
-
-                    L.circleMarker([point.lat, point.lon], {
-                        radius: 6,
-                        color: markerColor,
-                        fillColor: markerColor,
-                        fillOpacity: 0.8,
-                        title: point.name
-                    }).addTo(map_4345da8416a360146c06209c41abb8ae)
-                    .bindTooltip(tooltipContent, { permanent: false, direction: "top", className: "custom-tooltip" });
-                }
-            } else if (routeType === "walking_distance") {
-                for (var i = 0; i < route.length; i++) {
-                    latlngs.push([route[i].lat, route[i].lon]);
-                }
-                for (var i = 0; i < paths["walking_distance"].order.length; i++) {
-                    var point = paths["walking_distance"].order[i];
-
-                    var markerColor, tooltipLabel;
-                    if (i === 0) {
-                        markerColor = 'red';
-                        tooltipLabel = `Start: ${point.name}`;
-                    } else if (i === paths["walking_distance"].order.length - 1) {
-                        markerColor = 'blue';
-                        tooltipLabel = `End: ${point.name}`;
-                    } else {
-                        markerColor = 'green';
-                        tooltipLabel = `Point ${i + 1}: ${point.name}`;
-                    }
-
-                    var tooltipContent = `
-                        <div style="text-align: center;">
-                            <strong>${tooltipLabel}</strong><br>
-                            <img src="${point.image_url}" alt="${point.name}" style="width:150px; height:150px; object-fit: cover; margin-top:5px;">
-                        </div>
-                    `;
-
-                    L.circleMarker([point.lat, point.lon], {
-                        radius: 6,
-                        color: markerColor,
-                        fillColor: markerColor,
-                        fillOpacity: 0.8,
-                        title: point.name
-                    }).addTo(map_4345da8416a360146c06209c41abb8ae)
-                    .bindTooltip(tooltipContent, { permanent: false, direction: "top", className: "custom-tooltip" });
-                }
-            }
-
-            L.polyline(latlngs, {
-                color: routeType === 'crow_flies' ? 'red' : 'green',
-                weight: 3,
-                opacity: 0.7
-            }).addTo(map_4345da8416a360146c06209c41abb8ae);
-        }
-    };
-
-    function clearMap() {
-        map_4345da8416a360146c06209c41abb8ae.eachLayer(function (layer) {
-            if (layer !== tile_layer_c6662b5f0e163d2b2d40ea34941395bc) {
-                map_4345da8416a360146c06209c41abb8ae.removeLayer(layer);
-            }
-        });
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-        updateMap("crow_flies");
-    });
-});
-
-
-
-    
-</script>
-
-
-   <div class="map-container">
-
-        <div class="map-controls" style="position: absolute; top: 10px; right: 10px; z-index: 9999; background-color: white; padding: 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
-        <label for="routeType">Select Route Type:</label>
-        <select id="routeType" onchange="updateMap(this.value)">
-            <option value="crow_flies">As the Crow Flies</option>
-            <option value="walking_distance">Walking Distance</option>
-        </select>
-        <br>
-        <label id="distanceLabel" style="margin-top: 5px; display: block;">Total Distance: 0.00 km</label>
+<!--     <header>
+        <h1>π Day Visualization</h1>
+        <p>Generate a beautiful poster of π digits in Indian scripts</p>
+    </header>
+ -->    
+    <div class="container">
+        <div class="controls">
+            <h2>Settings</h2>
+            <div class="form-group">
+                <label for="num-digits">Number of Digits:</label>
+                <div class="slider-container">
+                    <input type="range" id="num-digits" min="10" max="430" value="200" step="10">
+                    <div class="slider-value" id="digits-value">200 digits</div>
+                    <div class="dimensions-info" id="dimensions-info">(Optimal grid: calculating...)</div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="seed">Random Seed (leave empty for random):</label>
+                <input type="number" id="seed" placeholder="e.g. 42">
+            </div>
+            
+            <button id="generate-btn">Generate New Visualization</button>
+            <button id="download-latex-btn">Download LaTeX</button>
+            
+            <div class="form-group" style="margin-top: 20px;">
+                <p><strong>Note:</strong> To generate PDFs, you'll need LaTeX with the following packages:</p>
+                <ul style="margin-left: 20px;">
+                    <li>fontspec</li>
+                    <li>xcolor</li>
+                    <li>tikz</li>
+                    <li>multicol</li>
+                    <li>Noto Sans fonts for Indian scripts</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="preview">
+            <h2>Preview</h2>
+            <div id="pi-grid-container">
+                <div id="pi-grid" class="pi-grid"></div>
+            </div>
+            
+            <div class="stats">
+                <h3>Statistics</h3>
+                <p id="stats-text">Loading...</p>
+                
+                <h3>Scripts Used</h3>
+                <div id="script-list" class="script-list">
+                    <div class="loading">Loading scripts...</div>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <style>
-        .custom-tooltip {
-            background: white;
-            border: 1px solid #ccc;
-            padding: 5px;
-            border-radius: 5px;
-            text-align: center;
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/decimal.js/10.4.3/decimal.min.js"></script>
+    <!-- <script src="/assets/pi_functions.js"></script> -->
+    <script>
+
+        // Global variables
+        let piData = null;
+        
+        // DOM elements
+        const numDigitsInput = document.getElementById('num-digits');
+        const digitsValueDisplay = document.getElementById('digits-value');
+        const dimensionsInfo = document.getElementById('dimensions-info');
+        const seedInput = document.getElementById('seed');
+        const generateBtn = document.getElementById('generate-btn');
+        const downloadLatexBtn = document.getElementById('download-latex-btn');
+        const piGridContainer = document.getElementById('pi-grid-container');
+        const piGrid = document.getElementById('pi-grid');
+        const statsText = document.getElementById('stats-text');
+        const scriptList = document.getElementById('script-list');
+        
+        // Event listeners
+        numDigitsInput.addEventListener('input', updateDigitsDisplay);
+        generateBtn.addEventListener('click', generateVisualization);
+        downloadLatexBtn.addEventListener('click', downloadLatex);
+        
+        // Initialize
+        updateDigitsDisplay();
+        generateVisualization();
+        
+        // Functions
+        function updateDigitsDisplay() {
+            const numDigits = parseInt(numDigitsInput.value);
+            digitsValueDisplay.textContent = `${numDigits} digits`;
+            
+            // Calculate approximate dimensions based on the golden ratio
+            const ratio = 1.414; // A4 ratio (height/width)
+            const { rows, cols } = calculateGridDimensions(numDigits);
+            
+            dimensionsInfo.textContent = `(Optimal grid: ${rows} × ${cols})`;
         }
-        .custom-tooltip img {
-            display: block;
-            margin: 0 auto;
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-        }
-    </style>
-
-            <div class="folium-map" id="map_4345da8416a360146c06209c41abb8ae" ></div>
-
-    </div>
-</body>
-
-<script>
-    
-    
-            var map_4345da8416a360146c06209c41abb8ae = L.map(
-                "map_4345da8416a360146c06209c41abb8ae",
-                {
-                    center: [50.776351, 6.083862],
-                    crs: L.CRS.EPSG3857,
-                    zoom: 13,
-                    zoomControl: true,
-                    preferCanvas: false,
-                }
-            );
+        
+        async function generateVisualization() {
+            showLoading();
+            
+            const numDigits = parseInt(numDigitsInput.value);
+            // Process seed value properly
+            let seed = seedInput.value.trim();
+            seed = seed ? parseInt(seed) : null;
+            
+            // Store the seed value in the input field even if it was generated
+            // randomly on the server, for reproducibility
+            if (seed !== null) {
+                seedInput.value = seed;
+            }
+            if (!seed) {
+                seed = Math.floor(Math.random() * 1000000);
+                seedInput.value = seed;
+            }
 
             
+            try {
+                // Call the backend to generate data
+                piData = JSON.parse(generateJsonData(numDigits, seed));
 
+                
+                renderGrid(piData);
+                updateStats(piData);
+                
+                // Update the seed input with the actual seed used (for reproducibility)
+                if (piData.seed && !seedInput.value) {
+                    seedInput.value = piData.seed;
+                }
+                
+            } catch (error) {
+                console.error('Error generating visualization:', error);
+                
+                // For demo purposes, use pre-generated data
+                fetch('pi_data.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        piData = data;
+                        renderGrid(piData);
+                        updateStats(piData);
+                    })
+                    .catch(err => {
+                        console.error('Error loading demo data:', err);
+                        alert('Failed to load visualization data. Please try again.');
+                    });
+            }
+        }
         
-    
-            var tile_layer_c6662b5f0e163d2b2d40ea34941395bc = L.tileLayer(
-                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            );
+        function renderGrid(data) {
+            piGrid.innerHTML = '';
+            piGrid.style.gridTemplateColumns = `repeat(${data.cols}, 1fr)`;
+            
+            // Apply appropriate size class based on the number of digits
+            piGridContainer.className = '';
+            if (data.rows * data.cols <= 50) {
+                piGridContainer.classList.add('small-grid');
+            } else if (data.rows * data.cols <= 200) {
+                piGridContainer.classList.add('medium-grid');
+            } else if (data.rows * data.cols <= 500) {
+                piGridContainer.classList.add('large-grid');
+            } else {
+                piGridContainer.classList.add('extra-large-grid');
+            }
+            
+            for (let row = 0; row < data.rows; row++) {
+                for (let col = 0; col < data.cols; col++) {
+                    const cell = data.grid[row][col];
+                    const cellElement = document.createElement('div');
+                    
+                    // Apply appropriate script class for styling
+                    let scriptClass = `script-${cell.script}`;
+                    // Handle special case for Ol Chiki which has a hyphen
+                    if (cell.script === "Ol Chiki") {
+                        scriptClass = "script-Ol-Chiki";
+                    }
+                    
+                    cellElement.className = `pi-cell ${scriptClass}`;
+                    
+                    // Add highlight class if in pi shape
+                    if (cell.highlight) {
+                        cellElement.classList.add('highlight');
+                    }
+                    
+                    cellElement.textContent = cell.digit;
+                    cellElement.dataset.script = `${cell.digit} ${cell.script} (${convertToLatin(cell.digit, cell.script)})`;
+                    // cellElement.title = `${cell.digit} (${cell.script})`;
+                    
+                    piGrid.appendChild(cellElement);
+                }
+            }
+        }
         
-    
-            tile_layer_c6662b5f0e163d2b2d40ea34941395bc.addTo(map_4345da8416a360146c06209c41abb8ae);
+        function updateStats(data) {
+            statsText.textContent = `Using ${data.total_scripts_used} different Indian scripts to display ${data.rows * data.cols} digits of π in a ${data.rows}×${data.cols} grid. Seed: ${data.seed}`;
+            
+            scriptList.innerHTML = '';
+            
+            // Sort scripts by usage count
+            const sortedScripts = Object.entries(data.script_usage)
+                .sort((a, b) => b[1] - a[1])
+                .map(([script, count]) => ({ script, count }));
+            
+            sortedScripts.forEach(item => {
+                const scriptTag = document.createElement('div');
+                
+                // Apply appropriate script class for styling
+                let scriptClass = `script-${item.script}`;
+                // Handle special case for Ol Chiki which has a hyphen
+                if (item.script === "Ol Chiki") {
+                    scriptClass = "script-Ol-Chiki";
+                }
+                
+                scriptTag.className = `script-tag ${scriptClass}`;
+                scriptTag.textContent = `${item.script} (${item.count})`;
+                scriptList.appendChild(scriptTag);
+            });
+        }
+        
+        function showLoading() {
+            piGrid.innerHTML = '<div class="loading">Generating visualization...</div>';
+            scriptList.innerHTML = '<div class="loading">Loading scripts...</div>';
+            statsText.textContent = 'Loading...';
+        }
+        
+        async function downloadLatex() {
+            if (!piData) {
+                alert('Please generate a visualization first');
+                return;
+            }
+            
+            try {
+                const title = "π in Indian Scripts"; // Fixed title
 
-</script>
+                // console.log("Pi Mask for LaTeX:", piData.pi_mask);
+
+                const latex = generateLatex(piData.grid.map(row => row.map(cell => cell.digit)), 
+                                            piData.grid.map(row => row.map(cell => cell.script)), 
+                                            piData.rows, 
+                                            piData.cols, 
+                                            "π in Indian Scripts", 
+                                            piData.pi_mask);
+
+                                
+                // const latex = await response.text();
+                downloadFile('pi_visualization.tex', latex);
+                
+            } catch (error) {
+                console.error('Error generating LaTeX:', error);
+                alert('Failed to generate LaTeX. Please try again.');
+            }
+        }
+        
+        function downloadFile(filename, content) {
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
 </html>
