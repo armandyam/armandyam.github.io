@@ -117,33 +117,33 @@ tags:
             font-weight: bold;
             color: var(--accent-color);
         }
-        /*
-        button {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 500;
-            transition: background-color 0.3s;
-            width: 100%;
-            margin-bottom: 10px;
+        
+        .pi-controls button {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 500;
+        transition: background-color 0.3s;
+        width: 100%;
+        margin-bottom: 10px;
         }
-        */
-        button:hover {
+
+        .pi-controls button:hover {
             background-color: var(--secondary-color);
         }
-        
-        button.secondary {
+
+        .pi-controls button.secondary {
             background-color: var(--accent-color);
         }
-        
-        button.secondary:hover {
+
+        .pi-controls button.secondary:hover {
             background-color: #c0392b;
         }
-        
+
         .pi-grid {
             display: grid;
             grid-template-columns: repeat(20, 1fr);
@@ -266,8 +266,10 @@ tags:
                 <input type="number" id="seed" placeholder="e.g. 42">
             </div>
             
-            <button id="generate-btn">Generate New Visualization</button>
-            <button id="download-latex-btn">Download LaTeX</button>
+            <div class="pi-controls">
+                <button id="generate-btn">Generate New Visualization</button>
+                <button id="download-latex-btn">Download LaTeX</button>
+            </div>
             
             <div class="form-group" style="margin-top: 20px;">
                 <p><strong>Note:</strong> To generate PDFs, you'll need LaTeX with the following packages:</p>
