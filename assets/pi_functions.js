@@ -63,12 +63,14 @@ function calculateGridDimensions(numDigits) {
     cols = Math.max(3, Math.round(cols)); // Minimum 3 columns
     rows = Math.max(3, Math.ceil(numDigits / cols)); // Minimum 3 rows, round up to ensure enough cells
 
-    // console.log(`Available space ratio: ${actualRatio.toFixed(3)} (vs A4 ratio: ${A4_RATIO.toFixed(3)})`);
-    // console.log(`Grid dimensions: ${rows} rows x ${cols} columns`);
+    console.log(`Available space ratio: ${actualRatio.toFixed(3)} (vs A4 ratio: ${A4_RATIO.toFixed(3)})`);
+    console.log(`Grid dimensions: ${rows} rows x ${cols} columns`);
     
     return { rows, cols };
 }
 
+// Example usage
+console.log(calculateGridDimensions(250));
 
 function calculateExactFontSize(rows, cols, leftRightMarginPt = LEFT_RIGHT_MARGIN_PT) {
     /**
@@ -95,13 +97,13 @@ function calculateExactFontSize(rows, cols, leftRightMarginPt = LEFT_RIGHT_MARGI
     // Reduced baseline skip to decrease vertical spacing
     const baselineSkip = fontSize * 1.05; // Reduced from 1.2 to 1.05
 
-    // console.log(fontSize, baselineSkip, leftRightMarginPt, cols, rows, cellScale);
+    console.log(fontSize, baselineSkip, leftRightMarginPt, cols, rows, cellScale);
     
     return { fontSize, baselineSkip };
 }
 
-// // Example usage
-// console.log(calculateExactFontSize(30, 20));
+// Example usage
+console.log(calculateExactFontSize(30, 20));
 
 
 // Import a high-precision library for handling pi (use decimal.js or a similar library)
@@ -133,9 +135,9 @@ function convertDigit(digit, script) {
     return String.fromCharCode(startCode + parseInt(digit));
 }
 
-// // Example usage
-// console.log(getPiDigits(200));
-// console.log(convertDigit('5', 'Devanagari'));
+// Example usage
+console.log(getPiDigits(200));
+console.log(convertDigit('5', 'Devanagari'));
 
 
 function generatePiShapeMask(rows, cols) {
@@ -186,8 +188,8 @@ function generatePiShapeMask(rows, cols) {
     return mask;
 }
 
-// // Example usage
-// console.log(generatePiShapeMask(30, 50));
+// Example usage
+console.log(generatePiShapeMask(30, 50));
 
 
 function getValidScripts(row, col, gridScripts, rows, cols, usedScriptsCount) {
@@ -261,7 +263,7 @@ function createPiGrid(rows = 10, cols = 20, seed = null, samplingStrategy = "ran
 
     // Generate pi shape mask for colored cells
     let piMask = generatePiShapeMask(rows, cols);
-    // console.log("Pi Mask:", piMask); // ✅ Check if `piMask` is being created correctly
+    console.log("Pi Mask:", piMask); // ✅ Check if `piMask` is being created correctly
 
     // Track script usage
     let usedScriptsCount = {};
@@ -359,7 +361,7 @@ function createPiGrid(rows = 10, cols = 20, seed = null, samplingStrategy = "ran
 }
 
 // Example usage:
-// console.log(createPiGrid(10, 20));
+console.log(createPiGrid(10, 20));
 
 
 
@@ -501,7 +503,7 @@ let gridScripts = [
     ["Malayalam", "Manipuri", "Urdu", "Sindhi", "Kashmiri"]
 ];
 
-// console.log(generateLatex(gridDigits, gridScripts, 3, 5));
+console.log(generateLatex(gridDigits, gridScripts, 3, 5));
 
 function generateJsonData(numDigits = 200, seed = null, samplingStrategy = "random", scriptWeights = null) {
     /**
@@ -516,7 +518,7 @@ function generateJsonData(numDigits = 200, seed = null, samplingStrategy = "rand
 
     // Calculate optimal rows and columns for this number of digits
     let { rows, cols } = calculateGridDimensions(numDigits);
-    // console.log("In generate JSON", seed, "strategy:", samplingStrategy);
+    console.log("In generate JSON", seed, "strategy:", samplingStrategy);
 
     // Create the pi grid with the specified sampling strategy
     let { gridDigits, gridScripts, scriptUsage, totalScriptsUsed, piMask } = createPiGrid(
@@ -556,7 +558,7 @@ function generateJsonData(numDigits = 200, seed = null, samplingStrategy = "rand
 }
 
 // Example usage:
-// console.log(generateJsonData(200));
+console.log(generateJsonData(200));
 
 function convertToLatin(digit, script) {
     if (digit === ".") return ".";  // Keep decimal points unchanged
