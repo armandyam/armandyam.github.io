@@ -67,8 +67,8 @@ tags:
             display: flex;
             flex-wrap: wrap;
             gap: 30px;
-        }
-        
+            justify-content: flex-start; /* ensures left alignment */
+        }        
         .controls {
             flex: 1;
             min-width: 300px;
@@ -250,29 +250,28 @@ tags:
 </head>
 <body>
      <section>
-  <p>Yeah, I know, Pi Day already passed. I'm fashionably late to the party—by a mere few days—but hey, the circumference of my enthusiasm is irrational, right?</p>
+  <p>Yeah, I know, Pi Day already passed. I am fashionably late to the party—by a mere few days—but hey, the circumference of my enthusiasm is irrational, right?</p>
 
-  <p>A couple of weeks back, while spiraling down another rabbit hole (read: procrastinating) for a completely unrelated blog post, I stumbled upon the absolutely brilliant work of Martin Krzywinski whose <a href="https://mk.bcgsc.ca/pi/piday2019/" target="_blank">website</a> I've cited before. For Pi Day 2019, he created an incredible poster featuring Pi represented through characters from scripts across the globe. Mind-blowing concept—I instantly wanted my own.</p>
+  <p>A couple of weeks back, while spiraling down another rabbit hole (read: procrastinating) for a completely unrelated blog post, I stumbled upon the absolutely brilliant work of Martin Krzywinski whose <a href="https://mk.bcgsc.ca/pi/piday2019/" target="_blank">website</a> I have cited before. For Pi Day 2019, he created an incredible poster featuring Pi represented through characters from scripts across the globe. Mind-blowing concept—I instantly wanted my own.</p>
 
   <p>Of course, instead of doing the sensible thing (using his ready-made masterpiece), I decided to create my own spin on it: What if everyone could have their own unique Pi poster? Uniqueness powered by—what else—large language models (LLMs).</p>
 
-  <p>Enter Sonnet 3.7, Cursor AI’s shiny new agent mode that my friend couldn’t stop raving about. Perfect timing! With one ambitious prompt (and probably too much optimism), I asked AgentS to craft Pi posters using all official Indian scripts (scheduled languages with their scripts) listed neatly on <a href="https://en.wikipedia.org/wiki/Languages_with_legal_status_in_India" target="_blank">Wikipedia</a>, in addition to Latin script to accommodate english. Amazingly, Sonnet 3.7 churned out a working Python version in about ten minutes flat—talk about instant gratification!</p>
+  <p>Enter Sonnet 3.7, Cursor AI’s shiny new agent mode that my friend couldn’t stop raving about. Perfect timing! With one ambitious prompt (and probably too much optimism), I asked Agent-S to craft Pi posters using all official Indian scripts (scheduled languages with their scripts) listed neatly on <a href="https://en.wikipedia.org/wiki/Languages_with_legal_status_in_India" target="_blank">Wikipedia</a>, in addition to Latin script to accommodate english. Amazingly, Sonnet 3.7 churned out a working Python version in about ten minutes flat—talk about instant gratification!</p>
 
   <p>But then came the twist: converting everything from Python to JavaScript to embed it neatly into my Jekyll-based website. Let's just say things quickly turned as chaotic as the decimals of Pi itself. My pristine code became an LLM playground. Sonnet randomly rewrote entire sections, turned Jinja templates into spaghetti, and generally made me regret not committing changes frequently enough to GitHub. Lesson learned: commit early, commit often, and never fully trust an overly enthusiastic LLM.</p>
 
   <p>After several frustrating rounds of 'fix-it-myself' debugging, I waved the white flag and went old-school: copy-pasting code snippets between ChatGPT and my editor, circa 2022. Vintage, but effective. Finally, a functional version emerged—after some JavaScript-induced headaches and website quirks.</p>
 
-  <p>So here's what you can do now:</p>
+  <p>So here is what you can do now:</p>
 
-  <p>Below this ramble, you'll find my shiny creation: input your own random seed number, choose your grid size, and voilà! A unique Pi, beautifully represented using the rich tapestry of Indian scripts. Hit "Generate," and you can even download your very own LaTeX file, ready to compile into an A4 poster to adorn your walls. A quick heads-up: you'll first need to download and install the NotoSans fonts for the scripts you select—tedious, I know, but think of it as character-building (pun absolutely intended).</p>
+  <p>Below this ramble, you will find my shiny creation: input your own random seed number, choose your grid size, and voilà! A unique Pi, beautifully represented using the rich tapestry of Indian scripts. Hit "Generate," and you can even download your very own LaTeX file, ready to compile into an A4 poster to adorn your walls. A quick heads-up: you will first need to download and install the NotoSans fonts for the scripts you select—tedious, I know, but think of it as character-building (pun absolutely intended).</p>
 
-  <p>Expanding this to include scripts worldwide is definitely doable (I just did not find an easy way to find the entire database from Noto Sans and also I could not find a way to identify all the various scripts available there!). For anyone brave enough, I've linked my <a href="https://github.com/armandyam/pi_day_indian_scripts" target="_blank">GitHub repository</a>—take it, remix it, and let me know how it goes!</p>
+  <p>Expanding this to include scripts worldwide is definitely doable (I just did not find an easy way to find the entire database from Noto Sans and also I could not find a way to identify all the various scripts available there!). For anyone brave enough, I have linked my <a href="https://github.com/armandyam/pi_day_indian_scripts" target="_blank">GitHub repository</a>—take it, remix it, and let me know how it goes!</p>
 
   <p>Happy belated Pi Day! Better late (and nerdy) than never, right?</p>
 
   <p>
-    P.S.
-I don't personally know the exact digits of Pi (beyond the obvious 3.14...), nor can I verify the accuracy of numbers represented in various scripts. If you spot any mistakes—especially speakers of these languages—please let me know so I can correct them!</p>
+P.S.: I don't personally know the exact digits of Pi (beyond the obvious 3.14...), nor can I verify the accuracy of numbers represented in various scripts. If you spot any mistakes—especially speakers of these languages—please let me know so I can correct them!</p>
 </section>
 
 
@@ -298,16 +297,6 @@ I don't personally know the exact digits of Pi (beyond the obvious 3.14...), nor
                 <button id="download-latex-btn">Download LaTeX</button>
             </div>
             
-            <div class="form-group" style="margin-top: 20px;">
-                <p><strong>Note:</strong> To generate PDFs, you'll need LaTeX with the following packages:</p>
-                <ul style="margin-left: 20px;">
-                    <li>fontspec</li>
-                    <li>xcolor</li>
-                    <li>tikz</li>
-                    <li>multicol</li>
-                    <li>Noto Sans fonts for Indian scripts</li>
-                </ul>
-            </div>
         </div>
         
         <div class="preview">
