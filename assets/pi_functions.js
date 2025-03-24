@@ -1,6 +1,6 @@
 // Unicode numeral scripts with starting code points for digits (0-9)
 const NUMERAL_SCRIPTS = {
-    "Assamese": 0x09E6,
+    // "Assamese": 0x09E6,
     "Bengali": 0x09E6,
     "Devanagari": 0x0966,
     "Gujarati": 0x0AE6,
@@ -12,7 +12,7 @@ const NUMERAL_SCRIPTS = {
     "Tamil": 0x0BE6,
     "Telugu": 0x0C66,
     "Urdu": 0x06F0,
-    "Kashmiri": 0x06F0,
+    // "Kashmiri": 0x06F0,
     "Sindhi": 0x06F0,
     "Manipuri": 0xABF0,
     "Latin": 0x0030
@@ -20,9 +20,9 @@ const NUMERAL_SCRIPTS = {
 
 // Well-supported scripts in LaTeX and browsers
 const WELL_SUPPORTED_SCRIPTS = [
-    "Latin", "Devanagari", "Bengali", "Assamese", "Gujarati", 
+    "Latin", "Devanagari", "Bengali", "Gujarati", 
     "Gurmukhi", "Tamil", "Telugu", "Kannada", "Malayalam", 
-    "Odia", "Urdu", "Kashmiri", "Sindhi", "Manipuri", "Ol Chiki"
+    "Odia", "Urdu", "Sindhi", "Manipuri", "Ol Chiki"
 ];
 
 // Constants for grid configuration and constraints
