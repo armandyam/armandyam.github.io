@@ -2,7 +2,7 @@
 title: "Pi Day Visualization - Indian Scripts"
 excerpt: "Interactive visualization of π digits using diverse Indian scripts"
 collection: portfolio
-symbol: 'fa fa-pi'
+symbol: 'fas fa-pi'
 technologies: ["Python", "Flask", "LaTeX", "MIT License"]
 ---
 
