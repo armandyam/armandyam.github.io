@@ -305,10 +305,8 @@ tags:
     <script src="/assets/pi_functions.js"></script>
     <script>
 
-        // Global variables
         let piData = null;
         
-        // DOM elements
         const numDigitsInput = document.getElementById('num-digits');
         const digitsValueDisplay = document.getElementById('digits-value');
         const dimensionsInfo = document.getElementById('dimensions-info');
@@ -320,21 +318,18 @@ tags:
         const statsText = document.getElementById('stats-text');
         const scriptList = document.getElementById('script-list');
         
-        // Event listeners
         numDigitsInput.addEventListener('input', updateDigitsDisplay);
         generateBtn.addEventListener('click', generateVisualization);
         downloadLatexBtn.addEventListener('click', downloadLatex);
         
-        // Initialize
         updateDigitsDisplay();
         generateVisualization();
-        // Functions
+
         function updateDigitsDisplay() {
             const numDigits = parseInt(numDigitsInput.value);
             digitsValueDisplay.textContent = `${numDigits} digits`;
             
-            // Calculate approximate dimensions based on the golden ratio
-            const ratio = 1.414; // A4 ratio (height/width)
+            const ratio = 1.414; 
             const { rows, cols } = calculateGridDimensions(numDigits);
             
             dimensionsInfo.textContent = `(Optimal grid: ${rows} × ${cols})`;
@@ -346,12 +341,9 @@ tags:
             showLoading();
             
             const numDigits = parseInt(numDigitsInput.value);
-            // Process seed value properly
             let seed = seedInput.value.trim();
             seed = seed ? parseInt(seed) : null;
-            
-            // Store the seed value in the input field even if it was generated
-            // randomly on the server, for reproducibility
+
             if (seed !== null) {
                 seedInput.value = seed;
             }
@@ -362,14 +354,12 @@ tags:
 
             
             try {
-                // Call the backend to generate data
                 piData = JSON.parse(generateJsonData(numDigits, seed));
 
                 
                 renderGrid(piData);
                 updateStats(piData);
                 
-                // Update the seed input with the actual seed used (for reproducibility)
                 if (piData.seed && !seedInput.value) {
                     seedInput.value = piData.seed;
                 }
@@ -377,18 +367,6 @@ tags:
             } catch (error) {
                 console.error('Error generating visualization:', error);
                 
-                // For demo purposes, use pre-generated data
-                fetch('pi_data.json')
-                    .then(response => response.json())
-                    .then(data => {
-                        piData = data;
-                        renderGrid(piData);
-                        updateStats(piData);
-                    })
-                    .catch(err => {
-                        console.error('Error loading demo data:', err);
-                        alert('Failed to load visualization data. Please try again.');
-                    });
             }
         }
         
@@ -396,7 +374,6 @@ tags:
             piGrid.innerHTML = '';
             piGrid.style.gridTemplateColumns = `repeat(${data.cols}, 1fr)`;
             
-            // Apply appropriate size class based on the number of digits
             piGridContainer.className = '';
             if (data.rows * data.cols <= 50) {
                 piGridContainer.classList.add('small-grid');
@@ -413,23 +390,19 @@ tags:
                     const cell = data.grid[row][col];
                     const cellElement = document.createElement('div');
                     
-                    // Apply appropriate script class for styling
                     let scriptClass = `script-${cell.script}`;
-                    // Handle special case for Ol Chiki which has a hyphen
                     if (cell.script === "Ol Chiki") {
                         scriptClass = "script-Ol-Chiki";
                     }
                     
                     cellElement.className = `pi-cell ${scriptClass}`;
                     
-                    // Add highlight class if in pi shape
                     if (cell.highlight) {
                         cellElement.classList.add('highlight');
                     }
                     
                     cellElement.textContent = cell.digit;
                     cellElement.dataset.script = `${cell.digit} ${cell.script} (${convertToLatin(cell.digit, cell.script)})`;
-                    // cellElement.title = `${cell.digit} (${cell.script})`;
                     
                     piGrid.appendChild(cellElement);
                 }
@@ -441,7 +414,6 @@ tags:
             
             scriptList.innerHTML = '';
             
-            // Sort scripts by usage count
             const sortedScripts = Object.entries(data.script_usage)
                 .sort((a, b) => b[1] - a[1])
                 .map(([script, count]) => ({ script, count }));
@@ -449,9 +421,7 @@ tags:
             sortedScripts.forEach(item => {
                 const scriptTag = document.createElement('div');
                 
-                // Apply appropriate script class for styling
                 let scriptClass = `script-${item.script}`;
-                // Handle special case for Ol Chiki which has a hyphen
                 if (item.script === "Ol Chiki") {
                     scriptClass = "script-Ol-Chiki";
                 }
@@ -475,9 +445,8 @@ tags:
             }
             
             try {
-                const title = "π in Indian Scripts"; // Fixed title
+                const title = "π in Indian Scripts"; 
 
-                // console.log("Pi Mask for LaTeX:", piData.pi_mask);
 
                 const latex = generateLatex(piData.grid.map(row => row.map(cell => cell.digit)), 
                                             piData.grid.map(row => row.map(cell => cell.script)), 
@@ -487,7 +456,6 @@ tags:
                                             piData.pi_mask);
 
                                 
-                // const latex = await response.text();
                 downloadFile('pi_visualization.tex', latex);
                 
             } catch (error) {
