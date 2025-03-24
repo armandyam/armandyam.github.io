@@ -69,8 +69,6 @@ function calculateGridDimensions(numDigits) {
     return { rows, cols };
 }
 
-// Example usage
-console.log(calculateGridDimensions(250));
 
 function calculateExactFontSize(rows, cols, leftRightMarginPt = LEFT_RIGHT_MARGIN_PT) {
     /**
@@ -102,9 +100,6 @@ function calculateExactFontSize(rows, cols, leftRightMarginPt = LEFT_RIGHT_MARGI
     return { fontSize, baselineSkip };
 }
 
-// Example usage
-console.log(calculateExactFontSize(30, 20));
-
 
 // Import a high-precision library for handling pi (use decimal.js or a similar library)
 // const Decimal = require('decimal.js');
@@ -135,9 +130,6 @@ function convertDigit(digit, script) {
     return String.fromCharCode(startCode + parseInt(digit));
 }
 
-// Example usage
-console.log(getPiDigits(200));
-console.log(convertDigit('5', 'Devanagari'));
 
 
 function generatePiShapeMask(rows, cols) {
@@ -188,8 +180,6 @@ function generatePiShapeMask(rows, cols) {
     return mask;
 }
 
-// Example usage
-console.log(generatePiShapeMask(30, 50));
 
 
 function getValidScripts(row, col, gridScripts, rows, cols, usedScriptsCount) {
@@ -223,11 +213,6 @@ function getValidScripts(row, col, gridScripts, rows, cols, usedScriptsCount) {
     return validScripts;
 }
 
-// // Example usage:
-// let gridScripts = Array.from({ length: 5 }, () => Array(5).fill(null));
-// let usedScriptsCount = { "Devanagari": 3, "Bengali": 2, "Tamil": 1 };
-
-// console.log(getValidScripts(2, 2, gridScripts, 5, 5, usedScriptsCount));
 
 
 function createPiGrid(rows = 10, cols = 20, seed = null, samplingStrategy = "random", scriptWeights = null) {
@@ -263,7 +248,6 @@ function createPiGrid(rows = 10, cols = 20, seed = null, samplingStrategy = "ran
 
     // Generate pi shape mask for colored cells
     let piMask = generatePiShapeMask(rows, cols);
-    console.log("Pi Mask:", piMask); // ✅ Check if `piMask` is being created correctly
 
     // Track script usage
     let usedScriptsCount = {};
@@ -359,9 +343,6 @@ function createPiGrid(rows = 10, cols = 20, seed = null, samplingStrategy = "ran
 
     return { gridDigits, gridScripts, scriptUsage, totalScriptsUsed, piMask };
 }
-
-// Example usage:
-console.log(createPiGrid(10, 20));
 
 
 
@@ -503,7 +484,6 @@ let gridScripts = [
     ["Malayalam", "Manipuri", "Urdu", "Sindhi", "Kashmiri"]
 ];
 
-console.log(generateLatex(gridDigits, gridScripts, 3, 5));
 
 function generateJsonData(numDigits = 200, seed = null, samplingStrategy = "random", scriptWeights = null) {
     /**
@@ -557,8 +537,6 @@ function generateJsonData(numDigits = 200, seed = null, samplingStrategy = "rand
     return JSON.stringify(data, null, 2);
 }
 
-// Example usage:
-console.log(generateJsonData(200));
 
 function convertToLatin(digit, script) {
     if (digit === ".") return ".";  // Keep decimal points unchanged
