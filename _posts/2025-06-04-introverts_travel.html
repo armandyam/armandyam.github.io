@@ -1,0 +1,240 @@
+---
+title: 'The Introvert's Guide to Visiting Every Country (Quietly)'
+date: 2026-06-05
+permalink: /posts/2026/06/introvert_travel/
+tags:
+  - optimization
+  - travel
+  - maps
+  - folium
+---
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+        .info-panel {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            max-width: 300px;
+        }
+        .stat-item {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .stat-label {
+            font-weight: bold;
+            color: #333;
+        }
+        .stat-value {
+            color: #666;
+        }
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+<section>
+  <p>
+    Inspired by <a href="https://patrickstolz.com">Patrick Stolz</a>'s brilliant idea of mapping population exposure to travel, I decided to ask myself a question that only a data-loving introvert would: 
+    <em>"How can I visit every country in the world while meeting the fewest number of people?"</em>
+  </p>
+
+  <p>
+    This turned into a four-part journey through optimization problems, each more grounded in reality (and computational effort) than the last.
+  </p>
+
+  <h3>Case 1: All Grids, All Countries Per Grid (Simple Greedy)</h3>
+  <p>
+    In this beginner-level version, I pick the lowest population grid per country. If a grid belongs to multiple countries—great! One stop, many stamps.
+    Teleportation assumed. Realism: zero. Population-avoidance: maximum.
+  </p>
+
+  <h3>Case 2: All Grids, One Country Per Grid (Strategic)</h3>
+  <p>
+    This one added some finesse. I enforced a one-to-one mapping: one grid per country. The problem then became an assignment challenge, solvable by Hungarian algorithms or similar combinatorial optimization techniques.
+    It’s like speed dating with Earth’s least populated spots.
+  </p>
+
+  <h3>Case 3: Airports, Shared Country Grids (Greedy + TSP)</h3>
+  <p>
+    Now we fly. Using airport locations as nodes, I designed a greedy airport-to-airport TSP solver. After landing, I could claim any country sharing that airport grid, even if it required a hypothetical boat ride or gentle hike.
+    This version introduced real-world logistics and a CO₂ tracker to account for emissions.
+  </p>
+
+  <h3>Case 4: Airports, Host Country Only (Hardcore Realism)</h3>
+  <p>
+    This is the strictest and cleanest version. You can only count a country if you fly into an airport grid hosted by that country—no border-hopping.
+    I computed the optimal airport sequence using TSP heuristics, minimized CO₂ output, and ensured the population footprint was as low as possible.
+  </p>
+
+  <p>
+    Below is the rendered map from the final case, visualizing the optimized tour across countries, complete with the calculated population exposure and total emissions.
+  </p>
+</section>
+
+<div id="loading" class="loading">Loading flight data...</div>
+<div id="map"></div>
+
+<div class="info-panel">
+    <h3 style="margin-top: 0; color: #2c3e50;">🌍 Introvert Travel Route</h3>
+    <div class="stat-item">
+        <span class="stat-label">Airports:</span> 
+        <span class="stat-value" id="airport-count">-</span>
+    </div>
+    <div class="stat-item">
+        <span class="stat-label">Flights:</span> 
+        <span class="stat-value" id="flight-count">-</span>
+    </div>
+    <div class="stat-item">
+        <span class="stat-label">Total CO₂:</span> 
+        <span class="stat-value" id="total-co2">-</span> tons
+    </div>
+    <div class="stat-item">
+        <span class="stat-label">Strategy:</span> 
+        <span class="stat-value">Airports + One Country</span>
+    </div>
+</div>
+
+<script>
+    let map;
+    function initMap(centerLat, centerLon) {
+        map = L.map('map').setView([centerLat, centerLon], 2);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+    }
+
+    function addFlightRoute(flight) {
+        const depLatLng = [flight.dep_lat, flight.dep_lon];
+        const arrLatLng = [flight.arr_lat, flight.arr_lon];
+        const popupContent = `<strong>${flight.dep_name} (${flight.dep_country}) → ${flight.arr_name} (${flight.arr_country})</strong><br>CO₂ emitted: ${flight.co2_tons} tons${flight.crosses_dateline ? '<br><em>(Trans-Pacific Route)</em>' : ''}`;
+        const tooltipContent = `${flight.dep_name} → ${flight.arr_name}: ${flight.co2_tons} tons CO₂${flight.crosses_dateline ? ' (Crosses Date Line)' : ''}`;
+        const lineOptions = {
+            color: flight.crosses_dateline ? 'red' : 'blue',
+            weight: flight.crosses_dateline ? 2 : 3,
+            opacity: flight.crosses_dateline ? 0.6 : 0.7,
+            dashArray: flight.crosses_dateline ? '10,10' : null
+        };
+        L.polyline([depLatLng, arrLatLng], lineOptions)
+            .bindPopup(popupContent)
+            .bindTooltip(tooltipContent)
+            .addTo(map);
+    }
+
+    function addAirport(airport) {
+        L.circleMarker([airport.lat, airport.lon], {
+            radius: 5,
+            color: 'red',
+            fill: true,
+            fillOpacity: 0.8
+        })
+        .bindTooltip(`${airport.name} (${airport.country})`)
+        .addTo(map);
+    }
+
+    async function loadFlightData() {
+        try {
+            const response = await fetch('/assets/data/flight_data_introvert.json');
+            const data = await response.json();
+            document.getElementById('loading').style.display = 'none';
+            initMap(data.map_center.lat, data.map_center.lon);
+            document.getElementById('airport-count').textContent = data.stats.total_airports;
+            document.getElementById('flight-count').textContent = data.stats.total_flights;
+            document.getElementById('total-co2').textContent = data.stats.total_co2.toFixed(2);
+            data.airports.forEach(addAirport);
+            data.flights.forEach(addFlightRoute);
+        } catch (error) {
+            console.error('Error loading flight data:', error);
+            document.getElementById('loading').textContent = 'Error loading flight data. Please check the console.';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadFlightData);
+</script>
+
+<section>
+  <h3>Population Exposure Table</h3>
+  <p>
+    The table below summarizes the percent of global population “met” during the journey for each case:
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Case</th>
+        <th>Travel Mode</th>
+        <th>Grid Constraint</th>
+        <th>Country Constraint</th>
+        <th>Realism</th>
+        <th>CO₂ Computed?</th>
+        <th>Population % Met</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Teleport</td>
+        <td>Any</td>
+        <td>Multiple allowed</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>~0.002%</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Teleport</td>
+        <td>Any</td>
+        <td>Unique per country</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>~0.003%</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Flights</td>
+        <td>Airports only</td>
+        <td>Shared countries OK</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>~0.1%</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Flights</td>
+        <td>Airports only</td>
+        <td>Host country only</td>
+        <td>✅✅</td>
+        <td>✅</td>
+        <td>~0.12%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Want to try your own quiet world domination? The code will soon be available on my GitHub.
+  </p>
+</section>
+</body>
+</html>

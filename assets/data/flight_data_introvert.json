@@ -1,0 +1,3655 @@
+{
+  "flights": [
+    {
+      "dep_name": "Cerro Largo International Airport",
+      "dep_country": "Uruguay",
+      "dep_lat": -32.3379,
+      "dep_lon": -54.2167,
+      "arr_name": "Comandante Gustavo Kraemer Airport",
+      "arr_country": "Brazil",
+      "arr_lat": -31.3905,
+      "arr_lon": -54.1122,
+      "co2_tons": 0.03,
+      "crosses_dateline": false,
+      "flight_id": 0
+    },
+    {
+      "dep_name": "Comandante Gustavo Kraemer Airport",
+      "dep_country": "Brazil",
+      "dep_lat": -31.3905,
+      "dep_lon": -54.1122,
+      "arr_name": "Filadelfia Airport",
+      "arr_country": "Paraguay",
+      "arr_lat": -22.36,
+      "arr_lon": -60.05,
+      "co2_tons": 0.332,
+      "crosses_dateline": false,
+      "flight_id": 1
+    },
+    {
+      "dep_name": "Filadelfia Airport",
+      "dep_country": "Paraguay",
+      "dep_lat": -22.36,
+      "dep_lon": -60.05,
+      "arr_name": "Santa Victoria Airport",
+      "arr_country": "Argentina",
+      "arr_lat": -22.2857,
+      "arr_lon": -62.7137,
+      "co2_tons": 0.078,
+      "crosses_dateline": false,
+      "flight_id": 2
+    },
+    {
+      "dep_name": "Santa Victoria Airport",
+      "dep_country": "Argentina",
+      "dep_lat": -22.2857,
+      "dep_lon": -62.7137,
+      "arr_name": "Camiri Airport",
+      "arr_country": "Bolivia",
+      "arr_lat": -20.0064,
+      "arr_lon": -63.5278,
+      "co2_tons": 0.076,
+      "crosses_dateline": false,
+      "flight_id": 3
+    },
+    {
+      "dep_name": "Camiri Airport",
+      "dep_country": "Bolivia",
+      "dep_lat": -20.0064,
+      "dep_lon": -63.5278,
+      "arr_name": "El Loa Airport",
+      "arr_country": "Chile",
+      "arr_lat": -22.4982,
+      "arr_lon": -68.9036,
+      "co2_tons": 0.177,
+      "crosses_dateline": false,
+      "flight_id": 4
+    },
+    {
+      "dep_name": "El Loa Airport",
+      "dep_country": "Chile",
+      "dep_lat": -22.4982,
+      "dep_lon": -68.9036,
+      "arr_name": "Trompeteros Airport",
+      "arr_country": "Peru",
+      "arr_lat": -3.80601,
+      "arr_lon": -75.0393,
+      "co2_tons": 0.622,
+      "crosses_dateline": false,
+      "flight_id": 5
+    },
+    {
+      "dep_name": "Trompeteros Airport",
+      "dep_country": "Peru",
+      "dep_lat": -3.80601,
+      "dep_lon": -75.0393,
+      "arr_name": "Putumayo Airport",
+      "arr_country": "Ecuador",
+      "arr_lat": 0.08333,
+      "arr_lon": -75.9,
+      "co2_tons": 0.126,
+      "crosses_dateline": false,
+      "flight_id": 6
+    },
+    {
+      "dep_name": "Putumayo Airport",
+      "dep_country": "Ecuador",
+      "dep_lat": 0.08333,
+      "dep_lon": -75.9,
+      "arr_name": "Finca Ceiba Airport",
+      "arr_country": "Panama",
+      "arr_lat": 8.355,
+      "arr_lon": -82.8364,
+      "co2_tons": 0.342,
+      "crosses_dateline": false,
+      "flight_id": 7
+    },
+    {
+      "dep_name": "Finca Ceiba Airport",
+      "dep_country": "Panama",
+      "dep_lat": 8.355,
+      "dep_lon": -82.8364,
+      "arr_name": "La Javilla Airport",
+      "arr_country": "Costa Rica",
+      "arr_lat": 9.81112,
+      "arr_lon": -85.2955,
+      "co2_tons": 0.09,
+      "crosses_dateline": false,
+      "flight_id": 8
+    },
+    {
+      "dep_name": "La Javilla Airport",
+      "dep_country": "Costa Rica",
+      "dep_lat": 9.81112,
+      "dep_lon": -85.2955,
+      "arr_name": "La Aramuaca Airport",
+      "arr_country": "El Salvador",
+      "arr_lat": 13.44799,
+      "arr_lon": -88.12011,
+      "co2_tons": 0.145,
+      "crosses_dateline": false,
+      "flight_id": 9
+    },
+    {
+      "dep_name": "La Aramuaca Airport",
+      "dep_country": "El Salvador",
+      "dep_lat": 13.44799,
+      "dep_lon": -88.12011,
+      "arr_name": "San Jose Airport",
+      "arr_country": "Guatemala",
+      "arr_lat": 13.9362,
+      "arr_lon": -90.8358,
+      "co2_tons": 0.085,
+      "crosses_dateline": false,
+      "flight_id": 10
+    },
+    {
+      "dep_name": "San Jose Airport",
+      "dep_country": "Guatemala",
+      "dep_lat": 13.9362,
+      "dep_lon": -90.8358,
+      "arr_name": "Ciudad del Carmen International Airport",
+      "arr_country": "Mexico",
+      "arr_lat": 18.6537,
+      "arr_lon": -91.799,
+      "co2_tons": 0.152,
+      "crosses_dateline": false,
+      "flight_id": 11
+    },
+    {
+      "dep_name": "Ciudad del Carmen International Airport",
+      "dep_country": "Mexico",
+      "dep_lat": 18.6537,
+      "dep_lon": -91.799,
+      "arr_name": "Dos Lagunas Airport",
+      "arr_country": "Belize",
+      "arr_lat": 17.6124,
+      "arr_lon": -89.6884,
+      "co2_tons": 0.072,
+      "crosses_dateline": false,
+      "flight_id": 12
+    },
+    {
+      "dep_name": "Dos Lagunas Airport",
+      "dep_country": "Belize",
+      "dep_lat": 17.6124,
+      "dep_lon": -89.6884,
+      "arr_name": "Cauquira Airport",
+      "arr_country": "Honduras",
+      "arr_lat": 15.31667,
+      "arr_lon": -83.59167,
+      "co2_tons": 0.199,
+      "crosses_dateline": false,
+      "flight_id": 13
+    },
+    {
+      "dep_name": "Cauquira Airport",
+      "dep_country": "Honduras",
+      "dep_lat": 15.31667,
+      "dep_lon": -83.59167,
+      "arr_name": "Corn Island",
+      "arr_country": "Nicaragua",
+      "arr_lat": 12.1629,
+      "arr_lon": -83.0638,
+      "co2_tons": 0.101,
+      "crosses_dateline": false,
+      "flight_id": 14
+    },
+    {
+      "dep_name": "Corn Island",
+      "dep_country": "Nicaragua",
+      "dep_lat": 12.1629,
+      "dep_lon": -83.0638,
+      "arr_name": "Puerto Bolivar Airport",
+      "arr_country": "Colombia",
+      "arr_lat": 12.2215,
+      "arr_lon": -71.9848,
+      "co2_tons": 0.343,
+      "crosses_dateline": false,
+      "flight_id": 15
+    },
+    {
+      "dep_name": "Puerto Bolivar Airport",
+      "dep_country": "Colombia",
+      "dep_lat": 12.2215,
+      "dep_lon": -71.9848,
+      "arr_name": "General Francisco Bermudez Airport",
+      "arr_country": "Venezuela",
+      "arr_lat": 10.66001,
+      "arr_lon": -63.26168,
+      "co2_tons": 0.275,
+      "crosses_dateline": false,
+      "flight_id": 16
+    },
+    {
+      "dep_name": "General Francisco Bermudez Airport",
+      "dep_country": "Venezuela",
+      "dep_lat": 10.66001,
+      "dep_lon": -63.26168,
+      "arr_name": "Point Salines International Airport",
+      "arr_country": "Saint Vincent and the Grenadines",
+      "arr_lat": 12.0042,
+      "arr_lon": -61.7862,
+      "co2_tons": 0.063,
+      "crosses_dateline": false,
+      "flight_id": 17
+    },
+    {
+      "dep_name": "Point Salines International Airport",
+      "dep_country": "Saint Vincent and the Grenadines",
+      "dep_lat": 12.0042,
+      "dep_lon": -61.7862,
+      "arr_name": "Tobago-Crown Point Airport",
+      "arr_country": "Trinidad and Tobago",
+      "arr_lat": 11.1497,
+      "arr_lon": -60.8322,
+      "co2_tons": 0.04,
+      "crosses_dateline": false,
+      "flight_id": 18
+    },
+    {
+      "dep_name": "Tobago-Crown Point Airport",
+      "dep_country": "Trinidad and Tobago",
+      "dep_lat": 11.1497,
+      "dep_lon": -60.8322,
+      "arr_name": "New Amsterdam Airport",
+      "arr_country": "Guyana",
+      "arr_lat": 6.24432,
+      "arr_lon": -57.47417,
+      "co2_tons": 0.188,
+      "crosses_dateline": false,
+      "flight_id": 19
+    },
+    {
+      "dep_name": "New Amsterdam Airport",
+      "dep_country": "Guyana",
+      "dep_lat": 6.24432,
+      "dep_lon": -57.47417,
+      "arr_name": "Totness Airport",
+      "arr_country": "Suriname",
+      "arr_lat": 5.86583,
+      "arr_lon": -56.3275,
+      "co2_tons": 0.038,
+      "crosses_dateline": false,
+      "flight_id": 20
+    },
+    {
+      "dep_name": "Totness Airport",
+      "dep_country": "Suriname",
+      "dep_lat": 5.86583,
+      "dep_lon": -56.3275,
+      "arr_name": "Sir Grantley Adams International Airport",
+      "arr_country": "Barbados",
+      "arr_lat": 13.0746,
+      "arr_lon": -59.4925,
+      "co2_tons": 0.249,
+      "crosses_dateline": false,
+      "flight_id": 21
+    },
+    {
+      "dep_name": "Sir Grantley Adams International Airport",
+      "dep_country": "Barbados",
+      "dep_lat": 13.0746,
+      "dep_lon": -59.4925,
+      "arr_name": "Canefield Airport",
+      "arr_country": "Dominica",
+      "arr_lat": 15.3367,
+      "arr_lon": -61.3922,
+      "co2_tons": 0.092,
+      "crosses_dateline": false,
+      "flight_id": 22
+    },
+    {
+      "dep_name": "Canefield Airport",
+      "dep_country": "Dominica",
+      "dep_lat": 15.3367,
+      "dep_lon": -61.3922,
+      "arr_name": "V.C. Bird International Airport",
+      "arr_country": "Antigua and Barbuda",
+      "arr_lat": 17.1367,
+      "arr_lon": -61.7927,
+      "co2_tons": 0.058,
+      "crosses_dateline": false,
+      "flight_id": 23
+    },
+    {
+      "dep_name": "V.C. Bird International Airport",
+      "dep_country": "Antigua and Barbuda",
+      "dep_lat": 17.1367,
+      "dep_lon": -61.7927,
+      "arr_name": "Gustaf III Airport",
+      "arr_country": "Saint Kitts and Nevis",
+      "arr_lat": 17.9044,
+      "arr_lon": -62.8436,
+      "co2_tons": 0.04,
+      "crosses_dateline": false,
+      "flight_id": 24
+    },
+    {
+      "dep_name": "Gustaf III Airport",
+      "dep_country": "Saint Kitts and Nevis",
+      "dep_lat": 17.9044,
+      "dep_lon": -62.8436,
+      "arr_name": "Henry E Rohlsen Airport",
+      "arr_country": "United States of America",
+      "arr_lat": 17.7015,
+      "arr_lon": -64.80194,
+      "co2_tons": 0.059,
+      "crosses_dateline": false,
+      "flight_id": 25
+    },
+    {
+      "dep_name": "Henry E Rohlsen Airport",
+      "dep_country": "United States of America",
+      "dep_lat": 17.7015,
+      "dep_lon": -64.80194,
+      "arr_name": "Cabo Rojo Airport",
+      "arr_country": "Dominican Republic",
+      "arr_lat": 17.929,
+      "arr_lon": -71.6448,
+      "co2_tons": 0.207,
+      "crosses_dateline": false,
+      "flight_id": 26
+    },
+    {
+      "dep_name": "Cabo Rojo Airport",
+      "dep_country": "Dominican Republic",
+      "dep_lat": 17.929,
+      "dep_lon": -71.6448,
+      "arr_name": "Jeremie Airport",
+      "arr_country": "Haiti",
+      "arr_lat": 18.6631,
+      "arr_lon": -74.1703,
+      "co2_tons": 0.079,
+      "crosses_dateline": false,
+      "flight_id": 27
+    },
+    {
+      "dep_name": "Jeremie Airport",
+      "dep_country": "Haiti",
+      "dep_lat": 18.6631,
+      "dep_lon": -74.1703,
+      "arr_name": "Norman Manley International Airport",
+      "arr_country": "Jamaica",
+      "arr_lat": 17.9357,
+      "arr_lon": -76.7875,
+      "co2_tons": 0.082,
+      "crosses_dateline": false,
+      "flight_id": 28
+    },
+    {
+      "dep_name": "Norman Manley International Airport",
+      "dep_country": "Jamaica",
+      "dep_lat": 17.9357,
+      "dep_lon": -76.7875,
+      "arr_name": "Antilla Airport",
+      "arr_country": "Cuba",
+      "arr_lat": 20.8388,
+      "arr_lon": -75.7328,
+      "co2_tons": 0.097,
+      "crosses_dateline": false,
+      "flight_id": 29
+    },
+    {
+      "dep_name": "Antilla Airport",
+      "dep_country": "Cuba",
+      "dep_lat": 20.8388,
+      "dep_lon": -75.7328,
+      "arr_name": "Spring Point Airport",
+      "arr_country": "The Bahamas",
+      "arr_lat": 22.4418,
+      "arr_lon": -73.9709,
+      "co2_tons": 0.073,
+      "crosses_dateline": false,
+      "flight_id": 30
+    },
+    {
+      "dep_name": "Spring Point Airport",
+      "dep_country": "The Bahamas",
+      "dep_lat": 22.4418,
+      "dep_lon": -73.9709,
+      "arr_name": "Qikiqtarjuaq Airport",
+      "arr_country": "Canada",
+      "arr_lat": 67.5458,
+      "arr_lon": -64.0314,
+      "co2_tons": 1.443,
+      "crosses_dateline": false,
+      "flight_id": 31
+    },
+    {
+      "dep_name": "Qikiqtarjuaq Airport",
+      "dep_country": "Canada",
+      "dep_lat": 67.5458,
+      "dep_lon": -64.0314,
+      "arr_name": "Borgarfjordur eystri Airport",
+      "arr_country": "Iceland",
+      "arr_lat": 65.5164,
+      "arr_lon": -13.805,
+      "co2_tons": 0.62,
+      "crosses_dateline": false,
+      "flight_id": 32
+    },
+    {
+      "dep_name": "Borgarfjordur eystri Airport",
+      "dep_country": "Iceland",
+      "dep_lat": 65.5164,
+      "dep_lon": -13.805,
+      "arr_name": "Trysil Saeterasen Airport",
+      "arr_country": "Norway",
+      "arr_lat": 61.22928,
+      "arr_lon": 12.26641,
+      "co2_tons": 0.391,
+      "crosses_dateline": false,
+      "flight_id": 33
+    },
+    {
+      "dep_name": "Trysil Saeterasen Airport",
+      "dep_country": "Norway",
+      "dep_lat": 61.22928,
+      "dep_lon": 12.26641,
+      "arr_name": "Norrtalje Airport",
+      "arr_country": "Sweden",
+      "arr_lat": 59.7328,
+      "arr_lon": 18.6964,
+      "co2_tons": 0.111,
+      "crosses_dateline": false,
+      "flight_id": 34
+    },
+    {
+      "dep_name": "Norrtalje Airport",
+      "dep_country": "Sweden",
+      "dep_lat": 59.7328,
+      "dep_lon": 18.6964,
+      "arr_name": "Mariehamn Airport",
+      "arr_country": "Finland",
+      "arr_lat": 60.1222,
+      "arr_lon": 19.8982,
+      "co2_tons": 0.023,
+      "crosses_dateline": false,
+      "flight_id": 35
+    },
+    {
+      "dep_name": "Mariehamn Airport",
+      "dep_country": "Finland",
+      "dep_lat": 60.1222,
+      "dep_lon": 19.8982,
+      "arr_name": "Ruhnu Airfield",
+      "arr_country": "Estonia",
+      "arr_lat": 57.7839,
+      "arr_lon": 23.2661,
+      "co2_tons": 0.092,
+      "crosses_dateline": false,
+      "flight_id": 36
+    },
+    {
+      "dep_name": "Ruhnu Airfield",
+      "dep_country": "Estonia",
+      "dep_lat": 57.7839,
+      "dep_lon": 23.2661,
+      "arr_name": "Smolensk South Airport",
+      "arr_country": "Russia",
+      "arr_lat": 54.745,
+      "arr_lon": 32.065,
+      "co2_tons": 0.182,
+      "crosses_dateline": false,
+      "flight_id": 37
+    },
+    {
+      "dep_name": "Smolensk South Airport",
+      "dep_country": "Russia",
+      "dep_lat": 54.745,
+      "dep_lon": 32.065,
+      "arr_name": "Marculesti International Airport",
+      "arr_country": "Moldova",
+      "arr_lat": 47.8627,
+      "arr_lon": 28.2128,
+      "co2_tons": 0.231,
+      "crosses_dateline": false,
+      "flight_id": 38
+    },
+    {
+      "dep_name": "Marculesti International Airport",
+      "dep_country": "Moldova",
+      "dep_lat": 47.8627,
+      "dep_lon": 28.2128,
+      "arr_name": "Rivne International Airport",
+      "arr_country": "Ukraine",
+      "arr_lat": 50.6071,
+      "arr_lon": 26.1416,
+      "co2_tons": 0.097,
+      "crosses_dateline": false,
+      "flight_id": 39
+    },
+    {
+      "dep_name": "Rivne International Airport",
+      "dep_country": "Ukraine",
+      "dep_lat": 50.6071,
+      "dep_lon": 26.1416,
+      "arr_name": "Lida Air Base",
+      "arr_country": "Belarus",
+      "arr_lat": 53.877,
+      "arr_lon": 25.377,
+      "co2_tons": 0.105,
+      "crosses_dateline": false,
+      "flight_id": 40
+    },
+    {
+      "dep_name": "Lida Air Base",
+      "dep_country": "Belarus",
+      "dep_lat": 53.877,
+      "dep_lon": 25.377,
+      "arr_name": "Alytus Airport",
+      "arr_country": "Lithuania",
+      "arr_lat": 54.41253,
+      "arr_lon": 24.05993,
+      "co2_tons": 0.03,
+      "crosses_dateline": false,
+      "flight_id": 41
+    },
+    {
+      "dep_name": "Alytus Airport",
+      "dep_country": "Lithuania",
+      "dep_lat": 54.41253,
+      "dep_lon": 24.05993,
+      "arr_name": "Suwa\u0142ki Airport",
+      "arr_country": "Poland",
+      "arr_lat": 54.0728,
+      "arr_lon": 22.8992,
+      "co2_tons": 0.024,
+      "crosses_dateline": false,
+      "flight_id": 42
+    },
+    {
+      "dep_name": "Suwa\u0142ki Airport",
+      "dep_country": "Poland",
+      "dep_lat": 54.0728,
+      "dep_lon": 22.8992,
+      "arr_name": "Vainode Airport",
+      "arr_country": "Latvia",
+      "arr_lat": 56.4056,
+      "arr_lon": 21.8869,
+      "co2_tons": 0.076,
+      "crosses_dateline": false,
+      "flight_id": 43
+    },
+    {
+      "dep_name": "Vainode Airport",
+      "dep_country": "Latvia",
+      "dep_lat": 56.4056,
+      "dep_lon": 21.8869,
+      "arr_name": "Fur Airport",
+      "arr_country": "Denmark",
+      "arr_lat": 56.8244,
+      "arr_lon": 8.98611,
+      "co2_tons": 0.225,
+      "crosses_dateline": false,
+      "flight_id": 44
+    },
+    {
+      "dep_name": "Fur Airport",
+      "dep_country": "Denmark",
+      "dep_lat": 56.8244,
+      "dep_lon": 8.98611,
+      "arr_name": "Ameland Airport",
+      "arr_country": "Netherlands",
+      "arr_lat": 53.4517,
+      "arr_lon": 5.67722,
+      "co2_tons": 0.123,
+      "crosses_dateline": false,
+      "flight_id": 45
+    },
+    {
+      "dep_name": "Ameland Airport",
+      "dep_country": "Netherlands",
+      "dep_lat": 53.4517,
+      "dep_lon": 5.67722,
+      "arr_name": "Sterpenich Airport",
+      "arr_country": "Luxembourg",
+      "arr_lat": 49.6628,
+      "arr_lon": 5.88694,
+      "co2_tons": 0.12,
+      "crosses_dateline": false,
+      "flight_id": 46
+    },
+    {
+      "dep_name": "Sterpenich Airport",
+      "dep_country": "Luxembourg",
+      "dep_lat": 49.6628,
+      "dep_lon": 5.88694,
+      "arr_name": "Friedrichshafen Airport",
+      "arr_country": "Liechtenstein",
+      "arr_lat": 47.6713,
+      "arr_lon": 9.51149,
+      "co2_tons": 0.099,
+      "crosses_dateline": false,
+      "flight_id": 47
+    },
+    {
+      "dep_name": "Friedrichshafen Airport",
+      "dep_country": "Liechtenstein",
+      "dep_lat": 47.6713,
+      "dep_lon": 9.51149,
+      "arr_name": "Memmingen Allgau Airport",
+      "arr_country": "Switzerland",
+      "arr_lat": 47.9888,
+      "arr_lon": 10.2395,
+      "co2_tons": 0.018,
+      "crosses_dateline": false,
+      "flight_id": 48
+    },
+    {
+      "dep_name": "Memmingen Allgau Airport",
+      "dep_country": "Switzerland",
+      "dep_lat": 47.9888,
+      "dep_lon": 10.2395,
+      "arr_name": "Vogtareuth Airport",
+      "arr_country": "Austria",
+      "arr_lat": 47.94611,
+      "arr_lon": 12.20472,
+      "co2_tons": 0.042,
+      "crosses_dateline": false,
+      "flight_id": 49
+    },
+    {
+      "dep_name": "Vogtareuth Airport",
+      "dep_country": "Austria",
+      "dep_lat": 47.94611,
+      "dep_lon": 12.20472,
+      "arr_name": "Lesce Bled Glider Airport",
+      "arr_country": "Slovenia",
+      "arr_lat": 46.3572,
+      "arr_lon": 14.1739,
+      "co2_tons": 0.066,
+      "crosses_dateline": false,
+      "flight_id": 50
+    },
+    {
+      "dep_name": "Lesce Bled Glider Airport",
+      "dep_country": "Slovenia",
+      "dep_lat": 46.3572,
+      "dep_lon": 14.1739,
+      "arr_name": "Benesov Airport",
+      "arr_country": "Czech Republic",
+      "arr_lat": 49.7408,
+      "arr_lon": 14.6447,
+      "co2_tons": 0.108,
+      "crosses_dateline": false,
+      "flight_id": 51
+    },
+    {
+      "dep_name": "Benesov Airport",
+      "dep_country": "Czech Republic",
+      "dep_lat": 49.7408,
+      "dep_lon": 14.6447,
+      "arr_name": "Budapest Ferenc Liszt International Airport",
+      "arr_country": "Slovakia",
+      "arr_lat": 47.4369,
+      "arr_lon": 19.2556,
+      "co2_tons": 0.121,
+      "crosses_dateline": false,
+      "flight_id": 52
+    },
+    {
+      "dep_name": "Budapest Ferenc Liszt International Airport",
+      "dep_country": "Slovakia",
+      "dep_lat": 47.4369,
+      "dep_lon": 19.2556,
+      "arr_name": "Vukovar Borovo N Airport",
+      "arr_country": "Bosnia and Herzegovina",
+      "arr_lat": 45.3864,
+      "arr_lon": 18.9628,
+      "co2_tons": 0.065,
+      "crosses_dateline": false,
+      "flight_id": 53
+    },
+    {
+      "dep_name": "Vukovar Borovo N Airport",
+      "dep_country": "Bosnia and Herzegovina",
+      "dep_lat": 45.3864,
+      "dep_lon": 18.9628,
+      "arr_name": "Timisoara Traian Vuia Airport",
+      "arr_country": "Romania",
+      "arr_lat": 45.8099,
+      "arr_lon": 21.3379,
+      "co2_tons": 0.054,
+      "crosses_dateline": false,
+      "flight_id": 54
+    },
+    {
+      "dep_name": "Timisoara Traian Vuia Airport",
+      "dep_country": "Romania",
+      "dep_lat": 45.8099,
+      "dep_lon": 21.3379,
+      "arr_name": "Pristina International Airport",
+      "arr_country": "Montenegro",
+      "arr_lat": 42.57283,
+      "arr_lon": 21.03583,
+      "co2_tons": 0.103,
+      "crosses_dateline": false,
+      "flight_id": 55
+    },
+    {
+      "dep_name": "Pristina International Airport",
+      "dep_country": "Montenegro",
+      "dep_lat": 42.57283,
+      "dep_lon": 21.03583,
+      "arr_name": "Petrich Airport",
+      "arr_country": "Macedonia",
+      "arr_lat": 41.4483,
+      "arr_lon": 23.2171,
+      "co2_tons": 0.063,
+      "crosses_dateline": false,
+      "flight_id": 56
+    },
+    {
+      "dep_name": "Petrich Airport",
+      "dep_country": "Macedonia",
+      "dep_lat": 41.4483,
+      "dep_lon": 23.2171,
+      "arr_name": "Korce Northwest Airport",
+      "arr_country": "Albania",
+      "arr_lat": 40.6457,
+      "arr_lon": 20.7415,
+      "co2_tons": 0.064,
+      "crosses_dateline": false,
+      "flight_id": 57
+    },
+    {
+      "dep_name": "Korce Northwest Airport",
+      "dep_country": "Albania",
+      "dep_lat": 40.6457,
+      "dep_lon": 20.7415,
+      "arr_name": "Ioannis Kapodistrias International Airport",
+      "arr_country": "Greece",
+      "arr_lat": 39.6019,
+      "arr_lon": 19.9117,
+      "co2_tons": 0.039,
+      "crosses_dateline": false,
+      "flight_id": 58
+    },
+    {
+      "dep_name": "Ioannis Kapodistrias International Airport",
+      "dep_country": "Greece",
+      "dep_lat": 39.6019,
+      "dep_lon": 19.9117,
+      "arr_name": "Luqa Airport",
+      "arr_country": "Malta",
+      "arr_lat": 35.8575,
+      "arr_lon": 14.4775,
+      "co2_tons": 0.181,
+      "crosses_dateline": false,
+      "flight_id": 59
+    },
+    {
+      "dep_name": "Luqa Airport",
+      "dep_country": "Malta",
+      "dep_lat": 35.8575,
+      "dep_lon": 14.4775,
+      "arr_name": "Nanur Airport",
+      "arr_country": "Libya",
+      "arr_lat": 31.7052,
+      "arr_lon": 14.9116,
+      "co2_tons": 0.132,
+      "crosses_dateline": false,
+      "flight_id": 60
+    },
+    {
+      "dep_name": "Nanur Airport",
+      "dep_country": "Libya",
+      "dep_lat": 31.7052,
+      "dep_lon": 14.9116,
+      "arr_name": "Lampedusa Airport",
+      "arr_country": "Italy",
+      "arr_lat": 35.4979,
+      "arr_lon": 12.6181,
+      "co2_tons": 0.135,
+      "crosses_dateline": false,
+      "flight_id": 61
+    },
+    {
+      "dep_name": "Lampedusa Airport",
+      "dep_country": "Italy",
+      "dep_lat": 35.4979,
+      "dep_lon": 12.6181,
+      "arr_name": "Monastir Habib Bourguiba International Airport",
+      "arr_country": "Tunisia",
+      "arr_lat": 35.7581,
+      "arr_lon": 10.7547,
+      "co2_tons": 0.049,
+      "crosses_dateline": false,
+      "flight_id": 62
+    },
+    {
+      "dep_name": "Monastir Habib Bourguiba International Airport",
+      "dep_country": "Tunisia",
+      "dep_lat": 35.7581,
+      "dep_lon": 10.7547,
+      "arr_name": "Aquino Airport",
+      "arr_country": "Vatican",
+      "arr_lat": 41.4863,
+      "arr_lon": 13.7188,
+      "co2_tons": 0.196,
+      "crosses_dateline": false,
+      "flight_id": 63
+    },
+    {
+      "dep_name": "Aquino Airport",
+      "dep_country": "Vatican",
+      "dep_lat": 41.4863,
+      "dep_lon": 13.7188,
+      "arr_name": "Foligno Airport",
+      "arr_country": "San Marino",
+      "arr_lat": 42.9328,
+      "arr_lon": 12.7101,
+      "co2_tons": 0.052,
+      "crosses_dateline": false,
+      "flight_id": 64
+    },
+    {
+      "dep_name": "Foligno Airport",
+      "dep_country": "San Marino",
+      "dep_lat": 42.9328,
+      "dep_lon": 12.7101,
+      "arr_name": "Le Luc-Le Cannet Airport",
+      "arr_country": "Monaco",
+      "arr_lat": 43.3847,
+      "arr_lon": 6.38714,
+      "co2_tons": 0.147,
+      "crosses_dateline": false,
+      "flight_id": 65
+    },
+    {
+      "dep_name": "Le Luc-Le Cannet Airport",
+      "dep_country": "Monaco",
+      "dep_lat": 43.3847,
+      "dep_lon": 6.38714,
+      "arr_name": "La Cerdanya Airport",
+      "arr_country": "Andorra",
+      "arr_lat": 42.3864,
+      "arr_lon": 1.86667,
+      "co2_tons": 0.11,
+      "crosses_dateline": false,
+      "flight_id": 66
+    },
+    {
+      "dep_name": "La Cerdanya Airport",
+      "dep_country": "Andorra",
+      "dep_lat": 42.3864,
+      "dep_lon": 1.86667,
+      "arr_name": "St Aubin Airport",
+      "arr_country": "France",
+      "arr_lat": 49.8825,
+      "arr_lon": 1.08528,
+      "co2_tons": 0.238,
+      "crosses_dateline": false,
+      "flight_id": 67
+    },
+    {
+      "dep_name": "St Aubin Airport",
+      "dep_country": "France",
+      "dep_lat": 49.8825,
+      "dep_lon": 1.08528,
+      "arr_name": "St. Mary's Airport",
+      "arr_country": "United Kingdom",
+      "arr_lat": 49.9133,
+      "arr_lon": -6.29167,
+      "co2_tons": 0.151,
+      "crosses_dateline": false,
+      "flight_id": 68
+    },
+    {
+      "dep_name": "St. Mary's Airport",
+      "dep_country": "United Kingdom",
+      "dep_lat": 49.9133,
+      "dep_lon": -6.29167,
+      "arr_name": "Bantry Aerodrome",
+      "arr_country": "Ireland",
+      "arr_lat": 51.6686,
+      "arr_lon": -9.48417,
+      "co2_tons": 0.085,
+      "crosses_dateline": false,
+      "flight_id": 69
+    },
+    {
+      "dep_name": "Bantry Aerodrome",
+      "dep_country": "Ireland",
+      "dep_lat": 51.6686,
+      "dep_lon": -9.48417,
+      "arr_name": "Portim\u00e3o Airport",
+      "arr_country": "Portugal",
+      "arr_lat": 37.1493,
+      "arr_lon": -8.58396,
+      "co2_tons": 0.461,
+      "crosses_dateline": false,
+      "flight_id": 70
+    },
+    {
+      "dep_name": "Portim\u00e3o Airport",
+      "dep_country": "Portugal",
+      "dep_lat": 37.1493,
+      "dep_lon": -8.58396,
+      "arr_name": "Jerez Airport",
+      "arr_country": "Spain",
+      "arr_lat": 36.7446,
+      "arr_lon": -6.06011,
+      "co2_tons": 0.065,
+      "crosses_dateline": false,
+      "flight_id": 71
+    },
+    {
+      "dep_name": "Jerez Airport",
+      "dep_country": "Spain",
+      "dep_lat": 36.7446,
+      "dep_lon": -6.06011,
+      "arr_name": "Rabat-Sale Airport",
+      "arr_country": "Morocco",
+      "arr_lat": 34.0515,
+      "arr_lon": -6.75152,
+      "co2_tons": 0.087,
+      "crosses_dateline": false,
+      "flight_id": 72
+    },
+    {
+      "dep_name": "Rabat-Sale Airport",
+      "dep_country": "Morocco",
+      "dep_lat": 34.0515,
+      "dep_lon": -6.75152,
+      "arr_name": "Hamaguir Airport",
+      "arr_country": "Algeria",
+      "arr_lat": 30.879,
+      "arr_lon": -3.06775,
+      "co2_tons": 0.141,
+      "crosses_dateline": false,
+      "flight_id": 73
+    },
+    {
+      "dep_name": "Hamaguir Airport",
+      "dep_country": "Algeria",
+      "dep_lat": 30.879,
+      "dep_lon": -3.06775,
+      "arr_name": "Nema Airport",
+      "arr_country": "Mauritania",
+      "arr_lat": 16.622,
+      "arr_lon": -7.3166,
+      "co2_tons": 0.468,
+      "crosses_dateline": false,
+      "flight_id": 74
+    },
+    {
+      "dep_name": "Nema Airport",
+      "dep_country": "Mauritania",
+      "dep_lat": 16.622,
+      "dep_lon": -7.3166,
+      "arr_name": "Nara Airport",
+      "arr_country": "Mali",
+      "arr_lat": 15.217,
+      "arr_lon": -7.267,
+      "co2_tons": 0.045,
+      "crosses_dateline": false,
+      "flight_id": 75
+    },
+    {
+      "dep_name": "Nara Airport",
+      "dep_country": "Mali",
+      "dep_lat": 15.217,
+      "dep_lon": -7.267,
+      "arr_name": "Kedougou Airport",
+      "arr_country": "Guinea Bissau",
+      "arr_lat": 12.5723,
+      "arr_lon": -12.2203,
+      "co2_tons": 0.174,
+      "crosses_dateline": false,
+      "flight_id": 76
+    },
+    {
+      "dep_name": "Kedougou Airport",
+      "dep_country": "Guinea Bissau",
+      "dep_lat": 12.5723,
+      "dep_lon": -12.2203,
+      "arr_name": "Banjul International Airport",
+      "arr_country": "Gambia",
+      "arr_lat": 13.338,
+      "arr_lon": -16.6522,
+      "co2_tons": 0.139,
+      "crosses_dateline": false,
+      "flight_id": 77
+    },
+    {
+      "dep_name": "Banjul International Airport",
+      "dep_country": "Gambia",
+      "dep_lat": 13.338,
+      "dep_lon": -16.6522,
+      "arr_name": "Maio Airport",
+      "arr_country": "Cape Verde",
+      "arr_lat": 15.1559,
+      "arr_lon": -23.2137,
+      "co2_tons": 0.21,
+      "crosses_dateline": false,
+      "flight_id": 78
+    },
+    {
+      "dep_name": "Maio Airport",
+      "dep_country": "Cape Verde",
+      "dep_lat": 15.1559,
+      "dep_lon": -23.2137,
+      "arr_name": "Kabala Airport",
+      "arr_country": "Sierra Leone",
+      "arr_lat": 9.63832,
+      "arr_lon": -11.51556,
+      "co2_tons": 0.402,
+      "crosses_dateline": false,
+      "flight_id": 79
+    },
+    {
+      "dep_name": "Kabala Airport",
+      "dep_country": "Sierra Leone",
+      "dep_lat": 9.63832,
+      "dep_lon": -11.51556,
+      "arr_name": "Faranah Airport",
+      "arr_country": "Guinea",
+      "arr_lat": 10.0355,
+      "arr_lon": -10.7698,
+      "co2_tons": 0.026,
+      "crosses_dateline": false,
+      "flight_id": 80
+    },
+    {
+      "dep_name": "Faranah Airport",
+      "dep_country": "Guinea",
+      "dep_lat": 10.0355,
+      "dep_lon": -10.7698,
+      "arr_name": "Voinjama Airport",
+      "arr_country": "Liberia",
+      "arr_lat": 8.4,
+      "arr_lon": -9.767,
+      "co2_tons": 0.061,
+      "crosses_dateline": false,
+      "flight_id": 81
+    },
+    {
+      "dep_name": "Voinjama Airport",
+      "dep_country": "Liberia",
+      "dep_lat": 8.4,
+      "dep_lon": -9.767,
+      "arr_name": "Boundiali Airport",
+      "arr_country": "Ivory Coast",
+      "arr_lat": 9.533,
+      "arr_lon": -6.467,
+      "co2_tons": 0.109,
+      "crosses_dateline": false,
+      "flight_id": 82
+    },
+    {
+      "dep_name": "Boundiali Airport",
+      "dep_country": "Ivory Coast",
+      "dep_lat": 9.533,
+      "dep_lon": -6.467,
+      "arr_name": "Tambao Airport",
+      "arr_country": "Burkina Faso",
+      "arr_lat": 14.8,
+      "arr_lon": 0.05,
+      "co2_tons": 0.262,
+      "crosses_dateline": false,
+      "flight_id": 83
+    },
+    {
+      "dep_name": "Tambao Airport",
+      "dep_country": "Burkina Faso",
+      "dep_lat": 14.8,
+      "dep_lon": 0.05,
+      "arr_name": "Ouallam Airport",
+      "arr_country": "Niger",
+      "arr_lat": 14.333,
+      "arr_lon": 2.083,
+      "co2_tons": 0.064,
+      "crosses_dateline": false,
+      "flight_id": 84
+    },
+    {
+      "dep_name": "Ouallam Airport",
+      "dep_country": "Niger",
+      "dep_lat": 14.333,
+      "dep_lon": 2.083,
+      "arr_name": "Natitingou Airport",
+      "arr_country": "Benin",
+      "arr_lat": 10.317,
+      "arr_lon": 1.383,
+      "co2_tons": 0.129,
+      "crosses_dateline": false,
+      "flight_id": 85
+    },
+    {
+      "dep_name": "Natitingou Airport",
+      "dep_country": "Benin",
+      "dep_lat": 10.317,
+      "dep_lon": 1.383,
+      "arr_name": "Tamale Airport",
+      "arr_country": "Ghana",
+      "arr_lat": 9.55719,
+      "arr_lon": -0.86321,
+      "co2_tons": 0.074,
+      "crosses_dateline": false,
+      "flight_id": 86
+    },
+    {
+      "dep_name": "Tamale Airport",
+      "dep_country": "Ghana",
+      "dep_lat": 9.55719,
+      "dep_lon": -0.86321,
+      "arr_name": "Akpaka Airport",
+      "arr_country": "Togo",
+      "arr_lat": 7.583,
+      "arr_lon": 1.117,
+      "co2_tons": 0.088,
+      "crosses_dateline": false,
+      "flight_id": 87
+    },
+    {
+      "dep_name": "Akpaka Airport",
+      "dep_country": "Togo",
+      "dep_lat": 7.583,
+      "dep_lon": 1.117,
+      "arr_name": "Principe Airport",
+      "arr_country": "Sao Tome and Principe",
+      "arr_lat": 1.66294,
+      "arr_lon": 7.41174,
+      "co2_tons": 0.273,
+      "crosses_dateline": false,
+      "flight_id": 88
+    },
+    {
+      "dep_name": "Principe Airport",
+      "dep_country": "Sao Tome and Principe",
+      "dep_lat": 1.66294,
+      "dep_lon": 7.41174,
+      "arr_name": "Bata Airport",
+      "arr_country": "Equatorial Guinea",
+      "arr_lat": 1.90547,
+      "arr_lon": 9.80568,
+      "co2_tons": 0.076,
+      "crosses_dateline": false,
+      "flight_id": 89
+    },
+    {
+      "dep_name": "Bata Airport",
+      "dep_country": "Equatorial Guinea",
+      "dep_lat": 1.90547,
+      "dep_lon": 9.80568,
+      "arr_name": "Eseka Airport",
+      "arr_country": "Cameroon",
+      "arr_lat": 3.65,
+      "arr_lon": 10.783,
+      "co2_tons": 0.063,
+      "crosses_dateline": false,
+      "flight_id": 90
+    },
+    {
+      "dep_name": "Eseka Airport",
+      "dep_country": "Cameroon",
+      "dep_lat": 3.65,
+      "dep_lon": 10.783,
+      "arr_name": "Oyem Airport",
+      "arr_country": "Gabon",
+      "arr_lat": 1.54311,
+      "arr_lon": 11.5814,
+      "co2_tons": 0.071,
+      "crosses_dateline": false,
+      "flight_id": 91
+    },
+    {
+      "dep_name": "Oyem Airport",
+      "dep_country": "Gabon",
+      "dep_lat": 1.54311,
+      "dep_lon": 11.5814,
+      "arr_name": "Souanke Airport",
+      "arr_country": "Republic of Congo",
+      "arr_lat": 2.067,
+      "arr_lon": 14.133,
+      "co2_tons": 0.083,
+      "crosses_dateline": false,
+      "flight_id": 92
+    },
+    {
+      "dep_name": "Souanke Airport",
+      "dep_country": "Republic of Congo",
+      "dep_lat": 2.067,
+      "dep_lon": 14.133,
+      "arr_name": "Paoua Airport",
+      "arr_country": "Central African Republic",
+      "arr_lat": 7.25,
+      "arr_lon": 16.433,
+      "co2_tons": 0.18,
+      "crosses_dateline": false,
+      "flight_id": 93
+    },
+    {
+      "dep_name": "Paoua Airport",
+      "dep_country": "Central African Republic",
+      "dep_lat": 7.25,
+      "dep_lon": 16.433,
+      "arr_name": "Moundou Airport",
+      "arr_country": "Chad",
+      "arr_lat": 8.62441,
+      "arr_lon": 16.0714,
+      "co2_tons": 0.045,
+      "crosses_dateline": false,
+      "flight_id": 94
+    },
+    {
+      "dep_name": "Moundou Airport",
+      "dep_country": "Chad",
+      "dep_lat": 8.62441,
+      "dep_lon": 16.0714,
+      "arr_name": "Yola Airport",
+      "arr_country": "Nigeria",
+      "arr_lat": 9.25755,
+      "arr_lon": 12.4304,
+      "co2_tons": 0.116,
+      "crosses_dateline": false,
+      "flight_id": 95
+    },
+    {
+      "dep_name": "Yola Airport",
+      "dep_country": "Nigeria",
+      "dep_lat": 9.25755,
+      "dep_lon": 12.4304,
+      "arr_name": "El Arish International Airport",
+      "arr_country": "Egypt",
+      "arr_lat": 31.0733,
+      "arr_lon": 33.8358,
+      "co2_tons": 0.936,
+      "crosses_dateline": false,
+      "flight_id": 96
+    },
+    {
+      "dep_name": "El Arish International Airport",
+      "dep_country": "Egypt",
+      "dep_lat": 31.0733,
+      "dep_lon": 33.8358,
+      "arr_name": "Ben Gurion International Airport",
+      "arr_country": "Israel",
+      "arr_lat": 32.0114,
+      "arr_lon": 34.8867,
+      "co2_tons": 0.041,
+      "crosses_dateline": false,
+      "flight_id": 97
+    },
+    {
+      "dep_name": "Ben Gurion International Airport",
+      "dep_country": "Israel",
+      "dep_lat": 32.0114,
+      "dep_lon": 34.8867,
+      "arr_name": "Zarqa Airport",
+      "arr_country": "Jordan",
+      "arr_lat": 32.0253,
+      "arr_lon": 36.1448,
+      "co2_tons": 0.034,
+      "crosses_dateline": false,
+      "flight_id": 98
+    },
+    {
+      "dep_name": "Zarqa Airport",
+      "dep_country": "Jordan",
+      "dep_lat": 32.0253,
+      "dep_lon": 36.1448,
+      "arr_name": "Rene Mouawad Air Base",
+      "arr_country": "Lebanon",
+      "arr_lat": 34.5893,
+      "arr_lon": 36.0113,
+      "co2_tons": 0.081,
+      "crosses_dateline": false,
+      "flight_id": 99
+    },
+    {
+      "dep_name": "Rene Mouawad Air Base",
+      "dep_country": "Lebanon",
+      "dep_lat": 34.5893,
+      "dep_lon": 36.0113,
+      "arr_name": "Ercan International Airport",
+      "arr_country": "Northern Cyprus",
+      "arr_lat": 35.1547,
+      "arr_lon": 33.4961,
+      "co2_tons": 0.068,
+      "crosses_dateline": false,
+      "flight_id": 100
+    },
+    {
+      "dep_name": "Ercan International Airport",
+      "dep_country": "Northern Cyprus",
+      "dep_lat": 35.1547,
+      "dep_lon": 33.4961,
+      "arr_name": "Bassel Al-Assad International Airport",
+      "arr_country": "Syria",
+      "arr_lat": 35.4011,
+      "arr_lon": 35.9487,
+      "co2_tons": 0.064,
+      "crosses_dateline": false,
+      "flight_id": 101
+    },
+    {
+      "dep_name": "Bassel Al-Assad International Airport",
+      "dep_country": "Syria",
+      "dep_lat": 35.4011,
+      "dep_lon": 35.9487,
+      "arr_name": "Kopitnari Airport",
+      "arr_country": "Georgia",
+      "arr_lat": 42.1767,
+      "arr_lon": 42.4826,
+      "co2_tons": 0.268,
+      "crosses_dateline": false,
+      "flight_id": 102
+    },
+    {
+      "dep_name": "Kopitnari Airport",
+      "dep_country": "Georgia",
+      "dep_lat": 42.1767,
+      "dep_lon": 42.4826,
+      "arr_name": "Ganja Airport",
+      "arr_country": "Azerbaijan",
+      "arr_lat": 40.73883,
+      "arr_lon": 46.32,
+      "co2_tons": 0.102,
+      "crosses_dateline": false,
+      "flight_id": 103
+    },
+    {
+      "dep_name": "Ganja Airport",
+      "dep_country": "Azerbaijan",
+      "dep_lat": 40.73883,
+      "dep_lon": 46.32,
+      "arr_name": "Van Ferit Melen Airport",
+      "arr_country": "Armenia",
+      "arr_lat": 38.4682,
+      "arr_lon": 43.3323,
+      "co2_tons": 0.102,
+      "crosses_dateline": false,
+      "flight_id": 104
+    },
+    {
+      "dep_name": "Van Ferit Melen Airport",
+      "dep_country": "Armenia",
+      "dep_lat": 38.4682,
+      "dep_lon": 43.3323,
+      "arr_name": "Bamarni Airport",
+      "arr_country": "Iraq",
+      "arr_lat": 37.0988,
+      "arr_lon": 43.2666,
+      "co2_tons": 0.043,
+      "crosses_dateline": false,
+      "flight_id": 105
+    },
+    {
+      "dep_name": "Bamarni Airport",
+      "dep_country": "Iraq",
+      "dep_lat": 37.0988,
+      "dep_lon": 43.2666,
+      "arr_name": "Ras Khafji Airport",
+      "arr_country": "Kuwait",
+      "arr_lat": 28.3899,
+      "arr_lon": 48.5165,
+      "co2_tons": 0.309,
+      "crosses_dateline": false,
+      "flight_id": 106
+    },
+    {
+      "dep_name": "Ras Khafji Airport",
+      "dep_country": "Kuwait",
+      "dep_lat": 28.3899,
+      "dep_lon": 48.5165,
+      "arr_name": "Abu Ali Airport",
+      "arr_country": "Saudi Arabia",
+      "arr_lat": 27.3191,
+      "arr_lon": 49.5871,
+      "co2_tons": 0.045,
+      "crosses_dateline": false,
+      "flight_id": 107
+    },
+    {
+      "dep_name": "Abu Ali Airport",
+      "dep_country": "Saudi Arabia",
+      "dep_lat": 27.3191,
+      "dep_lon": 49.5871,
+      "arr_name": "Bahrain International Airport",
+      "arr_country": "Qatar",
+      "arr_lat": 26.2708,
+      "arr_lon": 50.6336,
+      "co2_tons": 0.044,
+      "crosses_dateline": false,
+      "flight_id": 108
+    },
+    {
+      "dep_name": "Bahrain International Airport",
+      "dep_country": "Qatar",
+      "dep_lat": 26.2708,
+      "dep_lon": 50.6336,
+      "arr_name": "Asaloyeh Airport",
+      "arr_country": "Iran",
+      "arr_lat": 27.4814,
+      "arr_lon": 52.6155,
+      "co2_tons": 0.068,
+      "crosses_dateline": false,
+      "flight_id": 109
+    },
+    {
+      "dep_name": "Asaloyeh Airport",
+      "dep_country": "Iran",
+      "dep_lat": 27.4814,
+      "dep_lon": 52.6155,
+      "arr_name": "Al Hamra Airport",
+      "arr_country": "United Arab Emirates",
+      "arr_lat": 24.074,
+      "arr_lon": 52.4636,
+      "co2_tons": 0.108,
+      "crosses_dateline": false,
+      "flight_id": 110
+    },
+    {
+      "dep_name": "Al Hamra Airport",
+      "dep_country": "United Arab Emirates",
+      "dep_lat": 24.074,
+      "dep_lon": 52.4636,
+      "arr_name": "Lekhwair Airport",
+      "arr_country": "Oman",
+      "arr_lat": 22.80498,
+      "arr_lon": 55.37337,
+      "co2_tons": 0.094,
+      "crosses_dateline": false,
+      "flight_id": 111
+    },
+    {
+      "dep_name": "Lekhwair Airport",
+      "dep_country": "Oman",
+      "dep_lat": 22.80498,
+      "dep_lon": 55.37337,
+      "arr_name": "Aden International Airport",
+      "arr_country": "Yemen",
+      "arr_lat": 12.8295,
+      "arr_lon": 45.0288,
+      "co2_tons": 0.444,
+      "crosses_dateline": false,
+      "flight_id": 112
+    },
+    {
+      "dep_name": "Aden International Airport",
+      "dep_country": "Yemen",
+      "dep_lat": 12.8295,
+      "dep_lon": 45.0288,
+      "arr_name": "Egal International Airport",
+      "arr_country": "Somalia",
+      "arr_lat": 9.51817,
+      "arr_lon": 44.0888,
+      "co2_tons": 0.109,
+      "crosses_dateline": false,
+      "flight_id": 113
+    },
+    {
+      "dep_name": "Egal International Airport",
+      "dep_country": "Somalia",
+      "dep_lat": 9.51817,
+      "dep_lon": 44.0888,
+      "arr_name": "Djibouti-Ambouli Airport",
+      "arr_country": "Djibouti",
+      "arr_lat": 11.5473,
+      "arr_lon": 43.1595,
+      "co2_tons": 0.071,
+      "crosses_dateline": false,
+      "flight_id": 114
+    },
+    {
+      "dep_name": "Djibouti-Ambouli Airport",
+      "dep_country": "Djibouti",
+      "dep_lat": 11.5473,
+      "dep_lon": 43.1595,
+      "arr_name": "Assa-Gueyla Airport",
+      "arr_country": "Eritrea",
+      "arr_lat": 12.2,
+      "arr_lon": 42.6333,
+      "co2_tons": 0.026,
+      "crosses_dateline": false,
+      "flight_id": 115
+    },
+    {
+      "dep_name": "Assa-Gueyla Airport",
+      "dep_country": "Eritrea",
+      "dep_lat": 12.2,
+      "dep_lon": 42.6333,
+      "arr_name": "Galegu Airport",
+      "arr_country": "Sudan",
+      "arr_lat": 12.533,
+      "arr_lon": 35.067,
+      "co2_tons": 0.234,
+      "crosses_dateline": false,
+      "flight_id": 116
+    },
+    {
+      "dep_name": "Galegu Airport",
+      "dep_country": "Sudan",
+      "dep_lat": 12.533,
+      "dep_lon": 35.067,
+      "arr_name": "Tume Airport",
+      "arr_country": "Ethiopia",
+      "arr_lat": 5.833,
+      "arr_lon": 35.533,
+      "co2_tons": 0.213,
+      "crosses_dateline": false,
+      "flight_id": 117
+    },
+    {
+      "dep_name": "Tume Airport",
+      "dep_country": "Ethiopia",
+      "dep_lat": 5.833,
+      "dep_lon": 35.533,
+      "arr_name": "Kapoeta Airport",
+      "arr_country": "South Sudan",
+      "arr_lat": 4.783,
+      "arr_lon": 33.583,
+      "co2_tons": 0.07,
+      "crosses_dateline": false,
+      "flight_id": 118
+    },
+    {
+      "dep_name": "Kapoeta Airport",
+      "dep_country": "South Sudan",
+      "dep_lat": 4.783,
+      "dep_lon": 33.583,
+      "arr_name": "Eliye Springs Airport",
+      "arr_country": "Kenya",
+      "arr_lat": 3.21667,
+      "arr_lon": 35.9667,
+      "co2_tons": 0.09,
+      "crosses_dateline": false,
+      "flight_id": 119
+    },
+    {
+      "dep_name": "Eliye Springs Airport",
+      "dep_country": "Kenya",
+      "dep_lat": 3.21667,
+      "dep_lon": 35.9667,
+      "arr_name": "Musoma Airport",
+      "arr_country": "United Republic of Tanzania",
+      "arr_lat": -1.503,
+      "arr_lon": 33.8021,
+      "co2_tons": 0.165,
+      "crosses_dateline": false,
+      "flight_id": 120
+    },
+    {
+      "dep_name": "Musoma Airport",
+      "dep_country": "United Republic of Tanzania",
+      "dep_lat": -1.503,
+      "dep_lon": 33.8021,
+      "arr_name": "Entebbe International Airport",
+      "arr_country": "Uganda",
+      "arr_lat": 0.04239,
+      "arr_lon": 32.4435,
+      "co2_tons": 0.065,
+      "crosses_dateline": false,
+      "flight_id": 121
+    },
+    {
+      "dep_name": "Entebbe International Airport",
+      "dep_country": "Uganda",
+      "dep_lat": 0.04239,
+      "dep_lon": 32.4435,
+      "arr_name": "Gabiro Airport",
+      "arr_country": "Rwanda",
+      "arr_lat": -1.55,
+      "arr_lon": 30.383,
+      "co2_tons": 0.083,
+      "crosses_dateline": false,
+      "flight_id": 122
+    },
+    {
+      "dep_name": "Gabiro Airport",
+      "dep_country": "Rwanda",
+      "dep_lat": -1.55,
+      "dep_lon": 30.383,
+      "arr_name": "Kirundo Airport",
+      "arr_country": "Burundi",
+      "arr_lat": -2.54477,
+      "arr_lon": 30.09457,
+      "co2_tons": 0.033,
+      "crosses_dateline": false,
+      "flight_id": 123
+    },
+    {
+      "dep_name": "Kirundo Airport",
+      "dep_country": "Burundi",
+      "dep_lat": -2.54477,
+      "dep_lon": 30.09457,
+      "arr_name": "Lubumbashi International Airport",
+      "arr_country": "Democratic Republic of the Congo",
+      "arr_lat": -11.5913,
+      "arr_lon": 27.5309,
+      "co2_tons": 0.298,
+      "crosses_dateline": false,
+      "flight_id": 124
+    },
+    {
+      "dep_name": "Lubumbashi International Airport",
+      "dep_country": "Democratic Republic of the Congo",
+      "dep_lat": -11.5913,
+      "dep_lon": 27.5309,
+      "arr_name": "Kasompe Airport",
+      "arr_country": "Zambia",
+      "arr_lat": -12.5728,
+      "arr_lon": 27.8939,
+      "co2_tons": 0.033,
+      "crosses_dateline": false,
+      "flight_id": 125
+    },
+    {
+      "dep_name": "Kasompe Airport",
+      "dep_country": "Zambia",
+      "dep_lat": -12.5728,
+      "dep_lon": 27.8939,
+      "arr_name": "Cazombo Airport",
+      "arr_country": "Angola",
+      "arr_lat": -11.8931,
+      "arr_lon": 22.9164,
+      "co2_tons": 0.156,
+      "crosses_dateline": false,
+      "flight_id": 126
+    },
+    {
+      "dep_name": "Cazombo Airport",
+      "dep_country": "Angola",
+      "dep_lat": -11.8931,
+      "dep_lon": 22.9164,
+      "arr_name": "Kasane Airport",
+      "arr_country": "Namibia",
+      "arr_lat": -17.8329,
+      "arr_lon": 25.1624,
+      "co2_tons": 0.2,
+      "crosses_dateline": false,
+      "flight_id": 127
+    },
+    {
+      "dep_name": "Kasane Airport",
+      "dep_country": "Namibia",
+      "dep_lat": -17.8329,
+      "dep_lon": 25.1624,
+      "arr_name": "Francistown Airport",
+      "arr_country": "Botswana",
+      "arr_lat": -21.1596,
+      "arr_lon": 27.4745,
+      "co2_tons": 0.126,
+      "crosses_dateline": false,
+      "flight_id": 128
+    },
+    {
+      "dep_name": "Francistown Airport",
+      "dep_country": "Botswana",
+      "dep_lat": -21.1596,
+      "dep_lon": 27.4745,
+      "arr_name": "Alldays Airport",
+      "arr_country": "South Africa",
+      "arr_lat": -22.679,
+      "arr_lon": 29.0555,
+      "co2_tons": 0.067,
+      "crosses_dateline": false,
+      "flight_id": 129
+    },
+    {
+      "dep_name": "Alldays Airport",
+      "dep_country": "South Africa",
+      "dep_lat": -22.679,
+      "dep_lon": 29.0555,
+      "arr_name": "Bethlehem Airport",
+      "arr_country": "Lesotho",
+      "arr_lat": -28.2484,
+      "arr_lon": 28.3361,
+      "co2_tons": 0.178,
+      "crosses_dateline": false,
+      "flight_id": 130
+    },
+    {
+      "dep_name": "Bethlehem Airport",
+      "dep_country": "Lesotho",
+      "dep_lat": -28.2484,
+      "dep_lon": 28.3361,
+      "arr_name": "Buffelshoek Airport",
+      "arr_country": "Swaziland",
+      "arr_lat": -24.70246,
+      "arr_lon": 31.58788,
+      "co2_tons": 0.145,
+      "crosses_dateline": false,
+      "flight_id": 131
+    },
+    {
+      "dep_name": "Buffelshoek Airport",
+      "dep_country": "Swaziland",
+      "dep_lat": -24.70246,
+      "dep_lon": 31.58788,
+      "arr_name": "Vila Franca do Save Airport",
+      "arr_country": "Mozambique",
+      "arr_lat": -21.1645,
+      "arr_lon": 34.5607,
+      "co2_tons": 0.142,
+      "crosses_dateline": false,
+      "flight_id": 132
+    },
+    {
+      "dep_name": "Vila Franca do Save Airport",
+      "dep_country": "Mozambique",
+      "dep_lat": -21.1645,
+      "dep_lon": 34.5607,
+      "arr_name": "Chipinge Airport",
+      "arr_country": "Zimbabwe",
+      "arr_lat": -20.2067,
+      "arr_lon": 32.6283,
+      "co2_tons": 0.065,
+      "crosses_dateline": false,
+      "flight_id": 133
+    },
+    {
+      "dep_name": "Chipinge Airport",
+      "dep_country": "Zimbabwe",
+      "dep_lat": -20.2067,
+      "dep_lon": 32.6283,
+      "arr_name": "Bangula Airport",
+      "arr_country": "Malawi",
+      "arr_lat": -16.5833,
+      "arr_lon": 35.1167,
+      "co2_tons": 0.137,
+      "crosses_dateline": false,
+      "flight_id": 134
+    },
+    {
+      "dep_name": "Bangula Airport",
+      "dep_country": "Malawi",
+      "dep_lat": -16.5833,
+      "dep_lon": 35.1167,
+      "arr_name": "Tambohorano Airport",
+      "arr_country": "Madagascar",
+      "arr_lat": -17.4761,
+      "arr_lon": 43.9728,
+      "co2_tons": 0.27,
+      "crosses_dateline": false,
+      "flight_id": 135
+    },
+    {
+      "dep_name": "Tambohorano Airport",
+      "dep_country": "Madagascar",
+      "dep_lat": -17.4761,
+      "dep_lon": 43.9728,
+      "arr_name": "Moheli Bandar Es Eslam Airport",
+      "arr_country": "Comoros",
+      "arr_lat": -12.2981,
+      "arr_lon": 43.7664,
+      "co2_tons": 0.164,
+      "crosses_dateline": false,
+      "flight_id": 136
+    },
+    {
+      "dep_name": "Moheli Bandar Es Eslam Airport",
+      "dep_country": "Comoros",
+      "dep_lat": -12.2981,
+      "dep_lon": 43.7664,
+      "arr_name": "Assumption Island Airport",
+      "arr_country": "Seychelles",
+      "arr_lat": -9.74222,
+      "arr_lon": 46.5068,
+      "co2_tons": 0.118,
+      "crosses_dateline": false,
+      "flight_id": 137
+    },
+    {
+      "dep_name": "Assumption Island Airport",
+      "dep_country": "Seychelles",
+      "dep_lat": -9.74222,
+      "dep_lon": 46.5068,
+      "arr_name": "Sir Seewoosagur Ramgoolam International Airport",
+      "arr_country": "Mauritius",
+      "arr_lat": -20.4302,
+      "arr_lon": 57.6836,
+      "co2_tons": 0.481,
+      "crosses_dateline": false,
+      "flight_id": 138
+    },
+    {
+      "dep_name": "Sir Seewoosagur Ramgoolam International Airport",
+      "dep_country": "Mauritius",
+      "dep_lat": -20.4302,
+      "dep_lon": 57.6836,
+      "arr_name": "Maafaru International Airport",
+      "arr_country": "Maldives",
+      "arr_lat": 5.81783,
+      "arr_lon": 73.4685,
+      "co2_tons": 0.966,
+      "crosses_dateline": false,
+      "flight_id": 139
+    },
+    {
+      "dep_name": "Maafaru International Airport",
+      "dep_country": "Maldives",
+      "dep_lat": 5.81783,
+      "dep_lon": 73.4685,
+      "arr_name": "Koggala Airport",
+      "arr_country": "Sri Lanka",
+      "arr_lat": 5.99368,
+      "arr_lon": 80.3203,
+      "co2_tons": 0.216,
+      "crosses_dateline": false,
+      "flight_id": 140
+    },
+    {
+      "dep_name": "Koggala Airport",
+      "dep_country": "Sri Lanka",
+      "dep_lat": 5.99368,
+      "dep_lon": 80.3203,
+      "arr_name": "Campbell Bay Airport",
+      "arr_country": "India",
+      "arr_lat": 7.01304,
+      "arr_lon": 93.9228,
+      "co2_tons": 0.429,
+      "crosses_dateline": false,
+      "flight_id": 141
+    },
+    {
+      "dep_name": "Campbell Bay Airport",
+      "dep_country": "India",
+      "dep_lat": 7.01304,
+      "dep_lon": 93.9228,
+      "arr_name": "Ye Airport",
+      "arr_country": "Myanmar",
+      "arr_lat": 15.3,
+      "arr_lon": 97.867,
+      "co2_tons": 0.29,
+      "crosses_dateline": false,
+      "flight_id": 142
+    },
+    {
+      "dep_name": "Ye Airport",
+      "dep_country": "Myanmar",
+      "dep_lat": 15.3,
+      "dep_lon": 97.867,
+      "arr_name": "Cox's Bazar Airport",
+      "arr_country": "Bangladesh",
+      "arr_lat": 21.4522,
+      "arr_lon": 91.9639,
+      "co2_tons": 0.264,
+      "crosses_dateline": false,
+      "flight_id": 143
+    },
+    {
+      "dep_name": "Cox's Bazar Airport",
+      "dep_country": "Bangladesh",
+      "dep_lat": 21.4522,
+      "dep_lon": 91.9639,
+      "arr_name": "Lhasa Gonggar Airport",
+      "arr_country": "Bhutan",
+      "arr_lat": 29.2978,
+      "arr_lon": 90.9119,
+      "co2_tons": 0.25,
+      "crosses_dateline": false,
+      "flight_id": 144
+    },
+    {
+      "dep_name": "Lhasa Gonggar Airport",
+      "dep_country": "Bhutan",
+      "dep_lat": 29.2978,
+      "dep_lon": 90.9119,
+      "arr_name": "Gorkha Airport",
+      "arr_country": "Nepal",
+      "arr_lat": 28.05,
+      "arr_lon": 84.483,
+      "co2_tons": 0.183,
+      "crosses_dateline": false,
+      "flight_id": 145
+    },
+    {
+      "dep_name": "Gorkha Airport",
+      "dep_country": "Nepal",
+      "dep_lat": 28.05,
+      "dep_lon": 84.483,
+      "arr_name": "Chilas Airport",
+      "arr_country": "Pakistan",
+      "arr_lat": 35.4267,
+      "arr_lon": 74.0817,
+      "co2_tons": 0.365,
+      "crosses_dateline": false,
+      "flight_id": 146
+    },
+    {
+      "dep_name": "Chilas Airport",
+      "dep_country": "Pakistan",
+      "dep_lat": 35.4267,
+      "dep_lon": 74.0817,
+      "arr_name": "Turkmenabat International Airport",
+      "arr_country": "Turkmenistan",
+      "arr_lat": 39.0833,
+      "arr_lon": 63.6133,
+      "co2_tons": 0.288,
+      "crosses_dateline": false,
+      "flight_id": 147
+    },
+    {
+      "dep_name": "Turkmenabat International Airport",
+      "dep_country": "Turkmenistan",
+      "dep_lat": 39.0833,
+      "dep_lon": 63.6133,
+      "arr_name": "Navoi Airport",
+      "arr_country": "Uzbekistan",
+      "arr_lat": 40.1172,
+      "arr_lon": 65.1708,
+      "co2_tons": 0.05,
+      "crosses_dateline": false,
+      "flight_id": 148
+    },
+    {
+      "dep_name": "Navoi Airport",
+      "dep_country": "Uzbekistan",
+      "dep_lat": 40.1172,
+      "dep_lon": 65.1708,
+      "arr_name": "Chardara Airport",
+      "arr_country": "Kazakhstan",
+      "arr_lat": 41.2765,
+      "arr_lon": 67.971,
+      "co2_tons": 0.077,
+      "crosses_dateline": false,
+      "flight_id": 149
+    },
+    {
+      "dep_name": "Chardara Airport",
+      "dep_country": "Kazakhstan",
+      "dep_lat": 41.2765,
+      "dep_lon": 67.971,
+      "arr_name": "Isfana Airport",
+      "arr_country": "Kyrgyzstan",
+      "arr_lat": 39.82474,
+      "arr_lon": 69.56882,
+      "co2_tons": 0.06,
+      "crosses_dateline": false,
+      "flight_id": 150
+    },
+    {
+      "dep_name": "Isfana Airport",
+      "dep_country": "Kyrgyzstan",
+      "dep_lat": 39.82474,
+      "dep_lon": 69.56882,
+      "arr_name": "Darwaz Airport",
+      "arr_country": "Tajikistan",
+      "arr_lat": 38.4611,
+      "arr_lon": 70.8825,
+      "co2_tons": 0.054,
+      "crosses_dateline": false,
+      "flight_id": 151
+    },
+    {
+      "dep_name": "Darwaz Airport",
+      "dep_country": "Tajikistan",
+      "dep_lat": 38.4611,
+      "dep_lon": 70.8825,
+      "arr_name": "Tashkurgan Khunjerab Airport",
+      "arr_country": "China",
+      "arr_lat": 37.66271,
+      "arr_lon": 75.29227,
+      "co2_tons": 0.113,
+      "crosses_dateline": false,
+      "flight_id": 152
+    },
+    {
+      "dep_name": "Tashkurgan Khunjerab Airport",
+      "dep_country": "China",
+      "dep_lat": 37.66271,
+      "dep_lon": 75.29227,
+      "arr_name": "Bulgan Sum Airport",
+      "arr_country": "Mongolia",
+      "arr_lat": 46.1006,
+      "arr_lon": 91.5842,
+      "co2_tons": 0.467,
+      "crosses_dateline": false,
+      "flight_id": 153
+    },
+    {
+      "dep_name": "Bulgan Sum Airport",
+      "dep_country": "Mongolia",
+      "dep_lat": 46.1006,
+      "dep_lon": 91.5842,
+      "arr_name": "Orang Airport",
+      "arr_country": "North Korea",
+      "arr_lat": 41.4281,
+      "arr_lon": 129.647,
+      "co2_tons": 0.875,
+      "crosses_dateline": false,
+      "flight_id": 154
+    },
+    {
+      "dep_name": "Orang Airport",
+      "dep_country": "North Korea",
+      "dep_lat": 41.4281,
+      "dep_lon": 129.647,
+      "arr_name": "G 413 Airport",
+      "arr_country": "South Korea",
+      "arr_lat": 38.3827,
+      "arr_lon": 128.45799,
+      "co2_tons": 0.101,
+      "crosses_dateline": false,
+      "flight_id": 155
+    },
+    {
+      "dep_name": "G 413 Airport",
+      "dep_country": "South Korea",
+      "dep_lat": 38.3827,
+      "dep_lon": 128.45799,
+      "arr_name": "Oki Airport",
+      "arr_country": "Japan",
+      "arr_lat": 36.1811,
+      "arr_lon": 133.325,
+      "co2_tons": 0.141,
+      "crosses_dateline": false,
+      "flight_id": 156
+    },
+    {
+      "dep_name": "Oki Airport",
+      "dep_country": "Japan",
+      "dep_lat": 36.1811,
+      "dep_lon": 133.325,
+      "arr_name": "Itbayat Airport",
+      "arr_country": "Taiwan",
+      "arr_lat": 20.717,
+      "arr_lon": 121.817,
+      "co2_tons": 0.585,
+      "crosses_dateline": false,
+      "flight_id": 157
+    },
+    {
+      "dep_name": "Itbayat Airport",
+      "dep_country": "Taiwan",
+      "dep_lat": 20.717,
+      "dep_lon": 121.817,
+      "arr_name": "Cagayan de Sulu Airport",
+      "arr_country": "Philippines",
+      "arr_lat": 7.014,
+      "arr_lon": 118.496,
+      "co2_tons": 0.446,
+      "crosses_dateline": false,
+      "flight_id": 158
+    },
+    {
+      "dep_name": "Cagayan de Sulu Airport",
+      "dep_country": "Philippines",
+      "dep_lat": 7.014,
+      "dep_lon": 118.496,
+      "arr_name": "Anduki Airport",
+      "arr_country": "Brunei",
+      "arr_lat": 4.637,
+      "arr_lon": 114.382,
+      "co2_tons": 0.15,
+      "crosses_dateline": false,
+      "flight_id": 159
+    },
+    {
+      "dep_name": "Anduki Airport",
+      "dep_country": "Brunei",
+      "dep_lat": 4.637,
+      "dep_lon": 114.382,
+      "arr_name": "Miri Airport",
+      "arr_country": "Malaysia",
+      "arr_lat": 4.32201,
+      "arr_lon": 113.987,
+      "co2_tons": 0.016,
+      "crosses_dateline": false,
+      "flight_id": 160
+    },
+    {
+      "dep_name": "Miri Airport",
+      "dep_country": "Malaysia",
+      "dep_lat": 4.32201,
+      "dep_lon": 113.987,
+      "arr_name": "Kompong Cham Airport",
+      "arr_country": "Laos",
+      "arr_lat": 12.033,
+      "arr_lon": 105.433,
+      "co2_tons": 0.363,
+      "crosses_dateline": false,
+      "flight_id": 161
+    },
+    {
+      "dep_name": "Kompong Cham Airport",
+      "dep_country": "Laos",
+      "dep_lat": 12.033,
+      "dep_lon": 105.433,
+      "arr_name": "Kaoh Kong Airport",
+      "arr_country": "Vietnam",
+      "arr_lat": 11.6134,
+      "arr_lon": 102.99708,
+      "co2_tons": 0.077,
+      "crosses_dateline": false,
+      "flight_id": 162
+    },
+    {
+      "dep_name": "Kaoh Kong Airport",
+      "dep_country": "Vietnam",
+      "dep_lat": 11.6134,
+      "dep_lon": 102.99708,
+      "arr_name": "Samui Airport",
+      "arr_country": "Thailand",
+      "arr_lat": 9.54779,
+      "arr_lon": 100.062,
+      "co2_tons": 0.112,
+      "crosses_dateline": false,
+      "flight_id": 163
+    },
+    {
+      "dep_name": "Samui Airport",
+      "dep_country": "Thailand",
+      "dep_lat": 9.54779,
+      "dep_lon": 100.062,
+      "arr_name": "Banda Airport Kepulauan",
+      "arr_country": "Indonesia",
+      "arr_lat": 5.11667,
+      "arr_lon": 97.1167,
+      "co2_tons": 0.168,
+      "crosses_dateline": false,
+      "flight_id": 164
+    },
+    {
+      "dep_name": "Banda Airport Kepulauan",
+      "dep_country": "Indonesia",
+      "dep_lat": 5.11667,
+      "dep_lon": 97.1167,
+      "arr_name": "Sungai Pakning Bengkalis Airport",
+      "arr_country": "Singapore",
+      "arr_lat": 1.37,
+      "arr_lon": 102.14,
+      "co2_tons": 0.198,
+      "crosses_dateline": false,
+      "flight_id": 165
+    },
+    {
+      "dep_name": "Sungai Pakning Bengkalis Airport",
+      "dep_country": "Singapore",
+      "dep_lat": 1.37,
+      "dep_lon": 102.14,
+      "arr_name": "Maumere(Wai Oti) Airport",
+      "arr_country": "East Timor",
+      "arr_lat": -8.64065,
+      "arr_lon": 122.237,
+      "co2_tons": 0.71,
+      "crosses_dateline": false,
+      "flight_id": 166
+    },
+    {
+      "dep_name": "Maumere(Wai Oti) Airport",
+      "dep_country": "East Timor",
+      "dep_lat": -8.64065,
+      "dep_lon": 122.237,
+      "arr_name": "Angaur Airstrip",
+      "arr_country": "Palau",
+      "arr_lat": 6.9,
+      "arr_lon": 134.15,
+      "co2_tons": 0.62,
+      "crosses_dateline": false,
+      "flight_id": 167
+    },
+    {
+      "dep_name": "Angaur Airstrip",
+      "dep_country": "Palau",
+      "dep_lat": 6.9,
+      "dep_lon": 134.15,
+      "arr_name": "Yap International Airport",
+      "arr_country": "Federated States of Micronesia",
+      "arr_lat": 9.49891,
+      "arr_lon": 138.08248,
+      "co2_tons": 0.148,
+      "crosses_dateline": false,
+      "flight_id": 168
+    },
+    {
+      "dep_name": "Yap International Airport",
+      "dep_country": "Federated States of Micronesia",
+      "dep_lat": 9.49891,
+      "dep_lon": 138.08248,
+      "arr_name": "Buka Airport",
+      "arr_country": "Papua New Guinea",
+      "arr_lat": -5.42232,
+      "arr_lon": 154.673,
+      "co2_tons": 0.706,
+      "crosses_dateline": false,
+      "flight_id": 169
+    },
+    {
+      "dep_name": "Buka Airport",
+      "dep_country": "Papua New Guinea",
+      "dep_lat": -5.42232,
+      "dep_lon": 154.673,
+      "arr_name": "Nauru International Airport",
+      "arr_country": "Nauru",
+      "arr_lat": -0.54746,
+      "arr_lon": 166.91901,
+      "co2_tons": 0.417,
+      "crosses_dateline": false,
+      "flight_id": 170
+    },
+    {
+      "dep_name": "Nauru International Airport",
+      "dep_country": "Nauru",
+      "dep_lat": -0.54746,
+      "dep_lon": 166.91901,
+      "arr_name": "Mili Airport",
+      "arr_country": "Marshall Islands",
+      "arr_lat": 6.08333,
+      "arr_lon": 171.73333,
+      "co2_tons": 0.26,
+      "crosses_dateline": false,
+      "flight_id": 171
+    },
+    {
+      "dep_name": "Mili Airport",
+      "dep_country": "Marshall Islands",
+      "dep_lat": 6.08333,
+      "dep_lon": 171.73333,
+      "arr_name": "Abaiang Airport",
+      "arr_country": "Kiribati",
+      "arr_lat": 1.79861,
+      "arr_lon": 173.041,
+      "co2_tons": 0.142,
+      "crosses_dateline": false,
+      "flight_id": 172
+    },
+    {
+      "dep_name": "Abaiang Airport",
+      "dep_country": "Kiribati",
+      "dep_lat": 1.79861,
+      "dep_lon": 173.041,
+      "arr_name": "Funafuti International Airport",
+      "arr_country": "Tuvalu",
+      "arr_lat": -8.525,
+      "arr_lon": 179.196,
+      "co2_tons": 0.381,
+      "crosses_dateline": false,
+      "flight_id": 173
+    },
+    {
+      "dep_name": "Funafuti International Airport",
+      "dep_country": "Tuvalu",
+      "dep_lat": -8.525,
+      "dep_lon": 179.196,
+      "arr_name": "Asau Airport",
+      "arr_country": "Samoa",
+      "arr_lat": -13.5058,
+      "arr_lon": -172.62801,
+      "co2_tons": 0.299,
+      "crosses_dateline": true,
+      "flight_id": 174
+    },
+    {
+      "dep_name": "Asau Airport",
+      "dep_country": "Samoa",
+      "dep_lat": -13.5058,
+      "dep_lon": -172.62801,
+      "arr_name": "Mata'aho Airport",
+      "arr_country": "Tonga",
+      "arr_lat": -15.5708,
+      "arr_lon": -175.633,
+      "co2_tons": 0.113,
+      "crosses_dateline": false,
+      "flight_id": 175
+    },
+    {
+      "dep_name": "Mata'aho Airport",
+      "dep_country": "Tonga",
+      "dep_lat": -15.5708,
+      "dep_lon": -175.633,
+      "arr_name": "Rotuma Airport",
+      "arr_country": "Fiji",
+      "arr_lat": -12.4825,
+      "arr_lon": 177.071,
+      "co2_tons": 0.245,
+      "crosses_dateline": true,
+      "flight_id": 176
+    },
+    {
+      "dep_name": "Rotuma Airport",
+      "dep_country": "Fiji",
+      "dep_lat": -12.4825,
+      "dep_lon": 177.071,
+      "arr_name": "Santa Cruz/Graciosa Bay/Luova Airport",
+      "arr_country": "Solomon Islands",
+      "arr_lat": -10.7203,
+      "arr_lon": 165.795,
+      "co2_tons": 0.354,
+      "crosses_dateline": false,
+      "flight_id": 177
+    },
+    {
+      "dep_name": "Santa Cruz/Graciosa Bay/Luova Airport",
+      "dep_country": "Solomon Islands",
+      "dep_lat": -10.7203,
+      "dep_lon": 165.795,
+      "arr_name": "Mota Lava Airport",
+      "arr_country": "Vanuatu",
+      "arr_lat": -13.666,
+      "arr_lon": 167.71201,
+      "co2_tons": 0.111,
+      "crosses_dateline": false,
+      "flight_id": 178
+    },
+    {
+      "dep_name": "Mota Lava Airport",
+      "dep_country": "Vanuatu",
+      "dep_lat": -13.666,
+      "dep_lon": 167.71201,
+      "arr_name": "Lord Howe Island Airport",
+      "arr_country": "Australia",
+      "arr_lat": -31.5383,
+      "arr_lon": 159.077,
+      "co2_tons": 0.62,
+      "crosses_dateline": false,
+      "flight_id": 179
+    },
+    {
+      "dep_name": "Lord Howe Island Airport",
+      "dep_country": "Australia",
+      "dep_lat": -31.5383,
+      "dep_lon": 159.077,
+      "arr_name": "Paihia Private Airport",
+      "arr_country": "New Zealand",
+      "arr_lat": -35.2822,
+      "arr_lon": 174.091,
+      "co2_tons": 0.414,
+      "crosses_dateline": false,
+      "flight_id": 180
+    },
+    {
+      "dep_name": "Paihia Private Airport",
+      "dep_country": "New Zealand",
+      "dep_lat": -35.2822,
+      "dep_lon": 174.091,
+      "arr_name": "Cerro Largo International Airport",
+      "arr_country": "Uruguay",
+      "arr_lat": -32.3379,
+      "arr_lon": -54.2167,
+      "co2_tons": 3.125,
+      "crosses_dateline": true,
+      "flight_id": 181
+    }
+  ],
+  "airports": [
+    {
+      "name": "Nara Airport",
+      "country": "Mali",
+      "lat": 15.217,
+      "lon": -7.267,
+      "population_share": 0.008
+    },
+    {
+      "name": "Galegu Airport",
+      "country": "Sudan",
+      "lat": 12.533,
+      "lon": 35.067,
+      "population_share": 0.013
+    },
+    {
+      "name": "Lesce Bled Glider Airport",
+      "country": "Slovenia",
+      "lat": 46.3572,
+      "lon": 14.1739,
+      "population_share": 0.058
+    },
+    {
+      "name": "Foligno Airport",
+      "country": "San Marino",
+      "lat": 42.9328,
+      "lon": 12.7101,
+      "population_share": 0.059
+    },
+    {
+      "name": "Abu Ali Airport",
+      "country": "Saudi Arabia",
+      "lat": 27.3191,
+      "lon": 49.5871,
+      "population_share": 0.003
+    },
+    {
+      "name": "Sir Seewoosagur Ramgoolam International Airport",
+      "country": "Mauritius",
+      "lat": -20.4302,
+      "lon": 57.6836,
+      "population_share": 0.018
+    },
+    {
+      "name": "Memmingen Allgau Airport",
+      "country": "Switzerland",
+      "lat": 47.9888,
+      "lon": 10.2395,
+      "population_share": 0.04
+    },
+    {
+      "name": "Jerez Airport",
+      "country": "Spain",
+      "lat": 36.7446,
+      "lon": -6.06011,
+      "population_share": 0.025
+    },
+    {
+      "name": "Vila Franca do Save Airport",
+      "country": "Mozambique",
+      "lat": -21.1645,
+      "lon": 34.5607,
+      "population_share": 0.005
+    },
+    {
+      "name": "Santa Victoria Airport",
+      "country": "Argentina",
+      "lat": -22.2857,
+      "lon": -62.7137,
+      "population_share": 0.004
+    },
+    {
+      "name": "Nema Airport",
+      "country": "Mauritania",
+      "lat": 16.622,
+      "lon": -7.3166,
+      "population_share": 0.001
+    },
+    {
+      "name": "Miri Airport",
+      "country": "Malaysia",
+      "lat": 4.32201,
+      "lon": 113.987,
+      "population_share": 0.001
+    },
+    {
+      "name": "Natitingou Airport",
+      "country": "Benin",
+      "lat": 10.317,
+      "lon": 1.383,
+      "population_share": 0.03
+    },
+    {
+      "name": "Cabo Rojo Airport",
+      "country": "Dominican Republic",
+      "lat": 17.929,
+      "lon": -71.6448,
+      "population_share": 0.001
+    },
+    {
+      "name": "Ciudad del Carmen International Airport",
+      "country": "Mexico",
+      "lat": 18.6537,
+      "lon": -91.799,
+      "population_share": 0.008
+    },
+    {
+      "name": "Funafuti International Airport",
+      "country": "Tuvalu",
+      "lat": -8.525,
+      "lon": 179.196,
+      "population_share": 0.0
+    },
+    {
+      "name": "Tambohorano Airport",
+      "country": "Madagascar",
+      "lat": -17.4761,
+      "lon": 43.9728,
+      "population_share": 0.0
+    },
+    {
+      "name": "Buka Airport",
+      "country": "Papua New Guinea",
+      "lat": -5.42232,
+      "lon": 154.673,
+      "population_share": 0.001
+    },
+    {
+      "name": "Cazombo Airport",
+      "country": "Angola",
+      "lat": -11.8931,
+      "lon": 22.9164,
+      "population_share": 0.004
+    },
+    {
+      "name": "Filadelfia Airport",
+      "country": "Paraguay",
+      "lat": -22.36,
+      "lon": -60.05,
+      "population_share": 0.001
+    },
+    {
+      "name": "El Arish International Airport",
+      "country": "Egypt",
+      "lat": 31.0733,
+      "lon": 33.8358,
+      "population_share": 0.034
+    },
+    {
+      "name": "Ras Khafji Airport",
+      "country": "Kuwait",
+      "lat": 28.3899,
+      "lon": 48.5165,
+      "population_share": 0.021
+    },
+    {
+      "name": "Vogtareuth Airport",
+      "country": "Austria",
+      "lat": 47.94611,
+      "lon": 12.20472,
+      "population_share": 0.033
+    },
+    {
+      "name": "Cerro Largo International Airport",
+      "country": "Uruguay",
+      "lat": -32.3379,
+      "lon": -54.2167,
+      "population_share": 0.004
+    },
+    {
+      "name": "Trompeteros Airport",
+      "country": "Peru",
+      "lat": -3.80601,
+      "lon": -75.0393,
+      "population_share": 0.0
+    },
+    {
+      "name": "Tume Airport",
+      "country": "Ethiopia",
+      "lat": 5.833,
+      "lon": 35.533,
+      "population_share": 0.005
+    },
+    {
+      "name": "Antilla Airport",
+      "country": "Cuba",
+      "lat": 20.8388,
+      "lon": -75.7328,
+      "population_share": 0.022
+    },
+    {
+      "name": "Petrich Airport",
+      "country": "Macedonia",
+      "lat": 41.4483,
+      "lon": 23.2171,
+      "population_share": 0.035
+    },
+    {
+      "name": "Lida Air Base",
+      "country": "Belarus",
+      "lat": 53.877,
+      "lon": 25.377,
+      "population_share": 0.02
+    },
+    {
+      "name": "Ouallam Airport",
+      "country": "Niger",
+      "lat": 14.333,
+      "lon": 2.083,
+      "population_share": 0.014
+    },
+    {
+      "name": "Smolensk South Airport",
+      "country": "Russia",
+      "lat": 54.745,
+      "lon": 32.065,
+      "population_share": 0.006
+    },
+    {
+      "name": "Akpaka Airport",
+      "country": "Togo",
+      "lat": 7.583,
+      "lon": 1.117,
+      "population_share": 0.099
+    },
+    {
+      "name": "Mariehamn Airport",
+      "country": "Finland",
+      "lat": 60.1222,
+      "lon": 19.8982,
+      "population_share": 0.001
+    },
+    {
+      "name": "Corn Island",
+      "country": "Nicaragua",
+      "lat": 12.1629,
+      "lon": -83.0638,
+      "population_share": 0.001
+    },
+    {
+      "name": "Chilas Airport",
+      "country": "Pakistan",
+      "lat": 35.4267,
+      "lon": 74.0817,
+      "population_share": 0.082
+    },
+    {
+      "name": "Borgarfjordur eystri Airport",
+      "country": "Iceland",
+      "lat": 65.5164,
+      "lon": -13.805,
+      "population_share": 0.0
+    },
+    {
+      "name": "Chipinge Airport",
+      "country": "Zimbabwe",
+      "lat": -20.2067,
+      "lon": 32.6283,
+      "population_share": 0.013
+    },
+    {
+      "name": "V.C. Bird International Airport",
+      "country": "Antigua and Barbuda",
+      "lat": 17.1367,
+      "lon": -61.7927,
+      "population_share": 0.007
+    },
+    {
+      "name": "Kapoeta Airport",
+      "country": "South Sudan",
+      "lat": 4.783,
+      "lon": 33.583,
+      "population_share": 0.006
+    },
+    {
+      "name": "Darwaz Airport",
+      "country": "Tajikistan",
+      "lat": 38.4611,
+      "lon": 70.8825,
+      "population_share": 0.008
+    },
+    {
+      "name": "Finca Ceiba Airport",
+      "country": "Panama",
+      "lat": 8.355,
+      "lon": -82.8364,
+      "population_share": 0.024
+    },
+    {
+      "name": "St. Mary's Airport",
+      "country": "United Kingdom",
+      "lat": 49.9133,
+      "lon": -6.29167,
+      "population_share": 0.0
+    },
+    {
+      "name": "El Loa Airport",
+      "country": "Chile",
+      "lat": -22.4982,
+      "lon": -68.9036,
+      "population_share": 0.003
+    },
+    {
+      "name": "Monastir Habib Bourguiba International Airport",
+      "country": "Tunisia",
+      "lat": 35.7581,
+      "lon": 10.7547,
+      "population_share": 0.033
+    },
+    {
+      "name": "Mili Airport",
+      "country": "Marshall Islands",
+      "lat": 6.08333,
+      "lon": 171.73333,
+      "population_share": 0.0
+    },
+    {
+      "name": "Itbayat Airport",
+      "country": "Taiwan",
+      "lat": 20.717,
+      "lon": 121.817,
+      "population_share": 0.001
+    },
+    {
+      "name": "Gabiro Airport",
+      "country": "Rwanda",
+      "lat": -1.55,
+      "lon": 30.383,
+      "population_share": 0.113
+    },
+    {
+      "name": "Entebbe International Airport",
+      "country": "Uganda",
+      "lat": 0.04239,
+      "lon": 32.4435,
+      "population_share": 0.177
+    },
+    {
+      "name": "Gustaf III Airport",
+      "country": "Saint Kitts and Nevis",
+      "lat": 17.9044,
+      "lon": -62.8436,
+      "population_share": 0.001
+    },
+    {
+      "name": "Qikiqtarjuaq Airport",
+      "country": "Canada",
+      "lat": 67.5458,
+      "lon": -64.0314,
+      "population_share": 0.0
+    },
+    {
+      "name": "Zarqa Airport",
+      "country": "Jordan",
+      "lat": 32.0253,
+      "lon": 36.1448,
+      "population_share": 0.053
+    },
+    {
+      "name": "Oki Airport",
+      "country": "Japan",
+      "lat": 36.1811,
+      "lon": 133.325,
+      "population_share": 0.0
+    },
+    {
+      "name": "Tobago-Crown Point Airport",
+      "country": "Trinidad and Tobago",
+      "lat": 11.1497,
+      "lon": -60.8322,
+      "population_share": 0.02
+    },
+    {
+      "name": "Nanur Airport",
+      "country": "Libya",
+      "lat": 31.7052,
+      "lon": 14.9116,
+      "population_share": 0.001
+    },
+    {
+      "name": "General Francisco Bermudez Airport",
+      "country": "Venezuela",
+      "lat": 10.66001,
+      "lon": -63.26168,
+      "population_share": 0.016
+    },
+    {
+      "name": "Alldays Airport",
+      "country": "South Africa",
+      "lat": -22.679,
+      "lon": 29.0555,
+      "population_share": 0.018
+    },
+    {
+      "name": "St Aubin Airport",
+      "country": "France",
+      "lat": 49.8825,
+      "lon": 1.08528,
+      "population_share": 0.052
+    },
+    {
+      "name": "Kaoh Kong Airport",
+      "country": "Vietnam",
+      "lat": 11.6134,
+      "lon": 102.99708,
+      "population_share": 0.008
+    },
+    {
+      "name": "Assa-Gueyla Airport",
+      "country": "Eritrea",
+      "lat": 12.2,
+      "lon": 42.6333,
+      "population_share": 0.042
+    },
+    {
+      "name": "Maumere(Wai Oti) Airport",
+      "country": "East Timor",
+      "lat": -8.64065,
+      "lon": 122.237,
+      "population_share": 0.01
+    },
+    {
+      "name": "Kopitnari Airport",
+      "country": "Georgia",
+      "lat": 42.1767,
+      "lon": 42.4826,
+      "population_share": 0.035
+    },
+    {
+      "name": "Van Ferit Melen Airport",
+      "country": "Armenia",
+      "lat": 38.4682,
+      "lon": 43.3323,
+      "population_share": 0.029
+    },
+    {
+      "name": "Rivne International Airport",
+      "country": "Ukraine",
+      "lat": 50.6071,
+      "lon": 26.1416,
+      "population_share": 0.022
+    },
+    {
+      "name": "Lhasa Gonggar Airport",
+      "country": "Bhutan",
+      "lat": 29.2978,
+      "lon": 90.9119,
+      "population_share": 0.011
+    },
+    {
+      "name": "Angaur Airstrip",
+      "country": "Palau",
+      "lat": 6.9,
+      "lon": 134.15,
+      "population_share": 0.0
+    },
+    {
+      "name": "Mota Lava Airport",
+      "country": "Vanuatu",
+      "lat": -13.666,
+      "lon": 167.71201,
+      "population_share": 0.0
+    },
+    {
+      "name": "Assumption Island Airport",
+      "country": "Seychelles",
+      "lat": -9.74222,
+      "lon": 46.5068,
+      "population_share": 0.0
+    },
+    {
+      "name": "Voinjama Airport",
+      "country": "Liberia",
+      "lat": 8.4,
+      "lon": -9.767,
+      "population_share": 0.025
+    },
+    {
+      "name": "Ruhnu Airfield",
+      "country": "Estonia",
+      "lat": 57.7839,
+      "lon": 23.2661,
+      "population_share": 0.009
+    },
+    {
+      "name": "Friedrichshafen Airport",
+      "country": "Liechtenstein",
+      "lat": 47.6713,
+      "lon": 9.51149,
+      "population_share": 0.078
+    },
+    {
+      "name": "Chardara Airport",
+      "country": "Kazakhstan",
+      "lat": 41.2765,
+      "lon": 67.971,
+      "population_share": 0.016
+    },
+    {
+      "name": "Bassel Al-Assad International Airport",
+      "country": "Syria",
+      "lat": 35.4011,
+      "lon": 35.9487,
+      "population_share": 0.023
+    },
+    {
+      "name": "La Cerdanya Airport",
+      "country": "Andorra",
+      "lat": 42.3864,
+      "lon": 1.86667,
+      "population_share": 0.031
+    },
+    {
+      "name": "Ameland Airport",
+      "country": "Netherlands",
+      "lat": 53.4517,
+      "lon": 5.67722,
+      "population_share": 0.098
+    },
+    {
+      "name": "Dos Lagunas Airport",
+      "country": "Belize",
+      "lat": 17.6124,
+      "lon": -89.6884,
+      "population_share": 0.008
+    },
+    {
+      "name": "Paoua Airport",
+      "country": "Central African Republic",
+      "lat": 7.25,
+      "lon": 16.433,
+      "population_share": 0.01
+    },
+    {
+      "name": "Egal International Airport",
+      "country": "Somalia",
+      "lat": 9.51817,
+      "lon": 44.0888,
+      "population_share": 0.009
+    },
+    {
+      "name": "Fur Airport",
+      "country": "Denmark",
+      "lat": 56.8244,
+      "lon": 8.98611,
+      "population_share": 0.014
+    },
+    {
+      "name": "La Javilla Airport",
+      "country": "Costa Rica",
+      "lat": 9.81112,
+      "lon": -85.2955,
+      "population_share": 0.025
+    },
+    {
+      "name": "Musoma Airport",
+      "country": "United Republic of Tanzania",
+      "lat": -1.503,
+      "lon": 33.8021,
+      "population_share": 0.009
+    },
+    {
+      "name": "Henry E Rohlsen Airport",
+      "country": "United States of America",
+      "lat": 17.7015,
+      "lon": -64.80194,
+      "population_share": 0.001
+    },
+    {
+      "name": "Le Luc-Le Cannet Airport",
+      "country": "Monaco",
+      "lat": 43.3847,
+      "lon": 6.38714,
+      "population_share": 0.027
+    },
+    {
+      "name": "Ben Gurion International Airport",
+      "country": "Israel",
+      "lat": 32.0114,
+      "lon": 34.8867,
+      "population_share": 0.155
+    },
+    {
+      "name": "Kedougou Airport",
+      "country": "Guinea Bissau",
+      "lat": 12.5723,
+      "lon": -12.2203,
+      "population_share": 0.01
+    },
+    {
+      "name": "Maio Airport",
+      "country": "Cape Verde",
+      "lat": 15.1559,
+      "lon": -23.2137,
+      "population_share": 0.005
+    },
+    {
+      "name": "Kabala Airport",
+      "country": "Sierra Leone",
+      "lat": 9.63832,
+      "lon": -11.51556,
+      "population_share": 0.038
+    },
+    {
+      "name": "Banjul International Airport",
+      "country": "Gambia",
+      "lat": 13.338,
+      "lon": -16.6522,
+      "population_share": 0.03
+    },
+    {
+      "name": "Ercan International Airport",
+      "country": "Northern Cyprus",
+      "lat": 35.1547,
+      "lon": 33.4961,
+      "population_share": 0.012
+    },
+    {
+      "name": "Camiri Airport",
+      "country": "Bolivia",
+      "lat": -20.0064,
+      "lon": -63.5278,
+      "population_share": 0.003
+    },
+    {
+      "name": "Eseka Airport",
+      "country": "Cameroon",
+      "lat": 3.65,
+      "lon": 10.783,
+      "population_share": 0.031
+    },
+    {
+      "name": "San Jose Airport",
+      "country": "Guatemala",
+      "lat": 13.9362,
+      "lon": -90.8358,
+      "population_share": 0.003
+    },
+    {
+      "name": "Rotuma Airport",
+      "country": "Fiji",
+      "lat": -12.4825,
+      "lon": 177.071,
+      "population_share": 0.0
+    },
+    {
+      "name": "Oyem Airport",
+      "country": "Gabon",
+      "lat": 1.54311,
+      "lon": 11.5814,
+      "population_share": 0.005
+    },
+    {
+      "name": "G 413 Airport",
+      "country": "South Korea",
+      "lat": 38.3827,
+      "lon": 128.45799,
+      "population_share": 0.006
+    },
+    {
+      "name": "Yap International Airport",
+      "country": "Federated States of Micronesia",
+      "lat": 9.49891,
+      "lon": 138.08248,
+      "population_share": 0.0
+    },
+    {
+      "name": "Bangula Airport",
+      "country": "Malawi",
+      "lat": -16.5833,
+      "lon": 35.1167,
+      "population_share": 0.034
+    },
+    {
+      "name": "Tashkurgan Khunjerab Airport",
+      "country": "China",
+      "lat": 37.66271,
+      "lon": 75.29227,
+      "population_share": 0.014
+    },
+    {
+      "name": "Comandante Gustavo Kraemer Airport",
+      "country": "Brazil",
+      "lat": -31.3905,
+      "lon": -54.1122,
+      "population_share": 0.007
+    },
+    {
+      "name": "Eliye Springs Airport",
+      "country": "Kenya",
+      "lat": 3.21667,
+      "lon": 35.9667,
+      "population_share": 0.013
+    },
+    {
+      "name": "Aden International Airport",
+      "country": "Yemen",
+      "lat": 12.8295,
+      "lon": 45.0288,
+      "population_share": 0.075
+    },
+    {
+      "name": "Point Salines International Airport",
+      "country": "Saint Vincent and the Grenadines",
+      "lat": 12.0042,
+      "lon": -61.7862,
+      "population_share": 0.005
+    },
+    {
+      "name": "Vukovar Borovo N Airport",
+      "country": "Bosnia and Herzegovina",
+      "lat": 45.3864,
+      "lon": 18.9628,
+      "population_share": 0.041
+    },
+    {
+      "name": "Rabat-Sale Airport",
+      "country": "Morocco",
+      "lat": 34.0515,
+      "lon": -6.75152,
+      "population_share": 0.03
+    },
+    {
+      "name": "Lubumbashi International Airport",
+      "country": "Democratic Republic of the Congo",
+      "lat": -11.5913,
+      "lon": 27.5309,
+      "population_share": 0.036
+    },
+    {
+      "name": "Alytus Airport",
+      "country": "Lithuania",
+      "lat": 54.41253,
+      "lon": 24.05993,
+      "population_share": 0.024
+    },
+    {
+      "name": "Trysil Saeterasen Airport",
+      "country": "Norway",
+      "lat": 61.22928,
+      "lon": 12.26641,
+      "population_share": 0.001
+    },
+    {
+      "name": "Tamale Airport",
+      "country": "Ghana",
+      "lat": 9.55719,
+      "lon": -0.86321,
+      "population_share": 0.025
+    },
+    {
+      "name": "New Amsterdam Airport",
+      "country": "Guyana",
+      "lat": 6.24432,
+      "lon": -57.47417,
+      "population_share": 0.002
+    },
+    {
+      "name": "Banda Airport Kepulauan",
+      "country": "Indonesia",
+      "lat": 5.11667,
+      "lon": 97.1167,
+      "population_share": 0.036
+    },
+    {
+      "name": "Principe Airport",
+      "country": "Sao Tome and Principe",
+      "lat": 1.66294,
+      "lon": 7.41174,
+      "population_share": 0.002
+    },
+    {
+      "name": "Moheli Bandar Es Eslam Airport",
+      "country": "Comoros",
+      "lat": -12.2981,
+      "lon": 43.7664,
+      "population_share": 0.001
+    },
+    {
+      "name": "Moundou Airport",
+      "country": "Chad",
+      "lat": 8.62441,
+      "lon": 16.0714,
+      "population_share": 0.024
+    },
+    {
+      "name": "Lekhwair Airport",
+      "country": "Oman",
+      "lat": 22.80498,
+      "lon": 55.37337,
+      "population_share": 0.009
+    },
+    {
+      "name": "Bulgan Sum Airport",
+      "country": "Mongolia",
+      "lat": 46.1006,
+      "lon": 91.5842,
+      "population_share": 0.001
+    },
+    {
+      "name": "Bamarni Airport",
+      "country": "Iraq",
+      "lat": 37.0988,
+      "lon": 43.2666,
+      "population_share": 0.039
+    },
+    {
+      "name": "Cox's Bazar Airport",
+      "country": "Bangladesh",
+      "lat": 21.4522,
+      "lon": 91.9639,
+      "population_share": 0.019
+    },
+    {
+      "name": "Hamaguir Airport",
+      "country": "Algeria",
+      "lat": 30.879,
+      "lon": -3.06775,
+      "population_share": 0.002
+    },
+    {
+      "name": "Abaiang Airport",
+      "country": "Kiribati",
+      "lat": 1.79861,
+      "lon": 173.041,
+      "population_share": 0.001
+    },
+    {
+      "name": "Tambao Airport",
+      "country": "Burkina Faso",
+      "lat": 14.8,
+      "lon": 0.05,
+      "population_share": 0.012
+    },
+    {
+      "name": "Norman Manley International Airport",
+      "country": "Jamaica",
+      "lat": 17.9357,
+      "lon": -76.7875,
+      "population_share": 0.01
+    },
+    {
+      "name": "Sungai Pakning Bengkalis Airport",
+      "country": "Singapore",
+      "lat": 1.37,
+      "lon": 102.14,
+      "population_share": 0.116
+    },
+    {
+      "name": "Asau Airport",
+      "country": "Samoa",
+      "lat": -13.5058,
+      "lon": -172.62801,
+      "population_share": 0.001
+    },
+    {
+      "name": "Bethlehem Airport",
+      "country": "Lesotho",
+      "lat": -28.2484,
+      "lon": 28.3361,
+      "population_share": 0.032
+    },
+    {
+      "name": "Navoi Airport",
+      "country": "Uzbekistan",
+      "lat": 40.1172,
+      "lon": 65.1708,
+      "population_share": 0.016
+    },
+    {
+      "name": "Ioannis Kapodistrias International Airport",
+      "country": "Greece",
+      "lat": 39.6019,
+      "lon": 19.9117,
+      "population_share": 0.004
+    },
+    {
+      "name": "Kompong Cham Airport",
+      "country": "Laos",
+      "lat": 12.033,
+      "lon": 105.433,
+      "population_share": 0.047
+    },
+    {
+      "name": "Ye Airport",
+      "country": "Myanmar",
+      "lat": 15.3,
+      "lon": 97.867,
+      "population_share": 0.006
+    },
+    {
+      "name": "Cagayan de Sulu Airport",
+      "country": "Philippines",
+      "lat": 7.014,
+      "lon": 118.496,
+      "population_share": 0.001
+    },
+    {
+      "name": "Lampedusa Airport",
+      "country": "Italy",
+      "lat": 35.4979,
+      "lon": 12.6181,
+      "population_share": 0.0
+    },
+    {
+      "name": "La Aramuaca Airport",
+      "country": "El Salvador",
+      "lat": 13.44799,
+      "lon": -88.12011,
+      "population_share": 0.096
+    },
+    {
+      "name": "Aquino Airport",
+      "country": "Vatican",
+      "lat": 41.4863,
+      "lon": 13.7188,
+      "population_share": 0.06
+    },
+    {
+      "name": "Canefield Airport",
+      "country": "Dominica",
+      "lat": 15.3367,
+      "lon": -61.3922,
+      "population_share": 0.008
+    },
+    {
+      "name": "Jeremie Airport",
+      "country": "Haiti",
+      "lat": 18.6631,
+      "lon": -74.1703,
+      "population_share": 0.009
+    },
+    {
+      "name": "Paihia Private Airport",
+      "country": "New Zealand",
+      "lat": -35.2822,
+      "lon": 174.091,
+      "population_share": 0.001
+    },
+    {
+      "name": "Budapest Ferenc Liszt International Airport",
+      "country": "Slovakia",
+      "lat": 47.4369,
+      "lon": 19.2556,
+      "population_share": 0.072
+    },
+    {
+      "name": "Boundiali Airport",
+      "country": "Ivory Coast",
+      "lat": 9.533,
+      "lon": -6.467,
+      "population_share": 0.012
+    },
+    {
+      "name": "Luqa Airport",
+      "country": "Malta",
+      "lat": 35.8575,
+      "lon": 14.4775,
+      "population_share": 0.005
+    },
+    {
+      "name": "Sir Grantley Adams International Airport",
+      "country": "Barbados",
+      "lat": 13.0746,
+      "lon": -59.4925,
+      "population_share": 0.004
+    },
+    {
+      "name": "Santa Cruz/Graciosa Bay/Luova Airport",
+      "country": "Solomon Islands",
+      "lat": -10.7203,
+      "lon": 165.795,
+      "population_share": 0.0
+    },
+    {
+      "name": "Souanke Airport",
+      "country": "Republic of Congo",
+      "lat": 2.067,
+      "lon": 14.133,
+      "population_share": 0.004
+    },
+    {
+      "name": "Asaloyeh Airport",
+      "country": "Iran",
+      "lat": 27.4814,
+      "lon": 52.6155,
+      "population_share": 0.005
+    },
+    {
+      "name": "Orang Airport",
+      "country": "North Korea",
+      "lat": 41.4281,
+      "lon": 129.647,
+      "population_share": 0.041
+    },
+    {
+      "name": "Puerto Bolivar Airport",
+      "country": "Colombia",
+      "lat": 12.2215,
+      "lon": -71.9848,
+      "population_share": 0.002
+    },
+    {
+      "name": "Bantry Aerodrome",
+      "country": "Ireland",
+      "lat": 51.6686,
+      "lon": -9.48417,
+      "population_share": 0.006
+    },
+    {
+      "name": "Anduki Airport",
+      "country": "Brunei",
+      "lat": 4.637,
+      "lon": 114.382,
+      "population_share": 0.014
+    },
+    {
+      "name": "Lord Howe Island Airport",
+      "country": "Australia",
+      "lat": -31.5383,
+      "lon": 159.077,
+      "population_share": 0.0
+    },
+    {
+      "name": "Suwa\u0142ki Airport",
+      "country": "Poland",
+      "lat": 54.0728,
+      "lon": 22.8992,
+      "population_share": 0.021
+    },
+    {
+      "name": "Bahrain International Airport",
+      "country": "Qatar",
+      "lat": 26.2708,
+      "lon": 50.6336,
+      "population_share": 0.01
+    },
+    {
+      "name": "Bata Airport",
+      "country": "Equatorial Guinea",
+      "lat": 1.90547,
+      "lon": 9.80568,
+      "population_share": 0.012
+    },
+    {
+      "name": "Cauquira Airport",
+      "country": "Honduras",
+      "lat": 15.31667,
+      "lon": -83.59167,
+      "population_share": 0.001
+    },
+    {
+      "name": "Vainode Airport",
+      "country": "Latvia",
+      "lat": 56.4056,
+      "lon": 21.8869,
+      "population_share": 0.004
+    },
+    {
+      "name": "Marculesti International Airport",
+      "country": "Moldova",
+      "lat": 47.8627,
+      "lon": 28.2128,
+      "population_share": 0.052
+    },
+    {
+      "name": "Rene Mouawad Air Base",
+      "country": "Lebanon",
+      "lat": 34.5893,
+      "lon": 36.0113,
+      "population_share": 0.116
+    },
+    {
+      "name": "Kasane Airport",
+      "country": "Namibia",
+      "lat": -17.8329,
+      "lon": 25.1624,
+      "population_share": 0.006
+    },
+    {
+      "name": "Samui Airport",
+      "country": "Thailand",
+      "lat": 9.54779,
+      "lon": 100.062,
+      "population_share": 0.006
+    },
+    {
+      "name": "Norrtalje Airport",
+      "country": "Sweden",
+      "lat": 59.7328,
+      "lon": 18.6964,
+      "population_share": 0.016
+    },
+    {
+      "name": "Yola Airport",
+      "country": "Nigeria",
+      "lat": 9.25755,
+      "lon": 12.4304,
+      "population_share": 0.035
+    },
+    {
+      "name": "Sterpenich Airport",
+      "country": "Luxembourg",
+      "lat": 49.6628,
+      "lon": 5.88694,
+      "population_share": 0.027
+    },
+    {
+      "name": "Totness Airport",
+      "country": "Suriname",
+      "lat": 5.86583,
+      "lon": -56.3275,
+      "population_share": 0.001
+    },
+    {
+      "name": "Kirundo Airport",
+      "country": "Burundi",
+      "lat": -2.54477,
+      "lon": 30.09457,
+      "population_share": 0.096
+    },
+    {
+      "name": "Djibouti-Ambouli Airport",
+      "country": "Djibouti",
+      "lat": 11.5473,
+      "lon": 43.1595,
+      "population_share": 0.017
+    },
+    {
+      "name": "Korce Northwest Airport",
+      "country": "Albania",
+      "lat": 40.6457,
+      "lon": 20.7415,
+      "population_share": 0.036
+    },
+    {
+      "name": "Al Hamra Airport",
+      "country": "United Arab Emirates",
+      "lat": 24.074,
+      "lon": 52.4636,
+      "population_share": 0.0
+    },
+    {
+      "name": "Nauru International Airport",
+      "country": "Nauru",
+      "lat": -0.54746,
+      "lon": 166.91901,
+      "population_share": 0.0
+    },
+    {
+      "name": "Mata'aho Airport",
+      "country": "Tonga",
+      "lat": -15.5708,
+      "lon": -175.633,
+      "population_share": 0.0
+    },
+    {
+      "name": "Campbell Bay Airport",
+      "country": "India",
+      "lat": 7.01304,
+      "lon": 93.9228,
+      "population_share": 0.001
+    },
+    {
+      "name": "Francistown Airport",
+      "country": "Botswana",
+      "lat": -21.1596,
+      "lon": 27.4745,
+      "population_share": 0.005
+    },
+    {
+      "name": "Maafaru International Airport",
+      "country": "Maldives",
+      "lat": 5.81783,
+      "lon": 73.4685,
+      "population_share": 0.003
+    },
+    {
+      "name": "Turkmenabat International Airport",
+      "country": "Turkmenistan",
+      "lat": 39.0833,
+      "lon": 63.6133,
+      "population_share": 0.012
+    },
+    {
+      "name": "Portim\u00e3o Airport",
+      "country": "Portugal",
+      "lat": 37.1493,
+      "lon": -8.58396,
+      "population_share": 0.005
+    },
+    {
+      "name": "Putumayo Airport",
+      "country": "Ecuador",
+      "lat": 0.08333,
+      "lon": -75.9,
+      "population_share": 0.009
+    },
+    {
+      "name": "Pristina International Airport",
+      "country": "Montenegro",
+      "lat": 42.57283,
+      "lon": 21.03583,
+      "population_share": 0.077
+    },
+    {
+      "name": "Spring Point Airport",
+      "country": "The Bahamas",
+      "lat": 22.4418,
+      "lon": -73.9709,
+      "population_share": 0.0
+    },
+    {
+      "name": "Faranah Airport",
+      "country": "Guinea",
+      "lat": 10.0355,
+      "lon": -10.7698,
+      "population_share": 0.018
+    },
+    {
+      "name": "Isfana Airport",
+      "country": "Kyrgyzstan",
+      "lat": 39.82474,
+      "lon": 69.56882,
+      "population_share": 0.048
+    },
+    {
+      "name": "Timisoara Traian Vuia Airport",
+      "country": "Romania",
+      "lat": 45.8099,
+      "lon": 21.3379,
+      "population_share": 0.045
+    },
+    {
+      "name": "Kasompe Airport",
+      "country": "Zambia",
+      "lat": -12.5728,
+      "lon": 27.8939,
+      "population_share": 0.011
+    },
+    {
+      "name": "Benesov Airport",
+      "country": "Czech Republic",
+      "lat": 49.7408,
+      "lon": 14.6447,
+      "population_share": 0.041
+    },
+    {
+      "name": "Gorkha Airport",
+      "country": "Nepal",
+      "lat": 28.05,
+      "lon": 84.483,
+      "population_share": 0.018
+    },
+    {
+      "name": "Buffelshoek Airport",
+      "country": "Swaziland",
+      "lat": -24.70246,
+      "lon": 31.58788,
+      "population_share": 0.027
+    },
+    {
+      "name": "Koggala Airport",
+      "country": "Sri Lanka",
+      "lat": 5.99368,
+      "lon": 80.3203,
+      "population_share": 0.005
+    },
+    {
+      "name": "Ganja Airport",
+      "country": "Azerbaijan",
+      "lat": 40.73883,
+      "lon": 46.32,
+      "population_share": 0.037
+    }
+  ],
+  "map_center": {
+    "lat": 17.833203736263755,
+    "lon": 22.690228791208792
+  },
+  "stats": {
+    "total_flights": 182,
+    "total_airports": 182,
+    "total_co2": 37.292
+  }
+}
