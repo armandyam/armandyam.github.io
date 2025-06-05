@@ -83,55 +83,64 @@ tags:
 </head>
 <body>
 <section>
-  <p>
-    Hey everyone! Gather around, another one of my random thought experiment + vibe coding + optimization + plotting blog is here!
-  </p>
-<p>  
-    The idea for this started many months ago when I was playing around with the map from <a href="https://patrickstotz.github.io/Travel-Score/">Patrick Stolz</a>. I wrote about it previously <a href="https://www.ajayrangarajan.com/posts/2024/07/travel/">here</a> where I visualized all the places I have visited (so far) and calculated a "Travel Score". The facinating thing about the data from the original source was that I had a mapping between Population distribution &hArr; Geographic coordinates &hArr; Countries.  Now, I was thinking what else can I do with this data and one thought that came to my head was about converting it into some sort of optimization problem. That is when the exact idea came, what if I was an introvert (I am not) but also I am curious and want to travel the world (which I want to). However, going by the classic stereotype of introverts not wanting to meet many people, I would want to go and visit ALL countries in the world (for now we use the 197 countries as used in the original data set) but want to meet the leaast percentage of people in the world. Now thats a fun project I can get behind!
-  </p>
-
-  <p>
-    With that idea, it was time to sit down with the data and preprocess it into an easier format. The original data had a lot more complicated data structure for my liking, the first thing I did was to write the data in a way for my simple human brain to understand - a csv file with grid ID, percentage of population, percentage of land area covered by this grid and the list of countries this grid maps to. Now, I vibe coded this from all the complicated files from the original data. This one file should be sufficient to start with the optimization algorithm but as you will see soon I needed a second file. One where, I can connect the grid ID to the geographical coordinates (think of a polygon with each vertex given by its latitude and longitude). These are the grids we see in the <a href="https://patrickstotz.github.io/Travel-Score/">original map</a>. This second mapping would come in handy for extending the optimization to a more "realistic" scenario. 
-  </p>
- <p>
-    After I started thinking more about this, I realized this is not one optmization but can be expanded into multiple ones based on the assumptions I had made. Here are a few thoughts I can explain before jumping into the algorithms and results (which I know all of you are eager to find out!/s :D). So, the first thing to know is, each grid ID might map to more than one country. Second, for every grid ID we only know the percentage of population of the world (according to some data set in some unknown-to-me year) but we do not have country wise distribution. Now, this introduces our first challenge -  assuming we have an optimization algorithm and it picks a grid ID do we assume we have visited all the countries that correspond to this grid ID or only one country? If only one country how do we select which country?
-    </p>
-
-     <p>
-        As it oftern turns out, one assumption makes your algorithm trivially easy and removing that assumption makes the algorithm wildly difficult. This turned out to be such an assumption. Lets look at the two cases below
-        </p>
-  <h3>Case 1: All Grids, All Countries Per Grid (Simple Greedy Cover Set)</h3>
-  <p>
-    This is a baby in the world of optimization problems, I pick the lowest population grid per country. If a grid belongs to multiple countries—great! One stop, many stamps. Ok this is pretty easy (even for me, let alone my Claude-4 powered Cursor) to implement. One prompt, booooom! Implemented, done, time for coffee now. (I did not verify that this is indeed the theoretically minima though. You will see with the results that they seem reasonable to me.) 
-  </p>
-
-  <h3>Case 2: All Grids, One Country Per Grid (Strategic)</h3>
-  <p>
-    Ok this was a tough nut to crack. I dont even know how to sta
-    rt, may be cursor does? 
-      </p>
-  
-<img src="/assets/pictures/cursor_thinking.jpg" alt="Lot of the 'thinking' for this was done by Claude-4" width="300" />
 <p>
-    Wow, "THOUGHT FOR 15 seconds"!!! This one drove be down a rabbit hole, I ended up reading (and not really understanding) the <a href="https://en.wikipedia.org/wiki/Assignment_problem">assignment problem</a> and apparently something called as the <a href="https://en.wikipedia.org/wiki/Hungarian_algorithm">Hungarian algorithms"</a> (Turns out this algorithm was developed by Harold Kuhn, the person who represents the second 'K' in the famous KKT condition in optimization). Had never heard of that before. These random pursuits do teach me some new concepts! Anyway, back to our problem, this turned out to be much harder to understand and also get it to work with the vibe code. Its still amazing to see how these LLMs can help in actual scientific computing. They can not only do text and simple "boiler plate" code but actual realistic scientific computing. The caveat as always is if this were to be a real scientific research or engineering product, I would need to ENSURE that the produced code is correct. However, this is just my random curiosity code, so I can live with some tolerance for issues with the code. One thing I had to account for though is that there were a few cases (two cases to be exact) where there were two or more countries in exactly one single grid and nowhere else (think of two tiny island nations next to each other. They would share the grid ID and would only be in this one single grid ID. If I assign this grid ID to one, then I can never visit the other unless I reassing the same grid ID). 
-  </p>
-  <p>
-    Now, this is where I started comparing the optimum values (which were in the range of 1-3% of the world population) with my own travel map. As of this writing, I have visted 46 countries but my population encountered was a whopping 25%!!! Unrealistic as it might be that I have "met" 2 billion people, this got me wondering how is it that the algorithm chooses these amazing (for an introvert) locations. Then it hit me, of course, I fly to many of the places (I know, I am guilty of my CO2 emissions, I have written about it earlier <a href="https://www.ajayrangarajan.com/posts/2024/11/travel/">here</a>), and flying is often to big cities which would have lots of population percentages. (And of course the fact that I am from India accounts for a lot of the "population encountered"!)
-      </p>
+Hey everyone! Gather around, another one of my random thought experiment + vibe coding + optimization + plotting blogs is here!
+</p>
 
-        <p>
-            The previous optimization would pick grids and assume that an introvert traveller would just teleport between these grids somehow. That is of course unrealistic (at least more unrealistic than the premise of this blog) and as anyone already donw this path would normally do, I went around looking for a data set with all airports and landing stips in the world. And surprise surprise, it exists and is easily available in a simple csv file. Now the next logical step was to incorporate this into my optimization. This is where the second file I had mentioned before comes in. The airport data comes with the latitude and longitude of each airport, now I reverse mapped this to grid IDs - meaning now for each airport I mapped within which grid it was. To save this reverse mapping, I needed the polygonal data of each of the grids. Ok now we fly!
-            </p>
-  <h3>Case 3: Airports, Shared Country Grids (Greedy + TSP)</h3>
-  <p>
-    The next case was to use only the grids which have airports as options for us to visit, we can resue the greedy cover set as before. However, we still have the case that a selected grid (with an airport) could be associated with multiple countries. Now, this is like telling the traveller flew into a specific airport in a country and visited the near-by countries (that are in the same grid) by land or sea or <a href="https://www.limitezero.com/en/">zipline</a>  or <a href="https://en.wikipedia.org/wiki/Boquillas_Port_of_Entry">burro</a>  or whatever. This is quite realistic of course, now running this algorithm is quite easy but it quickly turned out, the airports choosen are super unknown like Random-city-landing-stip (sorry for any extroverts living in there!). Anyway, I was able to pick the full set of airports, now given that this worked out, I thought my not throw in my CO2 calculation for such a trip. I had the code lying around and with one prompt, Claude-4 just integrated it into my code here. I went one step further, after integrating the CO2 calculation between all selected airports to all other selected airports, I ran the TSP algorithm to optimize my route. Now, I can travel the world, avoid people and also feel slightly less guilty about flying in an unoptimized way. Again the TSP was thrown just because I had the code lying around from yet another earlier <a href="https://www.ajayrangarajan.com/posts/2025/02/aachen-grand-tour/">blog project</a> (I know! Shameless plug to my own previous blog!). To mitigate this random 1 landing strip to random 2 landing strip flight, I would need to find more realistic commercial flight data and may be use that. I can keep this for another day though. This version introduced "real-world" logistics and a CO2 tracker to account for emissions. 
-  </p>
+<p>
+The idea for this started many months ago when I was playing around with the map from <a href="https://patrickstotz.github.io/Travel-Score/">Patrick Stolz</a>. I wrote about it previously <a href="https://www.ajayrangarajan.com/posts/2024/07/travel/">here</a> where I visualized all the places I’ve visited so far and calculated a “Travel Score.” What fascinated me about the original dataset was this beautiful mapping:
+<br><code>Population distribution &hArr; Geographic coordinates &hArr; Countries</code>  
+I mean, come on, if that doesn’t scream “turn me into an optimization problem,” are you even a nerd?
+</p>
+<p>
+Anyway, the idea that popped into my head was this: what if I were an introvert (I’m not) who still wanted to travel the world (which I do)? And I wanted to visit all 197 countries (as listed in the dataset) while meeting the <strong>least possible number of people</strong>. Now <em>that’s</em> a fun project I can get behind!
+</p>
+<p>
+With that idea, it was time to sit down with the data and preprocess it into an easier format. The original data had a much more complicated structure than I liked. The first thing I did was to write the data in a way my simple human brain could understand — a CSV file with grid ID, percentage of population, percentage of land area covered by this grid, and the list of countries this grid maps to. I vibe-coded this from all the complicated files in the original dataset. This one file should be sufficient to start with the optimization algorithm, but as you will see soon, I needed a second file — one where I could connect the grid ID to the geographical coordinates (think of a polygon with each vertex given by its latitude and longitude). These are the grids we see in the <a href="https://patrickstotz.github.io/Travel-Score/">original map</a>. This second mapping would come in handy for extending the optimization to a more “realistic” scenario.
+</p>
 
-  <h3>Case 4: Airports, Host Country Only (Hardcore Realism)</h3>
-  <p>
-    Finally, coming to the strictest and cleanest version where you only strictly fly. You can only count a country if you fly into an airport grid hosted by that country—no border-hopping. This was a bit more challenging that I had anticipated basically because some countries either do not have airports or the airport data base does not assign it correctly to them. The code processes it first by assigning the airports to host countries (a side challenge was to ensure that the names of countries in the airport data base match the population data set. I did this by mapping everything into ISO names with some extra mappings just for guarantees), after assigning host countries, we process countries without airports by looking if there are other airports in the same grid but in a different country, if yes (and it is a yes in EVERY case we consider) we assign the same airport for both countries. Anyway, after this we throw in the CO2 and the TSP as before. This is probably not as realistic as the previous case but I thought it would be incomplete without this version. Finally for fun, below is a CO2 emission optimized travel map visiting every country in the world by flying.
-  </p>
-</section>
+ <p>
+After I started thinking more about this, I realized this is not one optimization but can be expanded into multiple ones based on the assumptions I had made. Here are a few thoughts I can explain before jumping into the algorithms and results (which I know all of you are eager to find out! /s :D). So, the first thing to know is, each grid ID might map to more than one country. Second, for every grid ID we only know the percentage of the population of the world (according to some dataset in some unknown-to-me year), but we do not have country-wise distribution. Now, this introduces our first challenge — assuming we have an optimization algorithm and it picks a grid ID, do we assume we have visited all the countries that correspond to this grid ID or only one country? If only one country, how do we select which country?
+</p>
+
+<p>
+As it often turns out, one assumption makes your algorithm trivially easy, and removing that assumption makes the algorithm wildly difficult. This turned out to be such an assumption. Let’s look at the two cases below.
+</p>
+
+<h3>Case 1: All Grids, All Countries Per Grid (Simple Greedy Cover Set)</h3>
+<p>
+This is a baby in the world of optimization problems — I pick the lowest population grid per country. If a grid belongs to multiple countries — great! One stop, many stamps. Ok, this is pretty easy (even for me, let alone my Claude-4-powered Cursor) to implement. One prompt, booooom! Implemented, done, time for coffee now. (I did not verify that this is indeed the theoretical minimum though. You will see with the results that they seem reasonable to me.)
+</p>
+
+<h3>Case 2: All Grids, One Country Per Grid (Strategic)</h3>
+<p>
+Ok, this was a tough nut to crack. I don’t even know how to start — maybe Cursor does?
+</p>
+
+<img src="/assets/pictures/cursor_thinking.jpg" alt="Lot of the 'thinking' for this was done by Claude-4" width="300" />
+
+<p>
+Wow, “THOUGHT FOR 15 seconds”!!! This one drove me down a rabbit hole — I ended up reading (and not really understanding) the <a href="https://en.wikipedia.org/wiki/Assignment_problem">assignment problem</a> and apparently something called the <a href="https://en.wikipedia.org/wiki/Hungarian_algorithm">Hungarian algorithm</a>. (Turns out this algorithm was developed by Harold Kuhn, the person who represents the second 'K' in the famous KKT condition in optimization.) Had never heard of that before. These random pursuits do teach me some new concepts! Anyway, back to our problem — this turned out to be much harder to understand and also to get working with the vibe code. It’s still amazing to see how these LLMs can help in actual scientific computing. They can not only do text and simple boilerplate code but actual realistic scientific computing. The caveat, as always, is: if this were to be a real scientific research or engineering product, I would need to ENSURE that the produced code is correct. However, this is just my random curiosity code, so I can live with some tolerance for issues in the code. One thing I had to account for, though, is that there were a few cases (two cases to be exact) where there were two or more countries in exactly one single grid and nowhere else (think of two tiny island nations next to each other — they would share the grid ID and would only be in this one single grid ID. If I assign this grid ID to one, then I can never visit the other unless I reassign the same grid ID).
+</p>
+
+<p>
+Now, this is where I started comparing the optimum values (which were in the range of 1–3% of the world population) with my own travel map. As of this writing, I have visited 46 countries, but my population encountered was a whopping 25%!!! Unrealistic as it might be that I have “met” 2 billion people, this got me wondering how it is that the algorithm chooses these amazing (for an introvert) locations. Then it hit me — of course, I fly to many of the places (I know, I am guilty of my CO₂ emissions — I have written about it earlier <a href="https://www.ajayrangarajan.com/posts/2024/11/travel/">here</a>), and flying is often to big cities which would have high population percentages. (And of course, the fact that I am from India accounts for a lot of the “population encountered”!)
+</p>
+
+<p>
+The previous optimization would pick grids and assume that an introvert traveller would just teleport between these grids somehow. That is, of course, unrealistic (at least more unrealistic than the premise of this blog), and as anyone already down this path would normally do, I went around looking for a dataset with all airports and landing strips in the world. And surprise, surprise — it exists and is easily available in a simple CSV file. Now the next logical step was to incorporate this into my optimization. This is where the second file I had mentioned before comes in. The airport data comes with the latitude and longitude of each airport. I reverse-mapped this to grid IDs — meaning, for each airport I mapped which grid it was in. To save this reverse mapping, I needed the polygonal data of each of the grids. Ok, now we fly!
+</p>
+
+<h3>Case 3: Airports, Shared Country Grids (Greedy + TSP)</h3>
+<p>
+The next case was to use only the grids which have airports as options for us to visit. We can reuse the greedy cover set as before. However, we still have the case that a selected grid (with an airport) could be associated with multiple countries. Now, this is like saying the traveller flew into a specific airport in one country and visited the nearby countries (that are in the same grid) by land, sea, <a href="https://www.limitezero.com/en/">zipline</a>, <a href="https://en.wikipedia.org/wiki/Boquillas_Port_of_Entry">burro</a>, or whatever. This is quite realistic, of course. Running this algorithm was quite easy, but it quickly turned out that the airports chosen are super unknown — like Random-city-landing-strip (sorry to any extroverts living there!). Anyway, I was able to pick the full set of airports. Now, given that this worked out, I thought why not throw in my CO₂ calculation for such a trip? I had the code lying around, and with one prompt, Claude-4 just integrated it into my code here. I went one step further — after integrating the CO₂ calculation between all selected airports to all other selected airports, I ran the TSP algorithm to optimize my route. Now I can travel the world, avoid people, and also feel slightly less guilty about flying in an unoptimized way. Again, the TSP was included just because I had the code lying around from yet another earlier <a href="https://www.ajayrangarajan.com/posts/2025/02/aachen-grand-tour/">blog project</a> (I know! Shameless plug to my own previous blog!). To mitigate this random one-landing-strip-to-random-other-landing-strip flight, I would need to find more realistic commercial flight data and maybe use that. I can keep this for another day though. This version introduced “real-world” logistics and a CO₂ tracker to account for emissions.
+</p>
+
+<h3>Case 4: Airports, Host Country Only (Hardcore Realism)</h3>
+<p>
+Finally, coming to the strictest and cleanest version, where you only strictly fly. You can only count a country if you fly into an airport grid hosted by that country — no border-hopping. This was a bit more challenging than I had anticipated, basically because some countries either do not have airports or the airport database does not assign them correctly. The code processes this first by assigning the airports to host countries. (A side challenge was to ensure that the names of countries in the airport database match the population dataset. I did this by mapping everything into ISO names with some extra mappings just for guarantees.) After assigning host countries, we process countries without airports by checking if there are other airports in the same grid but in a different country. If yes (and it is a yes in EVERY case we consider), we assign the same airport to both countries. Anyway, after this, we throw in the CO₂ and the TSP as before. This is probably not as realistic as the previous case, but I thought it would be incomplete without this version. Finally, for fun, below is a CO₂-emission-optimized travel map visiting every country in the world by flying.
+</p>
+
 
 <div class="map-wrapper">
   <div id="loading" class="loading">Loading flight data...</div>
@@ -216,7 +225,7 @@ tags:
 <section>
   <h3>Results</h3>
   <p>
-    Finaly what everyone (anyone?) has been waiting for!!! How do each of these algorithms stack up against each other? Well my intuition said the first should be the best (or worst depending on how you swing) in terms of people encounter and the fourth being the worst. However, I was not sure of the ordering between 2 and 3. Turns out, limiting ourselves to airport only girds is almost as good as the free to choose any grid option. This reinforces the idea that we have a lot of random landing strips in that data set. May be I really need to find that flight connections data after all! The table below summarizes the percent of global population “met” during the journey for each case:
+    Finally, what everyone (anyone?) has been waiting for!!! How do each of these algorithms stack up against each other? Well, my intuition said the first should be the best (or worst, depending on how you swing) in terms of people encountered, and the fourth being the worst. However, I was not sure of the ordering between 2 and 3. Turns out, limiting ourselves to airport-only grids is almost as good as the free-to-choose-any-grid option. This reinforces the idea that we have a lot of random landing strips in that dataset. Maybe I really need to find that flight connections data after all! The table below summarizes the percent of global population “met” during the journey for each case:
   </p>
   <table>
     <thead>
@@ -225,7 +234,6 @@ tags:
         <th>Travel Mode</th>
         <th>Grid Constraint</th>
         <th>Country Constraint</th>
-
         <th>Population % Met</th>
       </tr>
     </thead>
@@ -262,7 +270,7 @@ tags:
   </table>
 
   <p>
-    Looking at the table, it was an interesting excise for me to learn that by flying into remote locations one can visit all 197 countries and practically encounter <4% of the world (well obviously, we wont meet everyone in that grid but it is fair to assume that the number of people we encounter is proportional to the population percentage in that grid). For the people (aka weirdos) who want to play with the code, I will upload it on github. 
+    Looking at the table, it was an interesting exercise for me to learn that by flying into remote locations, one can visit all 197 countries and practically encounter &lt;4% of the world (well obviously, we won’t meet everyone in that grid, but it is fair to assume that the number of people we encounter is proportional to the population percentage in that grid). For the people (aka weirdos) who want to play with the code, I will upload it on GitHub.
   </p>
 </section>
 </body>
