@@ -104,6 +104,8 @@ After I started thinking more about this, I realized this is not one optimizatio
 <p>
 As it often turns out, one assumption makes your algorithm trivially easy, and removing that assumption makes the algorithm wildly difficult. This turned out to be such an assumption. Let’s look at the two cases below.
 </p>
+</section>
+<section>
 
 <h3>Case 1: All Grids, All Countries Per Grid (Simple Greedy)</h3>
 <p>
@@ -111,6 +113,8 @@ This is a baby in the world of optimization problems — I pick the lowest popul
 </p>
 
 <img src="/assets/pictures/case_1.png" width="300"/>
+</section>
+<section>
 
 <h3>Case 2: All Grids, One Country Per Grid (Hungarian Algorithm)</h3>
 <p>
@@ -133,12 +137,16 @@ The previous optimization would pick grids and assume that an introvert travelle
 
 <img src="/assets/pictures/case_2.png" width="300" />
 
+</section>
+<section>
 
 <h3>Case 3: Airports, Shared Country Grids (Greedy + TSP)</h3>
 <p>
 The next case was to use only the grids which have airports as options for us to visit. We can reuse the greedy cover set as before. However, we still have the case that a selected grid (with an airport) could be associated with multiple countries. Now, this is like saying the traveller flew into a specific airport in one country and visited the nearby countries (that are in the same grid) by land, sea, <a href="https://www.limitezero.com/en/">zipline</a>, <a href="https://en.wikipedia.org/wiki/Boquillas_Port_of_Entry">burro</a>, or whatever. This is quite realistic, of course. Running this algorithm was quite easy, but it quickly turned out that the airports chosen are super unknown — like Random-city-landing-strip-03. Anyway, I was able to pick the full set of airports. Now, given that this worked out, I thought why not throw in my CO₂ calculation for such a trip? I had the code lying around, and with one prompt, Claude-4 just integrated it into my code here. I went one step further — after integrating the CO₂ calculation between all selected airports to all other selected airports, I ran the TSP algorithm to optimize my route. Now I can travel the world, avoid people, and also feel slightly less guilty about flying in an unoptimized way. Again, the TSP was included just because I had the code lying around from yet another earlier <a href="https://www.ajayrangarajan.com/posts/2025/02/aachen-grand-tour/">blog project</a> (I know! Shameless plug to my own previous blog!). To mitigate this random one-landing-strip-to-random-other-landing-strip flight, I would need to find more realistic commercial flight data and maybe use that. I can keep this for another day though. This version introduced “real-world” logistics and a CO₂ tracker to account for emissions.
 </p>
 <img src="/assets/pictures/case_3.png" width="300" />
+</section>
+<section>
 
 <h3>Case 4: Airports, Host Country Only (Hardcore Realism)</h3>
 <p>
