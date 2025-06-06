@@ -112,7 +112,7 @@ As it often turns out, one assumption makes your algorithm trivially easy, and r
 This is a baby in the world of optimization problems — I pick the lowest population grid per country. If a grid belongs to multiple countries — great! One stop, many stamps. Ok, this is pretty easy (even for me, let alone my Claude-4-powered Cursor) to implement. One prompt, booooom! Implemented, done, time for coffee now. (I did not verify that this is indeed the theoretical minimum though. You will see with the results that they seem reasonable to me.)
 </p>
 
-<img src="/assets/pictures/case_1.png" width="300"/>
+<img src="/assets/pictures/case_1.png" width="300" style="margin-bottom: 20px;"/>
 </section>
 <section>
 
@@ -135,7 +135,7 @@ Now, this is where I started comparing the optimum values (which were in the ran
 The previous optimization would pick grids and assume that an introvert traveller would just teleport between these grids somehow. That is, of course, unrealistic (at least more unrealistic than the premise of this blog), and as anyone already down this path would normally do, I went around looking for a dataset with all airports and landing strips in the world. And surprise, surprise — it exists and is easily available in a simple CSV file. Now the next logical step was to incorporate this into my optimization. This is where the second file I had mentioned before comes in. The airport data comes with the latitude and longitude of each airport. I reverse-mapped this to grid IDs — meaning, for each airport I mapped which grid it was in. To save this reverse mapping, I needed the polygonal data of each of the grids. Ok, now we fly!
 </p>
 
-<img src="/assets/pictures/case_2.png" width="300" />
+<img src="/assets/pictures/case_2.png" width="300" style="margin-bottom: 20px;"/>
 
 </section>
 <section>
@@ -144,7 +144,7 @@ The previous optimization would pick grids and assume that an introvert travelle
 <p>
 The next case was to use only the grids which have airports as options for us to visit. We can reuse the greedy cover set as before. However, we still have the case that a selected grid (with an airport) could be associated with multiple countries. Now, this is like saying the traveller flew into a specific airport in one country and visited the nearby countries (that are in the same grid) by land, sea, <a href="https://www.limitezero.com/en/">zipline</a>, <a href="https://en.wikipedia.org/wiki/Boquillas_Port_of_Entry">burro</a>, or whatever. This is quite realistic, of course. Running this algorithm was quite easy, but it quickly turned out that the airports chosen are super unknown — like Random-city-landing-strip-03. Anyway, I was able to pick the full set of airports. Now, given that this worked out, I thought why not throw in my CO2 calculation for such a trip? I had the code lying around, and with one prompt, Claude-4 just integrated it into my code here. I went one step further — after integrating the CO2 calculation between all selected airports to all other selected airports, I ran the TSP algorithm to optimize my route. Now I can travel the world, avoid people, and also feel slightly less guilty about flying in an unoptimized way. Again, the TSP was included just because I had the code lying around from yet another earlier <a href="https://www.ajayrangarajan.com/posts/2025/02/aachen-grand-tour/">blog project</a> (I know! Shameless plug to my own previous blog!). To mitigate this random one-landing-strip-to-random-other-landing-strip flight, I would need to find more realistic commercial flight data and maybe use that. I can keep this for another day though. This version introduced “real-world” logistics and a CO2 tracker to account for emissions.
 </p>
-<img src="/assets/pictures/case_3.png" width="300" />
+<img src="/assets/pictures/case_3.png" width="300" style="margin-bottom: 20px;"/>
 </section>
 <section>
 
@@ -153,7 +153,7 @@ The next case was to use only the grids which have airports as options for us to
 Finally, coming to the strictest and cleanest version, where you only strictly fly. You can only count a country if you fly into an airport grid hosted by that country — no border-hopping. This was a bit more challenging than I had anticipated, basically because some countries either do not have airports or the airport database does not assign them correctly. The code processes this first by assigning the airports to host countries. (A side challenge was to ensure that the names of countries in the airport database match the population dataset. I did this by mapping everything into ISO names with some extra mappings just for guarantees.) After assigning host countries, we process countries without airports by checking if there are other airports in the same grid but in a different country. If yes (and it is a yes in EVERY case we consider), we assign the same airport to both countries. Anyway, after this, we throw in the CO2 and the TSP as before. This is probably not as realistic as the previous case, but I thought it would be incomplete without this version. Finally, for fun, below is a CO2-emission-optimized travel map visiting every country in the world by flying. (Note: The dashed red lines represent crossing the date line and due to plotting limitations, they seem like we are zipping across the world in an "unoptimized" way.)
 </p>
 
-<img src="/assets/pictures/case_4.png" width="300" />
+<img src="/assets/pictures/case_4.png" width="300" style="margin-bottom: 20px;"/>
 
 <div class="map-wrapper">
   <div id="loading" class="loading">Loading flight data...</div>
