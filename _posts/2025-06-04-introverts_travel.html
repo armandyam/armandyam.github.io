@@ -105,19 +105,19 @@ After I started thinking more about this, I realized this is not one optimizatio
 As it often turns out, one assumption makes your algorithm trivially easy, and removing that assumption makes the algorithm wildly difficult. This turned out to be such an assumption. Let’s look at the two cases below.
 </p>
 
-<h3>Case 1: All Grids, All Countries Per Grid (Simple Greedy Cover Set)</h3>
+<h3>Case 1: All Grids, All Countries Per Grid (Simple Greedy)</h3>
 <p>
 This is a baby in the world of optimization problems — I pick the lowest population grid per country. If a grid belongs to multiple countries — great! One stop, many stamps. Ok, this is pretty easy (even for me, let alone my Claude-4-powered Cursor) to implement. One prompt, booooom! Implemented, done, time for coffee now. (I did not verify that this is indeed the theoretical minimum though. You will see with the results that they seem reasonable to me.)
 </p>
 
 <img src="/assets/pictures/case_1.png" width="300"/>
 
-<h3>Case 2: All Grids, One Country Per Grid (Strategic)</h3>
+<h3>Case 2: All Grids, One Country Per Grid (Hungarian Algorithm)</h3>
 <p>
 Ok, this was a tough nut to crack. I don’t even know how to start — maybe Cursor does?
 </p>
 
-<img src="/assets/pictures/cursor_thinking.png" alt="Lot of the 'thinking' for this was done by Claude-4" />
+<img src="/assets/pictures/cursor_thinking.png" alt="Lot of the 'thinking' for this was done by Claude-4" style="margin-bottom: 20px;"/>
 
 <p>
 Wow, “THOUGHT FOR 15 seconds”!!! This one drove me down a rabbit hole — I ended up reading (and not really understanding) the <a href="https://en.wikipedia.org/wiki/Assignment_problem">assignment problem</a> and apparently something called the <a href="https://en.wikipedia.org/wiki/Hungarian_algorithm">Hungarian algorithm</a>. (Turns out this algorithm was developed by Harold Kuhn, the person who represents the second 'K' in the famous KKT condition in optimization.) Had never heard of that before. These random pursuits do teach me some new concepts! Anyway, back to our problem — this turned out to be much harder to understand and also to get working with the vibe code. It’s still amazing to see how these LLMs can help in actual scientific computing. They can not only do text and simple boilerplate code but actual realistic scientific computing. The caveat, as always, is: if this were to be a real scientific research or engineering product, I would need to ENSURE that the produced code is correct. However, this is just my random curiosity code, so I can live with some tolerance for issues in the code. One thing I had to account for, though, is that there were a few cases (two cases to be exact) where there were two or more countries in exactly one single grid and nowhere else (think of two tiny island nations next to each other — they would share the grid ID and would only be in this one single grid ID. If I assign this grid ID to one, then I can never visit the other unless I reassign the same grid ID).
