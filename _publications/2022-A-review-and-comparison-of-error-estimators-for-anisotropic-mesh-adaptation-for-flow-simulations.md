@@ -6,6 +6,7 @@ excerpt: ''
 date: 2022-01-01
 venue: 'Computers & Fluids'
 paperurl: ''
+type: 'journal'
 citation: 'Aravind Balan, Michael Park, Stephen Wood, W. Anderson, Ajay Rangarajan, Devina Sanjaya, Georg May.
 (2022).
 &quot;A review and comparison of error estimators for anisotropic mesh adaptation for flow simulations.&quot;

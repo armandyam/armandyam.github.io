@@ -6,6 +6,7 @@ excerpt: ''
 date: 2020-01-01
 venue: 'Journal of Computational Physics'
 paperurl: ''
+type: 'journal'
 citation: 'Ajay Rangarajan, Georg May, Vit Dolejsi.
 (2020).
 &quot;Adjoint-based anisotropic hp-adaptation for discontinuous Galerkin methods using a continuous mesh model.&quot;

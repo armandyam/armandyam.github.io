@@ -6,6 +6,7 @@ excerpt: ''
 date: 2019-01-01
 venue: 'Computers & Mathematics with Applications'
 paperurl: ''
+type: 'journal'
 citation: 'Ondřej Bartos, Vít Dolejší, Georg May, Ajay Rangarajan, Filip Roskovec.
 (2019).
 &quot;A goal-oriented anisotropic hp-mesh adaptation method for linear convection–diffusion–reaction problems.&quot;

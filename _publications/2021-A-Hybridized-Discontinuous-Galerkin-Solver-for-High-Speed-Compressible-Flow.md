@@ -6,6 +6,7 @@ excerpt: ''
 date: 2021-01-01
 venue: 'Aerospace'
 paperurl: ''
+type: 'journal'
 citation: 'Georg May, Koen Devesse, Ajay Rangarajan, Thierry Magin.
 (2021).
 &quot;A Hybridized Discontinuous Galerkin Solver for High-Speed Compressible Flow.&quot;

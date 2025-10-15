@@ -6,6 +6,7 @@ excerpt: ''
 date: 2013-01-01
 venue: 'The 14th International Conference on Fluidization – From Fundamentals to Products", J.A.M. Kuipers, Eindhoven University of Technology R.F. Mudde, Delft University of Technology J.R. van Ommen, Delft University of Technology N.G. Deen, Eindhoven University of Technology Eds, ECI Symposium Series'
 paperurl: ''
+type: 'journal'
 citation: 'Aditya Karnik, Ajay Rangarajan, Mohit Tandon.
 (2013).
 &quot;Numerical Investigation of the Hydrodynamics of Cylindrical Fluidized Bed.&quot;

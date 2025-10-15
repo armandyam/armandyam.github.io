@@ -6,6 +6,7 @@ excerpt: ''
 date: 2025-01-01
 venue: 'AIAA SCITECH 2025 Forum'
 paperurl: ''
+type: 'journal'
 citation: 'Devina Sanjaya, Ajay Rangarajan, Carl Gooch.
 (2025).
 &quot;Error Sampling and Synthesis for High-Order Node Movement.&quot;
