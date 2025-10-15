@@ -6,7 +6,7 @@ excerpt: ''
 date: 2019-01-01
 venue: 'AIAA Scitech 2019 Forum'
 paperurl: ''
-type: 'journal'
+type: 'conference'
 citation: 'Ajay Rangarajan, Ankit Chakraborty, Georg May.
 (2019).
 &quot;A goal oriented optimization technique for tetrahedral grids using a continuous-mesh model.&quot;

@@ -6,7 +6,7 @@ excerpt: ''
 date: 2019-01-01
 venue: 'AIAA Aviation 2019 Forum'
 paperurl: ''
-type: 'journal'
+type: 'conference'
 citation: 'Ajay Rangarajan, Georg May.
 (2019).
 &quot;Metric Construction for Error Control of Finite Element Solutions.&quot;
