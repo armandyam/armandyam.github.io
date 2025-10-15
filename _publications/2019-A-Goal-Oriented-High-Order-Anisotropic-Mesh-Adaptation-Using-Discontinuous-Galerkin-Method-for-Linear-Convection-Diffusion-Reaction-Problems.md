@@ -6,6 +6,7 @@ excerpt: ''
 date: 2019-01-01
 venue: 'SIAM Journal on Scientific Computing'
 paperurl: ''
+type: 'journal'
 citation: 'Vit Dolejsi, Georg May, Ajay Rangarajan, Filip Roskovec.
 (2019).
 &quot;A Goal-Oriented High-Order Anisotropic Mesh Adaptation Using Discontinuous Galerkin Method for Linear Convection-Diffusion-Reaction Problems.&quot;

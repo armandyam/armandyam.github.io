@@ -6,6 +6,7 @@ excerpt: ''
 date: 2023-01-01
 venue: 'Computers & Mathematics with Applications'
 paperurl: ''
+type: 'journal'
 citation: 'Stefan Wittschieber, Ajay Rangarajan, Georg May, Marek Behr.
 (2023).
 &quot;Metric-based anisotropic mesh adaptation for viscoelastic flows.&quot;

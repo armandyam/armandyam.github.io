@@ -6,6 +6,7 @@ excerpt: ''
 date: 2013-December-01
 venue: '11th ISHMT - ASME Heat and Mass Transfer Conference'
 paperurl: ''
+type: 'journal'
 citation: 'Ajay Rangarajan, Raja Banerjee.
 (2013).
 &quot;Numerical Investigation of In-Cylinder Fuel Atomization and Mixing For a GDI Engine.&quot;

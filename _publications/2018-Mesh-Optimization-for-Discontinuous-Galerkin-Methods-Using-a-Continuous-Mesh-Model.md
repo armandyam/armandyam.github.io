@@ -6,6 +6,7 @@ excerpt: ''
 date: 2018-01-01
 venue: 'AIAA Journal'
 paperurl: ''
+type: 'journal'
 citation: 'Ajay Rangarajan, Aravind Balan, Georg May.
 (2018).
 &quot;Mesh Optimization for Discontinuous Galerkin Methods Using a Continuous Mesh Model.&quot;

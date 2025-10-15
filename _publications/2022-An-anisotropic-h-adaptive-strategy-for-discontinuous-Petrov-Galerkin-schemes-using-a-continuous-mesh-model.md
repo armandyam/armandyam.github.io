@@ -6,6 +6,7 @@ excerpt: ''
 date: 2022-01-01
 venue: 'Computers & Mathematics with Applications'
 paperurl: ''
+type: 'journal'
 citation: 'Ankit Chakraborty, Ajay Rangarajan, Georg May.
 (2022).
 &quot;An anisotropic h-adaptive strategy for discontinuous Petrov-Galerkin schemes using a continuous mesh model.&quot;

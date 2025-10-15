@@ -6,6 +6,7 @@ excerpt: ''
 date: 2018-01-01
 venue: 'Applied Numerical Mathematics'
 paperurl: ''
+type: 'journal'
 citation: 'Vít Dolejší, Georg May, Ajay Rangarajan.
 (2018).
 &quot;A continuous hp-mesh model for adaptive discontinuous Galerkin schemes.&quot;
