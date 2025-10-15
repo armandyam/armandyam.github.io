@@ -13,6 +13,23 @@ Click [here](/assets/rangarajan.bib) to download my citations in BibTex format t
 
 {% include base_path %}
 
-{% for post in site.publications reversed %}
+## Academic Journals
+
+{% assign journal_pubs = site.publications | where: "type", "journal" %}
+{% for post in journal_pubs reversed %}
+  {% include archive-single.html %}
+{% endfor %}
+
+## Conference Papers
+
+{% assign conference_pubs = site.publications | where: "type", "conference" %}
+{% for post in conference_pubs reversed %}
+  {% include archive-single.html %}
+{% endfor %}
+
+## Technical Blogs
+
+{% assign techblog_pubs = site.publications | where: "type", "techblog" %}
+{% for post in techblog_pubs reversed %}
   {% include archive-single.html %}
 {% endfor %}
