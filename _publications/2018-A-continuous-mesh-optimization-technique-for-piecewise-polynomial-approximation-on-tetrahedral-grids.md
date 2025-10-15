@@ -6,7 +6,7 @@ excerpt: ''
 date: 2018-01-01
 venue: '2018 Fluid Dynamics Conference'
 paperurl: ''
-type: 'journal'
+type: 'conference'
 citation: 'Ajay Rangarajan, Ankit Chakraborty, Georg May, Vit Dolejsi.
 (2018).
 &quot;A continuous-mesh optimization technique for piecewise polynomial approximation on tetrahedral grids.&quot;
