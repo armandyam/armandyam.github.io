@@ -1,30 +1,33 @@
-/* Simple two-column layout for updates */
+/* Two-column layout: date (right-aligned) and text (left-aligned) */
 .updates-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 1rem;
     margin-top: 1.5rem;
 }
 
 .update-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
     margin-bottom: 0.5rem;
+    align-items: start;
 }
 
-.update-item p {
-    margin: 0;
+.update-date {
+    text-align: right;
+    font-weight: bold;
+    padding-right: 1rem;
+}
+
+.update-text {
+    text-align: left;
     line-height: 1.4;
 }
 
-.update-item strong {
-    font-weight: bold;
-}
-
-.update-item a {
+.update-text a {
     color: #007acc;
     text-decoration: none;
 }
 
-.update-item a:hover {
+.update-text a:hover {
     text-decoration: underline;
 }
 
@@ -34,31 +37,43 @@
 }
 
 .recent-updates-container .update-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
     margin-bottom: 0.5rem;
+    align-items: start;
 }
 
-.recent-updates-container .update-item p {
-    margin: 0;
+.recent-updates-container .update-date {
+    text-align: right;
+    font-weight: bold;
+    padding-right: 1rem;
+}
+
+.recent-updates-container .update-text {
+    text-align: left;
     line-height: 1.4;
 }
 
-.recent-updates-container .update-item strong {
-    font-weight: bold;
-}
-
-.recent-updates-container .update-item a {
+.recent-updates-container .update-text a {
     color: #007acc;
     text-decoration: none;
 }
 
-.recent-updates-container .update-item a:hover {
+.recent-updates-container .update-text a:hover {
     text-decoration: underline;
 }
 
 /* Responsive design for mobile */
 @media (max-width: 768px) {
-    .updates-container {
+    .update-item {
         grid-template-columns: 1fr;
-        gap: 0.5rem;
+        gap: 0.25rem;
+    }
+    
+    .update-date {
+        text-align: left;
+        padding-right: 0;
+        font-size: 0.9em;
     }
 }
