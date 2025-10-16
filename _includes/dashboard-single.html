@@ -13,7 +13,7 @@
 {% endif %}
 
 <article class="mini-blog">
-    <a href="{{ base_path }}{{ dashboard.url }}" target="_blank">
+    <a href="{{ base_path }}{{ dashboard.dashboard_url }}" target="_blank">
         <h5><i class='{{ dashboard.symbol | default: "fas fa-chart-line" }}'></i>{{ title }}</h5>
         <p>{{ dashboard.excerpt | markdownify }}</p>
         {% for technology in dashboard.technologies %}
