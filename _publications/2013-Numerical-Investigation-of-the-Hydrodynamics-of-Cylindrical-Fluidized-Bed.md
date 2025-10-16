@@ -15,3 +15,4 @@ citation: 'Aditya Karnik, Ajay Rangarajan, Mohit Tandon.
 Numerical simulation for 4 different ratios of initial bed heights (H) to base diameter (D), were performed; viz. 0.5, 1, 2 and 3. Glass beads of density 2600kg/m3 and with an average diameter of 550µm were used for all the simulations. Simulations were performed using the commercial CFD software, STAR-CCM+. The minimum fluidization velocity was identified by measuring pressure drop across the entire domain and found to remain same for all the above mentioned ratios. Comparison between experiment and simulation is done.
 
 [Download paper here](https://dc.engconfintl.org/fluidization_xiv/67)
+

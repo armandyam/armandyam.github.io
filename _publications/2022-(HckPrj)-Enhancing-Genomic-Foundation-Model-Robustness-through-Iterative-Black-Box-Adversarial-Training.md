@@ -15,3 +15,15 @@ citation: 'Jeyashree Krishnan, Ajay Rangarajan.
 
 
 [Download paper here](https://apartresearch.com/project/enhancing-genomic-foundation-model-robustness-through-iterative-black-box-adversarial-training-8k3m)
+
+
+**Linked Posts:**
+
+- [LessWrong post](https://www.lesswrong.com/posts/3zh4nnjoxDsknQYLw/enhancing-genomic-foundation-model-robustness-through%20#robustness%20#adversarialtesting)
+
+
+- [EA Forum post](https://forum.effectivealtruism.org/posts/abfnrGa4KnkYRKHWM/enhancing-genomic-foundation-model-robustness-through-1?utm_campaign=publish_share&utm_source=link)
+
+
+
+

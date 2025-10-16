@@ -15,3 +15,4 @@ citation: 'Ajay Rangarajan, Jeyashree Krishnan.
 
 
 [Download paper here](https://apartresearch.com/project/sequential-cascaded-hamiltonian-neural-networks-4zzi)
+
