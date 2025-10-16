@@ -1,17 +1,27 @@
 ---
 layout: portfolio
-title: "Code Portfolio"
+title: "Portfolio"
 permalink: /portfolio/
 author_profile: true
 ---
 
 {% include base_path %}
 
-Check out some of my projects including coding hacks, statistical analysis, and other hands-on projects.
+Check out some of my projects including coding hacks, statistical analysis, dashboards, and other hands-on projects.
+
+## Code Projects
 
 {% for post in site.portfolio %}
  <section class="blog-list">
   {% include portfolio-single.html %}           
+  </section>
+{% endfor %}
+
+## Dashboards
+
+{% for dashboard in site.dashboards %}
+ <section class="dashboard-grid">
+  {% include dashboard-single.html %}           
   </section>
 {% endfor %}
 

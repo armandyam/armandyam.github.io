@@ -1,0 +1,23 @@
+{% include base_path %}
+
+{% if dashboard.header.teaser %}
+  {% capture teaser %}{{ dashboard.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if dashboard.id %}
+  {% assign title = dashboard.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = dashboard.title %}
+{% endif %}
+
+<article class="dashboard-card">
+    <a href="{{ base_path }}{{ dashboard.url }}" target="_blank">
+        <h5><i class='{{ dashboard.symbol | default: "fas fa-chart-line" }}'></i>{{ title }}</h5>
+        <p>{{ dashboard.excerpt | markdownify }}</p>
+        {% for technology in dashboard.technologies %}
+          <span class="tag">{{ technology }}</span>
+        {% endfor %}
+    </a>
+</article>
