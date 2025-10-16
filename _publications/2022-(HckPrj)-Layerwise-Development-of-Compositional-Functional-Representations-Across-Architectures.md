@@ -14,4 +14,4 @@ citation: 'Jeyashree Krishnan, Ajay Rangarajan.
 ---
 
 
-[Download paper here](https://apartresearch.com)
+[Download paper here](https://apartresearch.com/project/layerwise-development-of-compositional-functional-representations-across-architectures-1zgq)
