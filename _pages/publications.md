@@ -27,9 +27,11 @@ Click [here](/assets/rangarajan.bib) to download my citations in BibTex format t
   {% include archive-single.html %}
 {% endfor %}
 
+{% assign techblog_pubs = site.publications | where: "type", "techblog" %}
+{% if techblog_pubs.size > 0 %}
 ## Technical Blogs
 
-{% assign techblog_pubs = site.publications | where: "type", "techblog" %}
 {% for post in techblog_pubs reversed %}
   {% include archive-single.html %}
 {% endfor %}
+{% endif %}
