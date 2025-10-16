@@ -28,3 +28,7 @@ Feel free to download my CV to learn more about my academic background, research
 
 Please note that this website is still a work in progress and might be a bit rough around the edges! :)
 
+## Recent Updates
+
+{% include recent_updates.html %}
+
