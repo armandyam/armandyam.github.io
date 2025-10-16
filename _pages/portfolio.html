@@ -9,19 +9,19 @@ author_profile: true
 
 Check out some of my projects including coding hacks, statistical analysis, dashboards, and other hands-on projects.
 
-## Code Projects
+<h2>Dashboards</h2>
+
+{% for dashboard in site.dashboards %}
+ <section class="blog-list">
+  {% include dashboard-single.html %}           
+  </section>
+{% endfor %}
+
+<h2>Code Projects</h2>
 
 {% for post in site.portfolio %}
  <section class="blog-list">
   {% include portfolio-single.html %}           
-  </section>
-{% endfor %}
-
-## Dashboards
-
-{% for dashboard in site.dashboards %}
- <section class="dashboard-grid">
-  {% include dashboard-single.html %}           
   </section>
 {% endfor %}
 
