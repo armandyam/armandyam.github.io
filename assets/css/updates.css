@@ -1,50 +1,31 @@
-/* Updates page styling for two-column layout */
+/* Simple two-column layout for updates */
 .updates-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
     margin-top: 1.5rem;
 }
 
 .update-item {
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    border-left: 4px solid #007acc;
+    margin-bottom: 0.5rem;
 }
 
 .update-item p {
     margin: 0;
-    line-height: 1.6;
+    line-height: 1.4;
 }
 
 .update-item strong {
-    color: #333;
-    font-size: 1.1em;
+    font-weight: bold;
 }
 
 .update-item a {
     color: #007acc;
     text-decoration: none;
-    font-weight: 500;
 }
 
 .update-item a:hover {
     text-decoration: underline;
-}
-
-/* Responsive design for mobile */
-@media (max-width: 768px) {
-    .updates-container {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .update-item {
-        margin-bottom: 1rem;
-        padding: 0.8rem;
-    }
 }
 
 /* Recent updates styling (for About page) */
@@ -53,30 +34,31 @@
 }
 
 .recent-updates-container .update-item {
-    margin-bottom: 1.2rem;
-    padding: 0.8rem;
-    background-color: #f8f9fa;
-    border-radius: 6px;
-    border-left: 3px solid #007acc;
+    margin-bottom: 0.5rem;
 }
 
 .recent-updates-container .update-item p {
     margin: 0;
-    line-height: 1.5;
-    font-size: 0.95em;
+    line-height: 1.4;
 }
 
 .recent-updates-container .update-item strong {
-    color: #333;
-    font-size: 1em;
+    font-weight: bold;
 }
 
 .recent-updates-container .update-item a {
     color: #007acc;
     text-decoration: none;
-    font-weight: 500;
 }
 
 .recent-updates-container .update-item a:hover {
     text-decoration: underline;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .updates-container {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
 }
