@@ -28,7 +28,7 @@
 }
 
 .archive__subtitle {
-  margin: 1.414em 0 0;
+  margin: 1.75em 0 0.5em;
   padding-bottom: 0.5em;
   font-size: $type-size-5;
   color: mix(#fff, $gray, 25%);
@@ -40,7 +40,8 @@
 }
 
 .archive__item-title {
-  margin-bottom: 0.25em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
   font-family: $sans-serif-narrow;
 
   a + a {
