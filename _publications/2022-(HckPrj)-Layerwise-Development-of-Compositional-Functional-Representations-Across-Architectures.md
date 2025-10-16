@@ -15,8 +15,3 @@ citation: 'Jeyashree Krishnan, Ajay Rangarajan.
 
 
 [Download paper here](https://apartresearch.com)
-
-Recommended citation: Jeyashree Krishnan, Ajay Rangarajan.
-(2025).
-&quot;(HckPrj) Layerwise Development of Compositional Functional Representations Across Architectures.&quot;
-<i>Apart Research</i>, 2025.
