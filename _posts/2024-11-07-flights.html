@@ -101,7 +101,7 @@ tags:
 </head>
 <body>
 
-Last updated: July, 7, 2025
+Last updated: November, 3, 2025
 
 <h2> Part 1 – Mapping My Air Travel Adventures</h2>
 
@@ -109,7 +109,7 @@ Last updated: July, 7, 2025
 
 <p>So, in the spirit of both curiosity and eco-guilt, I decided to dive into the numbers. I also wanted to have my facts right before I get <a href="https://en.wikipedia.org/wiki/Flight_shame">"flight shamed"</a>. I documented every single flight I’ve taken since I was born. Yes, every flight—because I’m nothing if not thorough. And for those of you wondering, flights with layovers count as separate ones for this calculation. This resulted in digging into my old emails and photos to recollect any trips and also of course directly from memory. I wrote them down in a simple file with the year, departure and arrival city name.</p>
 
-<p>I then used the city names to find their exact latitude and longitude with the help of <a href="https://geopy.readthedocs.io/en/stable/">geopy</a> and an <a href="https://github.com/armandyam/maps_kml_generator">old script</a>. Once I had those, I calculated the distance between the cities using the <a href="https://en.wikipedia.org/wiki/Haversine_formula">haversine formula</a>. The result was a shocker: I've flown far enough to make a small dent in the ozone layer and I have taken 136 flights as of today! </p>
+<p>I then used the city names to find their exact latitude and longitude with the help of <a href="https://geopy.readthedocs.io/en/stable/">geopy</a> and an <a href="https://github.com/armandyam/maps_kml_generator">old script</a>. Once I had those, I calculated the distance between the cities using the <a href="https://en.wikipedia.org/wiki/Haversine_formula">haversine formula</a>. The result was a shocker: I've flown far enough to make a small dent in the ozone layer and I have taken 139 flights as of today! </p>
 
 <p>Next, I used the <a href="https://pypi.org/project/transport-co2/">transport_co2</a> library to estimate the CO₂ emissions based on the distance for each flight. After calculating all that, I thought, why not slap it on a map? Despite not being my favourite type of projection, I used the Mercator projections as the others produced ugly corners in the visualization. I always wanted to create a map like this to try and recreate the old <a href="http://fbmap.bitaesthetics.com/">Facebook friends map</a>. I got the ideas for the color-coding from <a href="https://blog.hugo-larcher.com/flight-data-visualisation-with-pandas-and-matplotlib-ebbd13038647">this</a> blog where a power law scaling is recommended for small data sets (which it is in this case, thankfully!). Of course, the color coding is done based on the CO₂ emissions: the darker the color, the lower the emissions. You can zoom into the map and also hover on each flight path to get an estimate of the tons CO₂ equivalent emissions (tCO₂e).</p>
 
@@ -130,7 +130,7 @@ Last updated: July, 7, 2025
 <h2>Part 2 – What Does This Carbon Emission Actually Mean?</h2>
 
 
-<p>Okay, so now that I’ve mapped out all the flights I’ve taken (and probably scared myself with those numbers), I wanted to figure out just how much this 107.37 tCO₂e actually means in real-world terms. Because, let’s face it, throwing a massive number out there is one thing, but unless I’m visualizing it in relation to something I know, it’s just another abstract figure. So, I dug deeper.</p>
+<p>Okay, so now that I’ve mapped out all the flights I’ve taken (and probably scared myself with those numbers), I wanted to figure out just how much this 111.65 tCO₂e actually means in real-world terms. Because, let’s face it, throwing a massive number out there is one thing, but unless I’m visualizing it in relation to something I know, it’s just another abstract figure. So, I dug deeper.</p>
 
 <p> The easiest way I thought of visualizing this is to do some sort of <a href="https://en.wikipedia.org/wiki/One-factor-at-a-time_method">one-factor-at-a-time</a> sensitivity of analysis comparing the total cost of my flights against various lifestyle factors such as transport methods, food choices, number of trees required to offset this and also the carbon cost of this. Of course, this is not a scientific study but only something based on a few hours of doing "internet research". So take this with <a href="https://www.smithsonianmag.com/travel/spanish-mountain-made-salt-180969946/">mountains of salt</a>!</p>
 
@@ -198,27 +198,27 @@ Last updated: July, 7, 2025
   
   <div class="emoji-chart">
         <div class="emoji-row">
-            <div class="diet-label">Meat Lover (33 years):</div>
+            <div class="diet-label">Meat Lover (34 years):</div>
             <div id="meat-emojis" class="emoji-display"></div>
         </div>
         
         <div class="emoji-row">
-            <div class="diet-label">Average Diet (43 years):</div>
+            <div class="diet-label">Average Diet (45 years):</div>
             <div id="average-emojis" class="emoji-display"></div>
         </div>
         
         <div class="emoji-row">
-            <div class="diet-label">No Beef Diet (57 years):</div>
+            <div class="diet-label">No Beef Diet (59 years):</div>
             <div id="no-beef-emojis" class="emoji-display"></div>
         </div>
         
         <div class="emoji-row">
-            <div class="diet-label">Vegetarian (63 years):</div>
+            <div class="diet-label">Vegetarian (66 years):</div>
             <div id="vegetarian-emojis" class="emoji-display"></div>
         </div>
 
         <div class="emoji-row">
-            <div class="diet-label">Vegan (72 years):</div>
+            <div class="diet-label">Vegan (74 years):</div>
             <div id="vegan-emojis" class="emoji-display"></div>
         </div>
     </div>
@@ -235,9 +235,9 @@ Last updated: July, 7, 2025
 
 <p>&nbsp;&nbsp;</p>
 
-<p>We know that planting trees is one of the effective methods to offset our emissions. How many trees would it then take to offset my flight emissions alone? According to <a href="https://onetreeplanted.org/blogs/stories/how-much-co2-does-tree-absorb">this</a> resource a mature tree absorbs around 10 kg of CO₂ every year. So, then to offset my emissions, I’d need to plant a whopping 10737 trees. That's an entire forest! Guess I’d better start clearing my weekends if I want to make up for all those flights. Furthermore, one cannot just go around planting a single species of tree over acres of land leading to monocultures. Various restorative methods yield varying results. Further, they really start contributing to CO₂ removal after they are mature meaning, we need to grow them for years before we start seeing results. </p>
+<p>We know that planting trees is one of the effective methods to offset our emissions. How many trees would it then take to offset my flight emissions alone? According to <a href="https://onetreeplanted.org/blogs/stories/how-much-co2-does-tree-absorb">this</a> resource a mature tree absorbs around 10 kg of CO₂ every year. So, then to offset my emissions, I’d need to plant a whopping 11165 trees. That's an entire forest! Guess I’d better start clearing my weekends if I want to make up for all those flights. Furthermore, one cannot just go around planting a single species of tree over acres of land leading to monocultures. Various restorative methods yield varying results. Further, they really start contributing to CO₂ removal after they are mature meaning, we need to grow them for years before we start seeing results. </p>
 
-<p> Apart from actually contributing to NGOs that do good work, some <a href="https://en.wikipedia.org/wiki/Slacktivism">slacktivists</a> like me can help by using something like <a href="https://www.ecosia.org/Ecosia">Ecosia</a> which is a search engine that uses their profits to plan trees (I am in no way associated to them!). In addition, one can directly contribute to their cause to plant trees. In my case, this would <a href="https://plant.ecosia.org/products/trees-for-climate-action?variant=37125904761006">cost</a> me around 26841€. This is definitely something I hope to offset!</p>
+<p> Apart from actually contributing to NGOs that do good work, some <a href="https://en.wikipedia.org/wiki/Slacktivism">slacktivists</a> like me can help by using something like <a href="https://www.ecosia.org/Ecosia">Ecosia</a> which is a search engine that uses their profits to plan trees (I am in no way associated to them!). In addition, one can directly contribute to their cause to plant trees. In my case, this would <a href="https://plant.ecosia.org/products/trees-for-climate-action?variant=37125904761006">cost</a> me around 27912€. This is definitely something I hope to offset!</p>
 
 <h3>Cost to Offset – Can I Pay My Way Out of This?</h3>
 
@@ -245,7 +245,7 @@ Last updated: July, 7, 2025
 
 <p>I know carbon offsets are controversial but while writing this, I had a chance to read up a little bit about them. They seem to be some good number of high quality offset opportunities while at the same time one has low-quality cheap offset methods which are questionable at best (looking at you <a href="https://www.ucl.ac.uk/news/headlines/2019/nov/ryanair-carbon-offset-programme-woefully-inadequate">Ryanair</a>!). I believe, we are beyond the point where just "avoiding deforestation" (or <a href="https://unfccc.int/topics/land-use/workstreams/redd/what-is-redd">REDD+</a>) is sufficient and we actually need positive action towards offsets. Of course, this market is also quite fluctuating and there isn't a fixed number to tell how much it costs and what is the quality of this. You can read up more about this <a href="https://www.bloomberg.com/professional/insights/sustainable-finance/long-term-carbon-offsets-outlook-2023/">here</a>. We of course, need both technology based and nature based solutions for this as well.</p>
 
-<p>All in all, this is still a fun blog post and not a serious scientific research article so I want some number to calculate, so I just ended up using the one from <a href="https://www.reuters.com/sustainability/climate-energy/carbon-offset-price-25-35ton-would-boost-climate-action-adb-climate-envoy-2023-11-16/">here</a> and from that my flights would cost me between <span>$</span> 2684 to <span>$</span> 3758. That’s more than the cost of a few round-trip tickets! Sigh—I guess the price of this first world hobby also comes with a hefty environmental tax.</p>
+<p>All in all, this is still a fun blog post and not a serious scientific research article so I want some number to calculate, so I just ended up using the one from <a href="https://www.reuters.com/sustainability/climate-energy/carbon-offset-price-25-35ton-would-boost-climate-action-adb-climate-envoy-2023-11-16/">here</a> and from that my flights would cost me between <span>$</span> 2791 to <span>$</span> 3908. That’s more than the cost of a few round-trip tickets! Sigh—I guess the price of this first world hobby also comes with a hefty environmental tax.</p>
 
 <h3>Final remarks</h3>
 
