@@ -1000,5 +1000,11 @@
     "Country":"Indonesia",
     "Latitude":-8.7984847,
     "Longitude":115.5294895
+  },
+  {
+    "City":"Manama",
+    "Country":"Bahrain",
+    "Latitude":26.2235041,
+    "Longitude":50.5822436
   }
 ]
