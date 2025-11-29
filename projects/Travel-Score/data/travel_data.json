@@ -1006,5 +1006,17 @@
     "Country":"Bahrain",
     "Latitude":26.2235041,
     "Longitude":50.5822436
+  },
+  {
+    "City":"Lisbon",
+    "Country":"Portugal",
+    "Latitude":38.7077507,
+    "Longitude":-9.1365919
+  },
+  {
+    "City":"Sintra",
+    "Country":"Portugal",
+    "Latitude":38.8355446,
+    "Longitude":-9.3522371
   }
 ]
