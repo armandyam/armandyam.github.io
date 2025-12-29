@@ -8,9 +8,11 @@ redirect_from:
   - /about.html
 ---
 
-Hi there, and welcome to my personal website! I’m Ajay Mandyam Rangarajan, currently working as R&D Product Manager - CFD Meshing (was previously an R&D Software Engineering Manager) at Dassault Systemes in Darmstadt, Germany.
+Hi there, and welcome to my personal website! I’m Ajay Mandyam Rangarajan, currently working as a Senior Software Engineer in the GPU Meshing team at Ansys/Synopsys in Germany.
 
-Before joining Dassault Systemes, I worked at RWTH Aachen University as a postdoctoral researcher with [Prof. Karen Veroy-Grepl](https://www.tue.nl/en/research/researchers/karen-veroy-grepl/). My research focused on reduced order modeling and parameter reduction. I earned my Ph.D. (Dr.-Ing) in Computational Sciences from RWTH Aachen University in 2021, where I focused on anisotropic meshing for higher order methods, particularly in external aerodynamic applications, as a student of [Prof. Georg May](https://www.vki.ac.be/index.php/vkidepartments/ar-department-other-menu-100/263-faculty/faculty-in-ar/768-georg-may). My [Erdős number](https://en.wikipedia.org/wiki/Erd%C5%91s_number) is 4.
+Before joining Ansys/Synopsys, I spent four years at Dassault Systèmes in Darmstadt, Germany, across both software engineering and product management roles, with a focus on simulation software and CFD meshing.
+
+Before Dassault Systèmes, I worked at RWTH Aachen University as a postdoctoral researcher with [Prof. Karen Veroy-Grepl](https://www.tue.nl/en/research/researchers/karen-veroy-grepl/). My research focused on reduced order modeling and parameter reduction. I earned my Ph.D. (Dr.-Ing) in Computational Sciences from RWTH Aachen University in 2021, where I focused on anisotropic meshing for higher order methods, particularly in external aerodynamic applications, as a student of [Prof. Georg May](https://www.vki.ac.be/index.php/vkidepartments/ar-department-other-menu-100/263-faculty/faculty-in-ar/768-georg-may). My [Erdős number](https://en.wikipedia.org/wiki/Erd%C5%91s_number) is 4.
 
 Outside of my professional life, I have a passion for reading (mostly non-fiction), training for and participating in marathons and triathlons, and exploring new places. You can find more about my adventures [here](https://armandyam.github.io/others/). Additionally, I enjoy automating various tasks and have a collection of interesting scripts and hacks. You can check out some of these projects in my [portfolio](https://armandyam.github.io/portfolio/).
 
@@ -26,7 +28,7 @@ Feel free to download my CV to learn more about my academic background, research
     </center>
 </div>
 
-Please note that this website is still a work in progress and might be a bit rough around the edges! :)
+Please note: I am actively building a workflow where this website is updated automatically through Python scripts, backed by a small personal data management system that keeps my website, CV, and other profiles consistent from a single source of truth. As I improve this setup, you might occasionally notice small formatting issues, missing links, or slightly outdated sections. If you spot anything off, I would genuinely appreciate a quick message so I can fix it.
 
 ## Recent Updates
 
