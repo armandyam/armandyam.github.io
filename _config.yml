@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Ajay Rangarajan"
 title_separator          : "-"
 name                     : &name "Ajay Mandyam Rangarajan"
-description              : &description "R&D Software Engineer at Dassault Systemes"
+description              : &description "R&D Senior Software Engineer at Ansys"
 url                      : https://www.ajayrangarajan.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "armandyam/armandyam.github.io"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Ajay Mandyam Rangarajan"
   avatar           : "IMG_4010.jpg"
-  bio              : "Computational Scientist | Software Developer | Ironman"
+  bio              : "Computational Scientist | Meshing Expert | Technical AI Safety | Ironman | Plant-Based Food Enthusiast"
   location         : "Darmstadt, Germany"
   employer         :
 #  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
