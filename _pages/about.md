@@ -32,7 +32,7 @@ Feel free to download my below CV to learn more about my academic background, re
     </center>
 </div>
 
-Please note that I am actively building a workflow where this website is updated automatically through Python scripts, backed by a small personal data management system that keeps my website, CV, and other profiles consistent from a single source of truth. As I improve this setup, you might occasionally notice small formatting issues, missing links, or slightly outdated sections. If you spot anything off, I would genuinely appreciate a quick message so I can fix it.
+Please note that I am actively building a workflow where this website is updated automatically through Python scripts, backed by a small personal data management system that keeps my website, CV, and other profiles consistent from a single source of truth. As I improve this setup, you might occasionally notice small formatting issues, missing links, or slightly outdated sections. If you spot anything off, I would genuinely appreciate a quick message so I can fix it. Looking forward to your feedbacks!
 
 ## Recent Updates
 
