@@ -12,4 +12,4 @@ jobs:
         with:
           config_path: .spellcheck.yml
           task_name: Markdown
-          extra_dictionaries: wordlist.txt
+          extra_dictionaries: .wordlist.txt
