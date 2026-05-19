@@ -23,12 +23,25 @@ classes: wide
   text-transform:uppercase;color:#6b7280}
 .rr canvas{max-height:300px}
 .rr .note{color:#9ca3af;font-size:.82rem;margin-top:.4rem}
+.rr .wx{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.6rem;
+  background:linear-gradient(135deg,#eef4fb,#e7eef7);border-radius:14px;
+  padding:1rem 1.2rem;margin:.4rem 0 .2rem}
+.rr .wx-main{display:flex;align-items:center;gap:.7rem}
+.rr .wx-emoji{font-size:2.6rem;line-height:1}
+.rr .wx-temp{font-size:1.9rem;font-weight:800;display:block;line-height:1}
+.rr .wx-cond{color:#6b7280;font-size:.85rem}
+.rr .wx-tiles{display:flex;flex-wrap:wrap;gap:.5rem .4rem}
+.rr .wx-tiles div{background:#fff;border-radius:10px;padding:.45rem .7rem;
+  min-width:74px;text-align:center}
+.rr .wx-tiles b{display:block;font-size:1rem;font-variant-numeric:tabular-nums}
+.rr .wx-tiles span{color:#6b7280;font-size:.7rem;text-transform:uppercase;
+  letter-spacing:.04em}
+.rr .wx-verdict{width:100%;margin:.1rem 0 0;font-style:italic;color:#374151}
 </style>
 <div class="rr" data-key="mercklauf_2023">
   <p class="meta">24 May 2023 · 🇩🇪 Darmstadt, Germany · Europe<br>
-    🏃 10K · 10.0 km ·
-    1107 finishers ·
-    <a href="http://darmstadt-firmenlauf.de/" target="_blank" rel="noopener">official site ↗</a>
+    🏃 10K · 10.0 km
+     · <a href="http://darmstadt-firmenlauf.de/" target="_blank" rel="noopener">official site ↗</a>
     </p>
 
   
@@ -48,7 +61,6 @@ classes: wide
 
   <h3>Finish-time distribution</h3>
   <canvas id="hist-mercklauf_2023"></canvas>
-  <p class="note" id="histnote-mercklauf_2023"></p>
 
   <h3>The field</h3>
   <div class="grid">
@@ -59,11 +71,22 @@ classes: wide
   </div>
 
   
-  <h3>Weather that day 🌤️</h3>
-  <p>Mainly clear, 10.8°C
-    (8.1–13.8) · humidity
-    66% · wind 15.4 km/h · rain
-    0.0 mm. <em>Cool & dry — ideal racing conditions.</em></p>
+  <h3>Weather that day</h3>
+  <div class="wx">
+    <div class="wx-main">
+      <span class="wx-emoji">🌤️</span>
+      <div><span class="wx-temp">10.8°C</span>
+        <span class="wx-cond">Mainly clear</span></div>
+    </div>
+    <div class="wx-tiles">
+      <div><b>8.1–13.8°</b>
+        <span>range</span></div>
+      <div><b>66%</b><span>humidity</span></div>
+      <div><b>15.4</b><span>km/h wind</span></div>
+      <div><b>0.0</b><span>mm rain</span></div>
+    </div>
+    <p class="wx-verdict">Cool & dry — ideal racing conditions.</p>
+  </div>
   
 
   
@@ -104,10 +127,6 @@ classes: wide
           ' finishers';}}}},
         scales:{x:{ticks:{maxTicksLimit:10,maxRotation:0}},
           y:{title:{display:true,text:'Runners'}}}}});
-    var n=document.getElementById('histnote-'+KEY);
-    if(n)n.textContent=meta.note||'';
-  }).catch(function(){
-    var n=document.getElementById('histnote-'+KEY);
-    if(n)n.textContent='';});
+  }).catch(function(){});
 })();
 </script>
