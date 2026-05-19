@@ -1,0 +1,135 @@
+---
+layout: single
+title: "Monschau Marathon 2015 2015"
+permalink: /races/monschau_2015/
+author_profile: true
+classes: wide
+---
+
+<section class="race-report" data-key="monschau_2015">
+  <header class="rr-hero">
+    <h2>Monschau Marathon 2015</h2>
+    <p class="rr-sub">9 Aug 2015 · 🇩🇪 Monschau, Germany ·
+       Europe</p>
+    <p class="rr-badges">
+      <span>🏃 Marathon</span>
+      <span>42.2 km</span>
+      <span>539 finishers</span>
+      <a href="https://monschau-marathon.de/" target="_blank"
+         rel="noopener">Official site ↗</a>
+    </p>
+  </header>
+
+  
+  <div class="rr-cards">
+    <div class="rr-card">
+      <h3>Ajay's result</h3>
+      <div class="rr-big">4:15:15</div>
+      <ul>
+        <li>Place: 267 / 539
+          (top 49.5%)</li>
+        <li>Pace: 6:02/km</li>
+        <li>Beat 271 runners</li>
+      </ul>
+    </div>
+    <div class="rr-card">
+      <h3>Z-score vs the field</h3>
+      <div class="rr-z pos">
+        +0.11σ</div>
+      <p>about average for the field</p>
+    </div>
+  </div>
+  
+
+  <div class="rr-cards">
+    <div class="rr-card">
+      <h3>The field</h3>
+      <ul>
+        <li>Finishers: 539</li>
+        <li>Winner: 2:40:06</li>
+        <li>Median: 4:15:59</li>
+        <li>Mean: 4:19:46</li>
+        <li>Std dev: 40:01</li>
+      </ul>
+    </div>
+    
+    <div class="rr-card">
+      <h3>Weather that day 🌦️</h3>
+      <ul>
+        <li>Drizzle, 16.9°C
+          (14.3–18.8)</li>
+        <li>Humidity 92% · wind
+          14.5 km/h · rain 1.3 mm</li>
+        <li><em>Fair racing conditions.</em></li>
+      </ul>
+    </div>
+    
+    
+    <div class="rr-card">
+      <h3>Ajay's Marathon races</h3>
+      <div class="rr-big">#2<small> of
+        8</small></div>
+      <p>PB:
+         3:36:55.</p>
+    </div>
+    
+  </div>
+
+  <div class="rr-card rr-chart">
+    <h3>Finish-time distribution</h3>
+    <canvas id="hist-monschau_2015"></canvas>
+    <p class="rr-note" id="histnote-monschau_2015"></p>
+  </div>
+
+  
+  <div class="rr-card">
+    <h3>People of interest</h3>
+    <table><thead><tr><th>Runner</th><th>Time</th><th>Place</th>
+      <th>vs Ajay</th></tr></thead><tbody>
+      <tr><td>Ajay</td><td>4:15:15</td>
+        <td>267</td><td>same</td></tr>
+    </tbody></table>
+  </div>
+  
+
+  <p class="rr-foot">Source: raw kept (539 rows; recovered had 534). Names anonymised
+    in aggregate. Updated 2026-05-19.</p>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
+<script>
+(function(){
+  var KEY="monschau_2015", CSV="/assets/data/race_hist/monschau_2015.csv";
+  fetch(CSV).then(function(r){return r.text();}).then(function(txt){
+    var lines=txt.trim().split(/\r?\n/),bins=[],counts=[],meta={};
+    lines.forEach(function(l){
+      l=l.trim();if(!l)return;
+      var m=l.match(/^#\s*([\w]+)=(.*)$/);
+      if(m){meta[m[1]]=m[2];return;}
+      if(l.indexOf('#')===0||l.toLowerCase().indexOf('bin,')===0)return;
+      var c=l.split(",");bins.push(c[0]);counts.push(+c[1]);});
+    var ann={};
+    function L(v,c,t){return {type:'line',scaleID:'x',value:v,
+      borderColor:c,borderWidth:2,borderDash:[5,4],
+      label:{display:true,content:t,position:'start',
+        backgroundColor:c,color:'#fff',font:{size:10}}};}
+    if(meta.mean)ann.m=L(meta.mean,'#888','mean');
+    if(meta.median)ann.d=L(meta.median,'#3b82f6','median');
+    if(meta.subject)ann.s=L(meta.subject,'#10b981',meta.subject_name||'me');
+    new Chart(document.getElementById('hist-'+KEY),{type:'bar',
+      data:{labels:bins,datasets:[{data:counts,
+        backgroundColor:'#9bb4cf'}]},
+      options:{responsive:true,plugins:{legend:{display:false},
+        annotation:{annotations:ann},
+        tooltip:{callbacks:{label:function(i){return i.raw+
+          ' finishers';}}}},
+        scales:{x:{ticks:{maxTicksLimit:12,maxRotation:0}},
+          y:{title:{display:true,text:'Runners'}}}}});
+    var n=document.getElementById('histnote-'+KEY);
+    if(n)n.textContent=meta.note||'';
+  }).catch(function(e){
+    var n=document.getElementById('histnote-'+KEY);
+    if(n)n.textContent='Could not load chart data.';});
+})();
+</script>

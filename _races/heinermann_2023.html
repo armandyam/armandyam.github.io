@@ -1,0 +1,137 @@
+---
+layout: single
+title: "ENTEGA Heinermann 2023"
+permalink: /races/heinermann_2023/
+author_profile: true
+classes: wide
+---
+
+<section class="race-report" data-key="heinermann_2023">
+  <header class="rr-hero">
+    <h2>ENTEGA Heinermann</h2>
+    <p class="rr-sub">25 Jun 2023 · 🇩🇪 Darmstadt, Germany ·
+       Europe</p>
+    <p class="rr-badges">
+      <span>🥇 Olympic</span>
+      <span>Olympic</span>
+      <span>109 finishers</span>
+      <a href="https://www.heinerman.de/" target="_blank"
+         rel="noopener">Official site ↗</a>
+    </p>
+  </header>
+
+  
+  <div class="rr-cards">
+    <div class="rr-card">
+      <h3>Ajay's result</h3>
+      <div class="rr-big">03:13:28</div>
+      <ul>
+        <li>Place: 96 / 109
+          (top 88.1%)</li>
+        
+        <li>Beat 13 runners</li>
+      </ul>
+    </div>
+    <div class="rr-card">
+      <h3>Z-score vs the field</h3>
+      <div class="rr-z neg">
+        -1.34σ</div>
+      <p>slower than ~91% of finishers</p>
+    </div>
+  </div>
+  
+
+  <div class="rr-cards">
+    <div class="rr-card">
+      <h3>The field</h3>
+      <ul>
+        <li>Finishers: 109</li>
+        <li>Winner: 2:05:59</li>
+        <li>Median: 2:44:19</li>
+        <li>Mean: 2:46:45</li>
+        <li>Std dev: 20:00</li>
+      </ul>
+    </div>
+    
+    <div class="rr-card">
+      <h3>Weather that day ☀️</h3>
+      <ul>
+        <li>Clear sky, 22.9°C
+          (18.0–27.3)</li>
+        <li>Humidity 55% · wind
+          5.8 km/h · rain 0.0 mm</li>
+        <li><em>Warm — tough on endurance pace.</em></li>
+      </ul>
+    </div>
+    
+    
+    <div class="rr-card">
+      <h3>Ajay's Olympic races</h3>
+      <div class="rr-big">#2<small> of
+        4</small></div>
+      <p>PB:
+         3:09:11.</p>
+    </div>
+    
+  </div>
+
+  <div class="rr-card rr-chart">
+    <h3>Finish-time distribution</h3>
+    <canvas id="hist-heinermann_2023"></canvas>
+    <p class="rr-note" id="histnote-heinermann_2023"></p>
+  </div>
+
+  
+  <div class="rr-card">
+    <h3>People of interest</h3>
+    <table><thead><tr><th>Runner</th><th>Time</th><th>Place</th>
+      <th>vs Ajay</th></tr></thead><tbody>
+      <tr><td>Ajay</td><td>03:13:28</td>
+        <td>96</td><td>same</td></tr><tr><td>Paul</td><td>03:08:23</td>
+        <td>91</td><td>−5:05</td></tr><tr><td>Tino</td><td>02:44:19</td>
+        <td>55</td><td>−29:09</td></tr>
+    </tbody></table>
+  </div>
+  
+
+  <p class="rr-foot">Source: scraped/parsed. Names anonymised
+    in aggregate. Updated 2026-05-19.</p>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
+<script>
+(function(){
+  var KEY="heinermann_2023", CSV="/assets/data/race_hist/heinermann_2023.csv";
+  fetch(CSV).then(function(r){return r.text();}).then(function(txt){
+    var lines=txt.trim().split(/\r?\n/),bins=[],counts=[],meta={};
+    lines.forEach(function(l){
+      l=l.trim();if(!l)return;
+      var m=l.match(/^#\s*([\w]+)=(.*)$/);
+      if(m){meta[m[1]]=m[2];return;}
+      if(l.indexOf('#')===0||l.toLowerCase().indexOf('bin,')===0)return;
+      var c=l.split(",");bins.push(c[0]);counts.push(+c[1]);});
+    var ann={};
+    function L(v,c,t){return {type:'line',scaleID:'x',value:v,
+      borderColor:c,borderWidth:2,borderDash:[5,4],
+      label:{display:true,content:t,position:'start',
+        backgroundColor:c,color:'#fff',font:{size:10}}};}
+    if(meta.mean)ann.m=L(meta.mean,'#888','mean');
+    if(meta.median)ann.d=L(meta.median,'#3b82f6','median');
+    if(meta.subject)ann.s=L(meta.subject,'#10b981',meta.subject_name||'me');
+    new Chart(document.getElementById('hist-'+KEY),{type:'bar',
+      data:{labels:bins,datasets:[{data:counts,
+        backgroundColor:'#9bb4cf'}]},
+      options:{responsive:true,plugins:{legend:{display:false},
+        annotation:{annotations:ann},
+        tooltip:{callbacks:{label:function(i){return i.raw+
+          ' finishers';}}}},
+        scales:{x:{ticks:{maxTicksLimit:12,maxRotation:0}},
+          y:{title:{display:true,text:'Runners'}}}}});
+    var n=document.getElementById('histnote-'+KEY);
+    if(n)n.textContent=meta.note||'';
+  }).catch(function(e){
+    var n=document.getElementById('histnote-'+KEY);
+    if(n)n.textContent='Could not load chart data.';});
+})();
+</script>

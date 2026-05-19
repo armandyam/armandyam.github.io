@@ -1,0 +1,136 @@
+---
+layout: single
+title: "TCS Amsterdam Marathon 2018"
+permalink: /races/amsterdam_2018/
+author_profile: true
+classes: wide
+---
+
+<section class="race-report" data-key="amsterdam_2018">
+  <header class="rr-hero">
+    <h2>TCS Amsterdam Marathon</h2>
+    <p class="rr-sub">21 Oct 2018 · 🇳🇱 Amsterdam, Netherlands ·
+       Europe</p>
+    <p class="rr-badges">
+      <span>🏃 Marathon</span>
+      <span>42.2 km</span>
+      <span>12165 finishers</span>
+      <a href="https://www.tcsamsterdammarathon.nl/" target="_blank"
+         rel="noopener">Official site ↗</a>
+    </p>
+  </header>
+
+  
+  <div class="rr-cards">
+    <div class="rr-card">
+      <h3>Ajay's result</h3>
+      <div class="rr-big">04:54:45</div>
+      <ul>
+        <li>Place: 9994 / 12165
+          (top 82.2%)</li>
+        <li>Pace: 6:59/km</li>
+        <li>Beat 2169 runners</li>
+      </ul>
+    </div>
+    <div class="rr-card">
+      <h3>Z-score vs the field</h3>
+      <div class="rr-z neg">
+        -0.91σ</div>
+      <p>slower than ~82% of finishers</p>
+    </div>
+  </div>
+  
+
+  <div class="rr-cards">
+    <div class="rr-card">
+      <h3>The field</h3>
+      <ul>
+        <li>Finishers: 12165</li>
+        <li>Winner: 2:04:06</li>
+        <li>Median: 4:09:51</li>
+        <li>Mean: 4:13:06</li>
+        <li>Std dev: 45:56</li>
+      </ul>
+    </div>
+    
+    <div class="rr-card">
+      <h3>Weather that day 🌤️</h3>
+      <ul>
+        <li>Mainly clear, 10.3°C
+          (8.1–13.8)</li>
+        <li>Humidity 88% · wind
+          13.2 km/h · rain 0.0 mm</li>
+        <li><em>Cool & dry — ideal racing conditions.</em></li>
+      </ul>
+    </div>
+    
+    
+    <div class="rr-card">
+      <h3>Ajay's Marathon races</h3>
+      <div class="rr-big">#4<small> of
+        8</small></div>
+      <p>PB:
+         3:36:55.</p>
+    </div>
+    
+  </div>
+
+  <div class="rr-card rr-chart">
+    <h3>Finish-time distribution</h3>
+    <canvas id="hist-amsterdam_2018"></canvas>
+    <p class="rr-note" id="histnote-amsterdam_2018"></p>
+  </div>
+
+  
+  <div class="rr-card">
+    <h3>People of interest</h3>
+    <table><thead><tr><th>Runner</th><th>Time</th><th>Place</th>
+      <th>vs Ajay</th></tr></thead><tbody>
+      <tr><td>Ajay</td><td>04:54:45</td>
+        <td>9994</td><td>same</td></tr><tr><td>Jeyashree</td><td>04:04:12</td>
+        <td>5376</td><td>−50:33</td></tr>
+    </tbody></table>
+  </div>
+  
+
+  <p class="rr-foot">Source: consolidated/normalized -> amsterdam_2018.csv. Names anonymised
+    in aggregate. Updated 2026-05-19.</p>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
+<script>
+(function(){
+  var KEY="amsterdam_2018", CSV="/assets/data/race_hist/amsterdam_2018.csv";
+  fetch(CSV).then(function(r){return r.text();}).then(function(txt){
+    var lines=txt.trim().split(/\r?\n/),bins=[],counts=[],meta={};
+    lines.forEach(function(l){
+      l=l.trim();if(!l)return;
+      var m=l.match(/^#\s*([\w]+)=(.*)$/);
+      if(m){meta[m[1]]=m[2];return;}
+      if(l.indexOf('#')===0||l.toLowerCase().indexOf('bin,')===0)return;
+      var c=l.split(",");bins.push(c[0]);counts.push(+c[1]);});
+    var ann={};
+    function L(v,c,t){return {type:'line',scaleID:'x',value:v,
+      borderColor:c,borderWidth:2,borderDash:[5,4],
+      label:{display:true,content:t,position:'start',
+        backgroundColor:c,color:'#fff',font:{size:10}}};}
+    if(meta.mean)ann.m=L(meta.mean,'#888','mean');
+    if(meta.median)ann.d=L(meta.median,'#3b82f6','median');
+    if(meta.subject)ann.s=L(meta.subject,'#10b981',meta.subject_name||'me');
+    new Chart(document.getElementById('hist-'+KEY),{type:'bar',
+      data:{labels:bins,datasets:[{data:counts,
+        backgroundColor:'#9bb4cf'}]},
+      options:{responsive:true,plugins:{legend:{display:false},
+        annotation:{annotations:ann},
+        tooltip:{callbacks:{label:function(i){return i.raw+
+          ' finishers';}}}},
+        scales:{x:{ticks:{maxTicksLimit:12,maxRotation:0}},
+          y:{title:{display:true,text:'Runners'}}}}});
+    var n=document.getElementById('histnote-'+KEY);
+    if(n)n.textContent=meta.note||'';
+  }).catch(function(e){
+    var n=document.getElementById('histnote-'+KEY);
+    if(n)n.textContent='Could not load chart data.';});
+})();
+</script>

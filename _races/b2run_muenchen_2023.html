@@ -1,0 +1,108 @@
+---
+layout: single
+title: "B2Run Muenchen 2023"
+permalink: /races/b2run_muenchen_2023/
+author_profile: true
+classes: wide
+---
+
+<section class="race-report" data-key="b2run_muenchen_2023">
+  <header class="rr-hero">
+    <h2>B2Run Muenchen</h2>
+    <p class="rr-sub">24 Jun 2023 · 🇩🇪 Munich, Germany ·
+       Europe</p>
+    <p class="rr-badges">
+      <span>🏃 5.6K</span>
+      <span>5.6 km</span>
+      <span>28794 finishers</span>
+      <a href="https://www.b2run.de/run/de/de/muenchen/index.html" target="_blank"
+         rel="noopener">Official site ↗</a>
+    </p>
+  </header>
+
+  
+
+  <div class="rr-cards">
+    <div class="rr-card">
+      <h3>The field</h3>
+      <ul>
+        <li>Finishers: 28794</li>
+        <li>Winner: 17:45</li>
+        <li>Median: 36:00</li>
+        <li>Mean: 37:26</li>
+        <li>Std dev: 8:33</li>
+      </ul>
+    </div>
+    
+    <div class="rr-card">
+      <h3>Weather that day ☁️</h3>
+      <ul>
+        <li>Overcast, 17.6°C
+          (14.7–20.6)</li>
+        <li>Humidity 67% · wind
+          7.7 km/h · rain 0.0 mm</li>
+        <li><em>Fair racing conditions.</em></li>
+      </ul>
+    </div>
+    
+    
+  </div>
+
+  <div class="rr-card rr-chart">
+    <h3>Finish-time distribution</h3>
+    <canvas id="hist-b2run_muenchen_2023"></canvas>
+    <p class="rr-note" id="histnote-b2run_muenchen_2023"></p>
+  </div>
+
+  
+  <div class="rr-card">
+    <h3>People of interest</h3>
+    <table><thead><tr><th>Runner</th><th>Time</th><th>Place</th>
+      <th>vs subject</th></tr></thead><tbody>
+      <tr><td>Jeyashree</td><td>00:33:16</td>
+        <td>10324</td><td></td></tr>
+    </tbody></table>
+  </div>
+  
+
+  <p class="rr-foot">Source: consolidated/normalized -> b2run_muenchen_2023.csv. Names anonymised
+    in aggregate. Updated 2026-05-19.</p>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
+<script>
+(function(){
+  var KEY="b2run_muenchen_2023", CSV="/assets/data/race_hist/b2run_muenchen_2023.csv";
+  fetch(CSV).then(function(r){return r.text();}).then(function(txt){
+    var lines=txt.trim().split(/\r?\n/),bins=[],counts=[],meta={};
+    lines.forEach(function(l){
+      l=l.trim();if(!l)return;
+      var m=l.match(/^#\s*([\w]+)=(.*)$/);
+      if(m){meta[m[1]]=m[2];return;}
+      if(l.indexOf('#')===0||l.toLowerCase().indexOf('bin,')===0)return;
+      var c=l.split(",");bins.push(c[0]);counts.push(+c[1]);});
+    var ann={};
+    function L(v,c,t){return {type:'line',scaleID:'x',value:v,
+      borderColor:c,borderWidth:2,borderDash:[5,4],
+      label:{display:true,content:t,position:'start',
+        backgroundColor:c,color:'#fff',font:{size:10}}};}
+    if(meta.mean)ann.m=L(meta.mean,'#888','mean');
+    if(meta.median)ann.d=L(meta.median,'#3b82f6','median');
+    if(meta.subject)ann.s=L(meta.subject,'#10b981',meta.subject_name||'me');
+    new Chart(document.getElementById('hist-'+KEY),{type:'bar',
+      data:{labels:bins,datasets:[{data:counts,
+        backgroundColor:'#9bb4cf'}]},
+      options:{responsive:true,plugins:{legend:{display:false},
+        annotation:{annotations:ann},
+        tooltip:{callbacks:{label:function(i){return i.raw+
+          ' finishers';}}}},
+        scales:{x:{ticks:{maxTicksLimit:12,maxRotation:0}},
+          y:{title:{display:true,text:'Runners'}}}}});
+    var n=document.getElementById('histnote-'+KEY);
+    if(n)n.textContent=meta.note||'';
+  }).catch(function(e){
+    var n=document.getElementById('histnote-'+KEY);
+    if(n)n.textContent='Could not load chart data.';});
+})();
+</script>
