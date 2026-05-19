@@ -2,7 +2,7 @@
 title: "BibTeX to Markdown Converter"
 excerpt: "Generating markdown from bib for academic pages"
 symbol: 'fas fa-file-code'
-technologies: ["Python", "Jinja2", "Bibtex", "MIT License"]
+technologies: ["Python", "Jinja2", "BibTeX", "MIT License"]
 collection: portfolio
 ---
 
