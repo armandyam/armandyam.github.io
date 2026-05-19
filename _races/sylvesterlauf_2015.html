@@ -1,0 +1,132 @@
+---
+layout: single
+title: "38. Aachener Sylvesterlauf 2015"
+permalink: /races/sylvesterlauf_2015/
+author_profile: true
+classes: wide
+---
+
+<style>
+.rr{max-width:760px}
+.rr .meta{color:#6b7280;margin:.2rem 0 1rem;font-size:.95rem}
+.rr .meta a{white-space:nowrap}
+.rr .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:.5rem 1.5rem;margin:.5rem 0 1.4rem}
+.rr .kv{font-variant-numeric:tabular-nums}
+.rr .kv b{display:block;font-size:1.05rem}
+.rr .kv span{color:#6b7280;font-size:.8rem;text-transform:uppercase;
+  letter-spacing:.04em}
+.rr .hero{font-size:2rem;font-weight:800;line-height:1.1;margin:.2rem 0}
+.rr .z{font-size:1.5rem;font-weight:800}
+.rr .z.pos{color:#15803d}.rr .z.neg{color:#b45309}
+.rr h3{margin:1.4rem 0 .4rem;font-size:.8rem;letter-spacing:.06em;
+  text-transform:uppercase;color:#6b7280}
+.rr canvas{max-height:300px}
+.rr .note{color:#9ca3af;font-size:.82rem;margin-top:.4rem}
+.rr .wx{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.6rem;
+  background:linear-gradient(135deg,#eef4fb,#e7eef7);border-radius:14px;
+  padding:1rem 1.2rem;margin:.4rem 0 .2rem}
+.rr .wx-main{display:flex;align-items:center;gap:.7rem}
+.rr .wx-emoji{font-size:2.6rem;line-height:1}
+.rr .wx-temp{font-size:1.9rem;font-weight:800;display:block;line-height:1}
+.rr .wx-cond{color:#6b7280;font-size:.85rem}
+.rr .wx-tiles{display:flex;flex-wrap:wrap;gap:.5rem .4rem}
+.rr .wx-tiles div{background:#fff;border-radius:10px;padding:.45rem .7rem;
+  min-width:74px;text-align:center}
+.rr .wx-tiles b{display:block;font-size:1rem;font-variant-numeric:tabular-nums}
+.rr .wx-tiles span{color:#6b7280;font-size:.7rem;text-transform:uppercase;
+  letter-spacing:.04em}
+.rr .wx-verdict{width:100%;margin:.1rem 0 0;font-style:italic;color:#374151}
+</style>
+<div class="rr" data-key="sylvesterlauf_2015">
+  <p class="meta">31 Dec 2015 · 🇩🇪 Aachen, Germany · Europe<br>
+    🏃 10K · 10.0 km
+     · <a href="https://silvesterlauf.dlc-aachen.de/silvesterlauf" target="_blank" rel="noopener">official site ↗</a>
+    </p>
+
+  
+  <div class="hero">00:45:24</div>
+  <div class="grid">
+    <div class="kv"><span>Place</span><b>166 /
+      930</b></div>
+    <div class="kv"><span>Percentile</span><b>top 17.8%
+      </b></div>
+    <div class="kv"><span>Pace</span>
+      <b>4:32/km</b></div>
+    <div class="kv"><span>Z-score</span>
+      <b class="z pos">
+        +0.91σ</b></div>
+  </div>
+  
+
+  <h3>Finish-time distribution</h3>
+  <canvas id="hist-sylvesterlauf_2015"></canvas>
+
+  <h3>The field</h3>
+  <div class="grid">
+    <div class="kv"><span>Finishers</span><b>930</b></div>
+    <div class="kv"><span>Winner</span><b>27:11</b></div>
+    <div class="kv"><span>Median</span><b>52:40</b></div>
+    <div class="kv"><span>Mean</span><b>52:30</b></div>
+  </div>
+
+  
+  <h3>Weather that day</h3>
+  <div class="wx">
+    <div class="wx-main">
+      <span class="wx-emoji">☀️</span>
+      <div><span class="wx-temp">-2.0°C</span>
+        <span class="wx-cond">Clear sky</span></div>
+    </div>
+    <div class="wx-tiles">
+      <div><b>-2.5–-1.6°</b>
+        <span>range</span></div>
+      <div><b>80%</b><span>humidity</span></div>
+      <div><b>14.7</b><span>km/h wind</span></div>
+      <div><b>0.0</b><span>mm rain</span></div>
+    </div>
+    <p class="wx-verdict">Cold — stiff legs, layer up.</p>
+  </div>
+  
+
+  
+  <h3>My 10K races</h3>
+  <p>#3 of 10 —
+    PB
+    43:08.</p>
+  
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
+<script>
+(function(){
+  var KEY="sylvesterlauf_2015",CSV="/assets/data/race_hist/sylvesterlauf_2015.csv";
+  fetch(CSV).then(function(r){return r.text();}).then(function(txt){
+    var bins=[],counts=[],meta={};
+    txt.trim().split(/\r?\n/).forEach(function(l){
+      l=l.trim();if(!l)return;
+      var m=l.match(/^#\s*([\w]+)=(.*)$/);
+      if(m){meta[m[1]]=m[2];return;}
+      if(l.indexOf('#')===0||l.toLowerCase().indexOf('bin,')===0)return;
+      var c=l.split(",");bins.push(c[0]);counts.push(+c[1]);});
+    var ann={};
+    function L(v,c,t){return {type:'line',scaleID:'x',value:v,
+      borderColor:c,borderWidth:2,borderDash:[5,4],
+      label:{display:true,content:t,position:'start',
+        backgroundColor:c,color:'#fff',font:{size:10}}};}
+    if(meta.mean)ann.m=L(meta.mean,'#9ca3af','mean');
+    if(meta.median)ann.d=L(meta.median,'#3b82f6','median');
+    if(meta.subject)ann.s=L(meta.subject,'#15803d','me');
+    new Chart(document.getElementById('hist-'+KEY),{type:'bar',
+      data:{labels:bins,datasets:[{data:counts,
+        backgroundColor:'#9bb4cf'}]},
+      options:{responsive:true,plugins:{legend:{display:false},
+        annotation:{annotations:ann},
+        tooltip:{callbacks:{label:function(i){return i.raw+
+          ' finishers';}}}},
+        scales:{x:{ticks:{maxTicksLimit:10,maxRotation:0}},
+          y:{title:{display:true,text:'Runners'}}}}});
+  }).catch(function(){});
+})();
+</script>
