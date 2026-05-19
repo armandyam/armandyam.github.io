@@ -196,6 +196,9 @@ collections:
   others:
     output: true
     permalink: /:collection/:path/
+  races:
+    output: true
+    permalink: /races/:path/
 
 # Defaults
 defaults:
@@ -217,6 +220,14 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _races
+  - scope:
+      path: ""
+      type: races
+    values:
+      layout: single
+      author_profile: true
+      classes: wide
   # _teaching
   - scope:
       path: ""
