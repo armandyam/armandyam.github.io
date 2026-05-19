@@ -1,0 +1,127 @@
+---
+layout: single
+title: "38. Aachener Sylvesterlauf 2015"
+permalink: /races/sylvesterlauf_2015_5k/
+author_profile: true
+classes: wide
+---
+
+<section class="race-report" data-key="sylvesterlauf_2015_5k">
+  <header class="rr-hero">
+    <h2>38. Aachener Sylvesterlauf</h2>
+    <p class="rr-sub">31 Dec 2015 · 🇩🇪 Aachen, Germany ·
+       Europe</p>
+    <p class="rr-badges">
+      <span>🏃 5K</span>
+      <span>4.8 km</span>
+      <span>879 finishers</span>
+      <a href="https://silvesterlauf.dlc-aachen.de/silvesterlauf" target="_blank"
+         rel="noopener">Official site ↗</a>
+    </p>
+  </header>
+
+  
+  <div class="rr-cards">
+    <div class="rr-card">
+      <h3>Jeyashree's result</h3>
+      <div class="rr-big">00:30:31</div>
+      <ul>
+        <li>Place: 701 / 879
+          (top 79.7%)</li>
+        <li>Pace: 6:21/km</li>
+        <li>Beat 177 runners</li>
+      </ul>
+    </div>
+    <div class="rr-card">
+      <h3>Z-score vs the field</h3>
+      <div class="rr-z neg">
+        -0.83σ</div>
+      <p>slower than ~80% of finishers</p>
+    </div>
+  </div>
+  
+
+  <div class="rr-cards">
+    <div class="rr-card">
+      <h3>The field</h3>
+      <ul>
+        <li>Finishers: 879</li>
+        <li>Winner: 10:39</li>
+        <li>Median: 26:41</li>
+        <li>Mean: 26:44</li>
+        <li>Std dev: 4:33</li>
+      </ul>
+    </div>
+    
+    <div class="rr-card">
+      <h3>Weather that day ☁️</h3>
+      <ul>
+        <li>Overcast, 6.0°C
+          (5.5–6.9)</li>
+        <li>Humidity 81% · wind
+          16.5 km/h · rain 0.0 mm</li>
+        <li><em>Cool & dry — ideal racing conditions.</em></li>
+      </ul>
+    </div>
+    
+    
+  </div>
+
+  <div class="rr-card rr-chart">
+    <h3>Finish-time distribution</h3>
+    <canvas id="hist-sylvesterlauf_2015_5k"></canvas>
+    <p class="rr-note" id="histnote-sylvesterlauf_2015_5k"></p>
+  </div>
+
+  
+  <div class="rr-card">
+    <h3>People of interest</h3>
+    <table><thead><tr><th>Runner</th><th>Time</th><th>Place</th>
+      <th>vs Jeyashree</th></tr></thead><tbody>
+      <tr><td>Jeyashree</td><td>00:30:31</td>
+        <td>701</td><td>same</td></tr>
+    </tbody></table>
+  </div>
+  
+
+  <p class="rr-foot">Source: consolidated/normalized -> sylvesterlauf_2015.csv. Names anonymised
+    in aggregate. Updated 2026-05-19.</p>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
+<script>
+(function(){
+  var KEY="sylvesterlauf_2015_5k", CSV="/assets/data/race_hist/sylvesterlauf_2015_5k.csv";
+  fetch(CSV).then(function(r){return r.text();}).then(function(txt){
+    var lines=txt.trim().split(/\r?\n/),bins=[],counts=[],meta={};
+    lines.forEach(function(l){
+      l=l.trim();if(!l)return;
+      var m=l.match(/^#\s*([\w]+)=(.*)$/);
+      if(m){meta[m[1]]=m[2];return;}
+      if(l.indexOf('#')===0||l.toLowerCase().indexOf('bin,')===0)return;
+      var c=l.split(",");bins.push(c[0]);counts.push(+c[1]);});
+    var ann={};
+    function L(v,c,t){return {type:'line',scaleID:'x',value:v,
+      borderColor:c,borderWidth:2,borderDash:[5,4],
+      label:{display:true,content:t,position:'start',
+        backgroundColor:c,color:'#fff',font:{size:10}}};}
+    if(meta.mean)ann.m=L(meta.mean,'#888','mean');
+    if(meta.median)ann.d=L(meta.median,'#3b82f6','median');
+    if(meta.subject)ann.s=L(meta.subject,'#10b981',meta.subject_name||'me');
+    new Chart(document.getElementById('hist-'+KEY),{type:'bar',
+      data:{labels:bins,datasets:[{data:counts,
+        backgroundColor:'#9bb4cf'}]},
+      options:{responsive:true,plugins:{legend:{display:false},
+        annotation:{annotations:ann},
+        tooltip:{callbacks:{label:function(i){return i.raw+
+          ' finishers';}}}},
+        scales:{x:{ticks:{maxTicksLimit:12,maxRotation:0}},
+          y:{title:{display:true,text:'Runners'}}}}});
+    var n=document.getElementById('histnote-'+KEY);
+    if(n)n.textContent=meta.note||'';
+  }).catch(function(e){
+    var n=document.getElementById('histnote-'+KEY);
+    if(n)n.textContent='Could not load chart data.';});
+})();
+</script>

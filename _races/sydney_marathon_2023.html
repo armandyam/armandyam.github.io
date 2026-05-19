@@ -1,0 +1,136 @@
+---
+layout: single
+title: "Sydney marathon 2023"
+permalink: /races/sydney_marathon_2023/
+author_profile: true
+classes: wide
+---
+
+<section class="race-report" data-key="sydney_marathon_2023">
+  <header class="rr-hero">
+    <h2>Sydney marathon 🌍</h2>
+    <p class="rr-sub">17 Sep 2023 · 🇦🇺 Sydney, Australia ·
+       Oceania</p>
+    <p class="rr-badges">
+      <span>🏃 Marathon</span>
+      <span>42.2 km</span>
+      <span>13353 finishers</span>
+      <a href="https://sydneymarathon.com/" target="_blank"
+         rel="noopener">Official site ↗</a>
+    </p>
+  </header>
+
+  
+  <div class="rr-cards">
+    <div class="rr-card">
+      <h3>Ajay's result</h3>
+      <div class="rr-big">05:07:01</div>
+      <ul>
+        <li>Place: 9764 / 13353
+          (top 73.1%)</li>
+        <li>Pace: 7:16/km</li>
+        <li>Beat 3587 runners</li>
+      </ul>
+    </div>
+    <div class="rr-card">
+      <h3>Z-score vs the field</h3>
+      <div class="rr-z neg">
+        -0.57σ</div>
+      <p>slower than ~71% of finishers</p>
+    </div>
+  </div>
+  
+
+  <div class="rr-cards">
+    <div class="rr-card">
+      <h3>The field</h3>
+      <ul>
+        <li>Finishers: 13353</li>
+        <li>Winner: 2:08:19</li>
+        <li>Median: 4:30:08</li>
+        <li>Mean: 4:36:11</li>
+        <li>Std dev: 54:24</li>
+      </ul>
+    </div>
+    
+    <div class="rr-card">
+      <h3>Weather that day ☀️</h3>
+      <ul>
+        <li>Clear sky, 24.5°C
+          (17.5–30.4)</li>
+        <li>Humidity 31% · wind
+          16.1 km/h · rain 0.0 mm</li>
+        <li><em>Warm — tough on endurance pace.</em></li>
+      </ul>
+    </div>
+    
+    
+    <div class="rr-card">
+      <h3>Ajay's Marathon races</h3>
+      <div class="rr-big">#5<small> of
+        8</small></div>
+      <p>PB:
+         3:36:55.</p>
+    </div>
+    
+  </div>
+
+  <div class="rr-card rr-chart">
+    <h3>Finish-time distribution</h3>
+    <canvas id="hist-sydney_marathon_2023"></canvas>
+    <p class="rr-note" id="histnote-sydney_marathon_2023"></p>
+  </div>
+
+  
+  <div class="rr-card">
+    <h3>People of interest</h3>
+    <table><thead><tr><th>Runner</th><th>Time</th><th>Place</th>
+      <th>vs Ajay</th></tr></thead><tbody>
+      <tr><td>Ajay</td><td>05:07:01</td>
+        <td>9764</td><td>same</td></tr><tr><td>Jeyashree</td><td>04:45:33</td>
+        <td>8059</td><td>−21:28</td></tr>
+    </tbody></table>
+  </div>
+  
+
+  <p class="rr-foot">Source: scraped via sydney_curl.py (?page loop, curl_cffi+. Names anonymised
+    in aggregate. Updated 2026-05-19.</p>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
+<script>
+(function(){
+  var KEY="sydney_marathon_2023", CSV="/assets/data/race_hist/sydney_marathon_2023.csv";
+  fetch(CSV).then(function(r){return r.text();}).then(function(txt){
+    var lines=txt.trim().split(/\r?\n/),bins=[],counts=[],meta={};
+    lines.forEach(function(l){
+      l=l.trim();if(!l)return;
+      var m=l.match(/^#\s*([\w]+)=(.*)$/);
+      if(m){meta[m[1]]=m[2];return;}
+      if(l.indexOf('#')===0||l.toLowerCase().indexOf('bin,')===0)return;
+      var c=l.split(",");bins.push(c[0]);counts.push(+c[1]);});
+    var ann={};
+    function L(v,c,t){return {type:'line',scaleID:'x',value:v,
+      borderColor:c,borderWidth:2,borderDash:[5,4],
+      label:{display:true,content:t,position:'start',
+        backgroundColor:c,color:'#fff',font:{size:10}}};}
+    if(meta.mean)ann.m=L(meta.mean,'#888','mean');
+    if(meta.median)ann.d=L(meta.median,'#3b82f6','median');
+    if(meta.subject)ann.s=L(meta.subject,'#10b981',meta.subject_name||'me');
+    new Chart(document.getElementById('hist-'+KEY),{type:'bar',
+      data:{labels:bins,datasets:[{data:counts,
+        backgroundColor:'#9bb4cf'}]},
+      options:{responsive:true,plugins:{legend:{display:false},
+        annotation:{annotations:ann},
+        tooltip:{callbacks:{label:function(i){return i.raw+
+          ' finishers';}}}},
+        scales:{x:{ticks:{maxTicksLimit:12,maxRotation:0}},
+          y:{title:{display:true,text:'Runners'}}}}});
+    var n=document.getElementById('histnote-'+KEY);
+    if(n)n.textContent=meta.note||'';
+  }).catch(function(e){
+    var n=document.getElementById('histnote-'+KEY);
+    if(n)n.textContent='Could not load chart data.';});
+})();
+</script>

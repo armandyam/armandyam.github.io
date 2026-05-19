@@ -1,0 +1,135 @@
+---
+layout: single
+title: "Montreal Double Challenge Run (10K) 2019"
+permalink: /races/montreal_double_challenge_run_10k_2019/
+author_profile: true
+classes: wide
+---
+
+<section class="race-report" data-key="montreal_double_challenge_run_10k_2019">
+  <header class="rr-hero">
+    <h2>Montreal Double Challenge Run (10K)</h2>
+    <p class="rr-sub">27 Apr 2019 · 🇨🇦 Montreal, Canada ·
+       North America</p>
+    <p class="rr-badges">
+      <span>🏃 10K</span>
+      <span>10.0 km</span>
+      <span>1433 finishers</span>
+      <a href="https://sportstats.one/results/100588" target="_blank"
+         rel="noopener">Official site ↗</a>
+    </p>
+  </header>
+
+  
+  <div class="rr-cards">
+    <div class="rr-card">
+      <h3>Jeyashree's result</h3>
+      <div class="rr-big">1:06:11</div>
+      <ul>
+        <li>Place: 1117 / 1433
+          (top 77.9%)</li>
+        <li>Pace: 6:37/km</li>
+        <li>Beat 315 runners</li>
+      </ul>
+    </div>
+    <div class="rr-card">
+      <h3>Z-score vs the field</h3>
+      <div class="rr-z neg">
+        -0.44σ</div>
+      <p>slower than ~67% of finishers</p>
+    </div>
+  </div>
+  
+
+  <div class="rr-cards">
+    <div class="rr-card">
+      <h3>The field</h3>
+      <ul>
+        <li>Finishers: 1433</li>
+        <li>Winner: 32:22</li>
+        <li>Median: 58:07</li>
+        <li>Mean: 59:53</li>
+        <li>Std dev: 14:15</li>
+      </ul>
+    </div>
+    
+    <div class="rr-card">
+      <h3>Weather that day 🌦️</h3>
+      <ul>
+        <li>Light rain, 5.0°C
+          (4.2–5.7)</li>
+        <li>Humidity 96% · wind
+          24.6 km/h · rain 6.2 mm</li>
+        <li><em>Wet — slower, slippery footing.</em></li>
+      </ul>
+    </div>
+    
+    
+    <div class="rr-card">
+      <h3>Jeyashree's 10K races</h3>
+      <div class="rr-big">#3<small> of
+        3</small></div>
+      <p>PB:
+         31:21.</p>
+    </div>
+    
+  </div>
+
+  <div class="rr-card rr-chart">
+    <h3>Finish-time distribution</h3>
+    <canvas id="hist-montreal_double_challenge_run_10k_2019"></canvas>
+    <p class="rr-note" id="histnote-montreal_double_challenge_run_10k_2019"></p>
+  </div>
+
+  
+  <div class="rr-card">
+    <h3>People of interest</h3>
+    <table><thead><tr><th>Runner</th><th>Time</th><th>Place</th>
+      <th>vs Jeyashree</th></tr></thead><tbody>
+      <tr><td>Jeyashree</td><td>1:06:11</td>
+        <td>1117</td><td>same</td></tr>
+    </tbody></table>
+  </div>
+  
+
+  <p class="rr-foot">Source: consolidated/normalized -> montreal_double_challen. Names anonymised
+    in aggregate. Updated 2026-05-19.</p>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
+<script>
+(function(){
+  var KEY="montreal_double_challenge_run_10k_2019", CSV="/assets/data/race_hist/montreal_double_challenge_run_10k_2019.csv";
+  fetch(CSV).then(function(r){return r.text();}).then(function(txt){
+    var lines=txt.trim().split(/\r?\n/),bins=[],counts=[],meta={};
+    lines.forEach(function(l){
+      l=l.trim();if(!l)return;
+      var m=l.match(/^#\s*([\w]+)=(.*)$/);
+      if(m){meta[m[1]]=m[2];return;}
+      if(l.indexOf('#')===0||l.toLowerCase().indexOf('bin,')===0)return;
+      var c=l.split(",");bins.push(c[0]);counts.push(+c[1]);});
+    var ann={};
+    function L(v,c,t){return {type:'line',scaleID:'x',value:v,
+      borderColor:c,borderWidth:2,borderDash:[5,4],
+      label:{display:true,content:t,position:'start',
+        backgroundColor:c,color:'#fff',font:{size:10}}};}
+    if(meta.mean)ann.m=L(meta.mean,'#888','mean');
+    if(meta.median)ann.d=L(meta.median,'#3b82f6','median');
+    if(meta.subject)ann.s=L(meta.subject,'#10b981',meta.subject_name||'me');
+    new Chart(document.getElementById('hist-'+KEY),{type:'bar',
+      data:{labels:bins,datasets:[{data:counts,
+        backgroundColor:'#9bb4cf'}]},
+      options:{responsive:true,plugins:{legend:{display:false},
+        annotation:{annotations:ann},
+        tooltip:{callbacks:{label:function(i){return i.raw+
+          ' finishers';}}}},
+        scales:{x:{ticks:{maxTicksLimit:12,maxRotation:0}},
+          y:{title:{display:true,text:'Runners'}}}}});
+    var n=document.getElementById('histnote-'+KEY);
+    if(n)n.textContent=meta.note||'';
+  }).catch(function(e){
+    var n=document.getElementById('histnote-'+KEY);
+    if(n)n.textContent='Could not load chart data.';});
+})();
+</script>

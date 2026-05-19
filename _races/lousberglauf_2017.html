@@ -1,0 +1,134 @@
+---
+layout: single
+title: "Lousberglauf 2017 2017"
+permalink: /races/lousberglauf_2017/
+author_profile: true
+classes: wide
+---
+
+<section class="race-report" data-key="lousberglauf_2017">
+  <header class="rr-hero">
+    <h2>Lousberglauf 2017</h2>
+    <p class="rr-sub">8 Jul 2017 · 🇩🇪 Aachen, Germany ·
+       Europe</p>
+    <p class="rr-badges">
+      <span>🏃 5.555K</span>
+      <span>5.6 km</span>
+      <span>1894 finishers</span>
+      <a href="https://hochschulsport.rwth-aachen.de/cms/HSZ/Events/~kjqs/Lousberglauf/" target="_blank"
+         rel="noopener">Official site ↗</a>
+    </p>
+  </header>
+
+  
+  <div class="rr-cards">
+    <div class="rr-card">
+      <h3>Ajay's result</h3>
+      <div class="rr-big">00:25:22.4</div>
+      <ul>
+        <li>Place: 558 / 1894
+          (top 29.5%)</li>
+        <li>Pace: 4:31/km</li>
+        <li>Beat 1333 runners</li>
+      </ul>
+    </div>
+    <div class="rr-card">
+      <h3>Z-score vs the field</h3>
+      <div class="rr-z pos">
+        +0.59σ</div>
+      <p>faster than ~72% of finishers</p>
+    </div>
+  </div>
+  
+
+  <div class="rr-cards">
+    <div class="rr-card">
+      <h3>The field</h3>
+      <ul>
+        <li>Finishers: 1894</li>
+        <li>Winner: 17:16</li>
+        <li>Median: 27:41</li>
+        <li>Mean: 28:26</li>
+        <li>Std dev: 5:13</li>
+      </ul>
+    </div>
+    
+    <div class="rr-card">
+      <h3>Weather that day ☁️</h3>
+      <ul>
+        <li>Overcast, 19.4°C
+          (16.8–22.5)</li>
+        <li>Humidity 68% · wind
+          13.0 km/h · rain 0.0 mm</li>
+        <li><em>Fair racing conditions.</em></li>
+      </ul>
+    </div>
+    
+    
+    <div class="rr-card">
+      <h3>Ajay's 5.555K races</h3>
+      <div class="rr-big">#1<small> of
+        2</small></div>
+      <p>🏅 Personal best.</p>
+    </div>
+    
+  </div>
+
+  <div class="rr-card rr-chart">
+    <h3>Finish-time distribution</h3>
+    <canvas id="hist-lousberglauf_2017"></canvas>
+    <p class="rr-note" id="histnote-lousberglauf_2017"></p>
+  </div>
+
+  
+  <div class="rr-card">
+    <h3>People of interest</h3>
+    <table><thead><tr><th>Runner</th><th>Time</th><th>Place</th>
+      <th>vs Ajay</th></tr></thead><tbody>
+      <tr><td>Ajay</td><td>00:25:22.4</td>
+        <td>558</td><td>same</td></tr>
+    </tbody></table>
+  </div>
+  
+
+  <p class="rr-foot">Source: consolidated/normalized -> lousberglauf_2017.csv. Names anonymised
+    in aggregate. Updated 2026-05-19.</p>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
+<script>
+(function(){
+  var KEY="lousberglauf_2017", CSV="/assets/data/race_hist/lousberglauf_2017.csv";
+  fetch(CSV).then(function(r){return r.text();}).then(function(txt){
+    var lines=txt.trim().split(/\r?\n/),bins=[],counts=[],meta={};
+    lines.forEach(function(l){
+      l=l.trim();if(!l)return;
+      var m=l.match(/^#\s*([\w]+)=(.*)$/);
+      if(m){meta[m[1]]=m[2];return;}
+      if(l.indexOf('#')===0||l.toLowerCase().indexOf('bin,')===0)return;
+      var c=l.split(",");bins.push(c[0]);counts.push(+c[1]);});
+    var ann={};
+    function L(v,c,t){return {type:'line',scaleID:'x',value:v,
+      borderColor:c,borderWidth:2,borderDash:[5,4],
+      label:{display:true,content:t,position:'start',
+        backgroundColor:c,color:'#fff',font:{size:10}}};}
+    if(meta.mean)ann.m=L(meta.mean,'#888','mean');
+    if(meta.median)ann.d=L(meta.median,'#3b82f6','median');
+    if(meta.subject)ann.s=L(meta.subject,'#10b981',meta.subject_name||'me');
+    new Chart(document.getElementById('hist-'+KEY),{type:'bar',
+      data:{labels:bins,datasets:[{data:counts,
+        backgroundColor:'#9bb4cf'}]},
+      options:{responsive:true,plugins:{legend:{display:false},
+        annotation:{annotations:ann},
+        tooltip:{callbacks:{label:function(i){return i.raw+
+          ' finishers';}}}},
+        scales:{x:{ticks:{maxTicksLimit:12,maxRotation:0}},
+          y:{title:{display:true,text:'Runners'}}}}});
+    var n=document.getElementById('histnote-'+KEY);
+    if(n)n.textContent=meta.note||'';
+  }).catch(function(e){
+    var n=document.getElementById('histnote-'+KEY);
+    if(n)n.textContent='Could not load chart data.';});
+})();
+</script>

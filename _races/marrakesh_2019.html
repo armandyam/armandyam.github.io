@@ -1,0 +1,136 @@
+---
+layout: single
+title: "Marrakech Marathon 2019"
+permalink: /races/marrakesh_2019/
+author_profile: true
+classes: wide
+---
+
+<section class="race-report" data-key="marrakesh_2019">
+  <header class="rr-hero">
+    <h2>Marrakech Marathon 🌍</h2>
+    <p class="rr-sub">27 Jan 2019 · 🇲🇦 Marrakech, Morocco ·
+       Africa</p>
+    <p class="rr-badges">
+      <span>🏃 Marathon</span>
+      <span>42.2 km</span>
+      <span>1150 finishers</span>
+      <a href="https://marrakechmarathon.com/" target="_blank"
+         rel="noopener">Official site ↗</a>
+    </p>
+  </header>
+
+  
+  <div class="rr-cards">
+    <div class="rr-card">
+      <h3>Ajay's result</h3>
+      <div class="rr-big">05:57:15</div>
+      <ul>
+        <li>Place: 1146 / 1150
+          (top 99.7%)</li>
+        <li>Pace: 8:27/km</li>
+        <li>Beat 4 runners</li>
+      </ul>
+    </div>
+    <div class="rr-card">
+      <h3>Z-score vs the field</h3>
+      <div class="rr-z neg">
+        -2.94σ</div>
+      <p>slower than ~100% of finishers</p>
+    </div>
+  </div>
+  
+
+  <div class="rr-cards">
+    <div class="rr-card">
+      <h3>The field</h3>
+      <ul>
+        <li>Finishers: 1150</li>
+        <li>Winner: 1:54:43</li>
+        <li>Median: 3:57:54</li>
+        <li>Mean: 3:58:11</li>
+        <li>Std dev: 40:34</li>
+      </ul>
+    </div>
+    
+    <div class="rr-card">
+      <h3>Weather that day 🌤️</h3>
+      <ul>
+        <li>Mainly clear, 9.7°C
+          (6.0–15.0)</li>
+        <li>Humidity 75% · wind
+          7.9 km/h · rain 0.0 mm</li>
+        <li><em>Cool & dry — ideal racing conditions.</em></li>
+      </ul>
+    </div>
+    
+    
+    <div class="rr-card">
+      <h3>Ajay's Marathon races</h3>
+      <div class="rr-big">#7<small> of
+        8</small></div>
+      <p>PB:
+         3:36:55.</p>
+    </div>
+    
+  </div>
+
+  <div class="rr-card rr-chart">
+    <h3>Finish-time distribution</h3>
+    <canvas id="hist-marrakesh_2019"></canvas>
+    <p class="rr-note" id="histnote-marrakesh_2019"></p>
+  </div>
+
+  
+  <div class="rr-card">
+    <h3>People of interest</h3>
+    <table><thead><tr><th>Runner</th><th>Time</th><th>Place</th>
+      <th>vs Ajay</th></tr></thead><tbody>
+      <tr><td>Ajay</td><td>05:57:15</td>
+        <td>1146</td><td>same</td></tr><tr><td>Jeyashree</td><td>05:57:09</td>
+        <td>1145</td><td>−0:06</td></tr>
+    </tbody></table>
+  </div>
+  
+
+  <p class="rr-foot">Source: consolidated/normalized -> marrakesh_2019.csv. Names anonymised
+    in aggregate. Updated 2026-05-19.</p>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
+<script>
+(function(){
+  var KEY="marrakesh_2019", CSV="/assets/data/race_hist/marrakesh_2019.csv";
+  fetch(CSV).then(function(r){return r.text();}).then(function(txt){
+    var lines=txt.trim().split(/\r?\n/),bins=[],counts=[],meta={};
+    lines.forEach(function(l){
+      l=l.trim();if(!l)return;
+      var m=l.match(/^#\s*([\w]+)=(.*)$/);
+      if(m){meta[m[1]]=m[2];return;}
+      if(l.indexOf('#')===0||l.toLowerCase().indexOf('bin,')===0)return;
+      var c=l.split(",");bins.push(c[0]);counts.push(+c[1]);});
+    var ann={};
+    function L(v,c,t){return {type:'line',scaleID:'x',value:v,
+      borderColor:c,borderWidth:2,borderDash:[5,4],
+      label:{display:true,content:t,position:'start',
+        backgroundColor:c,color:'#fff',font:{size:10}}};}
+    if(meta.mean)ann.m=L(meta.mean,'#888','mean');
+    if(meta.median)ann.d=L(meta.median,'#3b82f6','median');
+    if(meta.subject)ann.s=L(meta.subject,'#10b981',meta.subject_name||'me');
+    new Chart(document.getElementById('hist-'+KEY),{type:'bar',
+      data:{labels:bins,datasets:[{data:counts,
+        backgroundColor:'#9bb4cf'}]},
+      options:{responsive:true,plugins:{legend:{display:false},
+        annotation:{annotations:ann},
+        tooltip:{callbacks:{label:function(i){return i.raw+
+          ' finishers';}}}},
+        scales:{x:{ticks:{maxTicksLimit:12,maxRotation:0}},
+          y:{title:{display:true,text:'Runners'}}}}});
+    var n=document.getElementById('histnote-'+KEY);
+    if(n)n.textContent=meta.note||'';
+  }).catch(function(e){
+    var n=document.getElementById('histnote-'+KEY);
+    if(n)n.textContent='Could not load chart data.';});
+})();
+</script>
