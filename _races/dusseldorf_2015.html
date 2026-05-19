@@ -6,105 +6,83 @@ author_profile: true
 classes: wide
 ---
 
-<section class="race-report" data-key="dusseldorf_2015">
-  <header class="rr-hero">
-    <h2>Duesseldorf Koe Lauf</h2>
-    <p class="rr-sub">6 Sep 2015 · 🇩🇪 Dusseldorf, Germany ·
-       Europe</p>
-    <p class="rr-badges">
-      <span>🏃 10K</span>
-      <span>10.0 km</span>
-      <span>1007 finishers</span>
-      <a href="https://www.diekoemeile.de/" target="_blank"
-         rel="noopener">Official site ↗</a>
+<style>
+.rr{max-width:760px}
+.rr .meta{color:#6b7280;margin:.2rem 0 1rem;font-size:.95rem}
+.rr .meta a{white-space:nowrap}
+.rr .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:.5rem 1.5rem;margin:.5rem 0 1.4rem}
+.rr .kv{font-variant-numeric:tabular-nums}
+.rr .kv b{display:block;font-size:1.05rem}
+.rr .kv span{color:#6b7280;font-size:.8rem;text-transform:uppercase;
+  letter-spacing:.04em}
+.rr .hero{font-size:2rem;font-weight:800;line-height:1.1;margin:.2rem 0}
+.rr .z{font-size:1.5rem;font-weight:800}
+.rr .z.pos{color:#15803d}.rr .z.neg{color:#b45309}
+.rr h3{margin:1.4rem 0 .4rem;font-size:.8rem;letter-spacing:.06em;
+  text-transform:uppercase;color:#6b7280}
+.rr canvas{max-height:300px}
+.rr .note{color:#9ca3af;font-size:.82rem;margin-top:.4rem}
+</style>
+<div class="rr" data-key="dusseldorf_2015">
+  <p class="meta">6 Sep 2015 · 🇩🇪 Dusseldorf, Germany · Europe<br>
+    🏃 10K · 10.0 km ·
+    1007 finishers ·
+    <a href="https://www.diekoemeile.de/" target="_blank" rel="noopener">official site ↗</a>
     </p>
-  </header>
 
   
-  <div class="rr-cards">
-    <div class="rr-card">
-      <h3>Ajay's result</h3>
-      <div class="rr-big">0:45:38</div>
-      <ul>
-        <li>Place: 270 / 1007
-          (top 26.8%)</li>
-        <li>Pace: 4:33/km</li>
-        <li>Beat 736 runners</li>
-      </ul>
-    </div>
-    <div class="rr-card">
-      <h3>Z-score vs the field</h3>
-      <div class="rr-z pos">
-        +0.67σ</div>
-      <p>faster than ~75% of finishers</p>
-    </div>
+  <div class="hero">0:45:38</div>
+  <div class="grid">
+    <div class="kv"><span>Place</span><b>270 /
+      1007</b></div>
+    <div class="kv"><span>Percentile</span><b>top 26.8%
+      </b></div>
+    <div class="kv"><span>Pace</span>
+      <b>4:33/km</b></div>
+    <div class="kv"><span>Z-score</span>
+      <b class="z pos">
+        +0.67σ</b></div>
   </div>
+  <p class="note">faster than ~75% of finishers (field mean 51:23).</p>
   
 
-  <div class="rr-cards">
-    <div class="rr-card">
-      <h3>The field</h3>
-      <ul>
-        <li>Finishers: 1007</li>
-        <li>Winner: 30:07</li>
-        <li>Median: 50:51</li>
-        <li>Mean: 51:23</li>
-        <li>Std dev: 8:35</li>
-      </ul>
-    </div>
-    
-    <div class="rr-card">
-      <h3>Weather that day ☁️</h3>
-      <ul>
-        <li>Overcast, 11.9°C
-          (9.8–14.5)</li>
-        <li>Humidity 80% · wind
-          18.7 km/h · rain 0.0 mm</li>
-        <li><em>Cool & dry — ideal racing conditions.</em></li>
-      </ul>
-    </div>
-    
-    
-    <div class="rr-card">
-      <h3>Ajay's 10K races</h3>
-      <div class="rr-big">#3<small> of
-        9</small></div>
-      <p>PB:
-         43:08.</p>
-    </div>
-    
-  </div>
+  <h3>Finish-time distribution</h3>
+  <canvas id="hist-dusseldorf_2015"></canvas>
+  <p class="note" id="histnote-dusseldorf_2015"></p>
 
-  <div class="rr-card rr-chart">
-    <h3>Finish-time distribution</h3>
-    <canvas id="hist-dusseldorf_2015"></canvas>
-    <p class="rr-note" id="histnote-dusseldorf_2015"></p>
+  <h3>The field</h3>
+  <div class="grid">
+    <div class="kv"><span>Finishers</span><b>1007</b></div>
+    <div class="kv"><span>Winner</span><b>30:07</b></div>
+    <div class="kv"><span>Median</span><b>50:51</b></div>
+    <div class="kv"><span>Mean</span><b>51:23</b></div>
   </div>
 
   
-  <div class="rr-card">
-    <h3>People of interest</h3>
-    <table><thead><tr><th>Runner</th><th>Time</th><th>Place</th>
-      <th>vs Ajay</th></tr></thead><tbody>
-      <tr><td>Ajay</td><td>0:45:38</td>
-        <td>270</td><td>same</td></tr><tr><td>Abhishek</td><td>1:18:28</td>
-        <td>1003</td><td>+32:50</td></tr>
-    </tbody></table>
-  </div>
+  <h3>Weather that day ☁️</h3>
+  <p>Overcast, 11.9°C
+    (9.8–14.5) · humidity
+    80% · wind 18.7 km/h · rain
+    0.0 mm. <em>Cool & dry — ideal racing conditions.</em></p>
   
 
-  <p class="rr-foot">Source: raw kept (1007 rows; recovered had 1004). Names anonymised
-    in aggregate. Updated 2026-05-19.</p>
-</section>
+  
+  <h3>My 10K races</h3>
+  <p>#3 of 9 —
+    PB
+    43:08.</p>
+  
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
 <script>
 (function(){
-  var KEY="dusseldorf_2015", CSV="/assets/data/race_hist/dusseldorf_2015.csv";
+  var KEY="dusseldorf_2015",CSV="/assets/data/race_hist/dusseldorf_2015.csv";
   fetch(CSV).then(function(r){return r.text();}).then(function(txt){
-    var lines=txt.trim().split(/\r?\n/),bins=[],counts=[],meta={};
-    lines.forEach(function(l){
+    var bins=[],counts=[],meta={};
+    txt.trim().split(/\r?\n/).forEach(function(l){
       l=l.trim();if(!l)return;
       var m=l.match(/^#\s*([\w]+)=(.*)$/);
       if(m){meta[m[1]]=m[2];return;}
@@ -115,9 +93,9 @@ classes: wide
       borderColor:c,borderWidth:2,borderDash:[5,4],
       label:{display:true,content:t,position:'start',
         backgroundColor:c,color:'#fff',font:{size:10}}};}
-    if(meta.mean)ann.m=L(meta.mean,'#888','mean');
+    if(meta.mean)ann.m=L(meta.mean,'#9ca3af','mean');
     if(meta.median)ann.d=L(meta.median,'#3b82f6','median');
-    if(meta.subject)ann.s=L(meta.subject,'#10b981',meta.subject_name||'me');
+    if(meta.subject)ann.s=L(meta.subject,'#15803d','me');
     new Chart(document.getElementById('hist-'+KEY),{type:'bar',
       data:{labels:bins,datasets:[{data:counts,
         backgroundColor:'#9bb4cf'}]},
@@ -125,12 +103,12 @@ classes: wide
         annotation:{annotations:ann},
         tooltip:{callbacks:{label:function(i){return i.raw+
           ' finishers';}}}},
-        scales:{x:{ticks:{maxTicksLimit:12,maxRotation:0}},
+        scales:{x:{ticks:{maxTicksLimit:10,maxRotation:0}},
           y:{title:{display:true,text:'Runners'}}}}});
     var n=document.getElementById('histnote-'+KEY);
     if(n)n.textContent=meta.note||'';
-  }).catch(function(e){
+  }).catch(function(){
     var n=document.getElementById('histnote-'+KEY);
-    if(n)n.textContent='Could not load chart data.';});
+    if(n)n.textContent='';});
 })();
 </script>

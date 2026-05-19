@@ -6,104 +6,81 @@ author_profile: true
 classes: wide
 ---
 
-<section class="race-report" data-key="greisheim_2023">
-  <header class="rr-hero">
-    <h2>15. Short-Track Triathlon</h2>
-    <p class="rr-sub">14 May 2023 · 🇩🇪 Stadt Griesheim, Germany ·
-       Europe</p>
-    <p class="rr-badges">
-      <span>🥇 Sprint</span>
-      <span>Sprint</span>
-      <span>47 finishers</span>
-      <a href="https://www.tus-tria.de/index.php/2014-04-04-05-01-57/short-track-triathlon" target="_blank"
-         rel="noopener">Official site ↗</a>
+<style>
+.rr{max-width:760px}
+.rr .meta{color:#6b7280;margin:.2rem 0 1rem;font-size:.95rem}
+.rr .meta a{white-space:nowrap}
+.rr .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:.5rem 1.5rem;margin:.5rem 0 1.4rem}
+.rr .kv{font-variant-numeric:tabular-nums}
+.rr .kv b{display:block;font-size:1.05rem}
+.rr .kv span{color:#6b7280;font-size:.8rem;text-transform:uppercase;
+  letter-spacing:.04em}
+.rr .hero{font-size:2rem;font-weight:800;line-height:1.1;margin:.2rem 0}
+.rr .z{font-size:1.5rem;font-weight:800}
+.rr .z.pos{color:#15803d}.rr .z.neg{color:#b45309}
+.rr h3{margin:1.4rem 0 .4rem;font-size:.8rem;letter-spacing:.06em;
+  text-transform:uppercase;color:#6b7280}
+.rr canvas{max-height:300px}
+.rr .note{color:#9ca3af;font-size:.82rem;margin-top:.4rem}
+</style>
+<div class="rr" data-key="greisheim_2023">
+  <p class="meta">14 May 2023 · 🇩🇪 Stadt Griesheim, Germany · Europe<br>
+    🥇 Sprint · Sprint ·
+    47 finishers ·
+    <a href="https://www.tus-tria.de/index.php/2014-04-04-05-01-57/short-track-triathlon" target="_blank" rel="noopener">official site ↗</a>
     </p>
-  </header>
 
   
-  <div class="rr-cards">
-    <div class="rr-card">
-      <h3>Ajay's result</h3>
-      <div class="rr-big">1:19:10</div>
-      <ul>
-        <li>Place: 42 / 47
-          (top 89.4%)</li>
-        
-        <li>Beat 6 runners</li>
-      </ul>
-    </div>
-    <div class="rr-card">
-      <h3>Z-score vs the field</h3>
-      <div class="rr-z neg">
-        -0.66σ</div>
-      <p>slower than ~75% of finishers</p>
-    </div>
+  <div class="hero">1:19:10</div>
+  <div class="grid">
+    <div class="kv"><span>Place</span><b>42 /
+      47</b></div>
+    <div class="kv"><span>Percentile</span><b>top 89.4%
+      </b></div>
+    
+    <div class="kv"><span>Z-score</span>
+      <b class="z neg">
+        -0.66σ</b></div>
   </div>
+  <p class="note">slower than ~75% of finishers (field mean 1:10:42).</p>
   
 
-  <div class="rr-cards">
-    <div class="rr-card">
-      <h3>The field</h3>
-      <ul>
-        <li>Finishers: 47</li>
-        <li>Winner: 52:04</li>
-        <li>Median: 1:08:15</li>
-        <li>Mean: 1:10:42</li>
-        <li>Std dev: 12:48</li>
-      </ul>
-    </div>
-    
-    <div class="rr-card">
-      <h3>Weather that day 🌦️</h3>
-      <ul>
-        <li>Light drizzle, 13.9°C
-          (9.9–17.0)</li>
-        <li>Humidity 74% · wind
-          12.5 km/h · rain 0.1 mm</li>
-        <li><em>Cool & dry — ideal racing conditions.</em></li>
-      </ul>
-    </div>
-    
-    
-    <div class="rr-card">
-      <h3>Ajay's Sprint races</h3>
-      <div class="rr-big">#1<small> of
-        2</small></div>
-      <p>🏅 Personal best.</p>
-    </div>
-    
-  </div>
+  <h3>Finish-time distribution</h3>
+  <canvas id="hist-greisheim_2023"></canvas>
+  <p class="note" id="histnote-greisheim_2023"></p>
 
-  <div class="rr-card rr-chart">
-    <h3>Finish-time distribution</h3>
-    <canvas id="hist-greisheim_2023"></canvas>
-    <p class="rr-note" id="histnote-greisheim_2023"></p>
+  <h3>The field</h3>
+  <div class="grid">
+    <div class="kv"><span>Finishers</span><b>47</b></div>
+    <div class="kv"><span>Winner</span><b>52:04</b></div>
+    <div class="kv"><span>Median</span><b>1:08:15</b></div>
+    <div class="kv"><span>Mean</span><b>1:10:42</b></div>
   </div>
 
   
-  <div class="rr-card">
-    <h3>People of interest</h3>
-    <table><thead><tr><th>Runner</th><th>Time</th><th>Place</th>
-      <th>vs Ajay</th></tr></thead><tbody>
-      <tr><td>Ajay</td><td>1:19:10</td>
-        <td>42</td><td>same</td></tr><tr><td>Abhishek</td><td>01:55:23</td>
-        <td>46</td><td>+36:13</td></tr>
-    </tbody></table>
-  </div>
+  <h3>Weather that day 🌦️</h3>
+  <p>Light drizzle, 13.9°C
+    (9.9–17.0) · humidity
+    74% · wind 12.5 km/h · rain
+    0.1 mm. <em>Cool & dry — ideal racing conditions.</em></p>
   
 
-  <p class="rr-foot">Source: raw kept (47 rows; recovered had 47). Names anonymised
-    in aggregate. Updated 2026-05-19.</p>
-</section>
+  
+  <h3>My Sprint races</h3>
+  <p>#1 of 2 —
+    🏅 personal best.</p>
+  
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
 <script>
 (function(){
-  var KEY="greisheim_2023", CSV="/assets/data/race_hist/greisheim_2023.csv";
+  var KEY="greisheim_2023",CSV="/assets/data/race_hist/greisheim_2023.csv";
   fetch(CSV).then(function(r){return r.text();}).then(function(txt){
-    var lines=txt.trim().split(/\r?\n/),bins=[],counts=[],meta={};
-    lines.forEach(function(l){
+    var bins=[],counts=[],meta={};
+    txt.trim().split(/\r?\n/).forEach(function(l){
       l=l.trim();if(!l)return;
       var m=l.match(/^#\s*([\w]+)=(.*)$/);
       if(m){meta[m[1]]=m[2];return;}
@@ -114,9 +91,9 @@ classes: wide
       borderColor:c,borderWidth:2,borderDash:[5,4],
       label:{display:true,content:t,position:'start',
         backgroundColor:c,color:'#fff',font:{size:10}}};}
-    if(meta.mean)ann.m=L(meta.mean,'#888','mean');
+    if(meta.mean)ann.m=L(meta.mean,'#9ca3af','mean');
     if(meta.median)ann.d=L(meta.median,'#3b82f6','median');
-    if(meta.subject)ann.s=L(meta.subject,'#10b981',meta.subject_name||'me');
+    if(meta.subject)ann.s=L(meta.subject,'#15803d','me');
     new Chart(document.getElementById('hist-'+KEY),{type:'bar',
       data:{labels:bins,datasets:[{data:counts,
         backgroundColor:'#9bb4cf'}]},
@@ -124,12 +101,12 @@ classes: wide
         annotation:{annotations:ann},
         tooltip:{callbacks:{label:function(i){return i.raw+
           ' finishers';}}}},
-        scales:{x:{ticks:{maxTicksLimit:12,maxRotation:0}},
+        scales:{x:{ticks:{maxTicksLimit:10,maxRotation:0}},
           y:{title:{display:true,text:'Runners'}}}}});
     var n=document.getElementById('histnote-'+KEY);
     if(n)n.textContent=meta.note||'';
-  }).catch(function(e){
+  }).catch(function(){
     var n=document.getElementById('histnote-'+KEY);
-    if(n)n.textContent='Could not load chart data.';});
+    if(n)n.textContent='';});
 })();
 </script>
