@@ -23,19 +23,31 @@ classes: wide
   text-transform:uppercase;color:#6b7280}
 .rr canvas{max-height:300px}
 .rr .note{color:#9ca3af;font-size:.82rem;margin-top:.4rem}
+.rr .wx{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.6rem;
+  background:linear-gradient(135deg,#eef4fb,#e7eef7);border-radius:14px;
+  padding:1rem 1.2rem;margin:.4rem 0 .2rem}
+.rr .wx-main{display:flex;align-items:center;gap:.7rem}
+.rr .wx-emoji{font-size:2.6rem;line-height:1}
+.rr .wx-temp{font-size:1.9rem;font-weight:800;display:block;line-height:1}
+.rr .wx-cond{color:#6b7280;font-size:.85rem}
+.rr .wx-tiles{display:flex;flex-wrap:wrap;gap:.5rem .4rem}
+.rr .wx-tiles div{background:#fff;border-radius:10px;padding:.45rem .7rem;
+  min-width:74px;text-align:center}
+.rr .wx-tiles b{display:block;font-size:1rem;font-variant-numeric:tabular-nums}
+.rr .wx-tiles span{color:#6b7280;font-size:.7rem;text-transform:uppercase;
+  letter-spacing:.04em}
+.rr .wx-verdict{width:100%;margin:.1rem 0 0;font-style:italic;color:#374151}
 </style>
 <div class="rr" data-key="djk_2014">
   <p class="meta">1 Oct 2014 · 🇩🇪 Geilenkirchen, Germany · Europe<br>
-    🏃 Half marathon · 21.0 km ·
-    82 finishers ·
-    <a href="https://www.runnersworld.de/laufkalender/gillrathervolkslaufundhalbmarathon/" target="_blank" rel="noopener">official site ↗</a>
+    🏃 Half marathon · 21.0 km
+     · <a href="https://www.runnersworld.de/laufkalender/gillrathervolkslaufundhalbmarathon/" target="_blank" rel="noopener">official site ↗</a>
     </p>
 
   
 
   <h3>Finish-time distribution</h3>
   <canvas id="hist-djk_2014"></canvas>
-  <p class="note" id="histnote-djk_2014"></p>
 
   <h3>The field</h3>
   <div class="grid">
@@ -46,11 +58,22 @@ classes: wide
   </div>
 
   
-  <h3>Weather that day 🌤️</h3>
-  <p>Mainly clear, 14.9°C
-    (12.2–18.4) · humidity
-    89% · wind 8.4 km/h · rain
-    0.0 mm. <em>Fair racing conditions.</em></p>
+  <h3>Weather that day</h3>
+  <div class="wx">
+    <div class="wx-main">
+      <span class="wx-emoji">🌤️</span>
+      <div><span class="wx-temp">14.9°C</span>
+        <span class="wx-cond">Mainly clear</span></div>
+    </div>
+    <div class="wx-tiles">
+      <div><b>12.2–18.4°</b>
+        <span>range</span></div>
+      <div><b>89%</b><span>humidity</span></div>
+      <div><b>8.4</b><span>km/h wind</span></div>
+      <div><b>0.0</b><span>mm rain</span></div>
+    </div>
+    <p class="wx-verdict">Fair racing conditions.</p>
+  </div>
   
 
   
@@ -86,10 +109,6 @@ classes: wide
           ' finishers';}}}},
         scales:{x:{ticks:{maxTicksLimit:10,maxRotation:0}},
           y:{title:{display:true,text:'Runners'}}}}});
-    var n=document.getElementById('histnote-'+KEY);
-    if(n)n.textContent=meta.note||'';
-  }).catch(function(){
-    var n=document.getElementById('histnote-'+KEY);
-    if(n)n.textContent='';});
+  }).catch(function(){});
 })();
 </script>

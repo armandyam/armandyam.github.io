@@ -23,12 +23,25 @@ classes: wide
   text-transform:uppercase;color:#6b7280}
 .rr canvas{max-height:300px}
 .rr .note{color:#9ca3af;font-size:.82rem;margin-top:.4rem}
+.rr .wx{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.6rem;
+  background:linear-gradient(135deg,#eef4fb,#e7eef7);border-radius:14px;
+  padding:1rem 1.2rem;margin:.4rem 0 .2rem}
+.rr .wx-main{display:flex;align-items:center;gap:.7rem}
+.rr .wx-emoji{font-size:2.6rem;line-height:1}
+.rr .wx-temp{font-size:1.9rem;font-weight:800;display:block;line-height:1}
+.rr .wx-cond{color:#6b7280;font-size:.85rem}
+.rr .wx-tiles{display:flex;flex-wrap:wrap;gap:.5rem .4rem}
+.rr .wx-tiles div{background:#fff;border-radius:10px;padding:.45rem .7rem;
+  min-width:74px;text-align:center}
+.rr .wx-tiles b{display:block;font-size:1rem;font-variant-numeric:tabular-nums}
+.rr .wx-tiles span{color:#6b7280;font-size:.7rem;text-transform:uppercase;
+  letter-spacing:.04em}
+.rr .wx-verdict{width:100%;margin:.1rem 0 0;font-style:italic;color:#374151}
 </style>
 <div class="rr" data-key="zurich_2018">
   <p class="meta">28 Jul 2018 · 🇨🇭 Zurich, Switzerland · Europe<br>
-    🥇 Olympic · Olympic ·
-    965 finishers ·
-    <a href="https://www.ironman.com/5150-zurich" target="_blank" rel="noopener">official site ↗</a>
+    🥇 Olympic · Olympic
+     · <a href="https://www.ironman.com/5150-zurich" target="_blank" rel="noopener">official site ↗</a>
     </p>
 
   
@@ -47,7 +60,6 @@ classes: wide
 
   <h3>Finish-time distribution</h3>
   <canvas id="hist-zurich_2018"></canvas>
-  <p class="note" id="histnote-zurich_2018"></p>
 
   <h3>The field</h3>
   <div class="grid">
@@ -58,11 +70,22 @@ classes: wide
   </div>
 
   
-  <h3>Weather that day 🌦️</h3>
-  <p>Drizzle, 22.9°C
-    (19.0–25.2) · humidity
-    59% · wind 13.8 km/h · rain
-    1.0 mm. <em>Warm — tough on endurance pace.</em></p>
+  <h3>Weather that day</h3>
+  <div class="wx">
+    <div class="wx-main">
+      <span class="wx-emoji">🌦️</span>
+      <div><span class="wx-temp">22.9°C</span>
+        <span class="wx-cond">Drizzle</span></div>
+    </div>
+    <div class="wx-tiles">
+      <div><b>19.0–25.2°</b>
+        <span>range</span></div>
+      <div><b>59%</b><span>humidity</span></div>
+      <div><b>13.8</b><span>km/h wind</span></div>
+      <div><b>1.0</b><span>mm rain</span></div>
+    </div>
+    <p class="wx-verdict">Warm — tough on endurance pace.</p>
+  </div>
   
 
   
@@ -103,10 +126,6 @@ classes: wide
           ' finishers';}}}},
         scales:{x:{ticks:{maxTicksLimit:10,maxRotation:0}},
           y:{title:{display:true,text:'Runners'}}}}});
-    var n=document.getElementById('histnote-'+KEY);
-    if(n)n.textContent=meta.note||'';
-  }).catch(function(){
-    var n=document.getElementById('histnote-'+KEY);
-    if(n)n.textContent='';});
+  }).catch(function(){});
 })();
 </script>
