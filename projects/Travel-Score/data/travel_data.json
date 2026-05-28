@@ -1018,5 +1018,11 @@
     "Country":"Portugal",
     "Latitude":38.8355446,
     "Longitude":-9.3522371
+  },
+  {
+    "City":"Dallas",
+    "Country":"USA",
+    "Latitude":32.7762719,
+    "Longitude":-96.7968559
   }
 ]
