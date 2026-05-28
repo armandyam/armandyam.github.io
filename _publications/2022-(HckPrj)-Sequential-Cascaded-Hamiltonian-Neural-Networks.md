@@ -10,7 +10,7 @@ type: 'techblog'
 citation: 'Ajay Rangarajan, Jeyashree Krishnan.
 (2025).
 &quot;(HckPrj) Sequential Cascaded Hamiltonian Neural Networks.&quot;
-<i>Apart Research</i>, 2025.'
+<i>Apart Research</i>.'
 ---
 
 

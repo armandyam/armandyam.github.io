@@ -10,7 +10,7 @@ type: 'techblog'
 citation: 'Jeyashree Krishnan, Ajay Rangarajan.
 (2025).
 &quot;(HckPrj) Enhancing Genomic Foundation Model Robustness through Iterative Black-Box Adversarial Training.&quot;
-<i>Apart Research</i>, 2025.'
+<i>Apart Research</i>.'
 ---
 
 
