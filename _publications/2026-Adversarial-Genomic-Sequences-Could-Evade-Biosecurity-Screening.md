@@ -10,7 +10,7 @@ type: 'conference'
 citation: 'Jeyashree Krishnan, Ajay Rangarajan, Andrea Loehr, Jason Hoelscher-Obermaier.
 (2026).
 &quot;Adversarial Genomic Sequences Could Evade Biosecurity Screening.&quot;
-<i>ICLR 2026 Workshop on Machine Learning for Genomics Explorations (MLGenX)</i>, 2026.'
+<i>ICLR 2026 Workshop on Machine Learning for Genomics Explorations (MLGenX)</i>.'
 ---
 
 

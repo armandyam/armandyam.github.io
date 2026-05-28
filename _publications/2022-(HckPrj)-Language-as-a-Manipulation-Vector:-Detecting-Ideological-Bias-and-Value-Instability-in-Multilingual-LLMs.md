@@ -10,7 +10,7 @@ type: 'techblog'
 citation: 'Ajay Rangarajan, Jeyashree Krishnan.
 (2026).
 &quot;(HckPrj) Language as a Manipulation Vector: Detecting Ideological Bias and Value Instability in Multilingual LLMs.&quot;
-<i>Apart Research</i>, 2026.'
+<i>Apart Research</i>.'
 ---
 
 
