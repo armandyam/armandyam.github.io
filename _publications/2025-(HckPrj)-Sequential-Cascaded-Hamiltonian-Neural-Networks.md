@@ -1,7 +1,7 @@
 ---
 title: "(HckPrj) Sequential Cascaded Hamiltonian Neural Networks"
 collection: publications
-permalink: /publication/2022-(HckPrj)-Sequential-Cascaded-Hamiltonian-Neural-Networks
+permalink: /publication/2025-(HckPrj)-Sequential-Cascaded-Hamiltonian-Neural-Networks
 excerpt: ''
 date: 2025-07-28
 venue: 'Apart Research'
