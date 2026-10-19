@@ -1,7 +1,7 @@
 ---
 title: "(HckPrj) Apart AIxBio Hackathon"
 collection: publications
-permalink: /publication/2022-(HckPrj)-Apart-AIxBio-Hackathon
+permalink: /publication/2026-(HckPrj)-Apart-AIxBio-Hackathon
 excerpt: ''
 date: 2026-04-26
 venue: 'Apart Research'

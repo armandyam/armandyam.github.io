@@ -1,7 +1,7 @@
 ---
 title: "(HckPrj) Layerwise Development of Compositional Functional Representations Across Architectures"
 collection: publications
-permalink: /publication/2022-(HckPrj)-Layerwise-Development-of-Compositional-Functional-Representations-Across-Architectures
+permalink: /publication/2025-(HckPrj)-Layerwise-Development-of-Compositional-Functional-Representations-Across-Architectures
 excerpt: ''
 date: 2025-07-28
 venue: 'Apart Research'

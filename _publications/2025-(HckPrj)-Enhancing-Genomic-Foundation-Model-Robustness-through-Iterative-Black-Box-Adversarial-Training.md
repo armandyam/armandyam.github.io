@@ -1,7 +1,7 @@
 ---
 title: "(HckPrj) Enhancing Genomic Foundation Model Robustness through Iterative Black-Box Adversarial Training"
 collection: publications
-permalink: /publication/2022-(HckPrj)-Enhancing-Genomic-Foundation-Model-Robustness-through-Iterative-Black-Box-Adversarial-Training
+permalink: /publication/2025-(HckPrj)-Enhancing-Genomic-Foundation-Model-Robustness-through-Iterative-Black-Box-Adversarial-Training
 excerpt: ''
 date: 2025-09-14
 venue: 'Apart Research'

@@ -1,7 +1,7 @@
 ---
 title: "(HckPrj) Language as a Manipulation Vector: Detecting Ideological Bias and Value Instability in Multilingual LLMs"
 collection: publications
-permalink: /publication/2022-(HckPrj)-Language-as-a-Manipulation-Vector:-Detecting-Ideological-Bias-and-Value-Instability-in-Multilingual-LLMs
+permalink: /publication/2026-(HckPrj)-Language-as-a-Manipulation-Vector:-Detecting-Ideological-Bias-and-Value-Instability-in-Multilingual-LLMs
 excerpt: ''
 date: 2026-01-11
 venue: 'Apart Research'
