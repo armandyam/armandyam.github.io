@@ -1024,5 +1024,41 @@
     "Country":"USA",
     "Latitude":32.7762719,
     "Longitude":-96.7968559
+  },
+  {
+    "City":"Allahabad",
+    "Country":"India",
+    "Latitude":25.4381302,
+    "Longitude":81.8338005
+  },
+  {
+    "City":"Dortmund",
+    "Country":"Germany",
+    "Latitude":51.5142273,
+    "Longitude":7.4652789
+  },
+  {
+    "City":"Dubai",
+    "Country":"UAE",
+    "Latitude":25.0742823,
+    "Longitude":55.1885624
+  },
+  {
+    "City":"D\u00fcsseldorf",
+    "Country":"Germany",
+    "Latitude":51.2254018,
+    "Longitude":6.7763137
+  },
+  {
+    "City":"Nuremberg",
+    "Country":"Germany",
+    "Latitude":49.453872,
+    "Longitude":11.077298
+  },
+  {
+    "City":"Singapore",
+    "Country":"Singapore",
+    "Latitude":1.357107,
+    "Longitude":103.8194992
   }
 ]
