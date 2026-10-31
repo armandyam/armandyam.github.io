@@ -1060,5 +1060,59 @@
     "Country":"Singapore",
     "Latitude":1.357107,
     "Longitude":103.8194992
+  },
+  {
+    "City":"Cambridge",
+    "Country":"UK",
+    "Latitude":52.1975846,
+    "Longitude":0.1391537
+  },
+  {
+    "City":"Leicester",
+    "Country":"UK",
+    "Latitude":52.6362,
+    "Longitude":-1.1331969
+  },
+  {
+    "City":"Lyon",
+    "Country":"France",
+    "Latitude":45.7578137,
+    "Longitude":4.8320114
+  },
+  {
+    "City":"Oxford",
+    "Country":"UK",
+    "Latitude":51.7520131,
+    "Longitude":-1.2578499
+  },
+  {
+    "City":"Pilsen",
+    "Country":"Czech",
+    "Latitude":49.7271322,
+    "Longitude":13.3359164
+  },
+  {
+    "City":"La Roche-en-Ardenne",
+    "Country":"Belgium",
+    "Latitude":50.1602833,
+    "Longitude":5.5627594032
+  },
+  {
+    "City":"Darmstadt",
+    "Country":"Germany",
+    "Latitude":49.8851869,
+    "Longitude":8.6736295
+  },
+  {
+    "City":"Suehl",
+    "Country":"Germany",
+    "Latitude":51.4912194,
+    "Longitude":6.9064464
+  },
+  {
+    "City":"Monschau",
+    "Country":"Germany",
+    "Latitude":50.5544687,
+    "Longitude":6.2407954
   }
 ]
