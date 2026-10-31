@@ -5,6 +5,7 @@ permalink: /publication/2026-Adversarial-Genomic-Sequences-Could-Evade-Biosecuri
 excerpt: ''
 date: 2026-01-01
 venue: '2026 IEEE Symposium on Security and Privacy Workshops (SPW)'
+award: 'Best Paper Runner-Up'
 paperurl: ''
 type: 'conference'
 citation: 'Jeyashree Krishnan, Ajay Rangarajan, Andrea Loehr, Jason Hoelscher-Obermaier.
@@ -12,6 +13,8 @@ citation: 'Jeyashree Krishnan, Ajay Rangarajan, Andrea Loehr, Jason Hoelscher-Ob
 &quot;Adversarial Genomic Sequences Could Evade Biosecurity Screening.&quot;
 <i>2026 IEEE Symposium on Security and Privacy Workshops (SPW)</i>.'
 ---
+**🏆 Best Paper Runner-Up**
+
 
 
 [Download paper here](https://doi.org/10.1109/SPW72489.2026.00013)
