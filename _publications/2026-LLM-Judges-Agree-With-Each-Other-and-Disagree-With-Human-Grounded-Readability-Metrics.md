@@ -5,6 +5,7 @@ permalink: /publication/2026-LLM-Judges-Agree-With-Each-Other-and-Disagree-With-
 excerpt: ''
 date: 2026-01-01
 venue: 'Third Workshop on Uncertainty-Aware NLP (UncertaiNLP), Conference on Empirical Methods in Natural Language Processing (EMNLP)'
+award: 'Spotlight Paper Award'
 paperurl: ''
 type: 'conference'
 citation: 'Ajay Rangarajan, Jeyashree Krishnan.
@@ -12,6 +13,8 @@ citation: 'Ajay Rangarajan, Jeyashree Krishnan.
 &quot;LLM Judges Agree With Each Other and Disagree With Human-Grounded Readability Metrics.&quot;
 <i>Third Workshop on Uncertainty-Aware NLP (UncertaiNLP), Conference on Empirical Methods in Natural Language Processing (EMNLP)</i>.'
 ---
+**🏆 Spotlight Paper Award**
+
 
 
 [Download paper here](https://openreview.net/forum?id=sOKzkunyhD)
