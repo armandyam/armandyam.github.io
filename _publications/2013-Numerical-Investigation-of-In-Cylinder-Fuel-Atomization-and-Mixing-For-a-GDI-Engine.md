@@ -3,7 +3,7 @@ title: "Numerical Investigation of In-Cylinder Fuel Atomization and Mixing For a
 collection: publications
 permalink: /publication/2013-Numerical-Investigation-of-In-Cylinder-Fuel-Atomization-and-Mixing-For-a-GDI-Engine
 excerpt: ''
-date: 2013-December-01
+date: 2013-12-01
 venue: '11th ISHMT - ASME Heat and Mass Transfer Conference'
 paperurl: ''
 type: 'journal'
