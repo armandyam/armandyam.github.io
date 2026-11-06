@@ -12,7 +12,7 @@ Initially, I started manually adding locations on [Google My Maps](https://www.g
 
 Armed with my Python and [Jinja2](https://jinja.palletsprojects.com/en/3.1.x/) skills, I figured I could streamline this map-making process. Sure, I might only update my map once a year, but future me would thank present me, right? (Spoiler: [Not really](https://xkcd.com/1205/)).
 
-So, I got to work converting my simple text file into a tabulated CSV, then into the KML format needed by My Maps. After a bit of Googling, I had the basic script running. The only hiccup was getting `geopy` to cooperate. You can check out the result of my efforts [here](https://armandyam.github.io/others/#travel_map).
+So, I got to work converting my simple text file into a tabulated CSV, then into the KML format needed by My Maps. After a bit of Googling, I had the basic script running. The only hiccup was getting `geopy` to cooperate. You can check out the result of my efforts [here](https://www.ajayrangarajan.com/others/#travel_map).
 
 If you want to create your own map, I've got you covered. The script is available on my [GitHub](https://github.com/armandyam/maps_kml_generator), along with the required Jinja template. Just provide a CSV file in this format:
 

@@ -1,4 +1,5 @@
 ---
+published: false  # academicpages template/demo page — not part of this site
 permalink: /non-menu-page/
 title: "Page not in menu"
 excerpt: "This is a page not in th emain menu"

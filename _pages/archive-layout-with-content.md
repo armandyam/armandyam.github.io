@@ -1,4 +1,5 @@
 ---
+published: false  # academicpages template/demo page — not part of this site
 title: "Archive Layout with Content"
 layout: archive
 permalink: /archive-layout-with-content/

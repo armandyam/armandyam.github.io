@@ -37,7 +37,7 @@ I know, I know—travel is supposed to be a fun activity, enjoyed without the co
 
 After a recent trip, I started wondering how I could measure my travel experiences. The most obvious metric is the number of countries visited. While this is a decent measure, I wanted a more comprehensive view of my travels.
 
-While googling, I stumbled upon this amazing tool by <a href="https://patrickstotz.github.io/Travel-Score/" target="_blank">Patrick Stotz</a>. I absolutely loved it because it combined two of my interests: travel/maps and <a href="https://publications.rwth-aachen.de/record/817176" target="_blank">discretization</a>. However, there was a tiny hiccup—I had to manually click boxes based on the <a href="https://armandyam.github.io/others/#travel_map" target="_blank">cities I have visited</a>. This assumes two things about me:
+While googling, I stumbled upon this amazing tool by <a href="https://patrickstotz.github.io/Travel-Score/" target="_blank">Patrick Stotz</a>. I absolutely loved it because it combined two of my interests: travel/maps and <a href="https://publications.rwth-aachen.de/record/817176" target="_blank">discretization</a>. However, there was a tiny hiccup—I had to manually click boxes based on the <a href="https://www.ajayrangarajan.com/others/#travel_map" target="_blank">cities I have visited</a>. This assumes two things about me:
 1. I enjoy clicking a lot.
 2. I know *exactly* where the cities I've visited are located on a map.
 

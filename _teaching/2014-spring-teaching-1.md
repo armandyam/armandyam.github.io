@@ -1,4 +1,5 @@
 ---
+published: false  # academicpages template/demo page — not part of this site
 title: "Teaching experience 1"
 collection: teaching
 type: "Undergraduate course"

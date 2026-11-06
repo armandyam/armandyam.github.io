@@ -18,8 +18,15 @@ Education
 
 Work experience
 ======
-* R&D Software Engineering Manager, [Dassault Systemes](https://www.3ds.com/)
-  * Duration: 12/2021 - Present
+* Staff Software Engineer, [Ansys (part of Synopsys)](https://www.ansys.com/)
+  * Duration: 12/2025 - Present
+  * Location: Germany
+  * GPU meshing team
+
+* R&D Software Engineer and CFD Meshing Product Manager, [Dassault Systèmes](https://www.3ds.com/)
+  * Duration: 12/2021 - 2025
+    * CFD Meshing Product Manager - 08/2024 - 2025
+    * R&D Software Engineer - 12/2021 - 07/2024
   * Location: Darmstadt, Germany
   * Workflows and infrastructure development
     * Creating workflows for systems assembly and modeling applied to electromagnetics simulations
@@ -47,7 +54,7 @@ Work experience
     * Led multiple interdisciplinary projects with research partners including TU Eindhoven, VKI and NASA
   * Oral and written communication
     * Mastered the art of presenting complex ideas to diverse audiences effectively
-    * Presented research work at $10+$ international conferences, published in $5+$ journals and facilitated training opportunities for young researchers
+    * Presented research work at 10+ international conferences, published in 5+ journals and facilitated training opportunities for young researchers
 
 Technical Skills
 ======
