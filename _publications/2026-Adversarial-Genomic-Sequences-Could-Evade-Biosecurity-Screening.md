@@ -3,7 +3,7 @@ title: "Adversarial Genomic Sequences Could Evade Biosecurity Screening"
 collection: publications
 permalink: /publication/2026-Adversarial-Genomic-Sequences-Could-Evade-Biosecurity-Screening
 excerpt: ''
-date: 2026-01-01
+date: 2026-04-01
 venue: 'ICLR 2026 Workshop on Machine Learning for Genomics Explorations (MLGenX)'
 paperurl: ''
 type: 'conference'

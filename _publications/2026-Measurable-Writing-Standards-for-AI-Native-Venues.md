@@ -3,7 +3,7 @@ title: "Measurable Writing Standards for AI-Native Venues"
 collection: publications
 permalink: /publication/2026-Measurable-Writing-Standards-for-AI-Native-Venues
 excerpt: ''
-date: 2026-01-01
+date: 2026-12-01
 venue: 'AI-Native Academia Workshop, Conference on Neural Information Processing Systems (NeurIPS)'
 paperurl: ''
 type: 'conference'

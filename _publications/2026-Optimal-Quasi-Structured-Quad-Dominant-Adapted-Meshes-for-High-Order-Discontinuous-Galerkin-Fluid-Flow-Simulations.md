@@ -3,7 +3,7 @@ title: "Optimal Quasi-Structured Quad-Dominant Adapted Meshes for High-Order Dis
 collection: publications
 permalink: /publication/2026-Optimal-Quasi-Structured-Quad-Dominant-Adapted-Meshes-for-High-Order-Discontinuous-Galerkin-Fluid-Flow-Simulations
 excerpt: ''
-date: 2026-01-01
+date: 2026-10-01
 venue: 'Journal of Computational Physics'
 paperurl: ''
 type: 'journal'

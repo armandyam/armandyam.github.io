@@ -3,7 +3,7 @@ title: "LLM Judges Agree With Each Other and Disagree With Human-Grounded Readab
 collection: publications
 permalink: /publication/2026-LLM-Judges-Agree-With-Each-Other-and-Disagree-With-Human-Grounded-Readability-Metrics
 excerpt: ''
-date: 2026-01-01
+date: 2026-10-01
 venue: 'Third Workshop on Uncertainty-Aware NLP (UncertaiNLP), Conference on Empirical Methods in Natural Language Processing (EMNLP)'
 award: 'Spotlight Paper Award'
 paperurl: ''

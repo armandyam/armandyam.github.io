@@ -3,7 +3,7 @@ title: "Adversarial Genomic Sequences Could Evade Biosecurity Screening"
 collection: publications
 permalink: /publication/2026-Adversarial-Genomic-Sequences-Could-Evade-Biosecurity-Screening-krishnan2026adversarial_cyberbio
 excerpt: ''
-date: 2026-01-01
+date: 2026-05-21
 venue: '2026 IEEE Symposium on Security and Privacy Workshops (SPW)'
 award: 'Best Paper Runner-Up'
 paperurl: ''
