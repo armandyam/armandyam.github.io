@@ -41,7 +41,7 @@ Work experience
   * Project management and leadership
     * Organized and coordinated different projects in collaboration with cross-functional teams
     * Mentored 4 students, identified key areas for research focus, provided computational expertise, executed plans and managed project resources.
-    * Coordinated with Principal Investigator and identified key areas for research focus that led to several grant fundings and facilitated a joint research project in mesh generation carried out at [Charles University, Czechia](http://knm.mff.cuni.cz/)
+    * Coordinated with Principal Investigator and identified key areas for research focus that led to several grant fundings and facilitated a joint research project in mesh generation carried out at [Charles University, Czechia](https://knm.mff.cuni.cz/)
   * Team work and collaboration
     * Established and nurtured a network of contacts across industry and academia
     * Led multiple interdisciplinary projects with research partners including TU Eindhoven, VKI and NASA
