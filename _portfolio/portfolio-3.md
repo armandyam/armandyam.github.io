@@ -14,5 +14,5 @@ The obvious choice for this was all the addresses I have lived before. Next the 
 
 
 <p align="center">
-  <img src="/images/pretty_maps.png" />
+  <img src="/images/pretty_maps.png" alt="Prettymaps renderings of places I have lived" />
 </p>

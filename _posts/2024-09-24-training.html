@@ -191,7 +191,7 @@ h3, p, ul, ol {
 <p>Let’s get into the nitty-gritty: the actual distances during training. As the graph shows, I tried (emphasis on <em>tried</em>) to keep up with around 10 km of swimming, 50 km of running, and 300 km of biking per month. But... vacations happened. The dip in training during November and December aligns with my trip to India for a friend’s wedding, where I did absolutely <em>nothing</em>. You can see the steep decline in all distances during that time. However, I redeemed myself during my second vacation in April, as shown by a similar drop in training but with a redeeming event: I ran a marathon in São Paulo and even hiked to Machu Picchu. Clearly, vacations aren’t always an excuse to slack off—they’re sometimes just another opportunity to push limits.</p>
 
 <!-- Initialize a select button -->
-    <select id="selectButton"></select>
+    <select id="selectButton" aria-label="Sport to plot"></select>
     <!-- Create a div where the graph will take place -->
     <div id="line_plot"></div>
 
@@ -215,8 +215,10 @@ h3, p, ul, ol {
 
         var svg = d3.select("#line_plot")
           .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
+            .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
+            .attr("width", "100%")
+            .style("max-width", (width + margin.left + margin.right) + "px")
+            .style("height", "auto")
             .style("display", "block")
             .style("margin", "0 auto")
           .append("g")
@@ -516,8 +518,10 @@ h3, p, ul, ol {
 
         var pie_svg = d3.select("#pie_chart")
           .append("svg")
-            .attr("width", pie_width)
-            .attr("height", pie_height)
+            .attr("viewBox", "0 0 " + pie_width + " " + pie_height)
+            .attr("width", "100%")
+            .style("max-width", pie_width + "px")
+            .style("height", "auto")
             .style("display", "block")
             .style("margin", "0 auto")
           .append("g")
