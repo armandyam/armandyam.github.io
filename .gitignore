@@ -6,4 +6,4 @@ Thumbs.db
 .sass-cache/
 .jekyll-cache/
 .bundle/
-vendor/
+/vendor/
