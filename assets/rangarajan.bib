@@ -28,9 +28,9 @@ keywords = {Anisotropic mesh adaptation, Error estimators, Adjoint-based, Metric
 abstract = {Automated mesh adaptation is known to be an efficient way to control discretization errors in Computational Fluid Dynamics (CFD) simulations. It offers the added advantage that the user only needs to have a minimal expertise in generating appropriate meshes, which is the biggest bottleneck in current CFD workflows. For anisotropic, or highly stretched, simplex (triangles in 2D and tetrahedra in 3D) meshes, the concept of a metric field, that describes a continuous mesh, offers a convenient way to describe the shape and size of mesh elements. Error estimators can be derived and optimized on this continuous mesh to get the optimal metric field, which can be used to generate the corresponding mesh using a metric-conforming mesh generator. The current work aims to review the various error estimators and the corresponding metric fields available for anisotropic mesh adaptation, and compare their mesh convergence behavior for various flow problems. Mathematical formulations are also briefly described here for many of those methods to understand their differences, including the underlying local error estimators used for the global analytic optimization. The metric fields include both solution-based ones that control interpolation error of a scalar field in Lq norm, and also adjoint-based ones that control the error in a particular output functional. All the metric fields considered in this work are implemented in NASA’s open-source grid mechanics package, refine, and FUN3D-SFE, a finite-element solver, is used for the primal and the adjoint solutions. Mesh convergences of output quantities are compared for various benchmark problems, including inviscid and laminar flows around the ONERA M6 wing, supersonic inviscid flow over a low-boom aircraft, and RANS turbulent flow around a high-lift configuration.}
 }
 
-@article{Rangarajan2013,
+@inproceedings{Rangarajan2013,
 author={Rangarajan, Ajay and Banerjee, Raja},
-journal = {11th ISHMT - ASME Heat and Mass Transfer Conference},
+booktitle = {11th ISHMT - ASME Heat and Mass Transfer Conference},
 title={Numerical Investigation of In-Cylinder Fuel Atomization and Mixing For a GDI Engine},
 month = {12},
 url = {https://raiith.iith.ac.in/1935/1/ASME-ISHMT-2013-HMTC1300405.pdf},
@@ -59,6 +59,7 @@ year={2013}
   author={Ajay Mandyam Rangarajan and Jeyashree Krishnan},
   booktitle={AI-Native Academia Workshop, Conference on Neural Information Processing Systems (NeurIPS)},
   year={2026},
+  date={2026-12-01},
   note={Accepted}
 }
 
@@ -77,16 +78,17 @@ keywords = {Petrov-Galerkin schemes, Metric-based, Anisotropy, Continuous-mesh m
 abstract = {Certain Petrov-Galerkin schemes deliver inherently stable formulations of variational problems on a given mesh by selecting appropriate pairs of trial and test spaces. These schemes are especially suited for adaptation, due to their inherent ability to yield robust a posteriori error estimates. On the other hand, metric-based continuous mesh models have previously been proposed for schemes using piecewise polynomial approximation spaces. These models aim to build (near) optimal anisotropic meshes with respect to interpolation error models. The main focus of this article is to formulate continuous-mesh error models for the optimal Petrov-Galerkin methodology using the inbuilt a posteriori error estimate rather than a generic interpolation error model. This pairs the ability to produce near optimal anisotropic simplex meshes with a numerical method that in turn produces optimal stability and approximation properties on these meshes. Error models are formulated either with respect to a suitable norm of the numerical error, or with respect to certain admissible target functionals, in the spirit of goal-oriented adaptation. We demonstrate the fidelity of the proposed metric-based mesh adaptation strategy via numerical examples for convection-diffusion problems on triangular meshes.}
 }
 
-@misc{rangarajan2026mlcommunicationnorms,
+@article{rangarajan2026mlcommunicationnorms,
   title={Machine Learning Research Has Outpaced Its Communication Norms and NeurIPS Should Act},
   author={Ajay Mandyam Rangarajan and Jeyashree Krishnan},
-  journal={arXiv preprint arXiv:2605.08889 (under review at TMLR)},
+  journal={Transactions on Machine Learning Research (TMLR)},
   year={2026},
   date={2026-05-01},
   eprint={2605.08889},
   archivePrefix={arXiv},
-  url={https://arxiv.org/abs/2605.08889},
-  note={Under review at TMLR}
+  url={https://openreview.net/forum?id=RoBtrexUvK},
+  linked_post_arxiv={https://arxiv.org/abs/2605.08889},
+  note={Accepted at TMLR}
 }
 
 
@@ -121,6 +123,7 @@ abstract = {We present a continuous-mesh model for anisotropic hp-adaptation in 
     author = {Jeyashree Krishnan and Ajay Mandyam Rangarajan and Andrea Loehr and Jason Hoelscher-Obermaier},
     booktitle = {ICLR 2026 Workshop on Machine Learning for Genomics Explorations (MLGenX)},
     year = {2026},
+    date = {2026-04-01},
     url = {https://openreview.net/forum?id=j0o93ydeGW}
 }
 
@@ -147,11 +150,11 @@ eprint = {
     abstract = { A method for anisotropic mesh adaptation and optimization for high-order discontinuous Galerkin schemes is presented. Given the total number of degrees of freedom, a metric-based method is proposed, which aims to globally optimize the mesh with respect to the Lq norm of the error. This is done by minimizing a suitable error model associated with the approximation space. Advantages of using a metric-based method in this context are several. First, it facilitates changing and manipulating the mesh in a general anisotropic way. Second, defining a suitable continuous interpolation operator allows the use of an analytic optimization framework that operates on the metric field, rather than the discrete mesh. The formulation of the method is presented as well as numerical experiments in the context of convection–diffusion systems. }
 }
 
-@article{Manoharan2013,
+@inproceedings{Manoharan2013,
 author = {Gautham Manoharan and Abram Kakkozha and Ajay Rangarajan and Karthik Vajapeyajula and Ashwin Kolappan and Mahesh Panchagnula and Srikanth Vedantam},
 isbn = {9788389687838},
 url={http://icmm3.ippt.gov.pl/icmm3_book_of_abstracts-a4paper.pdf},
-journal = {Third International Conference on Material Modelling Thirteenth European Mechanics of Materials Conference},
+booktitle = {Third International Conference on Material Modelling Thirteenth European Mechanics of Materials Conference},
 year={2013},
 month={09},
 title={Experimental study of dense bi-disperse granular flow through a pipe with a ninety degree bend}
@@ -193,6 +196,7 @@ eprint = {https://arc.aiaa.org/doi/pdf/10.2514/6.2019-3058}
   author={Cameron Berger and Padmaja Mohanty and Sri Bhanu Gundu and Jeyashree Krishnan and Ajay Mandyam Rangarajan},
   booktitle={XAI4Science Workshop, Conference on Neural Information Processing Systems (NeurIPS)},
   year={2026},
+  date={2026-12-01},
   note={Accepted}
 }
 
@@ -203,6 +207,7 @@ eprint = {https://arc.aiaa.org/doi/pdf/10.2514/6.2019-3058}
     booktitle = {2026 IEEE Symposium on Security and Privacy Workshops (SPW)},
     pages = {109-119},
     year = {2026},
+    date = {2026-05-21},
     doi = {10.1109/SPW72489.2026.00013},
     url = {https://doi.org/10.1109/SPW72489.2026.00013},
     award = {Best Paper Runner-Up}
@@ -356,9 +361,9 @@ eprint = {https://arc.aiaa.org/doi/pdf/10.2514/6.2025-0780},
 }
 
 
-@article{Rangarajan2013a,
+@inproceedings{Rangarajan2013a,
 author={Karnik, Aditya and Rangarajan, Ajay and Tandon, Mohit},
-journal = {The 14th International Conference on Fluidization – From Fundamentals to Products", J.A.M. Kuipers, Eindhoven University of Technology R.F. Mudde, Delft University of Technology J.R. van Ommen, Delft University of Technology N.G. Deen, Eindhoven University of Technology Eds, ECI Symposium Series},
+booktitle = {The 14th International Conference on Fluidization – From Fundamentals to Products", J.A.M. Kuipers, Eindhoven University of Technology R.F. Mudde, Delft University of Technology J.R. van Ommen, Delft University of Technology N.G. Deen, Eindhoven University of Technology Eds, ECI Symposium Series},
 title={Numerical Investigation of the Hydrodynamics of Cylindrical Fluidized Bed},
 year={2013},
 url={https://dc.engconfintl.org/fluidization_xiv/67},
@@ -392,6 +397,7 @@ abstract = {The computation of flows of viscoelastic fluids is expensive compare
     volume = {569},
     pages = {115461},
     year = {2026},
+    date = {2026-10-01},
     issn = {0021-9991},
     doi = {10.1016/j.jcp.2026.115461},
     url = {https://doi.org/10.1016/j.jcp.2026.115461},
@@ -405,6 +411,7 @@ abstract = {The computation of flows of viscoelastic fluids is expensive compare
   author={Ajay Mandyam Rangarajan and Jeyashree Krishnan},
   booktitle={Third Workshop on Uncertainty-Aware NLP (UncertaiNLP), Conference on Empirical Methods in Natural Language Processing (EMNLP)},
   year={2026},
+  date={2026-10-01},
   url={https://openreview.net/forum?id=sOKzkunyhD},
   note={Accepted},
   award={Spotlight Paper Award}
